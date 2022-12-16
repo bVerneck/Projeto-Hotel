@@ -1,0 +1,130 @@
+/* footer */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+footer {
+  background-color: #0dadbd;
+  padding: 5em 0;
+  padding-bottom: 40px;
+  font-family: "Mont";
+  font-weight: 400;
+  max-width: 1920px;
+}
+
+footer h2,
+footer p,
+footer a,
+footer span {
+  color: #ffffff;
+}
+
+footer h2 {
+  font-weight: 400;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer ul {
+  padding: 0;
+}
+
+footer li {
+  list-style: none;
+}
+
+.footer-box {
+  width: 24%;
+  padding: 1%;
+  float: left;
+  font-family: "AGaramondPro-Regular";
+}
+
+.footer-box2 {
+  width: 24%;
+  padding: 1%;
+  float: left;
+  font-family: "Montserrat";
+}
+
+footer .wrapper:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.company-footer {
+  width: 80%;
+}
+
+.company-footer h2 {
+  margin-top: 20px;
+}
+
+.company-footer h2,
+.company-footer p {
+  margin-bottom: 20px;
+}
+
+.footer-list li {
+  margin-bottom: 15px;
+  font-weight: bold, 400;
+  font-size: 16px;
+  line-height: 20px;
+  border: 0, 5px solid #fff;
+}
+
+.footer-list a {
+  transition: 0.5s;
+}
+
+.footer-list a:hover {
+  color: #fff;
+}
+
+.footer-list li:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.articles-footer {
+  width: 80%;
+}
+
+.footer-list.footer-article-list span {
+  display: block;
+  float: left;
+}
+
+.fab {
+  font-size: 30px;
+  margin-right: 10px;
+  float: left;
+}
+
+.footer-list li span {
+  float: left;
+  height: 30px;
+  line-height: 30px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #b2b2b2;
+}
+
+.footer-bottom p {
+  font-weight: 600;
+  margin-top: 40px;
+}
+
+.form label,
+.form input,
+.form textarea,
+.form button {
+  display: block;
+  width: 100%;
+}
