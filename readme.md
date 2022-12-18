@@ -8,4 +8,6 @@
 
 - João Ricardo Jr.
 
+- Cristian Marcucci [GitHub](https://github.com/cristianmarcucci/)
+
 
