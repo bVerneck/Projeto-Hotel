@@ -4,7 +4,7 @@
 
 ### A Squad é composta por:
 
-- Bruno Verneck  
+- Bruno Verneck  (Scrum Master)
 
 - João Ricardo Jr.
 
