@@ -64,10 +64,29 @@ img {
 }
 
 .imagens{
-    border-radius: 10px;
+    width: 450;
+    height: 300;
+    margin: 10px;
+    position: relative;
+    text-align: center;
 }
 
 .textoimg{
+    font-size: 30px;
+    font-family: 'Montserrat';
+}
+
+.holder {
+    display: flex;
+    justify-content: center;
+}
+
+.imagens::after {
+    content: attr(data-title); 
+    position: absolute;
+    width: 100%;
+    top: -30px;
+    left: 0;
     font-size: 30px;
     font-family: 'Montserrat';
 }
