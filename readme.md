@@ -12,4 +12,7 @@
 
 - Willian Pinheiro
 
--Renor Oliveira
+- Cristian Marcucci 
+
+- Renor Oliveira
+
