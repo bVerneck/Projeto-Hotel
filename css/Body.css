@@ -89,4 +89,15 @@ img {
     left: 0;
     font-size: 30px;
     font-family: 'Montserrat';
+    font-weight: bold !important;
+}
+
+.imagens::before {
+    content: attr(data-subtitle);
+    position: absolute;
+    width: 100%;
+    bottom: -100px;
+    left: 0;
+    font-size: 30px;
+    font-family: 'Montserrat';
 }
