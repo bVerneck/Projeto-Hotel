@@ -6,8 +6,13 @@
 
 - Bruno Verneck (Scrum Master)
 
+- André Sampaio (P.O)
+
 - João Ricardo Jr.
 
 - Willian Pinheiro
 
-- Cristian Marcucci [GitHub](https://github.com/cristianmarcucci/)
+- Cristian Marcucci 
+
+- Renor Oliveira
+
