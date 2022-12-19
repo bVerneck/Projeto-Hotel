@@ -9,3 +9,5 @@
 - João Ricardo Jr.
 
 - Willian Pinheiro
+
+-Renor Oliveira
