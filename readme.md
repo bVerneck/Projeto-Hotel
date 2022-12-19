@@ -1,13 +1,13 @@
 # Projeto Hotel
 
-## Este é o repositório usado para versionamento de código no desenvolvimento do site do "T.Ex Hotel". 
+## Este é o repositório usado para versionamento de código no desenvolvimento do site do "T.Ex Hotel".
 
 ### A Squad é composta por:
 
-- Bruno Verneck  (Scrum Master)
+- Bruno Verneck (Scrum Master)
 
 - João Ricardo Jr.
 
+- Willian Pinheiro
+
 - Cristian Marcucci [GitHub](https://github.com/cristianmarcucci/)
-
-
