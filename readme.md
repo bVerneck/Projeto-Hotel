@@ -6,6 +6,8 @@
 
 - Bruno Verneck (Scrum Master)
 
+- André Sampaio (P.O)
+
 - João Ricardo Jr.
 
 - Willian Pinheiro
