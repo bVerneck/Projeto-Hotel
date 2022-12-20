@@ -1,67 +1,66 @@
 * {
-    box-sizing:border-box;
-	margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
-
-.sobre{
-    text-align: center;
-    font-size: 50px;
-    font-family: 'Mont';
+.sobre {
+  text-align: center;
+  font-size: 50px;
+  font-family: "Mont";
 }
-
 
 body {
-margin: 0;
-font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
-padding: 60px;
+  padding: 60px;
 }
 
 .row:after {
-content: "";
-display: table;
-clear: both
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .column-66 {
-float: left;
-width: 66.66666%;
-padding: 10px;
+  float: left;
+  width: 66.66666%;
+  padding: 10px;
 }
 
 .column-33 {
-float: left;
-width: 33.33333%;
-padding: 10px;
+  float: left;
+  width: 33.33333%;
+  padding: 10px;
 }
 
 .large-font {
-font-size: 48px;
+  font-size: 48px;
 }
 
 .xlarge-font {
-font-size: 64px
+  font-size: 64px;
 }
 
 img {
-display: block;
-height: auto;
-max-width: 100%;
+  display: block;
+  height: auto;
+  max-width: 100%;
 }
 
 @media screen and (max-width: 1000px) {
-.column-66,
-.column-33 {
+  .column-66,
+  .column-33 {
     width: 100%;
     text-align: center;
-}
-img {
+  }
+  img {
     margin: auto;
+  }
 }
-}
+
 
 .imagens{
     width: 450;
@@ -76,31 +75,29 @@ img {
     font-size: 30px;
     font-family: 'Montserrat';
     text-justify: unset;
-    
-}
 
 .holder {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .imagens::after {
-    content: attr(data-title); 
-    position: absolute;
-    width: 100%;
-    top: -30px;
-    left: 0;
-    font-size: 30px;
-    font-family: 'Montserrat';
-    font-weight: bold !important;
+  content: attr(data-title);
+  position: absolute;
+  width: 100%;
+  top: -30px;
+  left: 0;
+  font-size: 30px;
+  font-family: "Montserrat";
+  font-weight: bold !important;
 }
 
 .imagens::before {
-    content: attr(data-subtitle);
-    position: absolute;
-    width: 100%;
-    bottom: -100px;
-    left: 0;
-    font-size: 30px;
-    font-family: 'Montserrat';
+  content: attr(data-subtitle);
+  position: absolute;
+  width: 100%;
+  bottom: -100px;
+  left: 0;
+  font-size: 30px;
+  font-family: "Montserrat";
 }
