@@ -1,5 +1,5 @@
 /* footer */
-* {
+*{
   margin: 0;
 }
 
@@ -13,16 +13,16 @@ footer {
   padding: 1% 10% 1% 10%;
 }
 
-.company-footer h2 {
+.company-footer h2{
   margin: 0 0 25px 0;
 }
 
-.company-footer {
+.company-footer{
   width: 80%;
   padding: 25px;
 }
 
-.footer-box {
+.footer-box{
   font-family: "AGaramondPro-Regular";
   width: 80%;
   padding: 0px 0px 0px 5%;
@@ -34,26 +34,27 @@ a {
   text-decoration: none;
 }
 
-.social-media {
+.social-media{
   font-family: "Montserrat";
   width: 80%;
   padding: 0px 0px 0px 5%;
 }
 
-.social-media ul {
-  display: flex;
+.social-media ul{
+  display: block;
+  float: left;
 }
 
-.social-media ul li {
+.social-media ul li{
   display: flex;
   justify-content: space-around;
 }
 
-span {
+span{
   padding: 0 15px;
 }
 
-ul {
+ul{
   padding: 0;
 }
 
@@ -65,152 +66,21 @@ li {
   border: 0, 5px solid #fff;
 }
 
-.footer-box li {
+.footer-box li{
   padding: 5%;
 }
 
-.social-media li {
+.social-media li{
   padding: 10px;
 }
 
-h2 {
+h2{
   font-weight: 400;
 }
 
-.newsletter {
+.newsletter{
   width: 50%;
   padding: 1%;
   float: left;
   font-family: "Montserrat";
-}
-
-@media screen and (max-width: 1000px ) and (orientation: portrait) {
-  .newsletter {
-    display: none;
-  }
-
-  .social-media ul {
-    width: 120px;
-  }
-
-  .social-media {
-    padding: 0px 0px 0px 68%;
-    margin-top: -36%;
-    margin-bottom: 126px;
-  }
-
-  span {
-    display: none;
-  }
-
-  .con {
-    display: none;
-  }
-
-  footer {
-    padding: 0px;
-    flex-direction: column;
-  }
-
-  .footer-box {
-    width: 100%;
-    margin-left: -15px;
-  }
-
-  .footer-box ul {
-    display: flex;
-    font-family: "AGaramondPro-Regular";
-    width: 37%;
-    height: 9%;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-
-  .company-footer {
-    padding-top: 10px;
-    padding-left: 5px;
-    width: 25%;
-    margin-bottom: -55px;
-  }
-
-  .texto h1 {
-    font-size: 8rem;
-  }
-
-  .texto .texto-hotel {
-    font-size: 3rem;
-  }
-
-  footer .img {
-    display: flex;
-  }
-
-}
-
-
-@media screen and (max-width: 1000px ) and (orientation: landscape) {
-  .newsletter {
-    display: none;
-  }
-
-  .social-media ul {
-    width: 120px;
-  }
-
-  .social-media {
-    padding: 0px 0px 0px 68%;
-  }
-
-  span {
-    display: none;
-  }
-
-  .con {
-    display: none;
-  }
-
-  footer {
-    padding: 0px;
-    flex-direction: column;
-  }
-
-  .footer-box {
-    width: 100%;
-    margin-left: -35px;
-  }
-
-  .footer-box ul {
-    display: flex;
-    font-family: "AGaramondPro-Regular";
-    width: 100%;
-    height: 9%;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-
-  .company-footer {
-    padding-top: 15px;
-    padding-left: 5px;
-    width: 25%;
-    margin-bottom: -55px;
-  }
-
-  .texto h1 {
-    font-size: 8rem;
-  }
-
-  .texto .texto-hotel {
-    font-size: 3rem;
-  }
-
-  footer .img {
-    display: flex;
-  }
-
 }
