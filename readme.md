@@ -16,3 +16,4 @@
 
 - Renor Oliveira
 
+- Raylan Medeiros
