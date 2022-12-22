@@ -10,282 +10,121 @@ box-sizing: border-box;
 }
 
 @font-face {
-    font-family:  'Mont-bold';
-    src: url('../fonts/Montserrat-Bold.otf');
+    font-family:  'Mont';
+    src: url('fonts/AGaramondPro-Regular.otf');
 }
 
-@font-face {
-    font-family:  'Garamond';
-    src: url('fonts/AGaramondPro-Bold.otf');
+header {
+    width: 1920px;
+    height: 1080px;
+    left: 1px;
+    top: 0px;
 }
+
+img{
+    height: 20px;
+    color: white; 
+}
+
+.logo{
+    left: 11.14%;
+    right: 75.53%;
+    top: 0%;
+    bottom: 97.22%;
+    display: inline;
+    float: left;
+    height: 100px;
+}
+
+.topnav {
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 27px;
+}
+
+.texto{
+    margin: 15px;
+    margin-top: 100px;
+    color: white;
+    font-size: 30px;
+    font-family: 'Montserrat';
+}
+
+.topnav a:hover {
+/* background-color: #ddd; */
+color: black;
+}
+
+/* .topnav a.active {
+ background-color: #04AA6D; 
+ color: white; 
+} */
+
+.topnav .icon {
+display: none;
+}
+
+@media screen and (max-width: 600px) {
+.topnav a:not(:first-child) {display: none;}
+.topnav a.icon {
+    float: right;
+    display: block;
+}
+.texto{
+    margin-top: -10px;
+}
+}
+
+@media screen and (max-width: 600px) {
+.topnav.responsive {position: relative;}
+.topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+}
+}
+
 
 .bg-img {
     background-image: url("../img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg");
-    width: 100%;
+    min-height: 1080px;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 20px;
-}
-
-.bg-img-top{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-
-    font-family: 'Mont';
-    color: #fff;
-}
-
-.logo-header{
-    display: block;
-    align-self: start;
-}
-
-.bg-img-top-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 10rem;
-    align-items: center;
-    flex-wrap: wrap;
-
-    font-family: 'Mont';
-    color: #fff;
-}
-
-.topnav{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 70px;
-    
-    font-size: 1.6rem;
-}
-
-.topnav a{
-    text-decoration: none;
-    color: #fff;
-}
-
-.topnav a:hover{
-    text-decoration: underline;
-}
-
-.nav-cadastro{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 30px;
-
-    font-size: 1.2rem;
-}
-
-.nav-cadastro button{
-    background: none;
-    border: none;
-    font-family: 'Mont';
-    font-size: 1.2rem;
-    color: #fff;
-}
-
-.nav-cadastro button:hover{
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.nav-cadastro .btn-cadastro{
-    grid-column-start: 1;
-    grid-column-end: 3;    
-    justify-self: right;
-}
-
-.texto{
-    max-width: fit-content;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    padding: 190px;
-    color: #fff;
-}
-
-.texto p, h1{
-    text-align: center;
-}
-
-.texto .texto-bemvindo{
-    font-family: 'Mont';
-    font-size: 3rem;
-}
-
-.texto h1{
-    font-family: 'Garamond';
-    font-size: 10rem;
-    line-height: 130px;
-}
-
-.texto .texto-hotel{
-    font-family: 'Garamond';
-    font-size: 4rem;
-    letter-spacing: 0.4em;
-    text-indent: 0.4em;
-}
-
-.texto .texto-slogan{
-    font-family: 'Mont';
-    font-size: 1.5rem;
+    position: relative;
+    max-width: 1920px;
 }
 
 .btn {
-    display: block;
-    margin: auto;
-    background-color:#0DADBD;
+    text-align: center;
+    background-color:#670BFF;
     border: none;
-    color: #fff;
-    padding: 1rem 2rem;
-    font-size: 1.3rem;
+    color: white;
+    padding: 12px 16px;
+    font-size: 25px;
     cursor: pointer;
     border-radius: 10px;
-    font-family: 'Mont-bold', 'Helvetica Neue';
-}
-
-.scroll-down {
-    width: fit-content;
-    margin: 70px auto 20px auto;
-    display: flex;
-    gap: 15px;
-    flex-direction: column;
-    justify-content: center;
-
-}
-
-.scroll-down p{
-    font-family: 'Mont-bold', 'Helvetica Neue';
-    color: #fff;
-    font-size: 1.1rem;
-}
-
-.scroll-down img{
-    display: block;
-    align-self: center;
-    width: 40px;   
-}
-
-@media only screen and (max-width: 1315px){
-.bg-img-top-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    padding-right: 30px;
-    gap: 30px;
-    max-width: 800px;
-    align-items: center;
-    flex-wrap: wrap-reverse;
-
-    font-family: 'Mont';
-    color: #fff;
-}
-
-.nav-cadastro{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 15px;
-
-    font-size: 1.2rem;
-}
-
-}
-@media only screen and (max-width: 1070px){
-.bg-img-top-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding-top: 30px;
-    gap: 30px;
-    max-width: 800px;
-    align-items: center;
-    flex-wrap: wrap-reverse;
-
-    font-family: 'Mont';
-    color: #fff;
-}
-
-.nav-cadastro{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 15px;
-
-    font-size: 1.2rem;
-}
-
-}
-
-@media only screen and (max-width: 768px) {
-
-.bg-img-top{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-
-    font-family: 'Mont';
-    color: #fff;
-}
-
-.bg-img-top-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding-top: 30px;
-    gap: 30px;
-    max-width: 400px;
-    align-items: center;
-    flex-wrap: wrap-reverse;
-
-    font-family: 'Mont';
-    color: #fff;
-}
-
-.topnav{
-    margin: 30px auto 30px auto;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
-    
-    font-size: 1.6rem;
-}
-
-.nav-cadastro{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 15px;
-
-    font-size: 1.2rem;
-}
-
-.texto{
-    max-width: fit-content;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    margin: auto;
-    padding: 50px;
-    color: #fff;
-}
-
-.scroll-down {
-    display: none;
+    font-family: 'Montserrat', 'Helvetica Neue',;
 }
 
 
+.btn:hover {
+background-color: RoyalBlue;
 }
+
+
 
 
 
