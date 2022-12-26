@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.lateral-menu {
+  background: #7623FF;
+  width: 400px;
+  height: 100vh;
+  display: flex;
+  
+}
+
+.logo{
+  margin-left: auto;
+  margin-right: auto;
+}
+
