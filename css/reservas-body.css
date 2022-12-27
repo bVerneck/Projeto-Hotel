@@ -1,0 +1,126 @@
+@font-face {
+    font-family:  'Mont';
+    src: url('../fonts/Montserrat-Regular.otf');
+}
+
+@font-face {
+    font-family:  'Mont-bold';
+    src: url('../fonts/Montserrat-Bold.otf');
+}
+
+main{
+    font-family: 'Mont', Arial, Helvetica, sans-serif;
+    color: #14274A;
+    font-size: 1.5rem;
+}
+
+main h2{    
+    font-family:  'Mont-bold', Arial, Helvetica, sans-serif;
+    font-size: 3.75rem;
+}
+
+.reserva-topo{
+    padding-top: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.reserva-topo form label{
+    display: block;
+}
+
+#quartos{
+    max-width: 600px;
+    margin: 15%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#quartos h3{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#quartos h3::after{
+    content: "";
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #14274A;
+}
+
+#quartos img{
+    max-width: 600px;
+}
+
+.quarto{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #14274A;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.quarto h4{
+    background-color: #670BFF;
+    color: #fff;
+    font-family: 'Mont-bold', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    padding: 15px;
+    text-align: center;
+    
+}
+
+.informacoes{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    padding: 10px;
+}
+
+.informacoes ul li{
+    margin-left: 10px; 
+    list-style: square;
+    display: list-item;
+}
+
+.informacoes div{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.informacoes p{
+    font-size: 1.1rem;
+}
+
+.informacoes p:first-child{
+    font-weight: bold;
+}
+
+.obter-quarto{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    align-items: center;
+}
+
+.obter-quarto button{
+    display: block;
+    height: 20px;
+    width: 20px;
+    align-self: center;
+    justify-self: center;
+    border-radius: 50%;
+
+}
+
+.obter-quarto .valor-diaria{
+    background-color: #0DADBD;
+    width: fit-content;
+    justify-self: end;
+    padding: 6px 12px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+}
