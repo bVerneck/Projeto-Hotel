@@ -17,3 +17,5 @@
 - Renor Oliveira
 
 - Raylan Medeiros
+
+Nathália Melo
