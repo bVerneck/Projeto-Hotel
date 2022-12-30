@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.minha_reserva{
+  text-align: center;
+  font-size: 50px;
+  font-family: "Mont";
+}
+
+.form{
+position: flex;
+text-align: center;
+}
+
+
+.input{
+    position: relative;
+}
+
+
+.data_enter{
+position: sticky;
+/* width: 320px;
+height: 67px;
+left: 444px;
+top: 1591px; */
+background: #0DADBD;
+}
+
+.data_out{
+position: sticky;
+/* width: 320px;
+height: 67px;
+left: 444px;
+top: 1591px; */
+background: #0DADBD;
+
+}
+
+.qtdPessoa{
+position: sticky;
+/* width: 320px;
+height: 67px;
+left: 444px;
+top: 1591px; */
+background: #0DADBD;
+}
+
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  padding: 60px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column-66 {
+  float: right;
+  width: 66.66666%;
+  padding: 10px;
+}
+
+.column-33 {
+  float: left;
+  width: 33.33333%;
+  padding: 10px;
+}
+
+.large-font {
+  font-size: 48px;
+}
+
+.xlarge-font {
+  font-size: 64px;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .column-66,
+  .column-33 {
+    width: 100%;
+    text-align: center;
+  }
+  img {
+    margin: auto;
+  }
+}
+
+.imagens {
+  width: 450;
+  height: 300;
+  margin: 10px;
+  position: sticky;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.textoimg {
+  font-size: 30px;
+  font-family: "Montserrat";
+  text-justify: unset;
+}
+.holder {
+  display: flex;
+  justify-content: center;
+}
+
+.imagens::after {
+  content: attr(data-title);
+  position: absolute;
+  width: 100%;
+  top: -30px;
+  left: 0;
+  font-size: 30px;
+  font-family: "Montserrat";
+  font-weight: bold !important;
+}
+
+.descImagens {
+  font-size: 30px;
+  font-family: "Montserrat";
+}
