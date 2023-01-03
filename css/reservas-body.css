@@ -34,9 +34,9 @@ main h2{
 #quartos{
     max-width: 600px;
     margin: 15%;
-
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 #quartos h3{
@@ -105,14 +105,35 @@ main h2{
     align-items: center;
 }
 
-.obter-quarto button{
-    display: block;
-    height: 20px;
-    width: 20px;
-    align-self: center;
-    justify-self: center;
-    border-radius: 50%;
 
+.obter-quarto .select-quarto{
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 0px;    
+}
+
+.obter-quarto .select-quarto i {
+    background-color: #E0B973;
+    border-radius: 50%;
+    padding: 5px;
+    height: 15px;
+    width: 15px;
+}
+
+.obter-quarto .select-quarto:hover {
+    cursor: pointer;
+}
+
+.obter-quarto .select-quarto p{
+    font-family: 'Mont', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
 }
 
 .obter-quarto .valor-diaria{
@@ -124,3 +145,61 @@ main h2{
     color: #fff;
     font-weight: bold;
 }
+
+aside{
+    position: absolute;
+    top: 0;
+    right: -440px;
+
+}
+
+aside .resumo-container{
+    background-color: #ECEBEE;
+    width: 350px;
+    padding: 20px;
+    color: #000;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 3px;
+}
+
+aside .resumo-container button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 0px;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+aside .resumo-container button:last-child{
+    background-color: #959595;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 49px;
+    width: fit-content;
+    align-self: center;
+    padding: 0.6rem 1.2rem;
+    border-radius: 3px;
+    font-family: 'Mont';
+        font-style: normal;
+        font-weight: 700;
+}
+
+aside .resumo-container .resumo{
+    background-color: #D5D8D9;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}
+
