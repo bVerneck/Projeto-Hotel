@@ -1,0 +1,205 @@
+@font-face {
+    font-family:  'Mont';
+    src: url('../fonts/Montserrat-Regular.otf');
+}
+
+@font-face {
+    font-family:  'Mont-bold';
+    src: url('../fonts/Montserrat-Bold.otf');
+}
+
+main{
+    font-family: 'Mont', Arial, Helvetica, sans-serif;
+    color: #14274A;
+    font-size: 1.5rem;
+}
+
+main h2{    
+    font-family:  'Mont-bold', Arial, Helvetica, sans-serif;
+    font-size: 3.75rem;
+}
+
+.reserva-topo{
+    padding-top: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.reserva-topo form label{
+    display: block;
+}
+
+#quartos{
+    max-width: 600px;
+    margin: 15%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#quartos h3{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#quartos h3::after{
+    content: "";
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #14274A;
+}
+
+#quartos img{
+    max-width: 600px;
+}
+
+.quarto{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #14274A;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.quarto h4{
+    background-color: #670BFF;
+    color: #fff;
+    font-family: 'Mont-bold', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    padding: 15px;
+    text-align: center;
+    
+}
+
+.informacoes{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    padding: 10px;
+}
+
+.informacoes ul li{
+    margin-left: 10px; 
+    list-style: square;
+    display: list-item;
+}
+
+.informacoes div{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.informacoes p{
+    font-size: 1.1rem;
+}
+
+.informacoes p:first-child{
+    font-weight: bold;
+}
+
+.obter-quarto{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    align-items: center;
+}
+
+
+.obter-quarto .select-quarto{
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 0px;    
+}
+
+.obter-quarto .select-quarto i {
+    background-color: #E0B973;
+    border-radius: 50%;
+    padding: 5px;
+    height: 15px;
+    width: 15px;
+}
+
+.obter-quarto .select-quarto:hover {
+    cursor: pointer;
+}
+
+.obter-quarto .select-quarto p{
+    font-family: 'Mont', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.obter-quarto .valor-diaria{
+    background-color: #0DADBD;
+    width: fit-content;
+    justify-self: end;
+    padding: 6px 12px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+aside{
+    position: absolute;
+    top: 0;
+    right: -440px;
+
+}
+
+aside .resumo-container{
+    background-color: #ECEBEE;
+    width: 350px;
+    padding: 20px;
+    color: #000;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 3px;
+}
+
+aside .resumo-container button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 0px;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+aside .resumo-container button:last-child{
+    background-color: #959595;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 49px;
+    width: fit-content;
+    align-self: center;
+    padding: 0.6rem 1.2rem;
+    border-radius: 3px;
+    font-family: 'Mont';
+        font-style: normal;
+        font-weight: 700;
+}
+
+aside .resumo-container .resumo{
+    background-color: #D5D8D9;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}
+
