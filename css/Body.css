@@ -95,3 +95,12 @@ img {
   font-size: 30px;
   font-family: "Montserrat";
 }
+
+.tituloAcomodacoes {
+  text-align: center;
+  font-size: 30px;
+  font-family: "Montserrat";
+  font-weight: bold !important;
+  margin-top: 0;
+  padding-top: 0;
+}
