@@ -17,3 +17,7 @@
 - Renor Oliveira
 
 - Raylan Medeiros
+
+- Caio Seixas
+
+- Nathália Melo

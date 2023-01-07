@@ -98,6 +98,7 @@ img {
   font-family: "Montserrat";
 }
 
+
 @media screen and (max-width: 1000px) and (orientation: portrait) {
 
   .column-66,
@@ -143,4 +144,13 @@ img {
   .descImagens {
     padding-bottom: 30px;
   }
+}
+
+.tituloAcomodacoes {
+  text-align: center;
+  font-size: 30px;
+  font-family: "Montserrat";
+  font-weight: bold !important;
+  margin-top: 0;
+  padding-top: 0;
 }
