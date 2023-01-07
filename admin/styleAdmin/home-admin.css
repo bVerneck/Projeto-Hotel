@@ -1,19 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+}
+
+body {
+  background-color: #F5F5F5;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  display: flex;
 }
 
 .lateral-menu {
   background: #7623FF;
-  width: 400px;
+  color: #fff;
+  padding: 0 70px 0 70px;
+  width: 350px;
   height: 100vh;
+  font-size: 1.8rem;
+
   display: flex;
-  
+  flex-direction: column;
+  align-items: center;
 }
 
-.logo{
-  margin-left: auto;
-  margin-right: auto;
+.itens-lateral-menu li {
+  padding: 50px 0 0 0;
 }
 
+.foto-perfil {
+  padding: 40px 0 0 0;
+}
+
+.foto-perfil > img {
+  border-radius: 50%;
+  width: 180px;
+  height: 200px;
+  border-style: solid;
+  border-color: #F5F5F5;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.dashboard svg {
+  margin-right: 10px;
+}
+
+.notification {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.notification svg {
+  margin-right: 10px;
+}
+
+.settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings svg {
+  margin-right: 10px;
+}
+
+.main {
+  display: block;
+}
+
+.navigation {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.8rem;
+}
+
+.navigation-itens {
+  padding: 30px;
+}
+
+.content {
+  height: 80%;
+  display: flex;
+}
+
+.box-content {
+  width: 700px;
+  height: 670px;
+  left: 582px;
+  top: 217px;
+  background: red;
+}
+
+.icone-logout {
+  width: 50px;
+  height: 40px;
+}
