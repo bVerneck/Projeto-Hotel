@@ -19,3 +19,5 @@
 - Raylan Medeiros
 
 - Caio Seixas
+
+- Nathália Melo
