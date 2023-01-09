@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Header.css">
+    <link rel="stylesheet" href="../css/Footer.css">
+    <link rel="stylesheet" href="../css/reservas-body.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Hotel TEX</title>
+</head>
+<body>
+
+    <header>
+        <div class="bg-img">
+            <div class="bg-img-top">
+              <img class="logo-header" src="../img/group.png" alt="logo">
+              <div class="bg-img-top-content">
+                <ul class="topnav" id="myTopnav">
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#news">Instalações</a></li>
+                  <li><a href="#contact">Quartos</a></li>
+                  <li><a href="#about">Contatos</a></li>
+                </ul>
+                <div class="nav-cadastro">
+                  <p>Olá, Usuário</p>
+                  <button>Sair</button>
+                  <button class="btn-cadastro">Cadastre-se</button>
+                </div>
+              </div>
+            </div>
+            <div class="texto">
+                <p class="texto-bemvindo">BEM-VINDO AO</p>
+                <h1 >T.EX</h1>
+                <p class="texto-hotel">HOTEL</p>
+                <p class="texto-slogan">Desfrute do Luxo Tecnológico</p>
+            </div>
+            <button class="btn"><i class="fa fa-home"></i> Reserve Agora</button>
+            <div class="scroll-down">
+              <p>Role para baixo</p>
+              <img src="../img/down-arrow.svg" alt="role para baixo">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="reserva-topo">
+            <h2>MINHA RESERVA</h2>
+            <p>Informe a data de check-in, check-out e número de hóspedes</p>
+            <form action="">
+                <label for="check-in">Check-in</label>
+                <input type="date" name="check-in" id="check-in">
+                <label for="check-out">Check-out</label>
+                <input type="date" name="check-out" id="check-out">
+                <label for="hospedes">Hospedes</label>
+                <input type="number" name="hospedes" id="hospedes">
+            </form>
+        </section>
+        <section id="quartos">
+            <h3>ESCOLHA O QUARTO</h3>
+            <article class="quarto">
+                
+                    <img src="../img/premier-room.webp" alt="Premier Room">
+                    <h4 class="titulo-quarto">PREMIER ROOM</h4>
+                    <div class="informacoes">
+                        <ul>
+                                <li>Permitido pets</li>
+                                <li>WiFi Free</li>
+                                <li>Ar condicionado</li>                                
+                                <li>Janelas anti-ruído</li>
+                                <li>Controle por voz</li>
+                        </ul>
+                        <div>
+                            <p> Sofá | Escrivaninha | 30m²</p>
+                            <p>Estes quartos aconchegantes oferecem conforto com algumas facilidades tecnológicas.</p>
+                        </div>
+                    </div>
+                    <div class="obter-quarto">
+                        <button class="select-quarto">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            <p class="select-quarto-label">Selecionar quarto</p>
+                        </button>
+                        <p class="valor-diaria">R$ 500,00/noite</p>
+                    </div>                
+            </article>
+            <article></article>
+            <article></article>
+            <aside>
+              <div class="resumo-container">
+                <p>Resumo da reserva</p>
+                <div class="resumo">
+                  <p>Apartamento:</p>
+                  <p>Check-in:</p>
+                  <p>Check-out:</p>
+                  <p>Hóspedes:</p>
+                </div>
+                <button>Adicionar mais serviços</button>
+                <button class="continuar">CONTINUAR</button>
+              </div>
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+			<div class="company-footer">
+        <img src="../img/tex logo branco 1.png">
+        <h2>HOTÉIS</h2>
+        <p>endereço: xxxxxxx<br>(011) 95423-6698<br>contato@texhotels.com</p>
+      </div>
+      <div class="footer-box">
+        <ul>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="#">Contatos</a></li>
+          <li><a href="#">Termos e Condições</a></li>
+          <li><a href="https://www.google.com.br/maps">Localização</a></li>
+          <li><a href="#nossos-servicos">Conheça nossos serviços</a></li>
+        </ul>
+      </div>
+      <div class="social-media">
+        <h2>Conecte-se conosco</h2>
+        <ul>
+          <li>
+            <img src="../img/facebook.png">
+            <span>Facebook</span>
+          </li>
+          <li>
+            <img src="../img/instagram.png">
+            <span>Instagram</span>
+          </li>
+          <li>
+            <img src="../img/twitter.png">
+            <span>Twitter</span>
+          </li>
+        </ul>
+      </div>
+      <div class="newsletter">
+        <h2>Assine nosso boletim de notícias:</h2>
+        <form action="post">
+          <input type="email" name="email" placeholder="Endereço de e-mail">
+          <button type="submit">OK</button>
+        </form>
+      </div>
+		</footer>
+</body>
+</html>

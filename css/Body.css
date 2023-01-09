@@ -50,31 +50,28 @@ img {
   max-width: 100%;
 }
 
-@media screen and (max-width: 1000px) {
-  .column-66,
-  .column-33 {
-    width: 100%;
-    text-align: center;
-  }
-  img {
-    margin: auto;
-  }
-}
 
 .imagens {
-  width: 450;
+  width: 550;
   height: 300;
   margin: 10px;
   position: relative;
   text-align: center;
-  border-radius: 20px;
+}
+
+.imagen {
+  width: 550px;
+  height: 300px;
+  margin: 10px;
+  position: relative;
+  text-align: center;
 }
 
 .textoimg {
   font-size: 30px;
   font-family: "Montserrat";
-  text-justify: unset;
 }
+
 .holder {
   display: flex;
   justify-content: center;
@@ -91,7 +88,69 @@ img {
   font-weight: bold !important;
 }
 
-.descImagens {
+.imagens::before {
+  content: attr(data-subtitle);
+  position: absolute;
+  width: 100%;
+  bottom: -100px;
+  left: 0;
   font-size: 30px;
   font-family: "Montserrat";
+}
+
+
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+
+  .column-66,
+  .column-33 {
+    width: 100%;
+    text-align: center;
+  }
+
+  img {
+    margin: auto;
+  }
+
+  .imagens {
+    margin: 0px;
+    width: auto;
+    height: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .imagen {
+    margin: 0px;
+    width: auto;
+    height: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sobre {
+    font-size: 31px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .descImagens {
+    padding-bottom: 30px;
+  }
+}
+
+.tituloAcomodacoes {
+  text-align: center;
+  font-size: 30px;
+  font-family: "Montserrat";
+  font-weight: bold !important;
+  margin-top: 0;
+  padding-top: 0;
 }
