@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "Mont";
+    src: url("../../fonts/Montserrat-Regular.otf");
+}
+body{
+    background-image: url(../../img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    
+    
+}
+
+article{
+    width: 30%;
+    margin-left: 35%;
+    background-color: rgba(240, 248, 255, 0.63);
+    /* text-align: center; */
+    border-radius: 12px 12px 12px 12px;
+    font-family: "Mont";
+}
+legend, h2{
+    text-align: center;
+}
+ul{
+    margin-left: 5%;
+}
+div{
+    margin-bottom: 100px;
+}
+li{
+    list-style: none;
+}
+.logo {
+    margin-left: 195px;
+    cursor: pointer;
+}
+
+.texto-slogan {
+    color: white;
+    font-family: "Mont";
+    float: right;
+    padding-right: 65rem;
+    padding-top: 2vh;
+    font-size: 1.5em;
+}

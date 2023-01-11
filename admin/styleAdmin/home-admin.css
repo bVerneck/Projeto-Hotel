@@ -3,7 +3,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: 'Roboto Mono', monospace;
 }
 
@@ -17,27 +16,35 @@ ul {
 
 .container {
   display: flex;
+  height: 100vh;
 }
 
 .lateral-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
   background: #7623FF;
   color: #fff;
   padding: 0 70px 0 70px;
-  width: 350px;
+  width: 15%;
   height: 100vh;
   font-size: 1.8rem;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.itens-lateral-menu li {
-  padding: 50px 0 0 0;
+.lateral-menu-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.lateral-menu-top ul {
+  align-items: left;
 }
 
 .foto-perfil {
-  padding: 40px 0 0 0;
+  padding: 40px 0 0 35px;
 }
 
 .foto-perfil > img {
@@ -52,6 +59,7 @@ ul {
   display: flex;
   justify-content: left;
   align-items: center;
+  padding-top: 25px;
 }
 
 .dashboard svg {
@@ -62,6 +70,7 @@ ul {
   display: flex;
   justify-content: left;
   align-items: center;
+  padding-top: 50px;
 }
 
 .notification svg {
@@ -72,6 +81,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 100px;
 }
 
 .settings svg {
@@ -80,6 +90,10 @@ ul {
 
 .main {
   display: block;
+}
+
+.navbar {
+  width: 85vw;
 }
 
 .navigation {
@@ -93,20 +107,45 @@ ul {
   padding: 30px;
 }
 
-.content {
-  height: 80%;
-  display: flex;
-}
-
-.box-content {
-  width: 700px;
-  height: 670px;
-  left: 582px;
-  top: 217px;
-  background: red;
-}
-
 .icone-logout {
   width: 50px;
   height: 40px;
 }
+
+.content {
+  background: #f5f6fa;
+  width: 100%;
+  display: flex;
+}
+
+.cards-header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background: #ffffff;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  margin: 0 20px;
+  height: 132px;
+}
+
+.card .card-content {
+  text-align: center;
+}
+
+.large-card {
+  width: 10%;
+}
+
+.card-small {
+  width: 240px;
+}
+
+.card-large {
+  width: 464px;
+}
+
