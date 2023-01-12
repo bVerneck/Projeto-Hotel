@@ -4,51 +4,78 @@
 }
 
 body {
-  background-image: url(../../img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg);
-
+  /* background-image: url(../../img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg); */
+  background-color: rgb(235, 234, 234);
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
-  width: 90%;
+  width: 100%;
   font-size: 1.5em;
 }
-footer{
- width: 100%;
-}
+
 
 /* CLASSES */
+.sair{
+  width: 37px;
+  padding-left: 700%;
+  padding-bottom: 20%;
+}
+.divp{
+  background-color: rgb(255, 255, 255);
+  border: none
+  
+}
 .logo {
-  margin-left: 195px;
+  /* margin-left: 195px; */
   cursor: pointer;
+  
+  
 }
-.texto-slogan {
-  color: white;
-  font-family: "Mont";
-  float: right;
-  padding-right: 65rem;
-  padding-top: 2vh;
-}
+
 .cursorClick:hover{
   cursor: pointer;
   color: red;
 }
 
 /* Area de Funcionarios */
-
+.matri{
+  padding-left: 3px;
+}
 table {
   width: 80%;
-  margin-left: 15%;
+  margin-left: 11%;
   margin-top: 5vh;
-  margin-bottom: 20vh;
   text-align: center;
-  border-radius: 20px 20px 20px 20px;
+  
+ 
 }
 
 table td,
 table th {
   padding: 1%;
-  border-radius: 12px 12px 12px 12px;
+  /* border-radius: 12px 12px 12px 12px; */
 }
+
+/* navega */
+.home{
+color: aliceblue;
+float:right;
+margin-top: 3%;
+margin-right: 30%;
+display:flex;
+
+ 
+}
+.home a{ 
+  color: rgb(0, 0, 0);
+  padding-right: 40px; 
+  text-decoration: none;
+  padding-left: 10%;
+}
+.home a:hover{
+  color: red;
+}
+
 
 
 /* COR DAS TABELAS */
@@ -72,10 +99,10 @@ table tr:nth-of-type(7) {
   border-radius: 12px 12px 12px 12px;
 }
 table tr:nth-of-type(9) {
-  background-color: rgba(255, 255, 255, 0.548);
+  background-color: rgba(255, 255, 255, 0.774);
   border-radius: 12px 12px 12px 12px;
 }
 table tr:nth-of-type(11) {
-  background-color: rgba(255, 255, 255, 0.548);
+  background-color: rgba(255, 255, 255, 0.747);
   border-radius: 12px 12px 12px 12px;
 }
