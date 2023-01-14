@@ -91,12 +91,19 @@ nav ul {
 
 /* START-MAIN */
 
+main {
+    padding-top: 10rem;
+    margin-bottom: 0.6rem;
+}
+
 h1 {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 600;
     font-family: 'Mont', 'Garamond';
     text-transform: uppercase;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .first-view {
@@ -109,34 +116,31 @@ h1 {
 }
 
 .first-box {
+
     background-color: rgb(211, 211, 211, 0.5);
     display: flex;
     /* border: .4rem solid rgb(105, 11, 255); */
     border-radius: 1rem;
     padding: 4rem;
-    padding-top: 0rem;
-    margin-top: 10rem;
+    padding-top: 2rem;
     margin-left: auto;
     margin-right: auto;
     width: 65%;
     flex-direction: column;
 }
 
-p {
-    text-align: justify;
-    width: 55%;
-}
-
 .p-left {
     float: left;
+    text-align: justify;
+    font-size: 1.3rem;
+    width: 55%;
 }
 
 .p-right {
     float: right;
-}
-
-img {
-    margin-bottom: 10rem;
+    text-align: justify;
+    font-size: 1.3rem;
+    width: 55%;
 }
 
 .img-left {
@@ -145,6 +149,7 @@ img {
     width: 40%;
     border-radius: 1rem;
     position: static;
+    margin-bottom: 10rem;
 }
 
 .img-right {
@@ -152,14 +157,14 @@ img {
     margin-left: auto;
     width: 40%;
     border-radius: 1rem;
-
+    margin-bottom: 10rem;
 }
 
 /* END-MAIN */
 
+/* START-FOOTER */
+
 /* OTHER */
-
-
 
 a {
     color: rgb(255, 255, 255);
