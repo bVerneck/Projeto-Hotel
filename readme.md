@@ -21,3 +21,5 @@
 - Caio Seixas
 
 - Nathália Melo
+
+- Luiz Gonzaga
