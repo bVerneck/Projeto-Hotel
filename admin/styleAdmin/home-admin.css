@@ -36,7 +36,7 @@ ul {
   color: #fff;
   padding: 0 70px 0 70px;
   width: 30vh;
-  height: 100vh;
+  height: auto;
   font-size: 1.8rem;
 
 }
@@ -96,13 +96,13 @@ ul {
 }
 
 .main {
-  display: flex;
+  display: block;
   flex-direction: column;
   width: 100%;
 }
 
 .navbar {
-  width: 85vw;
+  width: 100%;
 }
 
 .navigation {
@@ -120,12 +120,6 @@ ul {
 .icone-logout {
   width: 50px;
   height: 40px;
-}
-
-.content {
-  background: #f5f6fa;
-  width: 100%;
-  display: flex;
 }
 
 .cards-header {
@@ -151,14 +145,26 @@ ul {
   text-align: center;
 }
 
-.large-card {
-  width: 10%;
-}
-
-.card-small {
-  width: 240px;
-}
-
 .card-large {
-  width: 464px;
+  margin: 40px;
+  width: 642px;
+  height: 450px;
+  padding: 30px;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+}
+
+.card {
+  width: 450px;
+  height: auto;
+}
+
+.card h2 {
+  padding: 15px;
+  border-bottom: 1px solid #111;
+}
+
+.card p {
+  padding: 15px;
 }
