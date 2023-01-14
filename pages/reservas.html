@@ -11,6 +11,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script src="../js/reservas-public.js" async></script>
     <title>Hotel TEX</title>
   </head>
   <body>
@@ -46,117 +47,231 @@
       </div>
     </header>
 
-    <main>
-      <section class="reserva-topo">
-        <h2>MINHA RESERVA</h2>
-        <p>Informe a data de check-in, check-out e número de hóspedes</p>
-        <form action="">
-          <label for="check-in">Check-in</label>
-          <input type="date" name="check-in" id="check-in" />
-          <label for="check-out">Check-out</label>
-          <input type="date" name="check-out" id="check-out" />
-          <label for="hospedes">Hospedes</label>
-          <input type="number" name="hospedes" id="hospedes" />
-        </form>
-      </section>
-      <section id="quartos">
-        <h3>ESCOLHA O QUARTO</h3>
-        <article class="quarto">
-          <img src="../img/premier-room.webp" alt="Premier Room" />
-          <h4 class="titulo-quarto">PREMIER ROOM</h4>
-          <div class="informacoes">
-            <ul>
-              <li>Permitido pets</li>
-              <li>WiFi Free</li>
-              <li>Ar condicionado</li>
-              <li>Janelas anti-ruído</li>
-              <li>Controle por voz</li>
-            </ul>
+    <div class="reservas__container">
+      <main class="reservas__container__main">
+        <div class="reservas__entradas">
+          <div class="reservas__entradas__itens">
+            <p><i class="fa fa-user" aria-hidden="true"></i></p>
             <div>
-              <p>Sofá | Escrivaninha | 30m²</p>
-              <p>
-                Estes quartos aconchegantes oferecem conforto com algumas
-                facilidades tecnológicas.
-              </p>
+              <p class="bold">Hóspedes</p>
+              <p>2 adultos, 0 crianças</p>
             </div>
+            <p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
           </div>
-          <div class="obter-quarto">
-            <button class="select-quarto">
-              <i class="fa fa-plus" aria-hidden="true"></i>
-              <p class="select-quarto-label">Selecionar quarto</p>
-            </button>
-            <p class="valor-diaria">R$ 500,00/noite</p>
-          </div>
-        </article>
-        <article class="quarto">
-          <img src="../img/QUARTO DELUXE ROOM.jpg" alt="Deluxe Room" />
-          <h4 class="titulo-quarto">DELUXE ROOM</h4>
-          <div class="informacoes">
-            <ul>
-              <li>Permitido pets</li>
-              <li>WiFi Free</li>
-              <li>Ar condicionado</li>
-              <li>Janelas anti-ruído</li>
-              <li>Controle por voz</li>
-            </ul>
+          <div class="reservas__entradas__itens">
+            <p><i class="fa fa-calendar" aria-hidden="true"></i></p>
             <div>
-              <p>Sofá | Escrivaninha | 50m²</p>
-              <p>
-                Estes quartos aconchegantes oferecem conforto com algumas
-                facilidades tecnológicas.
-              </p>
+              <p class="bold">Check-in</p>
+              <p>qua, 24/05/22</p>
             </div>
+            <p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
           </div>
-          <div class="obter-quarto">
-            <button class="select-quarto">
-              <i class="fa fa-plus" aria-hidden="true"></i>
-              <p class="select-quarto-label">Selecionar quarto</p>
-            </button>
-            <p class="valor-diaria">R$ 700,00/noite</p>
-          </div>
-        </article>
-        <article class="quarto">
-          <img src="../img/tex-premier-room.webp" alt="Tex Premier" />
-          <h4 class="titulo-quarto">T.EX PREMIER</h4>
-          <div class="informacoes">
-            <ul>
-              <li>Permitido pets</li>
-              <li>WiFi Free</li>
-              <li>Ar condicionado</li>
-              <li>Janelas anti-ruído</li>
-              <li>Controle por voz</li>
-            </ul>
-            <div>
-              <p>Sofá | Duas camas | 75m²</p>
-              <p>
-                Estes quartos aconchegantes oferecem conforto com o melhor da tecnologia.
-              </p>
-            </div>
-          </div>
-          <div class="obter-quarto">
-            <button class="select-quarto">
-              <i class="fa fa-plus" aria-hidden="true"></i>
-              <p class="select-quarto-label">Selecionar quarto</p>
-            </button>
-            <p class="valor-diaria">R$ 1000,00/noite</p>
-          </div>
-        </article>
-        <aside>
-          <div class="resumo-container">
-            <p>Resumo da reserva</p>
-            <div class="resumo">
-              <p>Apartamento:</p>
-              <p>Check-in:</p>
-              <p>Check-out:</p>
-              <p>Hóspedes:</p>
-            </div>
-            <button>Adicionar mais serviços</button>
-            <button class="continuar">CONTINUAR</button>
-          </div>
-        </aside>
-      </section>
-    </main>
 
+          <div class="reservas__entradas__itens">
+            <p><i class="fa fa-calendar" aria-hidden="true"></i></p>
+            <div>
+              <p class="bold">Check-out</p>
+              <p>sex, 26/05/22</p>
+            </div>
+            <p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
+          </div>
+          <div class="reservas__entradas__adicionais">
+            <p></p>
+            <div>
+              <p class="bold">Adicionais</p>
+              <p>5 itens</p>
+              <!-- <p>Almoço, Cofre, Despertador, Lavanderia, Taxi</p> -->
+            </div>
+            <p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
+          </div>
+          <div class="reservas__entradas__resumo no-desktop">
+            <p></p>
+            <div>
+              <p class="bold">Total</p>
+              <p>R$1000.00</p>
+            </div>
+            <p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
+          </div>
+        </div>
+        <div class="reservas__quartos">
+          <div class="reserva__quartos__container">
+            <h2 class="reserva__titulo">Selecione o quarto</h2>
+          </div>
+          <div class="reserva__quartos__container">
+            <div class="quarto__container">
+              <div class="quarto__imagem">
+                <img src="../img/premier-room.webp" alt="Premier Room" />
+                <ul class="no-mobile">
+                  <li>Permitido pets</li>
+                  <li>WiFi Free</li>
+                  <li>Ar condicionado</li>
+                </ul>
+              </div>
+              <div class="quarto__especificacoes">
+                <div class="quarto__especificacoes__info">
+                  <h3>Premier Room</h3>
+                  <p class="bold">Sofá | Escrivaninha | 30m²</p>
+                  <p>
+                    Estes quartos aconchegantes oferecem conforto com algumas
+                    facilidades tecnológicas.
+                  </p>
+                  <ul>
+                    <li>Janelas anti-ruído</li>
+                    <li>Controle por voz</li>
+                  </ul>
+                </div>
+                <div class="quarto__especificacoes__selecao">
+                  <p class="bold">Diária: R$ 950.00/pessoa</p>
+                  <p class="info-adicional">
+                    Para crianças, os valores de diária serão cobrados pela
+                    metade.
+                  </p>
+                  <button class="btn-reservar">Reservar</button>
+                </div>
+              </div>
+            </div>
+            <div class="quarto__container">
+              <div class="quarto__imagem">
+                <img src="../img/QUARTO DELUXE ROOM.jpg" alt="Deluxe Room" />
+                <ul class="no-mobile">
+                  <li>Permitido pets</li>
+                  <li>WiFi Free</li>
+                  <li>Ar condicionado</li>
+                </ul>
+              </div>
+              <div class="quarto__especificacoes">
+                <div class="quarto__especificacoes__info">
+                  <h3>Deluxe Room</h3>
+                  <p class="bold">Sofá | Escrivaninha | 50m²</p>
+                  <p>
+                    Estes quartos aconchegantes oferecem conforto com algumas
+                    facilidades tecnológicas.
+                  </p>
+                  <ul>
+                    <li>Janelas anti-ruído</li>
+                    <li>Controle por voz</li>
+                  </ul>
+                </div>
+                <div class="quarto__especificacoes__selecao">
+                  <p class="bold">Diária: R$ 1425.00/pessoa</p>
+                  <p class="info-adicional">
+                    Para crianças, os valores de diária serão cobrados pela
+                    metade.
+                  </p>
+                  <button class="btn-reservar">Reservar</button>
+                </div>
+              </div>
+            </div>
+            <div class="quarto__container">
+              <div class="quarto__imagem">
+                <img src="../img/tex-premier-room.webp" alt="Tex Premier" />
+                <ul class="no-mobile">
+                  <li>Permitido pets</li>
+                  <li>WiFi Free</li>
+                  <li>Ar condicionado</li>
+                </ul>
+              </div>
+              <div class="quarto__especificacoes">
+                <div class="quarto__especificacoes__info">
+                  <h3>T.EX Premier</h3>
+                  <p class="bold">Sofá | Duas camas | 75m²</p>
+                  <p>
+                    Estes quartos aconchegantes oferecem conforto com o melhor
+                    da tecnologia.
+                  </p>
+                  <ul>
+                    <li>Janelas anti-ruído</li>
+                    <li>Controle por voz</li>
+                  </ul>
+                </div>
+                <div class="quarto__especificacoes__selecao">
+                  <p class="bold">Diária: R$ 2230.00/pessoa</p>
+                  <p class="info-adicional">
+                    Para crianças, os valores de diária serão cobrados pela
+                    metade.
+                  </p>
+                  <button class="btn-reservar">Reservar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <aside class="reservas__container__resumo">
+        <div class="reservas__container__resumo__holder">
+          <div class="resumo__header">
+            <h3 class="resumo__titulo">Resumo da reserva</h3>
+            <button class="no-desktop"></button>
+          </div>
+          <div class="resumo__conteudo">
+            <div class="resumo__conteudo__item">
+              <p class="bold">Check-in</p>
+              <p class="info">qua, 24/05/22</p>
+            </div>
+            <div class="resumo__conteudo__item">
+              <p class="bold">Check-out</p>
+              <p class="info">sex, 26/05/22</p>
+            </div>
+            <div class="resumo__conteudo__item">
+              <p class="bold">Hospedes</p>
+              <p class="info">2 adultos, 0 crianças</p>
+            </div>
+          </div>
+          <div class="resumo_conteudo_acomodacoes">
+            <p class="bold">Quarto</p>
+            <div class="resumo_conteudo_acomodacoes__wrap">
+              <div class="resumo_conteudo_acomodacoes__itens">
+                <ul>
+                  <li>Deluxe Room</li>
+                  <li>Noites</li>
+                  <li>Adultos</li>
+                  <li>Crianças</li>
+                </ul>
+              </div>
+              <div class="resumo_conteudo_acomodacoes__valores">
+                <ul>
+                  <li>R$0.00</li>
+                  <li>2</li>
+                  <li>2</li>
+                  <li>0</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="resumo_conteudo_adicionais">
+            <p class="bold">Adicionais</p>
+            <div class="resumo_conteudo_adicionais__wrap">
+              <div class="resumo_conteudo_adicionais__itens">
+                <ul>
+                  <li>Almoço</li>
+                  <li>Cofre</li>
+                  <li>Despertador</li>
+                  <li>Lavanderia</li>
+                  <li>Taxi</li>
+                </ul>
+              </div>
+              <div class="resumo_conteudo_adicionais__valores">
+                <ul>
+                  <li>R$0.00</li>
+                  <li>R$0.00</li>
+                  <li>R$0.00</li>
+                  <li>R$0.00</li>
+                  <li>R$0.00</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="resumo__total">
+            <p class="bold">TOTAL:</p>
+            <p class="bold">R$0.00</p>
+          </div>
+          <div class="btn__aside">
+            <button class="btn__aside__limpar">Limpar</button>
+            <button class="btn__aside__continuar">Continuar</button>
+          </div>
+        </div>
+      </aside>
+    </div>
     <footer>
       <div class="company-footer">
         <img src="../img/tex logo branco 1.png" />

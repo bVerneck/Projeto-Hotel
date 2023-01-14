@@ -4,25 +4,257 @@
   font-family: "Mont-bold";
   src: url("../fonts/Montserrat-Bold.otf");
 }
-main {
+.reservas__container {
   font-family: "Mont", Arial, Helvetica, sans-serif;
   color: #14274a;
-  font-size: 1.5rem;
+  padding: 0.3rem;
+  margin: 4rem auto;
 }
-main h2 {
-  font-family: "Mont-bold", Arial, Helvetica, sans-serif;
-  font-size: 3.75rem;
+.reservas__container aside {
+  display: none;
+}
+.reservas__container li {
+  font-size: 0.7rem;
+}
+.reservas__container li::before {
+  display: inline-block;
+  content: "";
+  height: 4px;
+  width: 4px;
+  background-color: #14274a;
+  margin-right: 10px;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.info-adicional {
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.reservas__entradas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.reservas__entradas__itens, .reservas__entradas__resumo, .reservas__entradas__adicionais {
+  cursor: pointer;
+  padding: 0.3rem;
+  border: 1px solid #2b2b2b;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+}
+.reservas__entradas__itens div, .reservas__entradas__resumo div, .reservas__entradas__adicionais div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reserva__titulo {
+  font-family: "Mont-bold", Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.quarto__container {
+  padding: 1rem;
+  box-shadow: 0 0 5px #eaecec;
+  margin-bottom: 25px;
+}
+
+.quarto__imagem {
+  width: 100%;
+}
+.quarto__imagem img {
+  width: 100%;
+}
+
+.quarto__especificacoes {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.quarto__especificacoes__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.quarto__especificacoes__selecao {
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.btn-reservar {
+  display: block;
+  width: fit-content;
+  align-self: flex-end;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 2px;
+  background-color: #0dadbd;
+  color: white;
+  font-weight: bold;
+}
+.btn-reservar:hover {
+  cursor: pointer;
+}
+
+.no-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .reservas__entradas {
+    flex-direction: row;
+    margin-bottom: 1rem;
+    justify-content: space-around;
+  }
+  .reservas__entradas__itens, .reservas__entradas__resumo, .reservas__entradas__adicionais {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .reservas__entradas__itens div, .reservas__entradas__resumo div, .reservas__entradas__adicionais div {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .quarto__container {
+    display: flex;
+    flex-direction: row;
+  }
+  .quarto__imagem {
+    max-width: 300px;
+  }
+  .quarto__imagem img {
+    width: 100%;
+  }
+  .no-mobile {
+    display: block;
+  }
+}
+@media (min-width: 1025px) {
+  .no-desktop {
+    display: none;
+  }
+  .reservas__container {
+    max-width: 1280px;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .reservas__container aside {
+    display: block;
+  }
+  .reservas__container aside .reservas__container__resumo__holder {
+    width: 300px;
+    background-color: #eaecec;
+    padding: 1rem;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .reservas__container .resumo__header,
+  .reservas__container .resumo__total {
+    padding: 0.5rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  .resumo__conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .resumo_conteudo_adicionais,
+  .resumo_conteudo_acomodacoes {
+    display: flex;
+    flex-direction: column;
+  }
+  .resumo_conteudo_acomodacoes__valores,
+  .resumo_conteudo_adicionais__valores {
+    text-align: right;
+  }
+  .resumo__conteudo__item,
+  .resumo__total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .resumo_conteudo_adicionais__wrap,
+  .resumo_conteudo_acomodacoes__wrap {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .resumo_conteudo_adicionais li::before,
+  .resumo_conteudo_acomodacoes li::before {
+    display: none;
+  }
+  .btn__aside {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .btn__aside__limpar {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .btn__aside__continuar {
+    background-color: #670bff;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .no-mobile {
+    display: block;
+  }
+}
+/*
+
+main {
+  font-family: $mont;
+  color: #14274a;
+  font-size: 1.5rem;
+  h2 {
+    font-family: $mont-bold;
+    font-size: 3.75rem;
+  }
+}
 .reserva-topo {
   padding-top: 100px;
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 50px;
-}
-.reserva-topo form label {
-  display: block;
+  form {
+    label {
+      display: block;
+    }
+  }
 }
 
 #quartos {
@@ -31,19 +263,19 @@ main h2 {
   display: flex;
   flex-direction: column;
   position: relative;
-}
-#quartos h3 {
-  text-align: center;
-  margin-bottom: 25px;
-}
-#quartos h3::after {
-  content: "";
-  display: inline-block;
-  width: 100%;
-  border-bottom: 1px solid #14274a;
-}
-#quartos img {
-  max-width: 600px;
+  h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      border-bottom: 1px solid #14274a;
+    }
+  }
+  img {
+    max-width: 600px;
+  }
 }
 
 .quarto {
@@ -51,129 +283,131 @@ main h2 {
   flex-direction: column;
   border: 2px solid #14274a;
   border-radius: 0px 0px 15px 15px;
-}
-.quarto h4 {
-  background-color: #670bff;
-  color: #fff;
-  font-family: "Mont-bold", Arial, Helvetica, sans-serif;
-  font-size: 2rem;
-  padding: 15px;
-  text-align: center;
+  h4 {
+    background-color: #670bff;
+    color: #fff;
+    font-family: $mont-bold;
+    font-size: 2rem;
+    padding: 15px;
+    text-align: center;
+  }
 }
 
 .informacoes {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   padding: 10px;
-}
-.informacoes ul li {
-  margin-left: 10px;
-  list-style: square;
-  display: list-item;
-}
-.informacoes div {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-.informacoes p {
-  font-size: 1.1rem;
-}
-.informacoes p:first-child {
-  font-weight: bold;
-}
+  ul {
+    li {
+      margin-left: 10px;
+      list-style: square;
+      display: list-item;
+    }
+  }
 
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  p {
+    font-size: 1.1rem;
+    &:first-child {
+      font-weight: bold;
+    }
+  }
+}
 .obter-quarto {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 10px;
   align-items: center;
+  .select-quarto {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 0px;
+    i {
+      background-color: #e0b973;
+      border-radius: 50%;
+      padding: 5px;
+      height: 15px;
+      width: 15px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    p {
+      font-family: $mont;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 30px;
+      text-align: center;
+    }
+  }
+  .valor-diaria {
+    background-color: #0dadbd;
+    width: fit-content;
+    justify-self: end;
+    padding: 6px 12px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+  }
 }
-.obter-quarto .select-quarto {
-  display: grid;
-  grid-template-columns: 20px 1fr;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border: 0px;
-}
-.obter-quarto .select-quarto i {
-  background-color: #e0b973;
-  border-radius: 50%;
-  padding: 5px;
-  height: 15px;
-  width: 15px;
-}
-.obter-quarto .select-quarto:hover {
-  cursor: pointer;
-}
-.obter-quarto .select-quarto p {
-  font-family: "Mont", Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 25px;
-  line-height: 30px;
-  text-align: center;
-}
-.obter-quarto .valor-diaria {
-  background-color: #0dadbd;
-  width: fit-content;
-  justify-self: end;
-  padding: 6px 12px;
-  border-radius: 10px;
-  color: #fff;
-  font-weight: bold;
-}
-
 aside {
   position: absolute;
   top: 0;
   right: -440px;
+  .resumo-container {
+    background-color: #ecebee;
+    width: 350px;
+    padding: 20px;
+    color: #000;
+    font-family: $mont;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 3px;
+    button {
+      cursor: pointer;
+      background-color: transparent;
+      border: 0px;
+      font-family: $mont;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-align: left;
+      &:last-child {
+        background-color: #959595;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 49px;
+        width: fit-content;
+        align-self: center;
+        padding: 0.6rem 1.2rem;
+        border-radius: 3px;
+        font-family: $mont;
+        font-style: normal;
+        font-weight: 700;
+      }
+    }
+  }
+  .resumo {
+    background-color: #d5d8d9;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
 }
-aside .resumo-container {
-  background-color: #ecebee;
-  width: 350px;
-  padding: 20px;
-  color: #000;
-  font-family: "Mont", Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  border-radius: 3px;
-}
-aside .resumo-container button {
-  cursor: pointer;
-  background-color: transparent;
-  border: 0px;
-  font-family: "Mont", Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.5rem;
-  text-align: left;
-}
-aside .resumo-container button:last-child {
-  background-color: #959595;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.4rem;
-  line-height: 49px;
-  width: fit-content;
-  align-self: center;
-  padding: 0.6rem 1.2rem;
-  border-radius: 3px;
-  font-family: "Mont", Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-}
-aside .resumo {
-  background-color: #d5d8d9;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+*/
 
 /*# sourceMappingURL=reservas-public.css.map */
