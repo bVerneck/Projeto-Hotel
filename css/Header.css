@@ -16,7 +16,7 @@ body {
 
 @font-face {
     font-family: 'Garamond';
-    src: url('fonts/AGaramondPro-Bold.otf');
+    src: url('../fonts/AGaramondPro-Bold.otf');
 }
 
 .bg-img {

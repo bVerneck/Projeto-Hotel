@@ -11,11 +11,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script src="../js/reservas-public.js" async></script>
+    <script src="../js/reservas-public.js" type="module" async></script>
     <title>Hotel TEX</title>
   </head>
   <body>
-    <header>
+    <!-- <header>
       <div class="bg-img">
         <div class="bg-img-top">
           <img class="logo-header" src="../img/group.png" alt="logo" />
@@ -45,12 +45,42 @@
           <img src="../img/down-arrow.svg" alt="role para baixo" />
         </div>
       </div>
-    </header>
-
+    </header> -->
+    <div class="modal-container">
+      <div class="modal-hospedes">
+        <div class="modal-header">
+          <h4>Hóspedes</h4>
+          <button class="modal-fechar">X</button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-adulto">
+            <p>Adultos</p>
+            <div>
+              <button class="retirar">-</button>
+              <p>2</p>
+              <button class="adicionar">+</button>
+            </div>
+          </div>
+          <div class="modal-crianca">
+            <p>Crianças</p>
+            <div>
+              <button class="retirar">-</button>
+              <p>0</p>
+              <button class="adicionar">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-confirma">
+          <button class="btn-reservar btn-modal-confirmar modal-fechar">
+            Confirmar
+          </button>
+        </div>
+      </div>
+    </div>
     <div class="reservas__container">
       <main class="reservas__container__main">
         <div class="reservas__entradas">
-          <div class="reservas__entradas__itens">
+          <div class="reservas__entradas__itens modal-abrir">
             <p><i class="fa fa-user" aria-hidden="true"></i></p>
             <div>
               <p class="bold">Hóspedes</p>
@@ -272,7 +302,7 @@
         </div>
       </aside>
     </div>
-    <footer>
+    <!-- <footer>
       <div class="company-footer">
         <img src="../img/tex logo branco 1.png" />
         <h2>HOTÉIS</h2>
@@ -313,6 +343,6 @@
           <button type="submit">OK</button>
         </form>
       </div>
-    </footer>
+    </footer> -->
   </body>
 </html>
