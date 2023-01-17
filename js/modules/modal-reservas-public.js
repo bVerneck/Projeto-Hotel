@@ -1,33 +1,51 @@
 function modal() {
   const botaoAbrir = document.querySelectorAll(".modal-abrir");
   const botaoFechar = document.querySelectorAll(".modal-fechar");
-  const containerModal = document.querySelector(".modal-container");
+  const botaoConfirmar = document.querySelectorAll(".modal-ok");
+  const containerModal = document.querySelectorAll(".modal-container");
 
   if (botaoAbrir && botaoFechar && containerModal) {
-    function abrirModal(e) {
-      e.preventDefault();
-      containerModal.classList.add("modal-ativo");
-    }
-
-    function fecharModal(e) {
-      e.preventDefault();
-      containerModal.classList.remove("modal-ativo");
-    }
-
-    function clickFora(e) {
-      if (this === e.target) {
-        fecharModal(e);
-      }
-    }
-
-    botaoAbrir.forEach((element) => {
-      element.addEventListener("click", abrirModal);
-    });
-    botaoFechar.forEach((element) => {
-      element.addEventListener("click", fecharModal);
+    //Função que identifica qual opção foi selecionada e abre o modal correspondente
+    botaoAbrir.forEach((element, item) => {
+      element.onclick = function (event) {
+        event.preventDefault();
+        containerModal[item].classList.add("modal-ativo");
+      };
     });
 
-    containerModal.addEventListener("click", clickFora);
+    function fecharModal(event, element, item) {
+      event.preventDefault();
+      containerModal[item].classList.remove("modal-ativo");
+    }
+
+    //Função que fecha o modal ao clicar no botão de fechar
+    botaoFechar.forEach((element, item) => {
+      element.onclick = function (event) {
+        fecharModal(event, element, item);
+        // event.preventDefault();
+        // containerModal[item].classList.remove("modal-ativo");
+      };
+    });
+
+    //Função que fecha o modal ao clicar no botão OK
+    botaoConfirmar.forEach((element, item) => {
+      element.onclick = function (event) {
+        fecharModal(event, element, item);
+        // event.preventDefault();
+        // containerModal[item].classList.remove("modal-ativo");
+      };
+    });
+
+    //Função que fecha o modal ao clicar fora da caixa
+    containerModal.forEach((element, item) => {
+      element.onclick = function (event) {
+        if (this === event.target) {
+          fecharModal(event, element, item);
+          // event.preventDefault();
+          // containerModal[item].classList.remove("modal-ativo");
+        }
+      };
+    });
   }
 }
 

@@ -48,22 +48,22 @@
     </header> -->
     <div class="modal-container">
       <div class="modal-hospedes">
-        <div class="modal-header">
+        <div class="modal-header flex-row">
           <h4>Hóspedes</h4>
           <button class="modal-fechar">X</button>
         </div>
-        <div class="modal-body">
-          <div class="modal-adulto">
+        <div class="modal-body flex-col">
+          <div class="modal-adulto flex-row">
             <p>Adultos</p>
-            <div>
+            <div class="flex-row">
               <button class="retirar">-</button>
               <p>2</p>
               <button class="adicionar">+</button>
             </div>
           </div>
-          <div class="modal-crianca">
+          <div class="modal-crianca flex-row">
             <p>Crianças</p>
-            <div>
+            <div class="flex-row">
               <button class="retirar">-</button>
               <p>0</p>
               <button class="adicionar">+</button>
@@ -71,14 +71,153 @@
           </div>
         </div>
         <div class="modal-confirma">
-          <button class="btn-reservar btn-modal-confirmar modal-fechar">
-            Confirmar
-          </button>
+          <button class="btn-reservar btn-modal-ok modal-ok">OK</button>
         </div>
       </div>
     </div>
+    <div class="modal-container">
+      <div class="modal-adicionais">
+        <div class="modal-header flex-row">
+          <h4>Adicionais</h4>
+          <button class="modal-fechar">X</button>
+        </div>
+        <div class="modal-body flex-col">
+          <div class="flex-row">
+            <input type="checkbox" />
+            <div class="flex-row">
+              <p class="bold left">Academia</p>
+              <p>R$ 30.00/dia</p>
+            </div>
+          </div>
+          <div class="flex-row">
+            <input type="checkbox" />
+            <div class="flex-row">
+              <p class="bold left">Cofre</p>
+              <p>R$ 150.00/dia</p>
+            </div>
+          </div>
+          <div class="flex-row">
+            <input type="checkbox" />
+
+            <div class="flex-row">
+              <p class="bold left">Despertador</p>
+              <p>R$ 20.00/dia</p>
+            </div>
+          </div>
+          <div class="flex-row">
+            <input type="checkbox" />
+            <div class="flex-row">
+              <p class="bold left">Estacionamento</p>
+              <p>R$ 25.00/dia</p>
+            </div>
+          </div>
+          <div class="flex-col">
+            <div class="flex-row">
+              <p class="bold">Transfer</p>
+              <p class="info-adicional left">Tranporte aeroporto-hotel</p>
+            </div>
+            <div class="flex-row">
+              <input type="checkbox" />
+              <div class="flex-row">
+                <p class="left">Chegada</p>
+                <p>R$ 75.00</p>
+              </div>
+            </div>
+            <div class="flex-row">
+              <input type="checkbox" />
+              <div class="flex-row">
+                <p class="left">Partida</p>
+                <p>R$ 75.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <p>Academia, Cofre, Despertador, Estacionamento, Taxi</p> -->
+        <div class="modal-confirma">
+          <button class="btn-reservar btn-modal-ok modal-ok">OK</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-container">
+      <div class="modal-resumo">
+        <div class="modal-header">
+          <h4>Resumo da reserva</h4>
+          <button class="modal-fechar">X</button>
+        </div>
+        <div class="modal-body flex-col">
+          <div class="resumo__conteudo flex-col">
+            <div class="resumo__conteudo__item flex-row">
+              <p class="bold">Check-in</p>
+              <p class="info">qua, 24/05/22</p>
+            </div>
+            <div class="resumo__conteudo__item flex-row">
+              <p class="bold">Check-out</p>
+              <p class="info">sex, 26/05/22</p>
+            </div>
+          </div>
+          <div class="resumo_conteudo_acomodacoes flex-col">
+            <p class="bold left">Quarto</p>
+            <div class="resumo_conteudo_acomodacoes__wrap flex-row">
+              <div class="resumo_conteudo_acomodacoes__itens">
+                <ul>
+                  <li>Deluxe Room</li>
+                  <li>Noites</li>
+                  <li>Adultos</li>
+                  <li>Crianças</li>
+                </ul>
+              </div>
+              <div class="resumo_conteudo_acomodacoes__valores">
+                <ul class="right">
+                  <li>R$0.00</li>
+                  <li>2</li>
+                  <li>2</li>
+                  <li>0</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="resumo_conteudo_adicionais flex-col">
+            <p class="bold left">Adicionais</p>
+            <div class="resumo_conteudo_adicionais__wrap flex-row">
+              <div class="resumo_conteudo_adicionais__itens">
+                <ul>
+                  <li>Academia</li>
+                  <li>Cofre</li>
+                  <li>Despertador</li>
+                  <li>Estacionamento</li>
+                  <li>Taxi</li>
+                </ul>
+              </div>
+              <div class="resumo_conteudo_adicionais__valores">
+                <ul class="right">
+                  <li>R$0.00</li>
+                  <li>R$0.00</li>
+                  <li>R$0.00</li>
+                  <li>R$0.00</li>
+                  <li>R$0.00</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="resumo__total flex-row">
+            <p class="bold">TOTAL:</p>
+            <p class="bold">R$0.00</p>
+          </div>
+          <div class="modal-btn flex-row">
+            <button class="modal-btn-limpar">Limpar</button>
+            <button class="modal-btn-continuar">Continuar</button>
+          </div>
+        </div>
+        <div class="modal-confirma">
+          <button class="btn-reservar btn-modal-ok modal-ok">OK</button>
+        </div>
+      </div>
+    </div>
+    <!--Código referente a reserva: entradas, quartos e resumo da reserva *********************************************************-->>
     <div class="reservas__container">
+      <!--O main agrupa toda parte de escolha: entradas e quartos-->>
       <main class="reservas__container__main">
+        <!--Código referente as entradas-->>
         <div class="reservas__entradas">
           <div class="reservas__entradas__itens modal-abrir">
             <p><i class="fa fa-user" aria-hidden="true"></i></p>
@@ -88,7 +227,7 @@
             </div>
             <p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
           </div>
-          <div class="reservas__entradas__itens">
+          <div id="entradaCheckIn" class="reservas__entradas__itens">
             <p><i class="fa fa-calendar" aria-hidden="true"></i></p>
             <div>
               <p class="bold">Check-in</p>
@@ -105,16 +244,16 @@
             </div>
             <p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
           </div>
-          <div class="reservas__entradas__adicionais">
+          <div class="reservas__entradas__adicionais modal-abrir">
             <p></p>
             <div>
               <p class="bold">Adicionais</p>
               <p>5 itens</p>
-              <!-- <p>Almoço, Cofre, Despertador, Lavanderia, Taxi</p> -->
+              <!-- <p>Academia, Cofre, Despertador, Estacionamento, Taxi</p> -->
             </div>
             <p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
           </div>
-          <div class="reservas__entradas__resumo no-desktop">
+          <div class="reservas__entradas__resumo modal-abrir no-desktop">
             <p></p>
             <div>
               <p class="bold">Total</p>
@@ -227,6 +366,7 @@
           </div>
         </div>
       </main>
+      <input type="date" name="" id="" />
       <aside class="reservas__container__resumo">
         <div class="reservas__container__resumo__holder">
           <div class="resumo__header">
@@ -273,10 +413,10 @@
             <div class="resumo_conteudo_adicionais__wrap">
               <div class="resumo_conteudo_adicionais__itens">
                 <ul>
-                  <li>Almoço</li>
+                  <li>Academia</li>
                   <li>Cofre</li>
                   <li>Despertador</li>
-                  <li>Lavanderia</li>
+                  <li>Estacionamento</li>
                   <li>Taxi</li>
                 </ul>
               </div>
