@@ -4,7 +4,7 @@ body {
 
 /* START-HEADER */
 
-header {
+/* header {
     background-color: rgb(105, 11, 255, 0);
     position: absolute;
     height: 6rem;
@@ -58,13 +58,13 @@ header .tx-logo {
 
 .btn:hover {
     background-color: rgba(124, 45, 252, 0.747);
-}
+} */
 
 /* END-HEADER */
 
 /* START-NAV-BAR */
 
-nav {
+/* nav {
     margin-top: 2rem;
     background-color: rgb(124, 45, 252, 1);
     position: absolute;
@@ -85,14 +85,14 @@ nav ul {
     margin-top: .3rem;
     font-family: 'Mont', 'Garamond';
     flex-wrap: wrap;
-}
+} */
 
 /* END-NAV-BAR */
 
 /* START-MAIN */
 
 main {
-    padding-top: 10rem;
+    padding-top: 2rem;
     margin-bottom: 0.6rem;
 }
 
@@ -125,7 +125,7 @@ h1 {
     padding-top: 2rem;
     margin-left: auto;
     margin-right: auto;
-    width: 65%;
+    width: 85%;
     flex-direction: column;
 }
 
