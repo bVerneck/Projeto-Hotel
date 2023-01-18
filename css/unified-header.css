@@ -42,6 +42,10 @@ ul {
     text-transform: uppercase;
 }
 
+header img{
+    display: inline;
+}
+
 .btn-rsv {
     width: 6rem;
     height: 2rem;
