@@ -39,6 +39,11 @@ ul {
     top: 0;
     width: 100%;
     font-family: 'Mont', 'Garamond';
+    text-transform: uppercase;
+}
+
+header img{
+    display: inline;
 }
 
 .btn-rsv {
