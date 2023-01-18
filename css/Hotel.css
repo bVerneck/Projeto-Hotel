@@ -102,7 +102,7 @@ h1 {
     font-weight: 600;
     font-family: 'Mont', 'Garamond';
     text-transform: uppercase;
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-bottom: 2rem;
 }
 
@@ -116,24 +116,16 @@ h1 {
 }
 
 .first-box {
-
-    background-color: rgb(211, 211, 211, 0.5);
+    /* background-color: rgb(211, 211, 211, 0.5); */
     display: flex;
     /* border: .4rem solid rgb(105, 11, 255); */
     border-radius: 1rem;
     padding: 4rem;
-    padding-top: 2rem;
+    padding-top: 0rem;
     margin-left: auto;
     margin-right: auto;
     width: 85%;
     flex-direction: column;
-}
-
-.p-left {
-    float: left;
-    text-align: justify;
-    font-size: 1.3rem;
-    width: 55%;
 }
 
 .p-right {
@@ -141,10 +133,11 @@ h1 {
     text-align: justify;
     font-size: 1.3rem;
     width: 55%;
+    font-family: 'Mont', 'Garamond';
+    font-size: larger;
 }
 
 .img-left {
-    display: block;
     margin-right: auto;
     width: 40%;
     border-radius: 1rem;
@@ -152,17 +145,29 @@ h1 {
     margin-bottom: 10rem;
 }
 
-.img-right {
-    display: block;
-    margin-left: auto;
-    width: 40%;
-    border-radius: 1rem;
-    margin-bottom: 10rem;
-}
 
 /* END-MAIN */
 
-/* START-FOOTER */
+/* START RESPONSIVE */
+
+@media screen and (max-width:780px) {
+
+    .first-box {
+        padding: 0;
+        background-color: var(--white);
+    }
+    .img-left{
+        width: 100%;
+        margin-bottom: 0rem;
+    }
+    .p-right{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+}
+
+/* END RESPONSIVE */
 
 /* OTHER */
 
@@ -190,3 +195,4 @@ a:hover {
     font-family: 'Garamond';
     src: url('fonts/AGaramondPro-Bold.otf');
 }
+
