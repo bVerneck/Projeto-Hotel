@@ -169,9 +169,24 @@ h1 {
 }
 
 .scroll-down img {
+    position: absolute;
     display: block;
     align-self: center;
     width: 40px; 
+    animation-name: slide;
+    animation-duration: .8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes slide{
+    from{
+        top: 56rem;
+    }
+    to{
+        top: 55rem;
+    }
+
 }
 
 @media only screen and (max-width: 1315px) {

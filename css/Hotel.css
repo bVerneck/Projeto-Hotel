@@ -92,7 +92,7 @@ nav ul {
 /* START-MAIN */
 
 main {
-    padding-top: 10rem;
+    padding-top: 2rem;
     margin-bottom: 0.6rem;
 }
 
@@ -125,7 +125,7 @@ h1 {
     padding-top: 2rem;
     margin-left: auto;
     margin-right: auto;
-    width: 65%;
+    width: 85%;
     flex-direction: column;
 }
 
