@@ -7,34 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Hotel | T.EX Hotel</title>
 
+
+    <link rel="stylesheet" href="../css/unified-header.css">
     <link rel="stylesheet" href="../css/Hotel.css">
     <link rel="stylesheet" href="../css/Footer.css">
+    <script src="../JS/unified-header.js"></script>
 
 </head>
 
 <body>
-    <header>
-        <div class="first-view"></div>
+
+    <!-- Start Unified Header -->
+    <header class="header">
+        <!-- Logo -->
         <a href="../index.html"><img src="../img/group.png" alt="TX logo" class="tx-logo"></a>
-
-        <ul class="side">
-            <li>
-                <span> USUÁRIO </span>
-            </li>
-            <li>
-                <a href="../pages/reservas.html"><button class="btn"> Reservar </button></a>
-            </li>
-        </ul>
-
-        <nav>
-            <ul>
+        <!-- Hamburger icon -->
+        <input class="side-menu" type="checkbox" id="side-menu" />
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <!-- Menu -->
+        <nav class="nav">
+            <ul class="menu">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../pages/hotel.html">O Hotel</a></li>
                 <li><a href="../pages/acomodacoes.html#acomodacoes">Acomodações</a></li>
                 <li><a href="../pages/faleconosco.html">Contatos</a></li>
+                <li>
+                    <a href="../pages/reservas.html"><button class="btn-rsv"> Reservar </button></a>
+                </li>
             </ul>
         </nav>
-
     </header>
 
     <main>
@@ -75,48 +76,48 @@
 
 
     <footer>
-            <div class="company-footer">
-                <img src="../img/tex logo branco 1.png" />
-                <h2>HOTÉIS</h2>
-                <p>
-                    endereço: xxxxxxx<br />(011) 95423-6698<br />contato@texhotels.com
-                </p>
-            </div>
-            <div class="footer-box">
-                <ul>
-                    <li><a href="sobre.html">Sobre Nós</a></li>
-                    <li><a href="#">Contatos</a></li>
-                    <li><a href="#">Termos e Condições</a></li>
-                    <li><a href="https://www.google.com.br/maps">Localização</a></li>
-                    <li><a href="#nossos-servicos">Conheça nossos serviços</a></li>
-                </ul>
-            </div>
-            <div class="social-media">
-                <h2>Conecte-se conosco</h2>
-                <ul>
-                    <li>
-                        <img src="../img/facebook.png" />
-                        <span>Facebook</span>
-                    </li>
-                    <li>
-                        <img src="../img/instagram.png" />
-                        <span>Instagram</span>
-                    </li>
-                    <li>
-                        <img src="../img/twitter.png" />
-                        <span>Twitter</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="newsletter">
-                <h2>Assine nosso boletim de notícias:</h2>
-                <form action="post">
-                    <input type="email" name="email" placeholder="Endereço de e-mail" />
-                    <button type="submit">OK</button>
-                </form>
-            </div>
-        </footer>
- 
+        <div class="company-footer">
+            <img src="../img/tex logo branco 1.png" />
+            <h2>HOTÉIS</h2>
+            <p>
+                endereço: xxxxxxx<br />(011) 95423-6698<br />contato@texhotels.com
+            </p>
+        </div>
+        <div class="footer-box">
+            <ul>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="#">Contatos</a></li>
+                <li><a href="#">Termos e Condições</a></li>
+                <li><a href="https://www.google.com.br/maps">Localização</a></li>
+                <li><a href="#nossos-servicos">Conheça nossos serviços</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <h2>Conecte-se conosco</h2>
+            <ul>
+                <li>
+                    <img src="../img/facebook.png" />
+                    <span>Facebook</span>
+                </li>
+                <li>
+                    <img src="../img/instagram.png" />
+                    <span>Instagram</span>
+                </li>
+                <li>
+                    <img src="../img/twitter.png" />
+                    <span>Twitter</span>
+                </li>
+            </ul>
+        </div>
+        <div class="newsletter">
+            <h2>Assine nosso boletim de notícias:</h2>
+            <form action="post">
+                <input type="email" name="email" placeholder="Endereço de e-mail" />
+                <button type="submit">OK</button>
+            </form>
+        </div>
+    </footer>
+
 
 </body>
 

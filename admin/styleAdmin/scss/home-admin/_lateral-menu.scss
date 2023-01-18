@@ -1,0 +1,112 @@
+@import "_global-config-home-admin.scss";
+
+// Global
+$display: flex;
+$display-top: flex;
+$flex-direction: column;
+$flex-direction-top: column; 
+$justify-content: space-between;
+$align-items: center;
+$background-color: $primary-color;
+$color: $secundary-color;
+$padding: 0 70px 0 70px;
+$width: 30vh;
+$height: auto;
+$font-size: 1.8rem;
+$ul-top: left;
+
+// Foto
+$padding-foto: 40px 0 0 35px;
+$img-border: 50%;
+$img-width: 180px;
+$img-height: 200px;
+$img-border-color: #F5F5F5;
+$img-border-style: solid;
+
+// Icons
+$icon-margin-right: 10px;
+
+// Dashboard
+$dashboard-display: flex;
+$dashboard-justify-content: left;
+$dashboard-align-items: center;
+$dashboard-padding: 25px;
+
+// Notification
+$notification-display: flex;
+$notification-justify-content: left;
+$notification-align-items: center;
+$notification-padding-bottom: 50px;
+
+// Settings
+$settings-display: flex;
+$settings-justify-content: center;
+$settings-align-items: center;
+$settings-padding-bottom: 100px;
+
+.lateral-menu {
+  display: $display;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  background: $background-color;
+  color: $color;
+  padding: $padding;
+  width: $width;
+  height: $height;
+  font-size: $font-size;
+}
+
+.lateral-menu-top {
+  display: $display-top;
+  flex-direction: $flex-direction-top;
+}
+
+.lateral-menu-top ul {
+  align-items: $ul-top;
+}
+
+.foto-perfil {
+  padding: $padding-foto;
+}
+
+.foto-perfil > img {
+  border-radius: $img-border;
+  width: $img-width;
+  height: $img-height;
+  border-style: $img-border-style;
+  border-color: $img-border-color;
+}
+
+.dashboard {
+  display: $dashboard-display;
+  justify-content: $dashboard-justify-content;
+  align-items: $dashboard-align-items;
+  padding-top: $dashboard-padding;
+}
+
+.dashboard svg {
+  margin-right: $icon-margin-right;
+}
+
+.notification {
+  display: $notification-display;
+  justify-content: $notification-justify-content;
+  align-items: $notification-align-items;
+  padding-bottom: $notification-padding-bottom;
+}
+
+.notification svg {
+  margin-right: $icon-margin-right;
+}
+
+.settings {
+  display: $settings-display;
+  justify-content: $settings-justify-content;
+  align-items: $settings-align-items;
+  padding-bottom: $settings-padding-bottom;
+}
+
+.settings svg {
+  margin-right: $icon-margin-right;
+}

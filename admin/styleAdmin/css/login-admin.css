@@ -18,7 +18,7 @@
 
 
 body{
-    background-image: url("../img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg");
+    background-image: url("/img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg");
     min-height: 120px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -42,12 +42,12 @@ form{
 
 @font-face {
     font-family:  'Mont';
-    src: url('../Montserrat-Regular.otf');
+    src: url('/admin/styleAdmin/fonts/Montserrat-Regular.otf');
 }
 
 @font-face {
     font-family:  'Gara';
-    src: url('../AGaramondPro-Regular.otf');
+    src: url('/admin/styleAdmin/fonts/AGaramondPro-Regular.otf');
 }
 
 .form-inline{
