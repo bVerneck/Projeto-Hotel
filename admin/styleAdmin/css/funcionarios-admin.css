@@ -1,121 +1,74 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Mont";
   src: url("../../fonts/Montserrat-Regular.otf");
 }
-
 body {
-  /* background-image: url(../../img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg); */
-  background-color: rgb(221, 218, 218);
-  background-repeat: no-repeat;
-  background-size: cover;
   margin: 0;
-  width: 100%;
-  font-size: 1.5em;
+  background-color: rgb(194, 191, 191);
+  font-size: 1.4em;
 }
-
 
 /* CLASSES */
 .botaosair {
   width: 37px;
   float: right;
   filter: invert(100%);
-  
-  
-}
-.divp{
-  background-color: #7623FF;
-  
-  
- 
-  
-  
-  
-}
-.logo {
- 
-  padding-left:22%;
-  cursor: pointer;
-  min-width: flex;
- 
-  
-  
 }
 
-.cursorClick:hover{
+.barraRoxaTop {
+  background-color: #7623FF;
+}
+
+.logo {
+  width: 9%;
+  padding-left: 25%;
+  cursor: pointer;
+}
+
+.cursorClick:hover {
   cursor: pointer;
   color: red;
 }
 
-/* Area de Funcionarios */
-.matricula{
+.matricula {
   padding-left: 3px;
 }
-table {
-  width: 80%;
-  margin-left: 11%;
-  margin-top: 5vh;
-  text-align: center;
-  
- 
+
+/* barra de navegação */
+.barraNavegacao {
+  display: initial;
+}
+.barraNavegacao a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  padding-left: 3%;
+  font-size: 1.4em;
+}
+.barraNavegacao a:hover {
+  color: red;
 }
 
+/* table */
+table {
+  width: 87%;
+  margin-left: 7%;
+  margin-top: 1%;
+  text-align: center;
+}
 table td,
 table th {
   padding: 1%;
-  /* border-radius: 12px 12px 12px 12px; */
 }
-
-/* navega */
-.home{
-
-float:right;
-margin-top: 3%;
-margin-right: 50rem;
-display: flex;
-
-
-
-
- 
-}
-.home a{ 
-  color: rgb(255, 255, 255);
-  padding-right: 40px; 
-  text-decoration: none;
-  padding-left: 10%;
-  
-}
-.home a:hover{
-  color: red;
-}
-
-
 
 /* COR DAS TABELAS */
-table tr:nth-child(even) {
-  background-color: #ffffff00;
+table tr:nth-of-type(even) {
+  background-color: rgba(255, 255, 255, 0.521);
 }
-table tr:nth-of-type(1) {
+
+table tr:nth-of-type(odd) {
   background-color: #7623FF;
-  border-radius: 12px 12px 12px 12px;
+  border-radius: 12px;
 }
-table tr:nth-of-type(3) {
-  background-color: #7623FF;
-  border-radius: 12px 12px 12px 12px;
-}
-table tr:nth-of-type(5) {
-  background-color: #7623FF;
-  border-radius: 12px 12px 12px 12px;
-}
-table tr:nth-of-type(7) {
-  background-color: #7623FF;
-  border-radius: 12px 12px 12px 12px;
-}
-table tr:nth-of-type(9) {
-  background-color: #7623FF;
-  border-radius: 12px 12px 12px 12px;
-}
-table tr:nth-of-type(11) {
-  background-color: #7623FF;
-  border-radius: 12px 12px 12px 12px;
-}
+
+/*# sourceMappingURL=funcionarios-admin.css.map */
