@@ -22,8 +22,6 @@ function modal() {
     botaoFechar.forEach((element, item) => {
       element.onclick = function (event) {
         fecharModal(event, element, item);
-        // event.preventDefault();
-        // containerModal[item].classList.remove("modal-ativo");
       };
     });
 
@@ -31,8 +29,6 @@ function modal() {
     botaoConfirmar.forEach((element, item) => {
       element.onclick = function (event) {
         fecharModal(event, element, item);
-        // event.preventDefault();
-        // containerModal[item].classList.remove("modal-ativo");
       };
     });
 
@@ -41,8 +37,6 @@ function modal() {
       element.onclick = function (event) {
         if (this === event.target) {
           fecharModal(event, element, item);
-          // event.preventDefault();
-          // containerModal[item].classList.remove("modal-ativo");
         }
       };
     });

@@ -220,6 +220,15 @@ $borda: 1px solid #2b2b2b;
       gap: 1rem;
     }
   }
+
+  &__itens{
+    input.dropdown{
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
 }
 
 .reserva__titulo {
@@ -294,6 +303,7 @@ $borda: 1px solid #2b2b2b;
 .right {
   text-align: right;
 }
+
 
 @media (min-width: 768px) {
   .reservas__entradas {
@@ -446,180 +456,3 @@ $borda: 1px solid #2b2b2b;
     display: block;
   }
 }
-
-/*
-
-main {
-  font-family: $mont;
-  color: #14274a;
-  font-size: 1.5rem;
-  h2 {
-    font-family: $mont-bold;
-    font-size: 3.75rem;
-  }
-}
-.reserva-topo {
-  padding-top: 100px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  form {
-    label {
-      display: block;
-    }
-  }
-}
-
-#quartos {
-  max-width: 600px;
-  margin: 15%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  h3 {
-    text-align: center;
-    margin-bottom: 25px;
-    &::after {
-      content: "";
-      display: inline-block;
-      width: 100%;
-      border-bottom: 1px solid #14274a;
-    }
-  }
-  img {
-    max-width: 600px;
-  }
-}
-
-.quarto {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid #14274a;
-  border-radius: 0px 0px 15px 15px;
-  h4 {
-    background-color: #670bff;
-    color: #fff;
-    font-family: $mont-bold;
-    font-size: 2rem;
-    padding: 15px;
-    text-align: center;
-  }
-}
-
-.informacoes {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  padding: 10px;
-  ul {
-    li {
-      margin-left: 10px;
-      list-style: square;
-      display: list-item;
-    }
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  p {
-    font-size: 1.1rem;
-    &:first-child {
-      font-weight: bold;
-    }
-  }
-}
-.obter-quarto {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 10px;
-  align-items: center;
-  .select-quarto {
-    display: grid;
-    grid-template-columns: 20px 1fr;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    border: 0px;
-    i {
-      background-color: #e0b973;
-      border-radius: 50%;
-      padding: 5px;
-      height: 15px;
-      width: 15px;
-    }
-    &:hover {
-      cursor: pointer;
-    }
-    p {
-      font-family: $mont;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 25px;
-      line-height: 30px;
-      text-align: center;
-    }
-  }
-  .valor-diaria {
-    background-color: #0dadbd;
-    width: fit-content;
-    justify-self: end;
-    padding: 6px 12px;
-    border-radius: 10px;
-    color: #fff;
-    font-weight: bold;
-  }
-}
-aside {
-  position: absolute;
-  top: 0;
-  right: -440px;
-  .resumo-container {
-    background-color: #ecebee;
-    width: 350px;
-    padding: 20px;
-    color: #000;
-    font-family: $mont;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    border-radius: 3px;
-    button {
-      cursor: pointer;
-      background-color: transparent;
-      border: 0px;
-      font-family: $mont;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 1.5rem;
-      text-align: left;
-      &:last-child {
-        background-color: #959595;
-        color: #fff;
-        font-weight: 700;
-        font-size: 1.4rem;
-        line-height: 49px;
-        width: fit-content;
-        align-self: center;
-        padding: 0.6rem 1.2rem;
-        border-radius: 3px;
-        font-family: $mont;
-        font-style: normal;
-        font-weight: 700;
-      }
-    }
-  }
-  .resumo {
-    background-color: #d5d8d9;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-}
-*/
