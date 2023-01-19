@@ -90,7 +90,7 @@ h2 {
     display: none;
   }
 
-  .footer-box{
+  .footer-box {
     display: none;
   }
 
@@ -142,17 +142,19 @@ h2 {
     width: 25%;
     margin-bottom: -55px;
   }
+
   .company-footer h2 {
     margin: 0 0 0px 0;
   }
 
-  .company-footer p{
+  .company-footer p {
     display: none;
   }
 
-  .social-media h2{
+  .social-media h2 {
     display: none;
   }
+
   .texto h1 {
     font-size: 8rem;
   }
@@ -180,12 +182,12 @@ h2 {
   }
 
   .social-media {
-    padding: 0px 0px 0px 80%;
+    padding: 0px 0px 0px 72%;
     margin-top: -18%;
     margin-bottom: 115px;
   }
 
-  .social-media h2{
+  .social-media h2 {
     display: none;
   }
 
@@ -205,7 +207,7 @@ h2 {
   .footer-box {
     width: 106%;
     margin-left: -82px;
-}
+  }
 
   .footer-box li {
     padding: 0%;
@@ -230,7 +232,8 @@ h2 {
     margin-bottom: -45px;
   }
 
-  .company-footer h2, p{
+  .company-footer h2,
+  p {
     margin-bottom: 15px;
   }
 
