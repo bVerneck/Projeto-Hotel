@@ -1,0 +1,94 @@
+$cor1:rgb(14, 102, 209);
+$bg-color:rgba(240, 248, 255, 0.63);
+$t-sadow:1px 1px 2px black, 0 0 25px rgb(255, 17, 0), 0 0 5px rgb(139, 5, 0);
+
+@font-face {
+    font-family: "Mont";
+    src: url("../../fonts/Montserrat-Regular.otf");
+}
+
+body {
+    background-image: url(/img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+article {
+    width: 50%;
+    margin-left: 25%;
+    background-color: $bg-color;
+    /* text-align: center; */
+    border-radius: 12px 12px 12px 12px;
+    font-family: "Mont";
+    color: $cor1;
+    font-weight: bold;
+    
+
+
+}
+
+h3 {
+    text-align: center;
+    color: $cor1;
+    text-shadow: $t-sadow;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+legend {
+    text-align: center;
+    color: $cor1;;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    border-radius: 4px 4px 4px 4px;
+}
+
+/* button{
+   background-position: center;
+} */
+
+ul {
+    margin-left: 5%;
+
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+li {
+    list-style: none;
+    /* border-radius: 20px 20px 20px 20px; */
+}
+
+button {
+    border-radius: 10px;
+    margin-left: 270px;
+    color: $cor1;
+    /* text-shadow: 1px 1px 2px black, 0 0 25px rgb(255, 17, 0), 0 0 5px rgb(139, 5, 0) */
+}
+
+form {
+   text-transform: uppercase; 
+} 
+.logo {
+    margin-left: 195px;
+    cursor: pointer;
+    width: 220px;
+
+}
+
+// .texto-slogan {
+//     color: white;
+//     font-family: "Mont";
+//     float: right;
+//     padding-right: 65rem;
+//     padding-top: 2vh;
+//     font-size: 1.5em;
+// }
+
+
