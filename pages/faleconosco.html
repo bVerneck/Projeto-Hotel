@@ -6,7 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="../css/faleconosco.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script defer src="../JS/faleconsco.js"></script>
 
   <title>Document</title>
 </head>
@@ -33,10 +35,10 @@
       <form action="../index.html">
 
         <div>
-          <p>E-mail</p><input type="text">
-          <p>Nome</p><input type="text">
-          <p>Sobrenome</p><input type="text">
-          <p>Telefone</p><input type="text">
+          <p>E-mail</p><input id="input_email" type="text">
+          <p>Nome</p><input id="input_nome" type ="text">
+          <p>Sobrenome</p><input id="input_sobrenome" type ="text">
+          <p>Telefone</p><input id="input_telefone" type ="text">
         </div>
 
         <div>
@@ -77,16 +79,16 @@
 
         <div>
           <p>Mensagem</p>
-          <textarea name=""></textarea>
+          <textarea id="input_mensagem" name=""></textarea>
         </div>
 
-        <label>
+        <label class="termos">
             <input type="checkbox">
             <span>Concordo que meus dados sejam usados para envio de comunicação e contato.</span>
         </label>
 
         <div>
-          <button class="btn">Enviar</button>
+          <button class="btn" id="btn_enviar">Enviar</button>
         </div>
 
       </form>
@@ -134,6 +136,8 @@
       </form>
     </div>
   </footer>
+
+  
 
 </body>
 
