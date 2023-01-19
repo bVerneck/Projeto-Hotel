@@ -79,17 +79,17 @@
           <div class="modal-adulto flex-row">
             <p>Adultos</p>
             <div class="flex-row">
-              <button class="retirar">-</button>
-              <p>2</p>
-              <button class="adicionar">+</button>
+              <button class="retirar btn-rem-adulto">-</button>
+              <p class="entrada-adulto">2</p>
+              <button class="adicionar btn-add-adulto">+</button>
             </div>
           </div>
           <div class="modal-crianca flex-row">
             <p>Crianças</p>
             <div class="flex-row">
-              <button class="retirar">-</button>
-              <p>0</p>
-              <button class="adicionar">+</button>
+              <button class="retirar btn-rem-crianca">-</button>
+              <p class="entrada-crianca">0</p>
+              <button class="adicionar btn-add-crianca">+</button>
             </div>
           </div>
         </div>
@@ -171,11 +171,11 @@
           <div class="resumo__conteudo flex-col">
             <div class="resumo__conteudo__item flex-row">
               <p class="bold">Check-in</p>
-              <p class="info">qua, 24/05/22</p>
+              <p class="info checkin-showup">qua, 24/05/22</p>
             </div>
             <div class="resumo__conteudo__item flex-row">
               <p class="bold">Check-out</p>
-              <p class="info">sex, 26/05/22</p>
+              <p class="info checkout-showup">sex, 26/05/22</p>
             </div>
           </div>
           <div class="resumo_conteudo_acomodacoes flex-col">
@@ -183,7 +183,7 @@
             <div class="resumo_conteudo_acomodacoes__wrap flex-row">
               <div class="resumo_conteudo_acomodacoes__itens">
                 <ul>
-                  <li>Deluxe Room</li>
+                  <li class="quarto-selecionado">Escolha seu quarto</li>
                   <li>Noites</li>
                   <li>Adultos</li>
                   <li>Crianças</li>
@@ -191,10 +191,10 @@
               </div>
               <div class="resumo_conteudo_acomodacoes__valores">
                 <ul class="right">
-                  <li>R$0.00</li>
-                  <li>2</li>
-                  <li>2</li>
-                  <li>0</li>
+                  <li class="quarto-selecionado-valor">R$0,00</li>
+                  <li class="display-noites">2</li>
+                  <li class="entrada-adulto">2</li>
+                  <li class="entrada-crianca">0</li>
                 </ul>
               </div>
             </div>
@@ -246,7 +246,7 @@
             <p><i class="fa fa-user" aria-hidden="true"></i></p>
             <div>
               <p class="bold">Hóspedes</p>
-              <p>2 adultos, 0 crianças</p>
+              <p class="hospedes-resumo">2 adultos, 0 crianças</p>
             </div>
             <p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
           </div>
@@ -254,20 +254,20 @@
             <p><i class="fa fa-calendar" aria-hidden="true"></i></p>
             <div>
               <p class="bold">Check-in</p>
-              <p>qua, 24/05/22</p>
+              <p class="checkin-showup">qua, 24/05/22</p>
             </div>
             <p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
-            <input type="date" class="dropdown" name="" id="">
+            <input type="date" class="dropdown" name="" id="entrada-checkin">
           </div>
 
           <div class="reservas__entradas__itens entrada-date">
             <p><i class="fa fa-calendar" aria-hidden="true"></i></p>
             <div>
               <p class="bold">Check-out</p>
-              <p>sex, 26/05/22</p>
+              <p class="checkout-showup">sex, 26/05/22</p>
             </div>
             <p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
-            <input type="date" class="dropdown" name="" id="">
+            <input type="date" class="dropdown" name="" id="entrada-checkout">
           </div>
           <div class="reservas__entradas__adicionais modal-abrir">
             <p></p>
@@ -320,7 +320,7 @@
                     Para crianças, os valores de diária serão cobrados pela
                     metade.
                   </p>
-                  <button class="btn-reservar">Reservar</button>
+                  <button class="btn-reservar quarto-reservar">Reservar</button>
                 </div>
               </div>
             </div>
@@ -352,7 +352,7 @@
                     Para crianças, os valores de diária serão cobrados pela
                     metade.
                   </p>
-                  <button class="btn-reservar">Reservar</button>
+                  <button class="btn-reservar quarto-reservar">Reservar</button>
                 </div>
               </div>
             </div>
@@ -384,7 +384,7 @@
                     Para crianças, os valores de diária serão cobrados pela
                     metade.
                   </p>
-                  <button class="btn-reservar">Reservar</button>
+                  <button class="btn-reservar quarto-reservar">Reservar</button>
                 </div>
               </div>
             </div>
@@ -400,15 +400,15 @@
           <div class="resumo__conteudo">
             <div class="resumo__conteudo__item">
               <p class="bold">Check-in</p>
-              <p class="info">qua, 24/05/22</p>
+              <p class="info checkin-showup">qua, 24/05/22</p>
             </div>
             <div class="resumo__conteudo__item">
               <p class="bold">Check-out</p>
-              <p class="info">sex, 26/05/22</p>
+              <p class="info checkout-showup">sex, 26/05/22</p>
             </div>
             <div class="resumo__conteudo__item">
               <p class="bold">Hospedes</p>
-              <p class="info">2 adultos, 0 crianças</p>
+              <p class="info hospedes-resumo" >2 adultos, 0 crianças</p>
             </div>
           </div>
           <div class="resumo_conteudo_acomodacoes">
@@ -416,7 +416,7 @@
             <div class="resumo_conteudo_acomodacoes__wrap">
               <div class="resumo_conteudo_acomodacoes__itens">
                 <ul>
-                  <li>Deluxe Room</li>
+                  <li class="quarto-selecionado">Escolha seu quarto</li>
                   <li>Noites</li>
                   <li>Adultos</li>
                   <li>Crianças</li>
@@ -424,10 +424,10 @@
               </div>
               <div class="resumo_conteudo_acomodacoes__valores">
                 <ul>
-                  <li>R$0.00</li>
-                  <li>2</li>
-                  <li>2</li>
-                  <li>0</li>
+                  <li class="quarto-selecionado-valor">R$0,00</li>
+                  <li class="display-noites">2</li>
+                  <li class="entrada-adulto">2</li>
+                  <li class="entrada-crianca">0</li>
                 </ul>
               </div>
             </div>
