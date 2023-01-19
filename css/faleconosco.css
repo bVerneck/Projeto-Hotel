@@ -84,11 +84,10 @@ h2 {
 .capa {
   width: 100%;
   height: 30vw;
-  background-color: red;
   background: url("../img/wallpaper.jpg");
   background-position: center center;
   background-size: cover;
-  backdrop-color: black; }
+  background-color: black; }
 
 header {
   display: flex;
