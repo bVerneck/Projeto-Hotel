@@ -89,6 +89,7 @@ h2 {
   background-size: cover;
   background-color: black; }
 
+
 header {
   display: flex;
   align-items: center;
@@ -131,3 +132,4 @@ main {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box; }
+

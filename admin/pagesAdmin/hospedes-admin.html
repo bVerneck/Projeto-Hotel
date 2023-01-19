@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../styleAdmin/hospedes-admin.css">
+    <!-- <link rel="stylesheet" href="../styleAdmin/hospedes-admin.css"> -->
+    <link rel="stylesheet" href="/admin/styleAdmin/css/hospedes-admin.css">
 </head>
 <body>
     <header>
         <div>
             <a href="../../index.html"><img src="../assetsAdmin/logo.png" alt="Logo Imagem" class="logo"></a>
-            <p class="texto-slogan">Desfrute do<br />Luxo Tecnológico</p>
+            <!-- <p class="texto-slogan">Desfrute do<br />Luxo Tecnológico</p> -->
         </div>
         <main>
             <article id="hospedes">
-                <h2>Controle de hóspedes</h2>
+                <h3>Controle de hospedes </h3>
                 <form action="" method="post" enctype="multipart/form-data">
                     
                         <legend>Preencha todos os campos</legend>
@@ -44,7 +45,7 @@
                             <br />
                             <li>
                                 <label for="acompanhantes">Acompanhantes</label>
-                                <input type="number" id="acompanhantes" name="acompanhantes" min="1" max="10" readonly required />
+                                <input type="number" id="acompanhantes" name="acompanhantes" min="1" max="10"required />
                             </li>
                             <br />
             
@@ -72,14 +73,14 @@
                             <br />
                             <li>
                                 <label for="tpAcomodação">Tipo de acomodação</label><br />
-                                <input type="radio" name="tpAcomodação" id="tpAcomodação">Padrão
-                                <input checked type="radio" name="bolo" id="tpAcomodação">Deluxe
-                                <input checked type="radio" name="bolo" id="tpAcomodação">Suíte
+                                <input type="radio" name="tpAcomodação" id="tpAcomodação">Premier room
+                                <input checked type="radio" name="bolo" id="tpAcomodação">Deluxe Room
+                                <input checked type="radio" name="bolo" id="tpAcomodação">T.Ex Premier Room
                             </li>
                             <br />
                             <li>
                                 <label for="obs">Observações</label> <br />
-                                <textarea name="obs" id="obs" cols="30" rows="10"></textarea>
+                                <textarea name="obs" id="obs" cols="50" rows="10"></textarea>
                             </li>
                             <li>
                                 <!-- <input type="image" src="../images/png/btn_bolo.png" alt="Registrar" width="200" /> -->

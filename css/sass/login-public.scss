@@ -1,3 +1,11 @@
+@import 'mixins_social_media';
+
+$color1: #fff;
+$color2:#0dadbd;
+$color3: #7413ac;
+$color4: rgb(19, 18, 18);;
+
+
 *{
     margin: 0;
     padding: 0;
@@ -8,7 +16,7 @@
 }
 
 body {
-    background-image: url("../../img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg");
+    background-image: url("../img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: -70px;
@@ -23,14 +31,14 @@ a {
 }
 
 a:hover {
-    color: #0dadbd;
+    color: $color2;
 }
 
 
 /* container login*/
 
 #login-container {
-    background-color: #fff;
+    background-color: $color1;
     width: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -59,7 +67,7 @@ label {
 }
 
 input {
-    border-bottom: 2px solid rgb(19, 18, 18);
+    border-bottom: 2px solid $color4;
     padding: 10px;
     font-size: 1rem;
     margin-bottom: 20px;
@@ -73,13 +81,13 @@ input[type="submit"]{
     height: 40px;
     border-radius: 20px;
     margin-top: 20px;
-    color: #fff;
-    background-color: #0dadbd;
+    color: $color1;
+    background-color:$color2;
     cursor: pointer;
 }
 
 input[type="submit"]:hover {
-    background-color: #7413ac;
+    background-color: $color3;
     transition: 0.5s;
 }
 
@@ -95,21 +103,21 @@ input[type="submit"]:hover {
     width: 40px;
     border-radius: 50%;
     line-height: 40px;
-    color: #fff;
+    color: $color1;
     margin: 0 5px;
     cursor: pointer;
 }
 
 .fa-facebook {
-    background-color: rgb(59, 89, 152);
+    @include bgColorFace;
 }
 
 .fa-linkedin{
-    background-color: rgb(0, 119, 181);
+    @include bgColorLinkedin;
 }
 
 .fa-twitter{
-    background-color: rgb(0, 172, 238);
+    @include bgColorTwiter;
 }
 
 
@@ -133,14 +141,11 @@ input[type="submit"]:hover {
       align-items: center;
       flex-wrap: wrap;
       font-family: 'Mont';
-      color: #fff;
+      color: $color1;
     }
 
      
     .texto-slogan {
-        color: white;
+        color: $color1;
         font-size: 50px;
     }
-
-
-    
