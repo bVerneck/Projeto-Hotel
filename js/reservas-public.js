@@ -52,22 +52,60 @@ const reserva = {
     estacionamento: { select: false, valor: 25 },
     transferChegada: { select: false, valor: 75 },
     transferPartida: { select: false, valor: 75 },
+    selecionados() {
+      let soma = 0;
+      for (const key of Object.entries(this)) {
+        if (key[1].select) {
+          soma = soma + 1;
+        }
+      }
+      return soma;
+    },
     valor() {
       let soma = 0;
       for (const key of Object.entries(this)) {
-        if (!key[0]) {
-          soma = soma + soma;
+        if (key[1].select) {
+          if (key[0] == "transferChegada" || key[0] == "transferPartida") {
+            soma = soma + key[1].valor;
+          } else {
+            soma = soma + key[1].valor * reserva.noites();
+          }
         }
       }
+      return soma;
     },
   },
-  total: 0,
+  total() {
+    let soma = 0;
+    soma =
+      (this.hospedes.adultos + this.hospedes.criancas / 2) *
+        this.noites() *
+        this.quarto.valor +
+      this.adicionais.valor();
+    return soma;
+  },
 };
 
+//Altera o display de total
+let displayTotal = document.querySelectorAll(".display-total");
+
+
+function altDisplayTotal() {
+  displayTotal.forEach((element) => {
+    element.innerHTML = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(reserva.total());
+  });
+}
+
+//Altera display de hospedes
 const hospedesResumo = document.querySelectorAll(".hospedes-resumo");
 function altHospedes() {
   hospedesResumo.forEach((element) => {
     element.innerHTML = reserva.hospedes.resumo();
+
+  altDisplayTotal(); 
   });
 }
 
@@ -141,6 +179,7 @@ function ModificarCheckin2(x) {
   checkinShowup.forEach((element) => {
     element.innerHTML = reserva.checkin.valor(x);
     changeNoites();
+    altDisplayTotal(); 
   });
 }
 
@@ -163,6 +202,7 @@ function ModificarCheckout2(x) {
   checkoutShowup.forEach((element) => {
     element.innerHTML = reserva.checkout.valor(x);
     changeNoites();
+    altDisplayTotal(); 
   });
 }
 
@@ -194,10 +234,55 @@ btnReservarQuartos.forEach((element, index) => {
         currency: "BRL",
       }).format(reserva.quarto.valor);
     });
+    altDisplayTotal(); 
   };
 });
 
-//
+//Seleção dos adicionais----------
+let inputs = document.querySelectorAll('input[type="checkbox"]');
+let resumoAdicionais = document.querySelectorAll(".resumo-adicionais");
+
+function alteraAdicionais(element) {}
+
+inputs.forEach((element, index) => {
+  element.onchange = function (event) {
+    for (const key of Object.entries(reserva.adicionais)) {
+      if (key[0] === element.id) {
+        key[1].select = element.checked;
+
+        resumoAdicionais.forEach((e) => {
+          if (e.classList.contains(key[0]) && key[1].select) {
+            if (key[0] == "transferChegada" || key[0] == "transferPartida") {
+              e.innerHTML = new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              }).format(key[1].valor);
+            } else {
+              e.innerHTML = new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              }).format(key[1].valor * reserva.noites());
+            }
+          } else {
+            if (e.classList.contains(key[0]) && !key[1].select) {
+              e.innerHTML = new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              }).format(0);
+            }
+          }
+        });
+      }
+    }
+    //Modificando apresentação na página
+    document.querySelector(
+      ".resumo-adicionais-short"
+    ).innerHTML = `${reserva.adicionais.selecionados()} itens`;
+    altDisplayTotal();
+  };
+});
+
+
 
 import ajustaData from "/js/modules/ajustaData-reservas-public.js";
 import calendario from "/js/modules/calendario-reservas-public.js";
