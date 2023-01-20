@@ -89,7 +89,6 @@ const reserva = {
 //Altera o display de total
 let displayTotal = document.querySelectorAll(".display-total");
 
-
 function altDisplayTotal() {
   displayTotal.forEach((element) => {
     element.innerHTML = new Intl.NumberFormat("pt-BR", {
@@ -105,7 +104,7 @@ function altHospedes() {
   hospedesResumo.forEach((element) => {
     element.innerHTML = reserva.hospedes.resumo();
 
-  altDisplayTotal(); 
+    altDisplayTotal();
   });
 }
 
@@ -161,6 +160,51 @@ btnAddCrianca.onclick = function () {
   altHospedes();
 };
 
+//Seleção dos adicionais----------
+let inputs = document.querySelectorAll('input[type="checkbox"]');
+let resumoAdicionais = document.querySelectorAll(".resumo-adicionais");
+
+function alteraAdicionais(element) {
+  for (const key of Object.entries(reserva.adicionais)) {
+    if (key[0] === element.id) {
+      key[1].select = element.checked;
+      resumoAdicionais.forEach((e) => {
+        if (e.classList.contains(key[0]) && key[1].select) {
+          if (key[0] == "transferChegada" || key[0] == "transferPartida") {
+            e.innerHTML = new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(key[1].valor);
+          } else {
+            e.innerHTML = new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(key[1].valor * reserva.noites());
+          }
+        } else {
+          if (e.classList.contains(key[0]) && !key[1].select) {
+            e.innerHTML = new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(0);
+          }
+        }
+      });
+    }
+  }
+  //Modificando apresentação na página
+  document.querySelector(
+    ".resumo-adicionais-short"
+  ).innerHTML = `${reserva.adicionais.selecionados()} itens`;
+  altDisplayTotal();
+}
+
+inputs.forEach((element) => {
+  element.onchange = function () {
+    alteraAdicionais(element);
+  };
+});
+
 //Apresentando noites de estadia----------
 let noites = document.querySelectorAll(".display-noites");
 
@@ -179,7 +223,10 @@ function ModificarCheckin2(x) {
   checkinShowup.forEach((element) => {
     element.innerHTML = reserva.checkin.valor(x);
     changeNoites();
-    altDisplayTotal(); 
+    inputs.forEach((element) => {
+      alteraAdicionais(element);
+    });
+    altDisplayTotal();
   });
 }
 
@@ -202,7 +249,10 @@ function ModificarCheckout2(x) {
   checkoutShowup.forEach((element) => {
     element.innerHTML = reserva.checkout.valor(x);
     changeNoites();
-    altDisplayTotal(); 
+    inputs.forEach((element) => {
+      alteraAdicionais(element);
+    });
+    altDisplayTotal();
   });
 }
 
@@ -234,55 +284,56 @@ btnReservarQuartos.forEach((element, index) => {
         currency: "BRL",
       }).format(reserva.quarto.valor);
     });
-    altDisplayTotal(); 
-  };
-});
-
-//Seleção dos adicionais----------
-let inputs = document.querySelectorAll('input[type="checkbox"]');
-let resumoAdicionais = document.querySelectorAll(".resumo-adicionais");
-
-function alteraAdicionais(element) {}
-
-inputs.forEach((element, index) => {
-  element.onchange = function (event) {
-    for (const key of Object.entries(reserva.adicionais)) {
-      if (key[0] === element.id) {
-        key[1].select = element.checked;
-
-        resumoAdicionais.forEach((e) => {
-          if (e.classList.contains(key[0]) && key[1].select) {
-            if (key[0] == "transferChegada" || key[0] == "transferPartida") {
-              e.innerHTML = new Intl.NumberFormat("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-              }).format(key[1].valor);
-            } else {
-              e.innerHTML = new Intl.NumberFormat("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-              }).format(key[1].valor * reserva.noites());
-            }
-          } else {
-            if (e.classList.contains(key[0]) && !key[1].select) {
-              e.innerHTML = new Intl.NumberFormat("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-              }).format(0);
-            }
-          }
-        });
-      }
-    }
-    //Modificando apresentação na página
-    document.querySelector(
-      ".resumo-adicionais-short"
-    ).innerHTML = `${reserva.adicionais.selecionados()} itens`;
     altDisplayTotal();
   };
 });
 
+//Limpar escolhas----------
+const btnLimpar = document.querySelectorAll(".limpar-dados");
 
+btnLimpar.forEach((element) => {
+  element.onclick = function () {
+    //reset hospedes
+    reserva.hospedes.adultos = 2;
+    entradaAdulto.forEach((element) => {
+      element.innerHTML = reserva.hospedes.adultos;
+    });
+    reserva.hospedes.criancas = 0;
+    entradaCrianca.forEach((element) => {
+      element.innerHTML = reserva.hospedes.criancas;
+    });
+    altHospedes();
+
+    //reset datas
+    ModificarCheckin2(reserva.checkin.days2());
+    ModificarCheckout2(reserva.checkout.days4());
+
+    //reset quarto
+    reserva.quarto.selecionado = "Escolha seu quarto";
+    reserva.quarto.valor = 0;
+    displayQuarto.forEach((e) => {
+      e.innerHTML = reserva.quarto.selecionado;
+    });
+    displayValorQuarto.forEach((e) => {
+      e.innerHTML = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(reserva.quarto.valor);
+    });
+
+    //reset adicionais
+    for (const key of Object.entries(reserva.adicionais)) {
+      key[1].select = false;
+      inputs.forEach((element) => {
+        element.checked = false;
+        alteraAdicionais(element);
+      });
+    }
+
+    //reset total
+    altDisplayTotal();
+  };
+});
 
 import ajustaData from "/js/modules/ajustaData-reservas-public.js";
 import calendario from "/js/modules/calendario-reservas-public.js";
