@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/unified-header.css">
+    <link rel="stylesheet" href="../css/unified-header.css" />
     <link rel="stylesheet" href="../css/Footer.css" />
     <link rel="stylesheet" href="../css/reservas-public.css" />
     <link
@@ -47,27 +47,35 @@
       </div>
     </header> -->
 
-  <!-- Start Unified Header -->
-  <header class="header">
-    <!-- Logo -->
-    <a href="../index.html"><img src="../img/group.png" alt="TX logo" class="tx-logo"></a>
-    <!-- Hamburger icon -->
-    <input class="side-menu" type="checkbox" id="side-menu" />
-    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
-    <!-- Menu -->
-    <nav class="nav">
-      <ul class="menu">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../pages/hotel.html">O Hotel</a></li>
-        <li><a href="../pages/acomodacoes.html#acomodacoes">Acomodações</a></li>
-        <li><a href="../pages/faleconosco.html">Contatos</a></li>
-        <li>
-          <a href="../pages/reservas.html"><button class="btn-rsv"> Reservar </button></a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <!-- End Unified Header -->
+    <!-- Start Unified Header -->
+    <header class="header">
+      <!-- Logo -->
+      <a href="../index.html"
+        ><img src="../img/group.png" alt="TX logo" class="tx-logo"
+      /></a>
+      <!-- Hamburger icon -->
+      <input class="side-menu" type="checkbox" id="side-menu" />
+      <label class="hamb" for="side-menu"
+        ><span class="hamb-line"></span
+      ></label>
+      <!-- Menu -->
+      <nav class="nav">
+        <ul class="menu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/hotel.html">O Hotel</a></li>
+          <li>
+            <a href="../pages/acomodacoes.html#acomodacoes">Acomodações</a>
+          </li>
+          <li><a href="../pages/faleconosco.html">Contatos</a></li>
+          <li>
+            <a href="../pages/reservas.html"
+              ><button class="btn-rsv">Reservar</button></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- End Unified Header -->
 
     <div class="modal-container">
       <div class="modal-hospedes">
@@ -106,21 +114,21 @@
         </div>
         <div class="modal-body flex-col">
           <div class="flex-row">
-            <input type="checkbox" />
+            <input type="checkbox" id="academia" name="academia" />
             <div class="flex-row">
               <p class="bold left">Academia</p>
               <p>R$ 30.00/dia</p>
             </div>
           </div>
           <div class="flex-row">
-            <input type="checkbox" />
+            <input type="checkbox" id="cofre" name="cofre" />
             <div class="flex-row">
               <p class="bold left">Cofre</p>
               <p>R$ 150.00/dia</p>
             </div>
           </div>
           <div class="flex-row">
-            <input type="checkbox" />
+            <input type="checkbox" id="despertador" name="despertador" />
 
             <div class="flex-row">
               <p class="bold left">Despertador</p>
@@ -128,7 +136,7 @@
             </div>
           </div>
           <div class="flex-row">
-            <input type="checkbox" />
+            <input type="checkbox" id="estacionamento" name="estacionamento" />
             <div class="flex-row">
               <p class="bold left">Estacionamento</p>
               <p>R$ 25.00/dia</p>
@@ -140,14 +148,22 @@
               <p class="info-adicional left">Tranporte aeroporto-hotel</p>
             </div>
             <div class="flex-row">
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                id="transferChegada"
+                name="transferChegada"
+              />
               <div class="flex-row">
                 <p class="left">Chegada</p>
                 <p>R$ 75.00</p>
               </div>
             </div>
             <div class="flex-row">
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                id="transferPartida"
+                name="transferPartida"
+              />
               <div class="flex-row">
                 <p class="left">Partida</p>
                 <p>R$ 75.00</p>
@@ -208,26 +224,28 @@
                   <li>Cofre</li>
                   <li>Despertador</li>
                   <li>Estacionamento</li>
-                  <li>Taxi</li>
+                  <li>Tranfer - Chegada</li>
+                  <li>Transfer - Partida</li>
                 </ul>
               </div>
               <div class="resumo_conteudo_adicionais__valores">
                 <ul class="right">
-                  <li>R$0.00</li>
-                  <li>R$0.00</li>
-                  <li>R$0.00</li>
-                  <li>R$0.00</li>
-                  <li>R$0.00</li>
+                  <li class="resumo-adicionais academia">R$0.00</li>
+                  <li class="resumo-adicionais cofre">R$0.00</li>
+                  <li class="resumo-adicionais despertador">R$0.00</li>
+                  <li class="resumo-adicionais estacionamento">R$0.00</li>
+                  <li class="resumo-adicionais transferChegada">R$0.00</li>
+                  <li class="resumo-adicionais transferPartida">R$0.00</li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="resumo__total flex-row">
             <p class="bold">TOTAL:</p>
-            <p class="bold">R$0.00</p>
+            <p class="bold display-total">R$0.00</p>
           </div>
           <div class="modal-btn flex-row">
-            <button class="modal-btn-limpar">Limpar</button>
+            <button class="modal-btn-limpar limpar-dados">Limpar</button>
             <button class="modal-btn-continuar">Continuar</button>
           </div>
         </div>
@@ -257,7 +275,7 @@
               <p class="checkin-showup">qua, 24/05/22</p>
             </div>
             <p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
-            <input type="date" class="dropdown" name="" id="entrada-checkin">
+            <input type="date" class="dropdown" name="" id="entrada-checkin" />
           </div>
 
           <div class="reservas__entradas__itens entrada-date">
@@ -267,13 +285,13 @@
               <p class="checkout-showup">sex, 26/05/22</p>
             </div>
             <p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
-            <input type="date" class="dropdown" name="" id="entrada-checkout">
+            <input type="date" class="dropdown" name="" id="entrada-checkout" />
           </div>
           <div class="reservas__entradas__adicionais modal-abrir">
             <p></p>
             <div>
               <p class="bold">Adicionais</p>
-              <p>5 itens</p>
+              <p class="resumo-adicionais-short">0 itens</p>
               <!-- <p>Academia, Cofre, Despertador, Estacionamento, Taxi</p> -->
             </div>
             <p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
@@ -282,7 +300,7 @@
             <p></p>
             <div>
               <p class="bold">Total</p>
-              <p>R$1000.00</p>
+              <p class="display-total">R$1000.00</p>
             </div>
             <p><i class="fa fa-sort-desc" aria-hidden="true"></i></p>
           </div>
@@ -408,7 +426,7 @@
             </div>
             <div class="resumo__conteudo__item">
               <p class="bold">Hospedes</p>
-              <p class="info hospedes-resumo" >2 adultos, 0 crianças</p>
+              <p class="info hospedes-resumo">2 adultos, 0 crianças</p>
             </div>
           </div>
           <div class="resumo_conteudo_acomodacoes">
@@ -441,71 +459,75 @@
                   <li>Cofre</li>
                   <li>Despertador</li>
                   <li>Estacionamento</li>
-                  <li>Taxi</li>
+                  <li>Tranfer - Chegada</li>
+                  <li>Transfer - Partida</li>
                 </ul>
               </div>
               <div class="resumo_conteudo_adicionais__valores">
                 <ul>
-                  <li>R$0.00</li>
-                  <li>R$0.00</li>
-                  <li>R$0.00</li>
-                  <li>R$0.00</li>
-                  <li>R$0.00</li>
+                  <li class="resumo-adicionais academia">R$0.00</li>
+                  <li class="resumo-adicionais cofre">R$0.00</li>
+                  <li class="resumo-adicionais despertador">R$0.00</li>
+                  <li class="resumo-adicionais estacionamento">R$0.00</li>
+                  <li class="resumo-adicionais transferChegada">R$0.00</li>
+                  <li class="resumo-adicionais transferPartida">R$0.00</li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="resumo__total">
             <p class="bold">TOTAL:</p>
-            <p class="bold">R$0.00</p>
+            <p class="bold display-total">R$0.00</p>
           </div>
           <div class="btn__aside">
-            <button class="btn__aside__limpar">Limpar</button>
+            <button class="btn__aside__limpar limpar-dados">Limpar</button>
             <button class="btn__aside__continuar">Continuar</button>
           </div>
         </div>
       </aside>
     </div>
-      <footer>
-    <div class="company-footer">
-      <img src="../img/tex logo branco 1.png">
-      <h2>HOTÉIS</h2>
-      <p>endereço: xxxxxxx<br>(011) 95423-6698<br>contato@texhotels.com</p>
-    </div>
-    <div class="footer-box">
-      <ul>
-        <li><a href="pages/sobre.html">Sobre Nós</a></li>
-        <li><a href="#">Contatos</a></li>
-        <li><a href="#">Termos e Condições</a></li>
-        <li><a href="https://www.google.com.br/maps">Localização</a></li>
-        <li><a href="#nossos-servicos">Conheça nossos serviços</a></li>
-      </ul>
-    </div>
-    <div class="social-media">
-      <h2>Conecte-se conosco</h2>
-      <ul>
-        <li>
-          <img src="../img/facebook.png">
-          <span>Facebook</span>
-        </li>
-        <li>
-          <img src="../img/instagram.png">
-          <span>Instagram</span>
-        </li>
-        <li>
-          <img src="../img/twitter.png">
-          <span>Twitter</span>
-        </li>
-      </ul>
-    </div>
-    <div class="newsletter">
-      <h2>Assine nosso boletim de notícias:</h2>
-      <form action="" method="post">
-        <input type="email" name="email" placeholder="Endereço de e-mail">
-        <button type="submit">OK</button>
-      </form>
-    </div>
-  </footer>
+    <footer>
+      <div class="company-footer">
+        <img src="../img/tex logo branco 1.png" />
+        <h2>HOTÉIS</h2>
+        <p>
+          endereço: xxxxxxx<br />(011) 95423-6698<br />contato@texhotels.com
+        </p>
+      </div>
+      <div class="footer-box">
+        <ul>
+          <li><a href="pages/sobre.html">Sobre Nós</a></li>
+          <li><a href="#">Contatos</a></li>
+          <li><a href="#">Termos e Condições</a></li>
+          <li><a href="https://www.google.com.br/maps">Localização</a></li>
+          <li><a href="#nossos-servicos">Conheça nossos serviços</a></li>
+        </ul>
+      </div>
+      <div class="social-media">
+        <h2>Conecte-se conosco</h2>
+        <ul>
+          <li>
+            <img src="../img/facebook.png" />
+            <span>Facebook</span>
+          </li>
+          <li>
+            <img src="../img/instagram.png" />
+            <span>Instagram</span>
+          </li>
+          <li>
+            <img src="../img/twitter.png" />
+            <span>Twitter</span>
+          </li>
+        </ul>
+      </div>
+      <div class="newsletter">
+        <h2>Assine nosso boletim de notícias:</h2>
+        <form action="" method="post">
+          <input type="email" name="email" placeholder="Endereço de e-mail" />
+          <button type="submit">OK</button>
+        </form>
+      </div>
+    </footer>
     <!-- <footer>
       <div class="company-footer">
         <img src="../img/tex logo branco 1.png" />
