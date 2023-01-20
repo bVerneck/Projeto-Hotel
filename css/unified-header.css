@@ -1,225 +1,181 @@
 /* Theming */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-/* import font */
-
-:root {
-    --white: #f9f9f9;
-    --black: #36383F;
-    --gray: #85888C;
-    --tex1: rgb(105, 11, 255, 1);
-    --tex2: rgb(133, 57, 253);
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap";
+@font-face {
+  font-family: "Mont";
+  src: url("../fonts/Montserrat-Regular.otf");
 }
-
-/* variables*/
-
-/* Reset */
+@font-face {
+  font-family: "Mont-bold";
+  src: url("../fonts/Montserrat-Bold.otf");
+}
+@font-face {
+  font-family: "Garamond";
+  src: url("fonts/AGaramondPro-Bold.otf");
+}
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--white);
+  background-color: #f9f9f9;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
-/* Header */
 .header {
-    background-color: var(--black);
-    box-shadow: 1px 1px 5px 0px var(--gray);
-    position: sticky;
-    top: 0;
-    width: 100%;
-    font-family: 'Mont', 'Garamond';
-    text-transform: uppercase;
+  background-color: #36383F;
+  box-shadow: 1px 1px 5px 0px #85888C;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  font-family: "Mont", "Garamond";
+  text-transform: uppercase;
 }
 
-header img{
-    display: inline;
+header img {
+  display: inline;
 }
 
 .btn-rsv {
-    width: 6rem;
-    height: 2rem;
-    text-transform: uppercase;
-    border-radius: .4rem;
-    border: none;
-    background-color: var(--tex1);
-    color: var(--white);
+  width: 6rem;
+  height: 2rem;
+  text-transform: uppercase;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: rgb(105, 11, 255);
+  color: #f9f9f9;
 }
-.btn-rsv:hover{
-    background-color: var(--tex2);
-    cursor: pointer;
+.btn-rsv:hover {
+  background-color: rgb(133, 57, 253);
+  cursor: pointer;
 }
 
-/* T.X Logo */
 .tx-logo {
-    margin-left: 6rem;
-    position: relative;
-    width: 8rem;
-    margin-left: 7.5%;
+  margin-left: 6rem;
+  position: relative;
+  width: 8rem;
+  margin-left: 7.5%;
 }
 
-/* Nav menu */
 .nav {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    background-color: var(--black);
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #36383F;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
 }
 
 .menu a {
-    display: block;
-    padding: 30px;
-    color: var(--white);
+  display: block;
+  padding: 30px;
+  color: #f9f9f9;
 }
-
 .menu a:hover {
-    background-color: var(--gray);
+  background-color: #85888C;
 }
 
-.nav {
-    max-height: 0;
-    transition: max-height .5s ease-out;
-}
-
-/* Menu Icon */
 .hamb {
-    cursor: pointer;
-    float: right;
-    padding: 40px 30px;
+  cursor: pointer;
+  float: right;
+  padding: 40px 30px;
 }
-
-/* Style label tag */
 
 .hamb-line {
-    background: var(--white);
-    display: block;
-    height: 2px;
-    position: relative;
-    width: 24px;
-
+  background: #f9f9f9;
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 24px;
 }
-
-/* Style span tag */
-
-.hamb-line::before,
-.hamb-line::after {
-    background: var(--white);
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
-}
-
 .hamb-line::before {
-    top: 5px;
+  background: #f9f9f9;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+  top: 5px;
 }
-
 .hamb-line::after {
-    top: -5px;
+  background: #f9f9f9;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+  top: -5px;
 }
 
 label span {
-    padding: 0px 0px;
+  padding: 0px 0px;
 }
 
 .side-menu {
+  display: none;
+}
+.side-menu:checked ~ nav {
+  max-height: 100%;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+  background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+@media (min-width: 800px) {
+  .nav {
+    margin-right: 6%;
+    max-height: none;
+    top: 0;
+    position: relative;
+    float: right;
+    width: fit-content;
+    background-color: transparent;
+  }
+  .menu li {
+    float: left;
+  }
+  .menu a:hover {
+    background-color: transparent;
+    color: #85888C;
+  }
+  .hamb {
     display: none;
+  }
+}
+@media (min-width: 768px) and (orientation: landscape) {
+  .nav {
+    margin-right: 1%;
+  }
+  .nav li {
+    height: 95px;
+    font-size: 14px;
+    line-height: 33px;
+  }
+  .tx-logo {
+    margin-left: 2.5%;
+  }
+  .menu a {
+    padding: 24px;
+  }
 }
 
-/* Hide checkbox */
-
-/* Toggle menu icon */
-.side-menu:checked~nav {
-    max-height: 100%;
-}
-
-.side-menu:checked~.hamb .hamb-line {
-    background: transparent;
-}
-
-.side-menu:checked~.hamb .hamb-line::before {
-    transform: rotate(-45deg);
-    top: 0;
-}
-
-.side-menu:checked~.hamb .hamb-line::after {
-    transform: rotate(45deg);
-    top: 0;
-}
-
-@media (min-width: 768px) {
-    .nav {
-        margin-right: 6%;
-        max-height: none;
-        top: 0;
-        position: relative;
-        float: right;
-        width: fit-content;
-        background-color: transparent;
-    }
-
-    .menu li {
-        float: left;
-    }
-
-    .menu a:hover {
-        background-color: transparent;
-        color: var(--gray);
-
-    }
-
-    .hamb {
-        display: none;
-    }
-}
-
-@media (min-width: 768px) and (orientation:landscape) {
-  
-    .nav{
-        margin-right: 1% ;
-    }
-
-    .tx-logo {
-        margin-left: 2.5%;
-    }
-
-    .nav li{
-        height: 95px;
-        font-size: 14px;
-        line-height: 33px;
-    }
-
-    .menu a{
-        padding: 24px;
-    }
-}
-
-/* Other */
-
-@font-face {
-    font-family: 'Mont';
-    src: url('../fonts/Montserrat-Regular.otf');
-}
-
-@font-face {
-    font-family: 'Mont-bold';
-    src: url('../fonts/Montserrat-Bold.otf');
-}
-
-@font-face {
-    font-family: 'Garamond';
-    src: url('fonts/AGaramondPro-Bold.otf');
-}
+/*# sourceMappingURL=unified-header.css.map */
