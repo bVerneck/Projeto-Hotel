@@ -86,7 +86,40 @@ const reserva = {
   },
 };
 
-//Altera o display de total
+//Local Storage: Leitura------------
+
+
+//Local Storage: Armazenamento---------
+function alteraLS() {
+  setTimeout(function () {
+    localStorage.setItem("checkin", reserva.checkin.escolhido);
+    localStorage.setItem("checkout", reserva.checkout.escolhido);
+    localStorage.setItem("quarto", reserva.quarto.selecionado);
+    localStorage.setItem("adultos", reserva.hospedes.adultos);
+    localStorage.setItem("criancas", reserva.hospedes.criancas);
+
+    localStorage.setItem("academia", reserva.adicionais.academia.select);
+    localStorage.setItem("cofre", reserva.adicionais.cofre.select);
+    localStorage.setItem("despertador", reserva.adicionais.despertador.select);
+    localStorage.setItem(
+      "estacionamento",
+      reserva.adicionais.estacionamento.select
+    );
+    localStorage.setItem(
+      "transferChegada",
+      reserva.adicionais.transferChegada.select
+    );
+    localStorage.setItem(
+      "transferPartida",
+      reserva.adicionais.transferPartida.select
+    );
+    alteraLS();
+  }, 5000);
+}
+
+alteraLS();
+
+//Altera o display de total----------
 let displayTotal = document.querySelectorAll(".display-total");
 
 function altDisplayTotal() {
@@ -335,9 +368,9 @@ btnLimpar.forEach((element) => {
   };
 });
 
-import ajustaData from "/js/modules/ajustaData-reservas-public.js";
-import calendario from "/js/modules/calendario-reservas-public.js";
-import modal from "/js/modules/modal-reservas-public.js";
+import ajustaData from "./modules/ajustaData-reservas-public.js";
+import calendario from "./modules/calendario-reservas-public.js";
+import modal from "./modules/modal-reservas-public.js";
 
 modal();
 calendario();
