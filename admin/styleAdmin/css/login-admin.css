@@ -18,7 +18,7 @@
 
 
 body{
-    background-image: url("/img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg");
+    background-image: url("../../../img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg");
     min-height: 120px;
     background-repeat: no-repeat;
     background-size: cover;
