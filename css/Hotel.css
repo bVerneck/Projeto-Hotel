@@ -1,192 +1,99 @@
+@font-face {
+  font-family: "Mont";
+  src: url("../fonts/Montserrat-Regular.otf");
+}
+
+@font-face {
+  font-family: "Mont-bold";
+  src: url("../fonts/Montserrat-Bold.otf");
+}
+
+@font-face {
+  font-family: "Garamond";
+  src: url("fonts/AGaramondPro-Bold.otf");
+}
+
 body {
-    margin: 0%;
+  margin: 0%;
 }
-
-/* START-HEADER */
-
-header {
-    background-color: rgb(105, 11, 255, 0);
-    position: absolute;
-    height: 6rem;
-    width: 100%;
-}
-
-header .tx-logo {
-    display: flex;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
-.tx-logo {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    width: 10rem;
-}
-
-.side {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    list-style-type: none;
-    color: rgb(255, 255, 255);
-    gap: 1.5rem;
-    margin-right: 1.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-family: 'Mont', 'Helvetica Neue';
-    font-weight: 600;
-}
-
-.btn {
-    display: inline;
-    margin-left: auto;
-    background-color: rgb(124, 45, 252);
-    border: none;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    text-transform: uppercase;
-    padding: .7rem 1.5rem;
-    font-size: 1rem;
-    font-family: 'Mont-bold', 'Helvetica Neue';
-    font-weight: 600;
-}
-
-.btn:hover {
-    background-color: rgba(124, 45, 252, 0.747);
-}
-
-/* END-HEADER */
-
-/* START-NAV-BAR */
-
-nav {
-    margin-top: 2rem;
-    background-color: rgb(124, 45, 252, 1);
-    position: absolute;
-    height: 1.8rem;
-    width: 100%;
-}
-
-nav ul {
-    display: flex;
-    padding-left: 0;
-    padding-right: 0;
-    align-items: center;
-    justify-content: center;
-    list-style-type: none;
-    color: rgb(255, 255, 255);
-    gap: 5%;
-    font-weight: 600;
-    margin-top: .3rem;
-    font-family: 'Mont', 'Garamond';
-    flex-wrap: wrap;
-}
-
-/* END-NAV-BAR */
-
-/* START-MAIN */
 
 main {
-    padding-top: 10rem;
-    margin-bottom: 0.6rem;
+  padding-top: 2rem;
+  margin-bottom: 0.6rem;
 }
 
 h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 600;
-    font-family: 'Mont', 'Garamond';
-    text-transform: uppercase;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-family: "Mont", "Garamond";
+  text-transform: uppercase;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
 .first-view {
-    background-image: url("../img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg");
-    background-size: cover;
-    width: 100%;
-    height: 8rem;
-    position: absolute;
-    z-index: -1;
+  background-image: url("../img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 8rem;
+  position: absolute;
+  z-index: -1;
 }
 
 .first-box {
-
-    background-color: rgb(211, 211, 211, 0.5);
-    display: flex;
-    /* border: .4rem solid rgb(105, 11, 255); */
-    border-radius: 1rem;
-    padding: 4rem;
-    padding-top: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 65%;
-    flex-direction: column;
-}
-
-.p-left {
-    float: left;
-    text-align: justify;
-    font-size: 1.3rem;
-    width: 55%;
+  display: flex;
+  border-radius: 1rem;
+  padding: 4rem;
+  padding-top: 0rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  flex-direction: column;
 }
 
 .p-right {
-    float: right;
-    text-align: justify;
-    font-size: 1.3rem;
-    width: 55%;
+  float: right;
+  text-align: justify;
+  font-size: 1.3rem;
+  width: 55%;
+  font-family: "Mont", "Garamond";
+  font-size: larger;
 }
 
 .img-left {
-    display: block;
-    margin-right: auto;
-    width: 40%;
-    border-radius: 1rem;
-    position: static;
-    margin-bottom: 10rem;
+  margin-right: auto;
+  width: 40%;
+  border-radius: 1rem;
+  position: static;
+  margin-bottom: 10rem;
 }
-
-.img-right {
-    display: block;
-    margin-left: auto;
-    width: 40%;
-    border-radius: 1rem;
-    margin-bottom: 10rem;
-}
-
-/* END-MAIN */
-
-/* START-FOOTER */
-
-/* OTHER */
 
 a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 a:hover {
-    color: rgba(255, 255, 255, 0.625);
+  color: rgba(255, 255, 255, 0.625);
 }
 
-@font-face {
-    font-family: 'Mont';
-    src: url('../fonts/Montserrat-Regular.otf');
+@media screen and (max-width: 780px) {
+  .first-box {
+    padding: 0;
+    background-color: white;
+  }
+
+  .img-left {
+    width: 100%;
+    margin-bottom: 0rem;
+  }
+
+  .p-right {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 }
 
-@font-face {
-    font-family: 'Mont-bold';
-    src: url('../fonts/Montserrat-Bold.otf');
-}
-
-@font-face {
-    font-family: 'Garamond';
-    src: url('fonts/AGaramondPro-Bold.otf');
-}
+/*# sourceMappingURL=hotel.css.map */
