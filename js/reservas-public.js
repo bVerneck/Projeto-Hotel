@@ -86,9 +86,6 @@ const reserva = {
   },
 };
 
-//Local Storage: Leitura------------
-
-
 //Local Storage: Armazenamento---------
 function alteraLS() {
   setTimeout(function () {
@@ -97,7 +94,6 @@ function alteraLS() {
     localStorage.setItem("quarto", reserva.quarto.selecionado);
     localStorage.setItem("adultos", reserva.hospedes.adultos);
     localStorage.setItem("criancas", reserva.hospedes.criancas);
-
     localStorage.setItem("academia", reserva.adicionais.academia.select);
     localStorage.setItem("cofre", reserva.adicionais.cofre.select);
     localStorage.setItem("despertador", reserva.adicionais.despertador.select);
@@ -321,6 +317,107 @@ btnReservarQuartos.forEach((element, index) => {
   };
 });
 
+//Local Storage: Leitura------------
+function getLS() {
+  localStorage.getItem("checkin")
+    ? (reserva.checkin.escolhido = localStorage.getItem("checkin"))
+    : null;
+  localStorage.getItem("checkout")
+    ? (reserva.checkout.escolhido = localStorage.getItem("checkout"))
+    : null;
+  localStorage.getItem("quarto")
+    ? (reserva.quarto.selecionado = localStorage.getItem("quarto"))
+    : null;
+  localStorage.getItem("adultos")
+    ? (reserva.hospedes.adultos = localStorage.getItem("adultos"))
+    : null;
+  localStorage.getItem("criancas")
+    ? (reserva.hospedes.criancas = localStorage.getItem("criancas"))
+    : null;
+  localStorage.getItem("academia")
+    ? (reserva.adicionais.academia.select =
+        localStorage.getItem("academia") == "true" ? true : false)
+    : null;
+  localStorage.getItem("cofre")
+    ? (reserva.adicionais.cofre.select = localStorage.getItem("cofre")
+        ? true
+        : false)
+    : null;
+  localStorage.getItem("despertador")
+    ? (reserva.adicionais.despertador.select = localStorage.getItem(
+        "despertador"
+      )
+        ? true
+        : false)
+    : null;
+  localStorage.getItem("estacionamento")
+    ? (reserva.adicionais.estacionamento.select = localStorage.getItem(
+        "estacionamento"
+      )
+        ? true
+        : false)
+    : null;
+
+  localStorage.getItem("transferChegada")
+    ? (reserva.adicionais.transferChegada.select =
+        localStorage.getItem("transferChegada") == "true" ? true : false)
+    : null;
+
+  localStorage.getItem("transferPartida")
+    ? (reserva.adicionais.transferPartida.select = localStorage.getItem(
+        "transferPartida"
+      )
+        ? true
+        : false)
+    : null;
+  //resgatar hospedes
+  entradaAdulto.forEach((element) => {
+    element.innerHTML = reserva.hospedes.adultos;
+  });
+  entradaCrianca.forEach((element) => {
+    element.innerHTML = reserva.hospedes.criancas;
+  });
+  altHospedes();
+  //resgatar datas
+  ModificarCheckin2(new Date(reserva.checkin.escolhido));
+  ModificarCheckout2(new Date(reserva.checkout.escolhido));
+  //resgatar quarto
+  displayQuarto.forEach((e) => {
+    if ((e.innerHTML = reserva.quarto.selecionado)) {
+      if (
+        reserva.quarto.valores[
+          reserva.quarto.nomes.indexOf(reserva.quarto.selecionado)
+        ]
+      ) {
+        reserva.quarto.valor =
+          reserva.quarto.valores[
+            reserva.quarto.nomes.indexOf(reserva.quarto.selecionado)
+          ];
+      }
+    }
+  });
+  displayValorQuarto.forEach((e) => {
+    e.innerHTML = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(reserva.quarto.valor);
+  });
+  
+  //resgatar adicionais
+
+  for (const key of Object.entries(reserva.adicionais)) {
+    //console.log(key[1].select);
+    // inputs.forEach((element) => {
+    //   element.checked = key[1].select;
+    //   alteraAdicionais(element);
+    // });
+  }
+
+  //resgatar total
+  altDisplayTotal();
+}
+getLS();
+
 //Limpar escolhas----------
 const btnLimpar = document.querySelectorAll(".limpar-dados");
 
@@ -365,6 +462,9 @@ btnLimpar.forEach((element) => {
 
     //reset total
     altDisplayTotal();
+
+    //reset LocalStorage
+    localStorage.clear();
   };
 });
 
