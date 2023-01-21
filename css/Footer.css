@@ -90,6 +90,10 @@ h2 {
     display: none;
   }
 
+  .footer-box {
+    display: none;
+  }
+
   .social-media ul {
     width: 120px;
     display: flex;
@@ -97,9 +101,9 @@ h2 {
   }
 
   .social-media {
-    padding: 0px 0px 0px 68%;
-    margin-top: -36%;
-    margin-bottom: 126px;
+    padding: 0px 0px 0px 60%;
+    margin-top: -2%;
+    margin-bottom: 21px;
   }
 
   span {
@@ -139,6 +143,18 @@ h2 {
     margin-bottom: -55px;
   }
 
+  .company-footer h2 {
+    margin: 0 0 0px 0;
+  }
+
+  .company-footer p {
+    display: none;
+  }
+
+  .social-media h2 {
+    display: none;
+  }
+
   .texto h1 {
     font-size: 8rem;
   }
@@ -166,9 +182,13 @@ h2 {
   }
 
   .social-media {
-    padding: 0px 0px 0px 83%;
-    margin-top: -14%;
-    margin-bottom: 90px;
+    padding: 0px 0px 0px 72%;
+    margin-top: -18%;
+    margin-bottom: 115px;
+  }
+
+  .social-media h2 {
+    display: none;
   }
 
   span {
@@ -187,7 +207,7 @@ h2 {
   .footer-box {
     width: 106%;
     margin-left: -82px;
-}
+  }
 
   .footer-box li {
     padding: 0%;
@@ -210,6 +230,11 @@ h2 {
     padding-top: 15px;
     width: 25%;
     margin-bottom: -45px;
+  }
+
+  .company-footer h2,
+  p {
+    margin-bottom: 15px;
   }
 
   .texto h1 {

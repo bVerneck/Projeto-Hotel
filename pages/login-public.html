@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="/css/login-public.css">
+  <link rel="stylesheet" href="../css/login-public.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
   <!-- header -->
   <div class="bg-img">
     <div class="bg-img-top">
-      <img class="logo-header" src="../assetsAdmin/logo.png" alt="logo">
+      <img class="logo-header" src="../admin/assetsAdmin/logo.png" alt="logo">
     </div>
     <div class="texto">
       <p class="texto-slogan">
@@ -30,7 +30,7 @@
       <input type="email" name="login" id="login" placeholder="Insira seu e-mail" autocomplete="off"> 
       <label for="password">Senha</label>
       <input type="password" name="password" id="password" placeholder="Insira sua senha">
-      <input type="submit" value="Confirmar">
+      <input type="submit" onclick="logar(); return false"  value="Confirmar">
       <a href="#" id="esqueci_senha">Esqueceu sua senha?</a>
     </form>
     <div id="social-container">
@@ -45,5 +45,6 @@
     </div>
   </div>
  </div>
+ <script src="../js/login-public.js"></script>
 </body>
 </html>

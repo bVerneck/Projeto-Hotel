@@ -6,18 +6,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="icon" type="image/png" href="../img/tex logo branco 1.png"/>
+    <title>Contatos | T.EX Hotel</title>
+
   <link rel="stylesheet" href="../css/faleconosco.css">
+  <link rel="stylesheet" href="../css/unified-header.css">
+
+  <script defer src="../JS/faleconsco.js"></script>
 
   <title>Document</title>
 </head>
 
 <body>
 
-  <header>
+  <!-- <header>
     <div></div>
     <div><a href="../index.html"><img src='../img/group.png'></a></div>
     <div><button class="btn">Reservar</button></div>
+  </header> -->
+
+  <!-- Start Unified Header -->
+  <header class="header">
+    <!-- Logo -->
+    <a href="../index.html"><img src="../img/group.png" alt="TX logo" class="tx-logo"></a>
+    <!-- Hamburger icon -->
+    <input class="side-menu" type="checkbox" id="side-menu" />
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <!-- Menu -->
+    <nav class="nav">
+      <ul class="menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/hotel.html">O Hotel</a></li>
+        <li><a href="../pages/acomodacoes.html#acomodacoes">Acomodações</a></li>
+        <li><a href="../pages/faleconosco.html">Contatos</a></li>
+        <li>
+          <a href="../pages/reservas.html"><button class="btn-rsv"> Reservar </button></a>
+        </li>
+      </ul>
+    </nav>
   </header>
+  <!-- End Unified Header -->
 
   <section class="capa"></section>
 
@@ -33,10 +61,10 @@
       <form action="../index.html">
 
         <div>
-          <p>E-mail</p><input type="text">
-          <p>Nome</p><input type="text">
-          <p>Sobrenome</p><input type="text">
-          <p>Telefone</p><input type="text">
+          <p>E-mail</p><input id="input_email" type="text">
+          <p>Nome</p><input id="input_nome" type ="text">
+          <p>Sobrenome</p><input id="input_sobrenome" type ="text">
+          <p>Telefone</p><input id="input_telefone" type ="text">
         </div>
 
         <div>
@@ -77,16 +105,17 @@
 
         <div>
           <p>Mensagem</p>
-          <textarea name=""></textarea>
+          <textarea id="input_mensagem" name=""></textarea>
         </div>
 
-        <label>
+        <label class="termos">
             <input type="checkbox">
             <span>Concordo que meus dados sejam usados para envio de comunicação e contato.</span>
+        
         </label>
 
         <div>
-          <button class="btn">Enviar</button>
+          <button class="btn" id="btn_enviar">Enviar</button>
         </div>
 
       </form>
@@ -134,6 +163,8 @@
       </form>
     </div>
   </footer>
+
+  
 
 </body>
 
