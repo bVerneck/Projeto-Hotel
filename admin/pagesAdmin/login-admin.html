@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/admin/styleAdmin/css/login-admin.css">
+    <link rel="stylesheet" href="../styleAdmin/css/login-admin.css">
     <title>Login Admin</title>
 </head>
 <body>
@@ -17,9 +17,10 @@
             <input type="email" id="email" placeholder="Enter email" name="email"> <br>
             <label for="pwd">Password</label><br>
             <input type="password" id="pwd" placeholder="Enter password"><br>
-            <button type="submit">Submit</button>
+            <button type="submit" onclick="logar(); return false">Submit</button>
         </form>
     </div>
        
+    <script src="login-admin.js"></script>
 </body>
 </html>
