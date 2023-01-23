@@ -10,16 +10,16 @@
 
 - João Ricardo Jr.
 
-- Willian Pinheiro
+- Willian Pinheiro (P.O)
 
-- Cristian Marcucci 
+- Cristian Marcucci (Scrum Master)
 
 - Renor Oliveira
 
-- Raylan Medeiros (P.O)
+- Raylan Medeiros 
 
 - Caio Seixas
 
-- Nathália Melo (Scrum Master)
+- Nathália Melo 
 
 - Luiz Gonzaga
