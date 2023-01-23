@@ -50,7 +50,6 @@ img {
   max-width: 100%;
 }
 
-
 .imagens {
   width: 550;
   height: 300;
@@ -97,9 +96,7 @@ img {
   font-family: "Montserrat";
 }
 
-
 @media screen and (max-width: 1000px) and (orientation: portrait) {
-
   .column-66,
   .column-33 {
     width: 100%;
@@ -152,4 +149,16 @@ img {
   font-weight: bold !important;
   margin-top: 0;
   padding-top: 0;
+}
+
+.row .holder .imagens img {
+  opacity: 0.7;
+  transition: all 0.6s;
+}
+
+.row .holder .imagens img:hover {
+  opacity: 1;
+  cursor: pointer;
+  width: 605px;
+  box-shadow: 5px 10px 10px grey;
 }
