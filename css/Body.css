@@ -28,6 +28,7 @@ body {
   float: left;
   width: 66.66666%;
   padding: 10px;
+ 
 }
 
 .column-33 {
@@ -48,6 +49,7 @@ img {
   display: block;
   height: auto;
   max-width: 100%;
+  
 }
 
 .imagens {
@@ -55,7 +57,9 @@ img {
   height: 300;
   margin: 10px;
   text-align: center;
+  border-radius: 18px;
 }
+
 
 .imagen {
   width: 550px;
@@ -68,6 +72,16 @@ img {
 .textoimg {
   font-size: 30px;
   font-family: "Montserrat";
+  padding-top: 8%;
+  padding-left: 5%;
+  
+  
+}
+.textoimgDelicie{
+  font-size: 30px;
+  font-family: "Montserrat";
+  padding-left:5% ;
+  
 }
 
 .holder {
