@@ -468,9 +468,16 @@ btnLimpar.forEach((element) => {
   };
 });
 
+
 import ajustaData from "./modules/ajustaData-reservas-public.js";
 import calendario from "./modules/calendario-reservas-public.js";
 import modal from "./modules/modal-reservas-public.js";
 
 modal();
 calendario();
+// modalModal();
+
+
+
+
+

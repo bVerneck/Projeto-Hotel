@@ -32,6 +32,8 @@ function modal() {
       };
     });
 
+    
+
     //Função que fecha o modal ao clicar fora da caixa
     containerModal.forEach((element, item) => {
       element.onclick = function (event) {
@@ -44,3 +46,5 @@ function modal() {
 }
 
 export default modal;
+
+

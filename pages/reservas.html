@@ -12,6 +12,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script src="../js/reservas-public.js" type="module" async></script>
+    <script src="/js/modal.js" type="" async></script>
+
     <title>Hotel TEX</title>
   </head>
   <body>
@@ -103,6 +105,7 @@
         </div>
         <div class="modal-confirma">
           <button class="btn-reservar btn-modal-ok modal-ok">OK</button>
+         
         </div>
       </div>
     </div>
@@ -251,6 +254,7 @@
         </div>
         <div class="modal-confirma">
           <button class="btn-reservar btn-modal-ok modal-ok">OK</button>
+
         </div>
       </div>
     </div>
@@ -481,11 +485,197 @@
           </div>
           <div class="btn__aside">
             <button class="btn__aside__limpar limpar-dados">Limpar</button>
-            <button class="btn__aside__continuar">Continuar</button>
+            <button class="btn__aside__continuar" onclick="openModal()" >Continuar</button>
+            <div class="modal">
+
+            </div>
           </div>
         </div>
       </aside>
     </div>
+<!-- Inserção modal botão-continuar André-->
+
+<!-- <button class="btnOpenModal" onclick="openModal()">Open Modal</button> -->
+<div class="modalContainer">
+<div class="modalConf">
+  <h2>Informações</h2>
+  <hr>
+  <!-- <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet perferendis, minus laudantium fuga provident voluptate ipsam sit ab autem ipsum eaque eum saepe recusandae possimus alias perspiciatis rem cum repudiandae. Ipsa aperiam eos vitae voluptatem, fuga nam asperiores quaerat, illum, explicabo officiis omnis. Reiciendis, ducimus voluptatum consectetur quaerat quidem tempora! -->
+  <aside class="reservas__container__resumo">
+    <div class="reservas__container__resumo__holder">
+      <div class="resumo__header">
+        <h3 class="resumo__titulo">Resumo da reserva</h3>
+        <button class="no-desktop"></button>
+      </div>
+      <div class="resumo__conteudo">
+        <div class="resumo__conteudo__item">
+          <p class="bold">Check-in</p>
+          <p class="info checkin-showup">qua, 24/05/22</p>
+        </div>
+        <div class="resumo__conteudo__item">
+          <p class="bold">Check-out</p>
+          <p class="info checkout-showup">sex, 26/05/22</p>
+        </div>
+        <div class="resumo__conteudo__item">
+          <p class="bold">Hospedes</p>
+          <p class="info hospedes-resumo">2 adultos, 0 crianças</p>
+        </div>
+      </div>
+      <div class="resumo_conteudo_acomodacoes">
+        <p class="bold">Quarto</p>
+        <div class="resumo_conteudo_acomodacoes__wrap">
+          <div class="resumo_conteudo_acomodacoes__itens">
+            <ul>
+              <li class="quarto-selecionado">Escolha seu quarto</li>
+              <li>Noites</li>
+              <li>Adultos</li>
+              <li>Crianças</li>
+            </ul>
+          </div>
+          <div class="resumo_conteudo_acomodacoes__valores">
+            <ul>
+              <li class="quarto-selecionado-valor">R$0,00</li>
+              <li class="display-noites">2</li>
+              <li class="entrada-adulto">2</li>
+              <li class="entrada-crianca">0</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="resumo_conteudo_adicionais">
+        <p class="bold">Adicionais</p>
+        <div class="resumo_conteudo_adicionais__wrap">
+          <div class="resumo_conteudo_adicionais__itens">
+            <ul>
+              <li>Academia</li>
+              <li>Cofre</li>
+              <li>Despertador</li>
+              <li>Estacionamento</li>
+              <li>Tranfer - Chegada</li>
+              <li>Transfer - Partida</li>
+            </ul>
+          </div>
+          <div class="resumo_conteudo_adicionais__valores">
+            <ul>
+              <li class="resumo-adicionais academia">R$0.00</li>
+              <li class="resumo-adicionais cofre">R$0.00</li>
+              <li class="resumo-adicionais despertador">R$0.00</li>
+              <li class="resumo-adicionais estacionamento">R$0.00</li>
+              <li class="resumo-adicionais transferChegada">R$0.00</li>
+              <li class="resumo-adicionais transferPartida">R$0.00</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="resumo__total">
+        <p class="bold">TOTAL:</p>
+        <p class="bold display-total">R$0.00</p>
+      </div>
+      <div class="btn__aside">
+        <!-- <button class="btn__aside__limpar limpar-dados">Limpar</button>
+        <button class="btn__aside__continuar" onclick="openModal()">Continuar</button> -->
+        <div class="modal">
+  
+        </div>
+      </div>
+    </div>
+  </aside>
+  <!-- </span> -->
+
+<div class="btns">
+  <!-- <button class="btnOk" onclick="closeModal()">ok</button> -->
+  <button class="btnClose" onclick="closeModal()">Fechar</button>
+</div>
+</div>
+</div>
+
+<!-- outro... -->
+<div class="modal-container">
+  <div class="modal-adicionais">
+    <div class="modal-header flex-row">
+      <h4>Adicionais</h4>
+      <button class="modal-fechar">X</button>
+    </div>
+    <div class="modal-body flex-col">
+      <div class="flex-row">
+        <input type="checkbox" id="academia" name="academia" />
+        <div class="flex-row">
+          <p class="bold left">Academia</p>
+          <p>R$ 30.00/dia</p>
+        </div>
+      </div>
+      <div class="flex-row">
+        <input type="checkbox" id="cofre" name="cofre" />
+        <div class="flex-row">
+          <p class="bold left">Cofre</p>
+          <p>R$ 150.00/dia</p>
+        </div>
+      </div>
+      <div class="flex-row">
+        <input type="checkbox" id="despertador" name="despertador" />
+
+        <div class="flex-row">
+          <p class="bold left">Despertador</p>
+          <p>R$ 20.00/dia</p>
+        </div>
+      </div>
+      <div class="flex-row">
+        <input type="checkbox" id="estacionamento" name="estacionamento" />
+        <div class="flex-row">
+          <p class="bold left">Estacionamento</p>
+          <p>R$ 25.00/dia</p>
+        </div>
+      </div>
+      <div class="flex-col">
+        <div class="flex-row">
+          <p class="bold">Transfer</p>
+          <p class="info-adicional left">Tranporte aeroporto-hotel</p>
+        </div>
+        <div class="flex-row">
+          <input type="checkbox" id="transferChegada" name="transferChegada" />
+          <div class="flex-row">
+            <p class="left">Chegada</p>
+            <p>R$ 75.00</p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <input type="checkbox" id="transferPartida" name="transferPartida" />
+          <div class="flex-row">
+            <p class="left">Partida</p>
+            <p>R$ 75.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <p>Academia, Cofre, Despertador, Estacionamento, Taxi</p> -->
+    <div class="modal-confirma">
+      <button class="btn-reservar btn-modal-ok modal-ok">OK</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="modal-container-m">
+  <div class="modal-conf">
+    <h2>Info</h2>
+    <hr>
+    <span>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ut assumenda perferendis a quod expedita!
+      Assumenda ad similique expedita totam.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ut assumenda perferendis a quod expedita!
+      Assumenda ad similique expedita totam.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ut assumenda perferendis a quod expedita!
+      Assumenda ad similique expedita totam.
+    </span>
+    <hr>
+    <div class="btns">
+      <button class="btnOk" onclick="closeModalx()">ok</button>
+      <button class="btnClose" onclick="closeModalx()">close</button>
+    </div>
+  </div>
+</div> -->
+
+
     <footer>
       <div class="company-footer">
         <img src="../img/tex logo branco 1.png" />
