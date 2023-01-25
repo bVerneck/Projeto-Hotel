@@ -189,9 +189,10 @@ $borda: 1px solid #2b2b2b;
   }
 }
 
-.modal-confirma{
+// .modal-confirma{
+    
+// }
 
-}
 
 .modal-ativo {
   display: flex;
@@ -456,5 +457,99 @@ $borda: 1px solid #2b2b2b;
 
   .no-mobile {
     display: block;
+  }
+}
+//teste modal - botão continuar
+
+.btnOpenModal {
+  font-size: x-large;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: blueviolet;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+hr {
+  border: 0px;
+  border-top: 1px solid lightgray;
+
+}
+
+.modalContainer {
+  width: 100vw;
+  position: fixed;
+  top: 30px;
+  display: none;
+  z-index: 999;
+  justify-content: center;
+}
+
+.modalConf {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: aliceblue;
+  border-radius: 10px;
+  width: 30%;
+}
+
+.active {
+  display: flex;
+}
+
+.active .modal {
+  animation: modal .4s;
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -60px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+span {
+  margin: 10px auto;
+  color: #670bff;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btns button {
+  font-size: medium;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.btnOk {
+  background-color: blue;
+}
+
+.btnClose {
+  background-color: brown;
+}
+
+@media (max-width: 500px) {
+  .modalConf {
+    padding: 10px;
+    width: 80%;
+  }
+
+  span .btns button {
+    font-size: smaller;
   }
 }
