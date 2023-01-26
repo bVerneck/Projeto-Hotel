@@ -4,22 +4,22 @@
 
 ### A Squad é composta por:
 
-- Bruno Verneck 
+- Bruno Verneck
 
-- André Sampaio 
+- André Sampaio
 
 - João Ricardo Jr.
 
-- Willian Pinheiro
+- Willian Pinheiro (PO)
 
-- Cristian Marcucci 
+- Cristian Marcucci (Scrum Master)
 
 - Renor Oliveira
 
-- Raylan Medeiros (P.O)
+- Raylan Medeiros
 
 - Caio Seixas
 
-- Nathália Melo (Scrum Master)
+- Nathália Melo
 
 - Luiz Gonzaga
