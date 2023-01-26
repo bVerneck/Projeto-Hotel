@@ -1,6 +1,6 @@
 <template>
  <header class="header">
-    Logo
+    <!-- Logo -->
     <a href="../index.html"><img src="../assets/group.png" alt="TX logo" class="tx-logo"></a>
     <!-- Hamburger icon -->
     <input class="side-menu" type="checkbox" id="side-menu" />
@@ -13,7 +13,7 @@
         <li><a href="../pages/acomodacoes.html#acomodacoes">Acomodações</a></li>
         <li><a href="../pages/faleconosco.html">Contatos</a></li>
         <li>
-          <a href="../pages/reservas.html"><button class="btn-rsv"> Reservar </button></a>
+          <botaoReserva />
         </li>
       </ul>
     </nav>
@@ -22,8 +22,12 @@
 </template>
 
 <script>
+import botaoReserva from '/src/components/botaoReserva.vue'
 export default {
   name: 'unifiedHeader',
+  components: {
+    botaoReserva,
+    },
   
 }
 </script>
@@ -76,19 +80,6 @@ header img {
   display: inline;
 }
 
-.btn-rsv {
-  width: 6rem;
-  height: 2rem;
-  text-transform: uppercase;
-  border-radius: 0.4rem;
-  border: none;
-  background-color: rgb(105, 11, 255);
-  color: #f9f9f9;
-}
-.btn-rsv:hover {
-  background-color: rgb(133, 57, 253);
-  cursor: pointer;
-}
 
 .tx-logo {
   margin-left: 6rem;
@@ -209,8 +200,4 @@ label span {
     padding: 24px;
   }
 }
-
-
-
-
 </style>
