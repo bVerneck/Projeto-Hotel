@@ -1,7 +1,7 @@
 <template>
  <header class="header">
     <!-- Logo -->
-    <a href="../index.html"><img src="../assets/group.png" alt="TX logo" class="tx-logo"></a>
+    <logoHeader />
     <!-- Hamburger icon -->
     <input class="side-menu" type="checkbox" id="side-menu" />
     <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
@@ -23,10 +23,12 @@
 
 <script>
 import botaoReserva from '/src/components/botaoReserva.vue'
+import logoHeader from '/src/components/logoHeader.vue'
 export default {
   name: 'unifiedHeader',
   components: {
     botaoReserva,
+    logoHeader
     },
   
 }
@@ -78,14 +80,6 @@ ul {
 
 header img {
   display: inline;
-}
-
-
-.tx-logo {
-  margin-left: 6rem;
-  position: relative;
-  width: 8rem;
-  margin-left: 7.5%;
 }
 
 .nav {
@@ -192,9 +186,6 @@ label span {
     height: 95px;
     font-size: 14px;
     line-height: 33px;
-  }
-  .tx-logo {
-    margin-left: 2.5%;
   }
   .menu a {
     padding: 24px;
