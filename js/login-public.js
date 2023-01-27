@@ -1,26 +1,13 @@
-// logar()
-
-// var userInfo = [
-//     { email: "Raylan@tex.com", password: "123456", nome: "Raylan medeiros" },
-//     { email: "admin@tex.com", password: "admin", nome: "Tex Admin" },
-//     { email: "user3@tex.com", password: "password3", nome: "teste2" }
-// ];
-
 function logar() {
     var login = document.getElementById('login').value;
     var password = document.getElementById('password').value;
-    var confirmation = 0;
+    var confirmation = "0";
     var userAtual;
 
-    localStorage.setItem("user", login)
-
+    localStorage.setItem("user", login);
     var email_localStorage = localStorage.getItem("email");
 
     const users = JSON.parse(localStorage.getItem("users"));
-    // console.log(users);
-    // users.forEach(user => {
-    //     console.log(`Nome: ${user.name}, Email: ${user.email}`);
-    // });
 
     users.forEach(user => {
 
@@ -28,12 +15,12 @@ function logar() {
             location.href = "../index.html";
             localStorage.setItem("confirmation", "1");
             localStorage.setItem("name", user.name);
-
         }
+
     });
 
     if (localStorage.getItem("confirmation") != "1") {
-        alert("Usuário ou senha incorretos!")
+        alert("Usuário ou senha incorretos!");
     }
 }
 
@@ -47,7 +34,7 @@ function confirm() {
 }
 
 function logout() {
-    localStorage.setItem("confirmation", "0");;
+    localStorage.setItem("confirmation", "0");
     alert("Você se desconectou!");
 }
 
@@ -81,12 +68,11 @@ form.addEventListener("submit", (e) => {
         location.href = "../index.html";
         alert("Cadastro realizado com sucesso!")
     }
-    
+
 });
 
 function tester() {
     const users = JSON.parse(localStorage.getItem("users"));
-    // console.log(users);
     users.forEach(user => {
         console.log(`Nome: ${user.name}, Email: ${user.email}`);
     });
