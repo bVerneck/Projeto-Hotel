@@ -1,7 +1,7 @@
 <template>
   <unifiedHeader /> <br />
   <div>
-    <footerTer />
+    <footerContent />
   </div>
   
     
@@ -10,13 +10,13 @@
 
 <script>
 import unifiedHeader from '../src/components/unifiedHeader.vue'
-import footerTer from '../src/components/footerTer.vue'
+import footerContent from './components/footerContent.vue'
 
 export default {
   name: 'App',
   components: {
     unifiedHeader,
-    footerTer
+    footerContent
   },
   
 }
