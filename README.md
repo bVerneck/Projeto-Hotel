@@ -1,19 +1,25 @@
-# projeto
+# Projeto Hotel
 
-## Project setup
-```
-npm install
-```
+## Este é o repositório usado para versionamento de código no desenvolvimento do site do "T.Ex Hotel".
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### A Squad é composta por:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Bruno Verneck
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- André Sampaio
+
+- João Ricardo Jr.
+
+- Willian Pinheiro 
+
+- Cristian Marcucci 
+
+- Renor Oliveira
+
+- Raylan Medeiros
+
+- Caio Seixas
+
+- Nathália Melo
+
+- Luiz Gonzaga
