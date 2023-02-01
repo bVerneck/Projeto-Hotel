@@ -6,7 +6,7 @@
     <div class="reserva__quartos__container">
       <div class="quarto__container">
         <div class="quarto__imagem">
-          <img src="../../assets/img/premier-room.webp" alt="Premier Room" />
+          <img src="@/assets/img/premier-room.webp" alt="Premier Room" />
           <ul class="no-mobile">
             <li>Permitido pets</li>
             <li>WiFi Free</li>
@@ -37,7 +37,7 @@
       </div>
       <div class="quarto__container">
         <div class="quarto__imagem">
-          <img src="../../assets/img/deluxe-room.jpg" alt="Deluxe Room" />
+          <img src="@/assets/img/deluxe-room.jpg" alt="Deluxe Room" />
           <ul class="no-mobile">
             <li>Permitido pets</li>
             <li>WiFi Free</li>
