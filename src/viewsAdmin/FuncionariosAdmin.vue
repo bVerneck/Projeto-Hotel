@@ -119,7 +119,7 @@
 import HeaderAdmin from './components/HeaderAdmin.vue';
 
 export default {
-  name: "FuncionariosAdmin",
+  name: "funcionariosAdmin",
   components: {
     HeaderAdmin
   },
@@ -137,7 +137,7 @@ export default {
 body {
   margin: 0;
   background-color: rgb(194, 191, 191);
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 /* CLASSES */

@@ -1,16 +1,17 @@
 <template>
    
   <div class="barraRoxaTop">
-    <a href="../../index.html">
-      <img src="../assets/img/logo.png" alt="Logo Imagem" class="logo" />
-    </a>
+   <router-link to="/"><img src="../assets/img/logo.png" alt="Logo Imagem" class="logo" /></router-link>
+      
+    
     <a href="">
       <img src="../assets/img/icone-logout.png" class="botaosair" alt="" />
     </a>
     <div class="barraNavegacao">
-      <a href="../pagesAdmin/home-admin.html">Home</a>
-      <a href="../pagesAdmin/hospedes-admin.html">Hóspedes</a>
-      <a href="../pagesAdmin/reservas-admin.html">Reservas</a>
+      <router-link to="/homeAdmin">Home</router-link>
+      <router-link to="/hospedesAdmin">Hospedes</router-link>
+      <router-link to="/reservasAdmin">Reservas</router-link>
+      <router-link to="/funcionariosAdmin">Funcionarios</router-link>
     </div>
   </div>
 
@@ -23,26 +24,41 @@ export default {
 }
 </script>
 
-<style >
+<style scoped>
+
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: "Mont";
+  src: url("../assets/fonts/Montserrat-Regular.otf");
+}
 .botaosair {
   width: 37px;
   float: right;
   filter: invert(100%);
 }
+.botaosair:hover{
+   filter: none;
+}
+
 
 .barraRoxaTop {
   background-color: #670bff;
   display: block;
   font-size: 1.2em;
+  
 }
 
 .logo {
-  width: 35%;
-  padding-left: 25%;
+  width: 25%;
+  padding-left: 15%;
   cursor: pointer;
 }
+
 .barraNavegacao {
   display: initial;
+  padding-left: 0.00001%;
 }
 .barraNavegacao a {
   color: rgb(255, 255, 255);
@@ -51,6 +67,6 @@ export default {
   font-size: 1.4em;
 }
 .barraNavegacao a:hover {
-  color: red;
+  color: rgba(0, 0, 0, 0.425);
 }
 </style>

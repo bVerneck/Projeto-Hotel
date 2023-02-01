@@ -36,11 +36,39 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/ReservasPublic.vue"),
   },
   {
-    path: "/fucionariosAdmin",
+    path: "/funcionariosAdmin",
     name: "funcionariosAdmin",
     
     component: () =>
       import("../viewsAdmin/FuncionariosAdmin.vue"),
+  },
+  {
+    path: "/hospedesAdmin",
+    name: "hospedesAdmin",
+    
+    component: () =>
+      import("../viewsAdmin/HospedesAdmin.vue"),
+  },
+  {
+    path: "/reservasAdmin",
+    name: "reservasAdmin",
+    
+    component: () =>
+      import("../viewsAdmin/ReservasAdmin.vue"),
+  },
+  {
+    path: "/homeAdmin",
+    name: "homeAdmin",
+    
+    component: () =>
+      import("../viewsAdmin/HomeAdmin.vue"),
+  },
+  {
+    path: "/loginAdmin",
+    name: "loginAdmin",
+    
+    component: () =>
+      import("../viewsAdmin/LoginAdmin.vue"),
   },
   
  

@@ -79,7 +79,7 @@
       </div>
 
       <div class="imagen" data-title="Deluxe Room">
-        <img src="@/assets/img/QUARTO_DELUXE_ROOM.jpg" style="border-radius: 18px;">
+        <img src="@/assets/img/quartoDeluxeRoom.jpg" style="border-radius: 18px;">
         <p class="descImagens">Cada detalhe foi cuidadosamente pensado e trabalhado tanto nos ambientes externos quanto
           internos, proporcionando uma experiência única e inesquecível em cada espaço.</p>
       </div>
