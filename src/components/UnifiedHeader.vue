@@ -12,9 +12,9 @@
         <li><router-link to="/sobre">Sobre</router-link></li>
         <li><router-link to="/acomodacoes">Acomodações</router-link></li>
         <li><router-link to="/contatos">Contatos</router-link></li>
-        <li>
+         <li>
           <BotaoReservar />
-        </li>
+         </li>
       </ul>
     </nav>
   </header>
@@ -26,10 +26,16 @@ import BotaoReservar from "@/components/BotaoReservar.vue";
 import LogoHeader from "@/components/LogoHeader.vue";
 export default {
   name: "UnifiedHeader",
+  data(){
+    return{
+
+    }
+  },
   components: {
     BotaoReservar,
     LogoHeader,
   },
+
 };
 </script>
 
