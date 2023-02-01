@@ -12,9 +12,9 @@
           <li><router-link to="/sobre">Sobre</router-link></li>
           <li><router-link to="/acomodacoes">Acomodações</router-link></li>
           <li><router-link to="/contatos">Contatos</router-link></li>
-            <li><router-link to="/contatos">Login</router-link></li>
-            <li><router-link to="/contatos">Cadastre-se</router-link></li>
-           <li>
+          <li><router-link to="/contatos">Login</router-link></li>
+          <li><router-link to="/contatos">Cadastre-se</router-link></li>
+          <li>
             <BotaoReservar />
            </li>
         </ul>
@@ -24,7 +24,7 @@
   </template>
   
   <script>
-  
+
   import BotaoReservar from "@/components/BotaoReservar.vue";
   import LogoHeader from "@/components/LogoHeader.vue";
   export default {

@@ -43,6 +43,13 @@ const routes = [
       import("../viewsAdmin/FuncionariosAdmin.vue"),
   },
   {
+
+    path: "/login-public",
+    name: "login-public",
+    
+    component: () =>
+      import("../views/LoginPublic.vue"),
+
     path: "/hospedesAdmin",
     name: "hospedesAdmin",
     
@@ -69,6 +76,7 @@ const routes = [
     
     component: () =>
       import("../viewsAdmin/LoginAdmin.vue"),
+
   },
   
  
