@@ -9,6 +9,13 @@ export default {
 </script>
 
 <style scoped>
+font-face {
+    font-family:  'Mont';
+    src: url('../assets/fonts/Montserrat-Regular.otf');
+}
+*{
+  font-family: 'Mont';
+}
 .btn-rsv {
   padding: 0;
   width: 6rem;
@@ -18,6 +25,8 @@ export default {
   border: none;
   background-color: rgb(105, 11, 255);
   color: #f9f9f9;
+  text-align: center;
+  
 }
 .btn-rsv:hover {
   background-color: rgb(133, 57, 253);

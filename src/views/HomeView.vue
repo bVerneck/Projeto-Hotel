@@ -114,17 +114,19 @@
 <div class="row">
   <div class="holder">
 
+
     <div class="imagen" data-title="Premier Room">
       <img src="@/assets/img/premier-room.webp" style="border-radius: 18px;">
       <p class="descImagens">Pensado e arquitetado pelos melhores profissionais do mundo, visando para que nossos
         clientes tenham total conforto e tecnologia ao seu dispor.</p>
     </div>
 
-    <div class="imagen" data-title="Deluxe Room">
-      <img src="@/assets/img/QUARTO_DELUXE_ROOM.jpg" style="border-radius: 18px;">
-      <p class="descImagens">Cada detalhe foi cuidadosamente pensado e trabalhado tanto nos ambientes externos quanto
-        internos, proporcionando uma experiência única e inesquecível em cada espaço.</p>
-    </div>
+      <div class="imagen" data-title="Deluxe Room">
+        <img src="@/assets/img/quartoDeluxeRoom.jpg" style="border-radius: 18px;">
+        <p class="descImagens">Cada detalhe foi cuidadosamente pensado e trabalhado tanto nos ambientes externos quanto
+          internos, proporcionando uma experiência única e inesquecível em cada espaço.</p>
+      </div>
+
 
     <div class="imagen" data-title="T.Ex Premier Room">
       <img src="@/assets/img/tex-premier-room.webp" style="border-radius: 18px;">
