@@ -42,6 +42,7 @@ const routes = [
     component: () =>
       import("../viewsAdmin/FuncionariosAdmin.vue"),
   },
+ 
 ];
 
 const router = createRouter({
