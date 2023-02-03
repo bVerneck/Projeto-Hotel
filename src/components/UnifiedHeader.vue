@@ -17,8 +17,8 @@
         </li>
       </ul>
     </nav>
-  </header>
-  <!-- End Unified Header -->
+  </header> 
+   <!-- End Unified Header -->
 </template>
 
 <script>

@@ -9,12 +9,7 @@
     content="https://untappedcities.com/wp-content/uploads/2011/08/Marina-Bay-Sands-Hotel-Singapore.jpg" />
 
   <link rel="icon" type="image/png" href="img/tex logo branco 1.png" />
-  <title>T.EX Hotel - Desfrute do luxo tecnológico</title>
-
-
-  <link rel="stylesheet" href="css/Header.css">
-  <link rel="stylesheet" href="css/Body.css">
-  <link rel="stylesheet" href="css/Footer.css">
+  <title>T.EX Hotel - Desfrute do luxo tecnológico</title> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 
 </head>
@@ -31,7 +26,7 @@
           <li><router-link to="/sobre">O Hotel</router-link></li>
           <li><router-link to="/acomodacoes">Acomodações</router-link></li>
           <li><router-link to="/contatos">Contatos</router-link></li>
-          <li><router-link to="/login-public">Login</router-link></li>
+          <li><router-link to="/loginPublic">Login</router-link></li>
           <li><router-link to="/cadastrese">Cadastre-se</router-link></li>         
         </ul>
         <!-- <div class="nav-cadastro">
@@ -178,8 +173,7 @@
 </template>
 
 <script>
-// import HeaderHome from '@/components/HeaderHome.vue'
-// import UnifiedHeader from "@/components/UnifiedHeader.vue";
+
 import BotaoReservar from "@/components/BotaoReservar.vue";
 import LogoHeader from "@/components/LogoHeader.vue";
 import UnifiedFooter from "@/components/UnifiedFooter.vue";
@@ -187,9 +181,7 @@ import UnifiedFooter from "@/components/UnifiedFooter.vue";
 export default {
   name: "HomeView",
   components: {
-    // HeaderHome,
-    // UnifiedHeader,
-    UnifiedFooter
+      UnifiedFooter
   }
 };
 </script>
