@@ -10,17 +10,25 @@
         <div class="modal-adulto flex-row">
           <p>Adultos</p>
           <div class="flex-row">
-            <button class="retirar btn-rem-adulto">-</button>
-            <p class="entrada-adulto">2</p>
-            <button class="adicionar btn-add-adulto">+</button>
+            <button @click="btnRemAdulto" class="retirar btn-rem-adulto">
+              -
+            </button>
+            <p class="entrada-adulto">{{ entradaAdulto }}</p>
+            <button @click="btnAddAdulto" class="adicionar btn-add-adulto">
+              +
+            </button>
           </div>
         </div>
         <div class="modal-crianca flex-row">
           <p>Crianças</p>
           <div class="flex-row">
-            <button class="retirar btn-rem-crianca">-</button>
-            <p class="entrada-crianca">0</p>
-            <button class="adicionar btn-add-crianca">+</button>
+            <button @click="btnRemCrianca" class="retirar btn-rem-crianca">
+              -
+            </button>
+            <p class="entrada-crianca">{{ entradaCrianca }}</p>
+            <button @click="btnAddCrianca" class="adicionar btn-add-crianca">
+              +
+            </button>
           </div>
         </div>
       </div>
@@ -39,21 +47,39 @@
       </div>
       <div class="modal-body flex-col">
         <div class="flex-row">
-          <input type="checkbox" id="academia" name="academia" />
+          <input
+            v-bind:checked="objreservas.default.adicionais.academia.select()"
+            @change="alteraAdicionais"
+            type="checkbox"
+            id="academia"
+            name="academia"
+          />
           <div class="flex-row">
             <p class="bold left">Academia</p>
             <p>R$ 30.00/dia</p>
           </div>
         </div>
         <div class="flex-row">
-          <input type="checkbox" id="cofre" name="cofre" />
+          <input
+            v-bind:checked="objreservas.default.adicionais.cofre.select()"
+            @change="alteraAdicionais"
+            type="checkbox"
+            id="cofre"
+            name="cofre"
+          />
           <div class="flex-row">
             <p class="bold left">Cofre</p>
             <p>R$ 150.00/dia</p>
           </div>
         </div>
         <div class="flex-row">
-          <input type="checkbox" id="despertador" name="despertador" />
+          <input
+            v-bind:checked="objreservas.default.adicionais.despertador.select()"
+            @change="alteraAdicionais"
+            type="checkbox"
+            id="despertador"
+            name="despertador"
+          />
 
           <div class="flex-row">
             <p class="bold left">Despertador</p>
@@ -61,7 +87,15 @@
           </div>
         </div>
         <div class="flex-row">
-          <input type="checkbox" id="estacionamento" name="estacionamento" />
+          <input
+            v-bind:checked="
+              objreservas.default.adicionais.estacionamento.select()
+            "
+            @change="alteraAdicionais"
+            type="checkbox"
+            id="estacionamento"
+            name="estacionamento"
+          />
           <div class="flex-row">
             <p class="bold left">Estacionamento</p>
             <p>R$ 25.00/dia</p>
@@ -74,6 +108,10 @@
           </div>
           <div class="flex-row">
             <input
+              v-bind:checked="
+                objreservas.default.adicionais.transferChegada.select()
+              "
+              @change="alteraAdicionais"
               type="checkbox"
               id="transferChegada"
               name="transferChegada"
@@ -85,6 +123,10 @@
           </div>
           <div class="flex-row">
             <input
+              v-bind:checked="
+                objreservas.default.adicionais.transferPartida.select()
+              "
+              @change="alteraAdicionais"
               type="checkbox"
               id="transferPartida"
               name="transferPartida"
@@ -114,11 +156,11 @@
         <div class="resumo__conteudo flex-col">
           <div class="resumo__conteudo__item flex-row">
             <p class="bold">Check-in</p>
-            <p class="info checkin-showup">qua, 24/05/22</p>
+            <p class="info checkin-showup">{{ checkinShowup }}</p>
           </div>
           <div class="resumo__conteudo__item flex-row">
             <p class="bold">Check-out</p>
-            <p class="info checkout-showup">sex, 26/05/22</p>
+            <p class="info checkout-showup">{{ checkoutShowup }}</p>
           </div>
         </div>
         <div class="resumo_conteudo_acomodacoes flex-col">
@@ -126,7 +168,7 @@
           <div class="resumo_conteudo_acomodacoes__wrap flex-row">
             <div class="resumo_conteudo_acomodacoes__itens">
               <ul>
-                <li class="quarto-selecionado">Escolha seu quarto</li>
+                <li class="quarto-selecionado">{{ displayQuarto }}</li>
                 <li>Noites</li>
                 <li>Adultos</li>
                 <li>Crianças</li>
@@ -134,10 +176,12 @@
             </div>
             <div class="resumo_conteudo_acomodacoes__valores">
               <ul class="right">
-                <li class="quarto-selecionado-valor">R$0,00</li>
-                <li class="display-noites">2</li>
-                <li class="entrada-adulto">2</li>
-                <li class="entrada-crianca">0</li>
+                <li class="quarto-selecionado-valor">
+                  {{ displayValorQuarto }}
+                </li>
+                <li class="display-noites">{{ noites }}</li>
+                <li class="entrada-adulto">{{ entradaAdulto }}</li>
+                <li class="entrada-crianca">{{ entradaCrianca }}</li>
               </ul>
             </div>
           </div>
@@ -169,11 +213,15 @@
         </div>
         <div class="resumo__total flex-row">
           <p class="bold">TOTAL:</p>
-          <p class="bold display-total">R$0.00</p>
+          <p class="bold display-total">{{ total }}</p>
         </div>
         <div class="modal-btn flex-row">
-          <button class="modal-btn-limpar limpar-dados">Limpar</button>
-          <button class="modal-btn-continuar">Continuar</button>
+          <button class="modal-btn-limpar limpar-dados" @click="limparDados">
+            Limpar
+          </button>
+          <button @click="ativarModalFinal" class="modal-btn-continuar">
+            Continuar
+          </button>
         </div>
       </div>
       <div class="modal-confirma">
@@ -183,6 +231,7 @@
       </div>
     </div>
   </div>
+
   <!--Código referente a reserva: entradas, quartos e resumo da reserva *********************************************************-->
   <div class="reservas__container">
     <!--O main agrupa toda parte de escolha: entradas e quartos-->
@@ -196,7 +245,7 @@
           <p><font-awesome-icon icon="user" /></p>
           <div>
             <p class="bold">Hóspedes</p>
-            <p class="hospedes-resumo">2 adultos, 0 crianças</p>
+            <p class="hospedes-resumo">{{ hospedesResumo }}</p>
           </div>
           <p><font-awesome-icon icon="sort-desc" /></p>
         </div>
@@ -207,10 +256,16 @@
           <p><font-awesome-icon icon="calendar" /></p>
           <div>
             <p class="bold">Check-in</p>
-            <p class="checkin-showup">qua, 24/05/22</p>
+            <p class="checkin-showup">{{ checkinShowup }}</p>
           </div>
           <p><font-awesome-icon icon="sort-desc" /></p>
-          <input type="date" class="dropdown" name="" id="entrada-checkin" />
+          <input
+            @input="alteraCheckin"
+            type="date"
+            class="dropdown"
+            name=""
+            id="entrada-checkin"
+          />
         </div>
 
         <div
@@ -220,10 +275,16 @@
           <p><font-awesome-icon icon="calendar" /></p>
           <div>
             <p class="bold">Check-out</p>
-            <p class="checkout-showup">sex, 26/05/22</p>
+            <p class="checkout-showup">{{ checkoutShowup }}</p>
           </div>
           <p><font-awesome-icon icon="sort-desc" /></p>
-          <input type="date" class="dropdown" name="" id="entrada-checkout" />
+          <input
+            @input="alteraCheckout"
+            type="date"
+            class="dropdown"
+            name=""
+            id="entrada-checkout"
+          />
         </div>
         <div
           v-on:click="ativarModalAdicionais"
@@ -244,7 +305,7 @@
           <p></p>
           <div>
             <p class="bold">Total</p>
-            <p class="display-total">R$1000.00</p>
+            <p class="display-total">{{ total }}</p>
           </div>
           <p><font-awesome-icon icon="sort-desc" /></p>
         </div>
@@ -256,7 +317,12 @@
         <div class="reserva__quartos__container">
           <div class="quarto__container">
             <div class="quarto__imagem">
-              <img src="" alt="Premier Room" />
+              <img
+                v-bind:src="
+                  require('@/assets/img/' + objreservas.default.quartos[1].src)
+                "
+                alt="Premier Room"
+              />
               <ul class="no-mobile">
                 <li>Permitido pets</li>
                 <li>WiFi Free</li>
@@ -282,13 +348,24 @@
                   Para crianças, os valores de diária serão cobrados pela
                   metade.
                 </p>
-                <button class="btn-reservar quarto-reservar">Reservar</button>
+                <button
+                  class="btn-reservar quarto-reservar"
+                  value="1"
+                  @click="reservarQuartos"
+                >
+                  Reservar
+                </button>
               </div>
             </div>
           </div>
           <div class="quarto__container">
             <div class="quarto__imagem">
-              <img src="" alt="Deluxe Room" />
+              <img
+                v-bind:src="
+                  require('@/assets/img/' + objreservas.default.quartos[2].src)
+                "
+                alt="Deluxe Room"
+              />
               <ul class="no-mobile">
                 <li>Permitido pets</li>
                 <li>WiFi Free</li>
@@ -314,13 +391,24 @@
                   Para crianças, os valores de diária serão cobrados pela
                   metade.
                 </p>
-                <button class="btn-reservar quarto-reservar">Reservar</button>
+                <button
+                  class="btn-reservar quarto-reservar"
+                  value="2"
+                  @click="reservarQuartos"
+                >
+                  Reservar
+                </button>
               </div>
             </div>
           </div>
           <div class="quarto__container">
             <div class="quarto__imagem">
-              <img src="" alt="Tex Premier" />
+              <img
+                v-bind:src="
+                  require('@/assets/img/' + objreservas.default.quartos[3].src)
+                "
+                alt="Tex Premier"
+              />
               <ul class="no-mobile">
                 <li>Permitido pets</li>
                 <li>WiFi Free</li>
@@ -346,7 +434,13 @@
                   Para crianças, os valores de diária serão cobrados pela
                   metade.
                 </p>
-                <button class="btn-reservar quarto-reservar">Reservar</button>
+                <button
+                  class="btn-reservar quarto-reservar"
+                  value="3"
+                  @click="reservarQuartos"
+                >
+                  Reservar
+                </button>
               </div>
             </div>
           </div>
@@ -362,15 +456,15 @@
         <div class="resumo__conteudo">
           <div class="resumo__conteudo__item">
             <p class="bold">Check-in</p>
-            <p class="info checkin-showup">qua, 24/05/22</p>
+            <p class="info checkin-showup">{{ checkinShowup }}</p>
           </div>
           <div class="resumo__conteudo__item">
             <p class="bold">Check-out</p>
-            <p class="info checkout-showup">sex, 26/05/22</p>
+            <p class="info checkout-showup">{{ checkoutShowup }}</p>
           </div>
           <div class="resumo__conteudo__item">
             <p class="bold">Hospedes</p>
-            <p class="info hospedes-resumo">2 adultos, 0 crianças</p>
+            <p class="info hospedes-resumo">{{ hospedesResumo }}</p>
           </div>
         </div>
         <div class="resumo_conteudo_acomodacoes">
@@ -378,7 +472,7 @@
           <div class="resumo_conteudo_acomodacoes__wrap">
             <div class="resumo_conteudo_acomodacoes__itens">
               <ul>
-                <li class="quarto-selecionado">Escolha seu quarto</li>
+                <li class="quarto-selecionado">{{ displayQuarto }}</li>
                 <li>Noites</li>
                 <li>Adultos</li>
                 <li>Crianças</li>
@@ -386,10 +480,12 @@
             </div>
             <div class="resumo_conteudo_acomodacoes__valores">
               <ul>
-                <li class="quarto-selecionado-valor">R$0,00</li>
-                <li class="display-noites">2</li>
-                <li class="entrada-adulto">2</li>
-                <li class="entrada-crianca">0</li>
+                <li class="quarto-selecionado-valor">
+                  {{ displayValorQuarto }}
+                </li>
+                <li class="display-noites">{{ noites }}</li>
+                <li class="entrada-adulto">{{ entradaAdulto }}</li>
+                <li class="entrada-crianca">{{ entradaCrianca }}</li>
               </ul>
             </div>
           </div>
@@ -421,13 +517,13 @@
         </div>
         <div class="resumo__total">
           <p class="bold">TOTAL:</p>
-          <p class="bold display-total">R$0.00</p>
+          <p class="bold display-total">{{ total }}</p>
         </div>
         <div class="btn__aside">
-          <button class="btn__aside__limpar limpar-dados">Limpar</button>
-          <button @click="ativarModalHospedes" class="btn__aside__continuar">
-            Continuar
+          <button class="btn__aside__limpar limpar-dados" @click="limparDados">
+            Limpar
           </button>
+          <button class="btn__aside__continuar">Continuar</button>
         </div>
       </div>
     </aside>
@@ -436,208 +532,271 @@
 </template>
 
 <script>
-import UnifiedHeader from '@/components/UnifiedHeader.vue';
-import UnifiedFooter from '@/components/UnifiedFooter.vue';
-export default{
-    name: "ReservasPublic",
-    components: {
-        UnifiedHeader,
-        UnifiedFooter
+import UnifiedHeader from "@/components/UnifiedHeader.vue";
+import UnifiedFooter from "@/components/UnifiedFooter.vue";
+export default {
+  name: "ReservasPublic",
+  components: {
+    UnifiedHeader,
+    UnifiedFooter,
+  },
+  data() {
+    return {
+      modalHospedes: false,
+      modalAdicionais: false,
+      modalResumo: false,
+      objreservas: {},
+      total: "",
+      hospedesResumo: "",
+      entradaAdulto: 2,
+      entradaCrianca: 0,
+      checkinShowup: "",
+      checkoutShowup: "",
+      noites: 0,
+      displayQuarto: "",
+      displayValorQuarto: "",
+    };
+  },
+  methods: {
+    callReservas() {
+      this.objreservas = require("@/assets/reservas.js");
     },
-    data(){
-      return{
-        modalHospedes: false,
-        modalAdicionais: false,
-        modalResumo: false,
-        reserva : {
-        hospedes: {
-          adultos() {
-            return lsGet("adultos") ? lsGet("adultos") : 2;
-          },
-          criancas() {
-            return lsGet("criancas") ? lsGet("criancas") : 0;
-          },
-        },
-        datas: {
-          hoje() {
-            return new Date();
-          },
-          checkinDefault() {
-            return new Date(this.hoje().valueOf() + 2 * 86400000);
-          },
-          checkoutDefault() {
-            return new Date(this.hoje().valueOf() + 4 * 86400000);
-          },
-          checkin() {
-            return lsGet("checkin") ? lsGet("checkin") : this.checkinDefault();
-          },
-          checkout() {
-            return lsGet("checkout") ? lsGet("checkout") : this.checkoutDefault();
-          },
-          noites() {
-            return parseInt(
-              (this.checkout().valueOf() - this.checkin().valueOf()) / 86400000
-            );
-          },
-        },
-        quartos: {
-          0: { nome: "Escolha seu quarto", diaria: 0, src: "" },
-          1: { nome: "Premier Room", diaria: 950, src: "../img/premier-room.webp" },
-          2: {
-            nome: "Deluxe Room",
-            diaria: 1425,
-            src: "../img/QUARTO DELUXE ROOM.jpg",
-          },
-          3: {
-            nome: "T.Ex Premier",
-            diaria: 2230,
-            src: "../img/tex-premier-room.webp",
-          },
-          selecionado() {
-            return lsGet("quarto") ? lsGet("quarto") : 0;
-          },
-        },
-        adicionais: {
-          academia: {
-            select() {
-              return lsGet("academia") ? lsGet("academia") : false;
-            },
-            valor: 30,
-            parcial() {
-              if (this.select()) {
-                return (
-                  this.valor * reserva.hospedes.adultos() * reserva.datas.noites()
-                );
-              } else {
-                return 0;
-              }
-            },
-          },
-          cofre: {
-            select() {
-              return lsGet("cofre") ? lsGet("cofre") : false;
-            },
-            valor: 150,
-            parcial() {
-              if (this.select()) {
-                return this.valor * reserva.datas.noites();
-              } else {
-                return 0;
-              }
-            },
-          },
-          despertador: {
-            select() {
-              return lsGet("despertador") ? lsGet("despertador") : false;
-            },
-            valor: 20,
-            parcial() {
-              if (this.select()) {
-                return this.valor * reserva.datas.noites();
-              } else {
-                return 0;
-              }
-            },
-          },
-          estacionamento: {
-            select() {
-              return lsGet("estacionamento") ? lsGet("estacionamento") : false;
-            },
-            valor: 25,
-            parcial() {
-              if (this.select()) {
-                return this.valor * reserva.datas.noites();
-              } else {
-                return 0;
-              }
-            },
-          },
-          transferChegada: {
-            select() {
-              return lsGet("transferChegada") ? lsGet("transferChegada") : false;
-            },
-            valor: 75,
-            parcial() {
-              if (this.select()) {
-                return this.valor;
-              } else {
-                return 0;
-              }
-            },
-          },
-          transferPartida: {
-            select() {
-              return lsGet("transferPartida") ? lsGet("transferPartida") : false;
-            },
-            valor: 75,
-            parcial() {
-              if (this.select()) {
-                return this.valor;
-              } else {
-                return 0;
-              }
-            },
-          },
-        },
-      },
+    ativarModalHospedes() {
+      this.modalHospedes = !this.modalHospedes;
+    },
+    ativarModalAdicionais() {
+      this.modalAdicionais = !this.modalAdicionais;
+    },
+    ativarModalResumo() {
+      this.modalResumo = !this.modalResumo;
+    },
+    fecharModal() {
+      (this.modalHospedes = false),
+        (this.modalAdicionais = false),
+        (this.modalResumo = false);
+    },
+    clickFora(event) {
+      if (event.target.classList.contains("modal-container")) {
+        this.fecharModal();
       }
     },
-    methods:{
-      ativarModalHospedes(){
-        this.modalHospedes = !this.modalHospedes
-      },
-      ativarModalAdicionais(){
-        this.modalAdicionais = !this.modalAdicionais
-      },
-      ativarModalResumo(){
-        this.modalResumo = !this.modalResumo
-      },
-      fecharModal(){
-        this.modalHospedes= false,
-        this.modalAdicionais= false,
-        this.modalResumo= false
-      },
-      clickFora(event){
-        if (event.target.classList.contains('modal-container')) {this.fecharModal()}
-      },
-      ativarCheckin(){
-        document.querySelector("#entrada-checkin").showPicker();
-      },
-      ativarCheckout(){
-        document.querySelector("#entrada-checkout").showPicker();
-        console.log(this.reserva.hospedes.adultos());
-      },
-      stringToBoolean(string) {
-        if (string) {
-          if (string == "false") {
-            return false;
+    ativarCheckin() {
+      document.querySelector("#entrada-checkin").showPicker();
+    },
+    ativarCheckout() {
+      document.querySelector("#entrada-checkout").showPicker();
+    },
+    ajustaData(infoData) {
+      const dias = ["dom", "seg", "ter", "qua", "qui", "sex", "sab"];
+
+      let dia = dias[infoData.getDay()];
+      let data = infoData.getDate();
+      data < 10 ? (data = "0" + data) : null;
+      let mes = infoData.getMonth() + 1;
+      mes < 10 ? (mes = "0" + mes) : null;
+      let ano = infoData.getFullYear().toString().slice(-2);
+
+      return `${dia}, ${data}/${mes}/${ano}`;
+    },
+    valorTotal() {
+      let parcial1 = 0;
+      let parcial2 = 0;
+      let index = this.objreservas.default.quartos.selecionado();
+      parcial1 =
+        (this.objreservas.default.hospedes.adultos() +
+          this.objreservas.default.hospedes.criancas() / 2) *
+        this.objreservas.default.datas.noites() *
+        this.objreservas.default.quartos[index].diaria;
+      for (let key of Object.entries(this.objreservas.default.adicionais)) {
+        parcial2 = parcial2 + key[1].parcial();
+      }
+      return parcial1 + parcial2;
+    },
+    altDisplayTotal() {
+      this.total = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(this.valorTotal());
+      return this.total;
+    },
+    alteraDisplayHospedes() {
+      this.hospedesResumo = `${this.objreservas.default.hospedes.adultos()} adultos, ${this.objreservas.default.hospedes.criancas()} crianças`;
+      return this.hospedesResumo;
+    },
+    alteraDisplayAdultos() {
+      this.entradaAdulto = this.objreservas.default.hospedes.adultos();
+      return this.entradaAdulto;
+    },
+    alteraDisplayCriancas() {
+      this.entradaCrianca = this.objreservas.default.hospedes.criancas();
+      return this.entradaCrianca;
+    },
+    alteraDisplayCheckin() {
+      this.checkinShowup = this.ajustaData(
+        this.objreservas.default.datas.checkin()
+      );
+      return this.checkinShowup;
+    },
+    alteraDisplayCheckout() {
+      this.checkoutShowup = this.ajustaData(
+        this.objreservas.default.datas.checkout()
+      );
+      return this.checkoutShowup;
+    },
+    alteraDisplayNoites() {
+      this.noites = this.objreservas.default.datas.noites();
+      return this.noites;
+    },
+    alteraDisplayAdicional() {
+      let resumoAdicionais = document.querySelectorAll(".resumo-adicionais");
+      let resumoAdicionaisShort = document.querySelector(
+        ".resumo-adicionais-short"
+      );
+      let r = 0;
+      resumoAdicionais.forEach((element) => {
+        for (let keys of Object.entries(this.objreservas.default.adicionais)) {
+          if (element.classList.contains(keys[0]) && keys[1].select()) {
+            r++;
+            element.innerHTML = new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(keys[1].parcial());
           }
-          return true;
+          if (element.classList.contains(keys[0])) {
+            element.innerHTML = new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(keys[1].parcial());
+          }
         }
-      },
-
-      lsSet(item, valor) {
-        localStorage.setItem(item, valor);
-      },
-
-      lsGet(item) {
-        let valor = localStorage.getItem(item);
-        if (valor) {
-          if (valor === "0" || parseInt(valor) / parseInt(valor) == 1) {
-            return parseInt(valor);
-          } else if (valor == "true" || valor == "false") {
-            return stringToBoolean(valor);
-          } else if (Date.parse(valor)) {
-            return new Date(Date.parse(valor));
-          } else {
-            return valor;
+      });
+      resumoAdicionaisShort.innerHTML = `${r} itens`;
+    },
+    alteraDisplayInputAdicional() {
+      let inputs = document.querySelectorAll('input[type="checkbox"]');
+      inputs.forEach((element) => {
+        for (let key of Object.entries(this.objreservas.default.adicionais)) {
+          if (element.id == key[0]) {
+            key[1].select()
+              ? (element.checked = key[1].select())
+              : (element.checked = false);
           }
-        } else {
-          return null;
+        }
+      });
+    },
+    alteraDisplayQuarto() {
+      let i = this.objreservas.default.quartos.selecionado();
+      this.displayQuarto = this.objreservas.default.quartos[i].nome;
+      return this.displayQuarto;
+    },
+
+    alteraDisplayValorQuarto() {
+      let i = this.objreservas.default.quartos.selecionado();
+      this.displayValorQuarto = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(this.objreservas.default.quartos[i].diaria);
+      return this.displayValorQuarto;
+    },
+    altDisplay() {
+      this.altDisplayTotal();
+      this.alteraDisplayHospedes();
+      this.alteraDisplayAdultos();
+      this.alteraDisplayCriancas();
+      this.alteraDisplayCheckin();
+      this.alteraDisplayCheckout();
+      this.alteraDisplayNoites();
+      this.alteraDisplayAdicional();
+      this.alteraDisplayInputAdicional();
+      this.alteraDisplayQuarto();
+      this.alteraDisplayValorQuarto();
+    },
+    alertaLimite() {
+      window.alert("Máximo de hóspedes é 4 (Adultos e Crianças)");
+      return false;
+    },
+    limiteHospedes() {
+      return this.objreservas.default.hospedes.adultos() +
+        this.objreservas.default.hospedes.criancas() <
+        4
+        ? true
+        : this.alertaLimite();
+    },
+    btnRemAdulto() {
+      if (this.objreservas.default.hospedes.adultos() > 1) {
+        this.objreservas.default.lsSet(
+          "adultos",
+          this.objreservas.default.hospedes.adultos() - 1
+        );
+        this.altDisplay();
+      }
+    },
+    btnAddAdulto() {
+      if (this.limiteHospedes()) {
+        this.objreservas.default.lsSet(
+          "adultos",
+          this.objreservas.default.hospedes.adultos() + 1
+        );
+        this.altDisplay();
+      }
+    },
+    btnRemCrianca() {
+      if (this.objreservas.default.hospedes.criancas() > 0) {
+        this.objreservas.default.lsSet(
+          "criancas",
+          this.objreservas.default.hospedes.criancas() - 1
+        );
+        this.altDisplay();
+      }
+    },
+
+    btnAddCrianca() {
+      if (this.limiteHospedes()) {
+        this.objreservas.default.lsSet(
+          "criancas",
+          this.objreservas.default.hospedes.criancas() + 1
+        );
+        this.altDisplay();
+      }
+    },
+    alteraCheckin() {
+      let mod = new Date(document.querySelector("#entrada-checkin").value); // Está retornando um dia a menos do selecionado
+      mod = new Date(mod.valueOf() + 86400000);
+      this.objreservas.default.lsSet("checkin", mod);
+      this.altDisplay();
+    },
+
+    alteraCheckout() {
+      let mod = new Date(document.querySelector("#entrada-checkout").value); // Está retornando um dia a menos do selecionado
+      mod = new Date(mod.valueOf() + 86400000);
+      this.objreservas.default.lsSet("checkout", mod);
+      this.altDisplay();
+    },
+    alteraAdicionais(event) {
+      for (let key of Object.entries(this.objreservas.default.adicionais)) {
+        if (event.target.id == key[0]) {
+          this.objreservas.default.lsSet(key[0], event.target.checked);
         }
       }
-    }
-}
+      this.altDisplay();
+    },
+    reservarQuartos(event) {
+      this.objreservas.default.lsSet("quarto", event.target.value);
+      this.altDisplay();
+    },
+    limparDados() {
+      localStorage.clear();
+      this.altDisplay();
+    },
+  },
+
+  created() {
+    this.callReservas();
+  },
+  mounted() {
+    this.altDisplay();
+  },
+};
 </script>
 
 <style>
