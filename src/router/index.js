@@ -44,11 +44,13 @@ const routes = [
   },
   {
 
-    path: "/login-public",
-    name: "login-public",
+    path: "/loginPublic",
+    name: "loginPublic",
     
     component: () =>
       import("../views/LoginPublic.vue"),
+  },
+  {
 
     path: "/hospedesAdmin",
     name: "hospedesAdmin",
