@@ -1,8 +1,9 @@
 <template>
    
   <div class="barraRoxaTop">
+    
    <router-link to="/"><img src="../assets/img/logo.png" alt="Logo Imagem" class="logo" /></router-link>
-      
+     
     
     <a href="">
       <img src="../assets/img/icone-logout.png" class="botaosair" alt="" />
@@ -36,6 +37,8 @@ export default {
 .botaosair {
   width: 37px;
   float: right;
+  
+  
   filter: invert(100%);
 }
 .botaosair:hover{
@@ -46,7 +49,7 @@ export default {
 .barraRoxaTop {
   background-color: #670bff;
   display: block;
-  font-size: 1.2em;
+  
   
 }
 
@@ -54,16 +57,21 @@ export default {
   width: 25%;
   padding-left: 15%;
   cursor: pointer;
+  display: inline-block;
 }
 
-.barraNavegacao {
-  display: initial;
-  padding-left: 0.00001%;
+.barraNavegacao { 
+  display: inline-block; 
+  position:absolute;
+  padding-top:1.8% ;
+  width: 25%;
+  
+  
 }
 .barraNavegacao a {
   color: rgb(255, 255, 255);
   text-decoration: none;
-  padding-left: 3%;
+  padding-left: 20%;
   font-size: 1.4em;
 }
 .barraNavegacao a:hover {

@@ -49,18 +49,10 @@
         <div class="navbar">
           <div>
             <ul class="navigation">
-              <a href="/admin/pagesAdmin/home-admin.html">
-                <li class="navigation-itens">Home</li>
-              </a>
-              <a href="/admin/pagesAdmin/funcionarios-admin.html">
-                <li class="navigation-itens">Funcionários</li>
-              </a>
-              <a href="/admin/pagesAdmin/hospedes-admin.html">
-                <li class="navigation-itens">Hóspedes</li>
-              </a>
-              <a href="/admin/pagesAdmin/reservas-admin.html">
-                <li class="navigation-itens">Reservas</li>
-              </a>
+              <router-link class="navigation-itens" to="/homeAdmin">Home</router-link>
+              <router-link class="navigation-itens" to="/hospedesAdmin">Hospedes</router-link>
+               <router-link class="navigation-itens" to="/reservasAdmin">Reservas</router-link>
+              <router-link class="navigation-itens" to="/funcionariosAdmin">Funcionarios</router-link>
               <li class="navigation-itens"><img class="icone-logout" src="@/viewsAdmin/assets/img/icone-logout.png" alt="logo"></li>
             </ul>
           </div>

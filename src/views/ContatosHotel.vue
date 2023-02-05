@@ -269,19 +269,6 @@ h2{
   font-family: "Montserrat";
 }
 
-/* header */
-
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height:149px;
-}
-
-header div{
-    overflow: hidden;
-}
-
 i{
     color: red;
     margin: 0px;
