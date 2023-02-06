@@ -131,15 +131,13 @@ export default{
 
 </script>
 
-<style>
+
+
+<style scoped>
 *{
     padding: 0px;
     margin: 0px;
 }
-</style>
-
-<style scoped>
-
 /* main */
 main{
   display: grid;
