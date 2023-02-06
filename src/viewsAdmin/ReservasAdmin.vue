@@ -66,7 +66,7 @@
       <div id="rooms">
         <div class="room">
           <img class="room-image" src="../assets/img/premier-room.webp" />
-          <div>
+          <div class="modificarImagem">
             <p>MODIFICAR IMAGEM</p>
             <input type="file">
           </div>
@@ -74,6 +74,7 @@
           <div class="room-info">
             <input placeholder="Valor aqui" value="R$ 500" class="room-price" />
           </div>
+          <button class="botaoConfirmar">Confirmar</button>
         </div>
         <div class="room">
           <img
@@ -81,7 +82,7 @@
             src="../assets/img/quartoDeluxeRoom.jpg"
             alt="App"
           />
-          <div>
+          <div class="modificarImagem">
             <p>MODIFICAR IMAGEM</p>
             <input type="file">
           </div>
@@ -89,10 +90,11 @@
           <div class="room-info">
             <input value="" placeholder="Valor aqui" class="room-price" />
           </div>
+          <button class="botaoConfirmar">Confirmar</button>
         </div>
         <div class="room">
           <img class="room-image" src="../assets/img/tex-premier-room.webp" />
-          <div>
+          <div class="modificarImagem">
             <p>MODIFICAR IMAGEM</p>
             <input type="file">
           </div>
@@ -100,6 +102,7 @@
           <div class="room-info">
             <input placeholder="Valor aqui" class="room-price" />
           </div>
+          <button class="botaoConfirmar">Confirmar</button>
         </div>
       </div>
      <!--  <aside id="summary">
@@ -133,6 +136,14 @@ export default {
 </script>
 
 <style scoped>
+.botaoConfirmar{
+ cursor: pointer;
+}
+
+.modificarImagem{
+  text-align: center;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -207,6 +218,7 @@ background: #0DADBD;
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+    background-color:#95959558;
 }
 
 .container {
@@ -239,16 +251,16 @@ body {
 .room{
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin: 6rem;
   max-width: 400px;
-  border: 2px solid darkgray;
+  border: 2px solid rgb(0, 0, 0)
 }
 
 .room-name{
   text-align: center;
   font-size: 2rem;
   font-family: "Mont";
-  background-color: blueviolet;
+  background-color: #0b1fff41;
   color: aliceblue;
   padding: 0.5rem 0;
 }
@@ -257,6 +269,8 @@ body {
   display: flex;
   /* background-color: red; */
   padding: 0.5rem;
+  margin-left: 10%;
+  
 
 }
 
