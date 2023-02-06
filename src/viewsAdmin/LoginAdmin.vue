@@ -82,7 +82,7 @@ logar()
 
 body{
  
-    background-image:linear-gradient(rgba(119, 35, 255, 0),rgba(119, 35, 255, 0.164)),
+    background-image:
     url("../assets/img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg");
     min-height: 120px;
     background-repeat: no-repeat;
