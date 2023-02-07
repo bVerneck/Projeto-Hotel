@@ -9,7 +9,7 @@
     <nav class="nav">
       <ul class="menu">
         <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/sobre">Sobre</router-link></li>
+        <li><router-link to="/sobreHotel">O Hotel</router-link></li>
         <li><router-link to="/acomodacoes">Acomodações</router-link></li>
         <li><router-link to="/contatos">Contatos</router-link></li>
         <li>
@@ -36,7 +36,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 /* Theming */
 @import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap";
 @font-face {
