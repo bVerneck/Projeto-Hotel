@@ -18,7 +18,7 @@
             <input type="email" id="email" placeholder="Enter email" name="email"> <br>
             <label for="pwd">Password</label><br>
             <input type="password" id="pwd" placeholder="Enter password"><br>
-            <button type="submit" onclick="logar(); return false">Submit</button>
+            <button type="submit" onclick="logar(); return false">Entrar</button>
         </form>
     </div>
        

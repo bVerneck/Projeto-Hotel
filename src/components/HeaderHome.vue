@@ -9,7 +9,7 @@
       <nav class="nav">
         <ul class="menu">
           <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/sobre">Sobre</router-link></li>
+          <li><router-link to="/sobreHotel">O Hotel</router-link></li>
           <li><router-link to="/acomodacoes">Acomodações</router-link></li>
           <li><router-link to="/contatos">Contatos</router-link></li>
           <li><router-link to="/login-public">Login</router-link></li>
