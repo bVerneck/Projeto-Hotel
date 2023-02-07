@@ -30,7 +30,7 @@
       </div>
       <div id="registrar_container">
         <p>Ainda não tem uma conta?</p>
-        <a href="../pages/cadastro.html">Registrar</a>
+        <router-link to="/cadastroPublic">Registre-se</router-link>
       </div>
     </div>
    
