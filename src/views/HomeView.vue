@@ -29,7 +29,7 @@
         </ul>
              <ul class="loginCadastro">
               <li class="logCada"><router-link  to="/loginPublic">Login</router-link></li>
-              <li class="logCada"><router-link  to="/cadastrese">Cadastre-se</router-link></li>
+              <li class="logCada"><router-link  to="/cadastroPublic">Registre-se</router-link></li>
             </ul> 
         <!-- <div class="nav-cadastro">
           <a href="./pages/login-public.html" id="link"><button id="btn-cadastro" class="btn-cadastro"><span
@@ -48,8 +48,8 @@
       <p class="texto-hotel">HOTEL</p>
       <p class="texto-slogan">Desfrute do Luxo Tecnológico</p>
     </div>
-    <a style="text-decoration: none" href="#"><button class="btn"><i class="fa fa-home"></i> Reserve
-        Agora</button></a>
+        <router-link style="text-decoration: none" href="#" to="/reservas"><button class="btn"><i class="fa fa-home"></i> Reserve
+        Agora</button></router-link>
     <div class="scroll-down">
       <img src="@/assets/img/down_arrow.svg" alt="role para baixo">
     </div>
@@ -193,12 +193,15 @@ export default {
   margin-bottom:20px;
   font-size: 1.6rem;
   list-style: none;
+  
+  
 }
 
 
   * {
   box-sizing: border-box;
   margin: 0;
+  
 }
 
 .sobre {
@@ -397,6 +400,7 @@ img {
 .logo-header {
     display: block;
     align-self: start;
+    
 }
 
 .bg-img-top-content {
@@ -418,17 +422,21 @@ img {
     justify-content: space-between;
     gap: 70px;
     font-size: 1.6rem;
+    
 }
 
 .topnav a, .loginCadastro a{
     text-decoration: none;
     color: #fff;
+    
 }
 
 .topnav a:hover, .loginCadastro a:hover {
     text-decoration: none;
-    font-size: 1.65rem;
+    font-size: 1.614rem;
     color: rgb(207, 233, 245);
+    
+    
 }
 
 .nav-cadastro {
@@ -568,6 +576,7 @@ h1 {
 
         font-size: 1.2rem;
     }
+   
 
 }
 

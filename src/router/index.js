@@ -52,6 +52,14 @@ const routes = [
   },
   {
 
+    path: "/cadastroPublic",
+    name: "CadatrosPublic",
+    
+    component: () =>
+      import("../views/CadastroPublic.vue"),
+  },
+  {
+
     path: "/hospedesAdmin",
     name: "hospedesAdmin",
     
