@@ -50,6 +50,9 @@ export default{
 
 main{
   background-image:url("../assets/img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 33px;
 }
 h1{
   margin-bottom: 5vh;
