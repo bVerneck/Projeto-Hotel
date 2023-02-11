@@ -1,7 +1,6 @@
 <template>
-    
-   <UnifiedHeader />  
     <main>
+   <UnifiedHeader />
         <div id="login-container">
       <h1>Login</h1>
       <form action="">
@@ -31,15 +30,12 @@
       </div>
       <div id="registrar_container">
         <p>Ainda não tem uma conta?</p>
-        <a href="../pages/cadastro.html">Registrar</a>
+        <router-link to="/cadastroPublic">Registre-se</router-link>
       </div>
     </div>
-    </main> 
-     <br />
-   <br />
-   <br /> 
-   <UnifiedFooter />  
    
+   <unifiedFooter />
+    </main> 
 </template>
 
 <script>
@@ -55,8 +51,16 @@ export default{
 };
 </script>
 
-<style>
+<style scoped>
 
+
+
+main{
+  background-image:url("../assets/img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 33px;
+}
 
 form { 
     margin-top: 30px;
@@ -95,19 +99,22 @@ label {
   transition: 0.5s; }
 
   #login-container {
-    background-color: rgb(235, 243, 235);
+  background-color: rgb(235, 243, 235);
   width: 400px;
   margin-left: auto;
   margin-right: auto;
   padding: 20px 30px;
   margin-top: 10vh;
+  margin-bottom: 20vh;
   border-radius: 10px;
   text-align: center;
   }
 
   /* redes sociais*/
 #social-container, #social-container p {
-  margin-bottom: 20px; }
+  margin-bottom: 20px; 
+  margin-top:10%;
+  }
 
 #social-container i {
   height: 40px;
@@ -116,29 +123,41 @@ label {
   line-height: 40px;
   color: #fff;
   margin: 0 5px;
-  cursor: pointer; }
+  cursor: pointer; 
+  }
+  
 
-.fa-facebook {
-  background-color: #3b5998; }
+.fa-facebook, span{
+  /* background-color: #3b5998;  */
+  cursor: pointer;
+  }
 
-.fa-linkedin {
-  background-color: #0077b5; }
+.fa-linkedin, span {
+  /* background-color: #0077b5;  */
+  cursor: pointer;
+  }
 
-.fa-twitter {
-  background-color: #00acee; }
+.fa-twitter, span {
+  /* background-color: #00acee;  */
+  cursor: pointer;
+  }
 
 /* registrar */
-#registrar_container {
-  margin-bottom: 10px; }
+#registrar_container{
+  margin-bottom: 10px; 
+  }
+  
 
   ul {
     display: flex;
     padding: 0 50px;
     justify-content: space-between;
+    
   }
 
   ul, li {
     padding: 0 10px;
+    
   }
 
 </style>

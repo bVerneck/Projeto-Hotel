@@ -131,15 +131,13 @@ export default{
 
 </script>
 
-<style>
+
+
+<style scoped>
 *{
     padding: 0px;
     margin: 0px;
 }
-</style>
-
-<style scoped>
-
 /* main */
 main{
   display: grid;
@@ -267,19 +265,6 @@ h2{
   padding: 1%;
   float: left;
   font-family: "Montserrat";
-}
-
-/* header */
-
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height:149px;
-}
-
-header div{
-    overflow: hidden;
 }
 
 i{

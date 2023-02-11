@@ -8,8 +8,8 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/sobre",
-    name: "sobre",
+    path: "/sobreHotel",
+    name: "sobreHotel",
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/SobreHotel.vue"),
   },
@@ -49,6 +49,14 @@ const routes = [
     
     component: () =>
       import("../views/LoginPublic.vue"),
+  },
+  {
+
+    path: "/cadastroPublic",
+    name: "CadatrosPublic",
+    
+    component: () =>
+      import("../views/CadastroPublic.vue"),
   },
   {
 

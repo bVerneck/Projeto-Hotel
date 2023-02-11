@@ -10,7 +10,6 @@
 
   <link rel="icon" type="image/png" href="img/tex logo branco 1.png" />
   <title>T.EX Hotel - Desfrute do luxo tecnológico</title> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 
 </head>
 <!-- <body onload="confirm()"> -->
@@ -23,12 +22,15 @@
       <div class="bg-img-top-content">
         <ul class="topnav" id="myTopnav">
           <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/sobre">O Hotel</router-link></li>
+          <li><router-link to="/sobreHotel">O Hotel</router-link></li>
           <li><router-link to="/acomodacoes">Acomodações</router-link></li>
           <li><router-link to="/contatos">Contatos</router-link></li>
-          <li><router-link to="/loginPublic">Login</router-link></li>
-          <li><router-link to="/cadastrese">Cadastre-se</router-link></li>         
+                
         </ul>
+             <ul class="loginCadastro">
+              <li class="logCada"><router-link  to="/loginPublic">Login</router-link></li>
+              <li class="logCada"><router-link  to="/cadastroPublic">Registre-se</router-link></li>
+            </ul> 
         <!-- <div class="nav-cadastro">
           <a href="./pages/login-public.html" id="link"><button id="btn-cadastro" class="btn-cadastro"><span
                 id="login">Login</span></button></a>
@@ -46,8 +48,8 @@
       <p class="texto-hotel">HOTEL</p>
       <p class="texto-slogan">Desfrute do Luxo Tecnológico</p>
     </div>
-    <a style="text-decoration: none" href="#"><button class="btn"><i class="fa fa-home"></i> Reserve
-        Agora</button></a>
+        <router-link style="text-decoration: none" href="#" to="/reservas"><button class="btn"><i class="fa fa-home"></i> Reserve
+        Agora</button></router-link>
     <div class="scroll-down">
       <img src="@/assets/img/down_arrow.svg" alt="role para baixo">
     </div>
@@ -133,7 +135,7 @@
   </div>
 </div>
 
-<br><br><br><br><br>
+<br><br><br><br>
 
 <div class="container">
   <button class="btn">Conheça mais sobre nossos serviços</button>
@@ -143,7 +145,7 @@
 <!--Fim Acomodações-->
 
 <!--Gastronomia-->
-<br><br><br><br><br><br>
+<!-- <br><br><br><br><br><br> -->
 <div style="text-align:left">
   <h2 class="sobre">Gastronomia</h2>
 </div>
@@ -166,10 +168,10 @@
   </div>
 </div>
 <!--Fim Gastronomia-->
-
+<UnifiedFooter />
 </body>
 
-  <UnifiedFooter />
+  
 </template>
 
 <script>
@@ -187,9 +189,19 @@ export default {
 </script>
 
 <style>
+.logCada{
+  margin-bottom:20px;
+  font-size: 1.6rem;
+  list-style: none;
+  
+  
+}
+
+
   * {
   box-sizing: border-box;
   margin: 0;
+  
 }
 
 .sobre {
@@ -388,6 +400,7 @@ img {
 .logo-header {
     display: block;
     align-self: start;
+    
 }
 
 .bg-img-top-content {
@@ -408,17 +421,22 @@ img {
     flex-direction: row;
     justify-content: space-between;
     gap: 70px;
-
     font-size: 1.6rem;
+    
 }
 
-.topnav a {
+.topnav a, .loginCadastro a{
     text-decoration: none;
     color: #fff;
+    
 }
 
-.topnav a:hover {
-    text-decoration: underline;
+.topnav a:hover, .loginCadastro a:hover {
+    text-decoration: none;
+    font-size: 1.614rem;
+    color: rgb(207, 233, 245);
+    
+    
 }
 
 .nav-cadastro {
@@ -558,6 +576,7 @@ h1 {
 
         font-size: 1.2rem;
     }
+   
 
 }
 

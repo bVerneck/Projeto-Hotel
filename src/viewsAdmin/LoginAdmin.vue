@@ -18,7 +18,7 @@
             <input type="email" id="email" placeholder="Enter email" name="email"> <br>
             <label for="pwd">Password</label><br>
             <input type="password" id="pwd" placeholder="Enter password"><br>
-            <button type="submit" onclick="logar(); return false">Submit</button>
+            <button type="submit" onclick="logar(); return false">Entrar</button>
         </form>
     </div>
        
@@ -82,7 +82,7 @@ logar()
 
 body{
  
-    background-image:linear-gradient(rgba(119, 35, 255, 0),rgba(119, 35, 255, 0.164)),
+    background-image:
     url("../assets/img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg");
     min-height: 120px;
     background-repeat: no-repeat;
