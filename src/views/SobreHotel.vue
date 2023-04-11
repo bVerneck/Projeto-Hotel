@@ -118,7 +118,7 @@ h1 {
   text-align: justify;
   font-size: 1.3rem;
   width: 55%;
-  font-family: "Mont", "Garamond";
+  font-family: "Mont";
   font-size: larger;
 }
 
