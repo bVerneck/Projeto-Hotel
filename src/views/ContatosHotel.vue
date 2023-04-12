@@ -1,10 +1,7 @@
 <template>
     <UnifiedHeader />
     
-    <!-- começo -->
-
     <section class="capa"></section>
-
     <main>
 
 <aside>
@@ -70,7 +67,6 @@
     </label>
 
     <div>
-      <!-- <button @click="check_all()" class="btn" id="btn_enviar">Enviar</button> -->
       <button type="submit" @click="check()" class="btn" id="btn_enviar">Enviar</button>
     </div>  
     
@@ -79,7 +75,6 @@
 
 
 </main>    
-    <!-- fim -->
 
     <UnifiedFooter />
 </template>
