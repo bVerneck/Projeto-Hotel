@@ -88,6 +88,13 @@ const routes = [
       import("../viewsAdmin/LoginAdmin.vue"),
 
   },
+  {
+    path: "/paginaTesteApi",
+    name: "paginaTesteApi",
+
+    component: () =>
+    import("../views/PaginaTesteApi"),
+  }
   
  
 ];
