@@ -3,11 +3,12 @@
     <div class="company-footer">
       <img src="@/assets/img/tex_logo_branco.png" />
       <h2>HOTÉIS</h2>
-      <span
-        ><p>
-          Av. Atlântica, 1284<br />(11) 95423-6698<br />contato@texhotels.com
-        </p></span
-      >
+      <span>
+        <p>Av. Atlântica, 1284
+         <br />(11) 95423-6698
+         <br />contato@texhotels.com
+        </p>
+      </span>
     </div>
 
     <div class="footer-box">
