@@ -1,49 +1,54 @@
 <template>
     
     <header class="header">
-      <unifiedHeader />
-    </header>
-    <main>
+  <unifiedHeader />
+</header>
 
-        <div class="first-box">
-            <h1>O Hotel</h1>
-            <article>
+<main>
+  <div class="first-box">
+    <h1>O Hotel</h1>
+    <article>
+      <ul>
+        <li>
+          <div class="image-and-text">
+            <img src="@/assets/img/getting-to-marinabaysands-t.webp" class="img-left">
+            <p class="p-right">
+              Este hotel está sempre em busca de oferecer o melhor para seus clientes, 
+              desde as comodidades de alta qualidade até a tecnologia mais avançada. 
+              Com quartos modernos e confortáveis, bem como uma equipe atenciosa e prestativa, 
+              os hóspedes têm a certeza de uma experiência memorável.
+            </p>
+          </div>
+        </li>
 
-                <ul>
-                    <li>
-                        <img src="@/assets/img/getting-to-marinabaysands-t.webp" class="img-left">
-                        <p class="p-right">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus mollitia doloribus
-                            sapiente officia? Quis distinctio incidunt illo natus qui aliquam ab debitis assumenda
-                            eveniet quaerat fuga, necessitatibus quasi totam, nihil minus deleniti nam odit placeat!
-                        </p>
-                    </li>
+        <li>
+          <div class="image-and-text">
+            <img src="@/assets/img/quartoDeluxeRoom.jpg" class="img-left">
+            <p class="p-right">
+              Os quartos deste hotel são verdadeiras obras de arte. 
+              Com decoração moderna e confortável, 
+              oferecem o ambiente perfeito para descansar após um longo dia de viagem. 
+              As camas macias e os lençóis de alta qualidade garantem uma noite de sono inesquecível.
+            </p>
+          </div>
+        </li>
 
-                    <li>
-                        <img src="@/assets/img/quartoDeluxeRoom.jpg" class="img-left">
-                        <p class="p-right">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quis voluptate
-                            quaerat beatae ipsum dolore dolorem nemo aliquam eius veniam pariatur perspiciatis, iure
-                            nobis consectetur eaque nam asperiores recusandae optio odit neque ratione praesentium.
-                            Quibusdam.
-                        </p>
-                        </li>
+        <li>
+          <div class="image-and-text">
+            <img src="@/assets/img/RISE_Australian_Stanbroke_Beef_Ribeye_600x450.webp" class="img-left">
+            <p class="p-right">
+            O nosso hotel oferece uma experiência gastronômica única.<b/> 
+              Nosso chef utiliza ingredientes frescos e locais para criar pratos deliciosos e saudáveis. 
+              Experimente o melhor da culinária local e internacional no nosso restaurante.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </article>
+  </div>
+</main>
 
-
-                    <li>
-                        <img src="@/assets/img/RISE_Australian_Stanbroke_Beef_Ribeye_600x450.webp" class="img-left">
-                        <p class="p-right">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus mollitia doloribus
-                            sapiente officia? Quis distinctio incidunt illo natus qui aliquam ab debitis assumenda
-                            eveniet quaerat fuga, necessitatibus quasi totam, nihil minus deleniti nam odit placeat!
-                        </p>
-                    </li>
-                </ul>
-
-            </article>
-        </div>
-    </main>
-    <unifiedFooter />
+<unifiedFooter />
 </template>
 
 <script>
@@ -114,20 +119,30 @@ h1 {
 }
 
 .p-right {
-  float: right;
-  text-align: justify;
+  float:right;
+  text-align:center;
   font-size: 1.3rem;
-  width: 55%;
+  width: 50%;
   font-family: "Mont";
   font-size: larger;
+  
 }
+.image-and-text {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+  }
 
 .img-left {
-  margin-right: auto;
+  margin-right: 2rem;
   width: 40%;
   border-radius: 1rem;
   position: static;
-  margin-bottom: 10rem;
+  border:solid 1px black;
+  
 }
 
 a {
@@ -141,6 +156,10 @@ a:hover {
 }
 
 @media screen and (max-width: 780px) {
+  .image-and-text {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .first-box {
     padding: 0;
     background-color: white;
@@ -154,8 +173,10 @@ a:hover {
   .p-right {
     width: 100%;
     margin-bottom: 2rem;
+    float: bottom;
+    
   }
 }
 
-/*# sourceMappingURL=hotel.css.map */
+
 </style>
