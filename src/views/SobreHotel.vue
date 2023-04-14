@@ -1,6 +1,6 @@
 <template>
-    
-    <header class="header">
+
+<header class="header">
   <unifiedHeader />
 </header>
 
@@ -37,9 +37,9 @@
           <div class="image-and-text">
             <img src="@/assets/img/RISE_Australian_Stanbroke_Beef_Ribeye_600x450.webp" class="img-left">
             <p class="p-right">
-            O nosso hotel oferece uma experiência gastronômica única.<b/> 
-              Nosso chef utiliza ingredientes frescos e locais para criar pratos deliciosos e saudáveis. 
-              Experimente o melhor da culinária local e internacional no nosso restaurante.
+              O nosso hotel oferece uma experiência gastronômica única.
+              <b>Nosso chef utiliza ingredientes frescos e locais para criar pratos deliciosos e saudáveis. 
+              Experimente o melhor da culinária local e internacional no nosso restaurante.</b>
             </p>
           </div>
         </li>

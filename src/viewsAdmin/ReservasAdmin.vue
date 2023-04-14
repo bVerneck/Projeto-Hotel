@@ -19,49 +19,7 @@
     <div style="text-align: center">
       <h2 class="minha_reserva">QUARTOS</h2>
     </div>
-<!--     <div>
-      <article>
-        <h2>
-          <form
-            class="form"
-            action=""
-            method="post"
-            enctype="multipart/form-data"
-          >
-            <fieldset class="input">
-              <ul id="formCalendario">
-                <li>
-                  <label for="data_enter">Data Entrada</label>
-                  <input
-                    class="data_enter"
-                    type="date"
-                    name="data_enter"
-                    id="data_enter"
-                  />
-                </li>
-                <li>
-                  <label class="data_out" for="data_out">Data Saída</label>
-                  <input type="date" name="data_out" id="data_out" />
-                </li>
-                <li>
-                  <label class="qtdPessoa" for="qtdPessoa">Qtd Pessoa</label>
-                  <input
-                    type="text"
-                    id="qtdPessoa"
-                    name="qtdPessoa"
-                    maxlength="30"
-                    autofocus
-                    placeholder="Quantidade aqui"
-                    required
-                  />
-                </li>
-                <input type="submit" value="Confirmar o Envio">
-              </ul>
-            </fieldset>
-          </form>
-        </h2>
-      </article>
-    </div> -->
+
     <main>
       <div id="rooms">
         <div class="room">
@@ -105,7 +63,7 @@
           <button class="botaoConfirmar">Confirmar</button>
         </div>
       </div>
-     <!--  <aside id="summary">
+      <aside id="summary">
         <h1>Resumo da Reserva</h1>
         <div class="summary-info">
           <p>Apartamento:</p>
@@ -114,7 +72,7 @@
           <p>Qtd Pessoas:</p>
         </div>
         <button class="summary-book">Continuar</button>
-      </aside> -->
+      </aside>
     </main>
   </body>
 
