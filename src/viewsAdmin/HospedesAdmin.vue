@@ -4,11 +4,11 @@
       <HeaderAdmin /> 
     </header>   
         <main>
-            <article id="hospedes">
-                <h3>Controle de hospedes </h3>
+            <article id="hospedes" class="container">
+                <h3>Reservar</h3>
                 <form action="" method="post" enctype="multipart/form-data">
                     
-                        <legend>Preencha todos os campos</legend>
+                    
                         <ul>
                             <li>
                                 <label for="nome">Nome</label>
@@ -24,12 +24,12 @@
                             <br />
                             <li>
                                 <label for="data_niver">Data da entrada</label>
-                                <input type="date" name="data_niver" id="data_niver">
+                                <input type="date">
                             </li>
                             <br />
                             <li>
                                 <label for="data_niver">Data prevista para saída</label>
-                                <input type="date" name="data_niver" id="data_niver">
+                                <input type="date" >
                             </li>
                             <br />
                             <li>
@@ -46,47 +46,48 @@
                             <br />
                             <li>
                                 <label for="data_niver">Data de nascimento</label>
-                                <input type="date" name="data_niver" id="data_niver">
+                                <input type="date" >
                             </li>
-                            <!-- <li>
-                                    <label for="cor_tema">Cor do tema</label>
-                                    <input type="color" name="cor_tema" id="cor_tema" value="#ff00ff">
-                                </li> -->
+                        
                             <br />
                             <li>
-                                <label for="servicos">Serviços adicionais</label><br />
-                                <input style="accent-color: red;" type="checkbox" name="servicos" id="musico">Garçom particular
-                                <input type="checkbox" name="servicos" id="danca_do_ventre">Motorista 24h
-                                <input type="checkbox" name="servicos" id="magico">Cardápio completo
+                                <label class="text-label"  for="servicos">Serviços adicionais :</label><br />
+                                <input type="checkbox" name="servicos" id="garcom">Garçom particular
+                                <input type="checkbox" name="servicos" id="Motorista">Motorista 24h
+                                <input type="checkbox" name="servicos" id="cardapio">Cardápio completo
                             </li>
                             <br />
                             <li>
-                                <label for="tpAcomodação">Tipo de acomodação</label><br />
+                                <label for="tpAcomodação">Tipo de acomodação :</label><br />
                                 <input type="radio" name="tpAcomodação" id="tpAcomodação">Premier room
-                                <input checked type="radio" name="bolo" id="tpAcomodação">Deluxe Room
-                                <input checked type="radio" name="bolo" id="tpAcomodação">T.Ex Premier Room
+                                <input checked type="radio"  id="tpAcomodação">Deluxe Room
+                                <input checked type="radio"  id="tpAcomodação">T.Ex Premier Room
                             </li>
                             <br />
                             <li>
                                 <label for="obs">Observações</label> <br />
                                 <textarea name="obs" id="obs" cols="50" rows="10"></textarea>
                             </li>
-                            <li>
-                                <!-- <input type="image" src="../images/png/btn_bolo.png" alt="Registrar" width="200" /> -->
-                                <!-- input type="submit" value="Confirmar o envio" -->
-                                <button>Salvar informações</button>
+                            <li class="botton-salvar">
+                                <button >Salvar informações</button>
                             </li>
                         </ul>
-                    
+                    <aside id="summary">
+        <h1>Resumo da Reserva</h1>
+        <div class="summary-info">
+          <p>Apartamento:</p>
+          <p>Check-in:</p>
+          <p>Check-out:</p>
+          <p>Qtd Pessoas:</p>
+        </div>
+        <button class="summary-book">Continuar</button>
+      </aside>
                 </form>
+                
+                
             </article>
-            <!-- <article>
-                <form oninput="pessoas.value=qtd.value; res.value= `R$ ${parseInt(qtd.value)*50},00`">
-                    <label for="">Calcule a quantidade de pessoas/label>
-                        <input type="range" name="qtd" id="qtd" min="1" max="10" value="1" />
-                        <input type="number" name="pessoas" id="pessoas" max="10" min="1" value="1" />
-                        <output name="res" id="res">R$ 50,00</output>
-                </form> -->
+        
+   
               </main>
     
 </body>
@@ -111,37 +112,90 @@ export default {
   font-family: "Mont";
   src: url("../assets/fonts/Montserrat-Regular.otf");
 }
+
+/* test de summario */
+#summary{
+  background-color: #ECEBEE;
+  height: 500px;
+  width: 450px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  float: right;
+  
+}
+
+#summary div{
+  background-color: #D5D8D9;
+  padding: 0 1rem;
+  height: 300px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#summary h1{
+  text-transform: uppercase;
+}
+
+.summary-info p{
+text-transform: uppercase;
+margin: 1.2rem 0;
+}
+
+.summary-book{
+background-color: #959595;
+border: none;
+color: aliceblue;
+padding: 10px 30px;
+font-weight: bold;
+font-size: 1.3rem;
+text-transform: uppercase;
+}
+
+.summary-book:hover{
+cursor: pointer;
+}
+
+/* fim */
+
+.text-label{
+  margin-top: 1000px;
+  /* border:solid 2px black; */
+}
+.container{
+margin-top: 20px;
+}
+.botton-salvar{
+padding-top: 20px;
+}
 body {
-  background-image: url(../assets/img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+ background-color: rgb(194, 191, 191);
   margin: 0;
 }
 
 article {
+  
   width: 50%;
   margin-left: 25%;
-  background-color: rgba(240, 248, 255, 0.63);
-  /* text-align: center; */
+  background-color: #0b30ff36;
   border-radius: 12px 12px 12px 12px;
   font-family: "Mont";
-  color: rgb(14, 102, 209);
+  color: rgb(255, 255, 255);
   font-weight: bold;
 }
 
 h3 {
   text-align: center;
-  color: rgb(14, 102, 209);
-  text-shadow: 1px 1px 2px black, 0 0 25px rgb(255, 17, 0), 0 0 5px rgb(139, 5, 0);
+  color: rgb(255, 255, 255);
   text-transform: uppercase;
   font-size: 30px;
+  padding-bottom: 30px;
 }
 
-legend {
-  text-align: center;
-  color: rgb(14, 102, 209);
-  font-weight: bold;
-}
+
 
 input,
 textarea {
@@ -161,14 +215,14 @@ div {
 
 li {
   list-style: none;
-  /* border-radius: 20px 20px 20px 20px; */
+ 
 }
 
 button {
   border-radius: 10px;
   margin-left: 270px;
-  color: rgb(14, 102, 209);
-  /* text-shadow: 1px 1px 2px black, 0 0 25px rgb(255, 17, 0), 0 0 5px rgb(139, 5, 0) */
+  color: rgb(0, 0, 0);
+  
 }
 
 form {
@@ -180,7 +234,9 @@ form {
   cursor: pointer;
   width: 220px;
 }
+label{
+  padding-right: 20px;
+}
 
-/*# sourceMappingURL=hospedes-admin.css.map */
 
 </style>
