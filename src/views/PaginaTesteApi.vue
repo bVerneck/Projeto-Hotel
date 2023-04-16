@@ -1,27 +1,30 @@
 <template>
-    <div id="example-1">
+    <!-- <div id="hoteis">
         <li v-for="(pokemons, i) in pokemons" :key="i">
             {{ pokemons.name }} 
         </li>
-    </div>
+    </div> -->
 </template>
 
 <script>
-import api from '@/services/api';
+import api from '@/services/api.js';
 
 export default{
-    name:'example-1',
+    name:'hoteis',
     data(){
         return {
-            pokemons: []
+            hoteis: []
         }
     },
     mounted(){
-        api.get('').then(response => {
-            this.pokemons = response.data.results;
-            console.log(response.data.results);
+        api.get('/hoteis').then(response => {
+            console.log(response.data);
         })
-    }
+    },
+    // const listarHoteis = async () => {
+    //     const dados = await api.listarHoteis();
+    //     console.log(dados);
+    // }
 }
 </script>
 
