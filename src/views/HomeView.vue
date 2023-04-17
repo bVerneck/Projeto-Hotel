@@ -6,12 +6,13 @@
   <meta property="og:type" content="hotel" />
   <meta property="og:title" content="T.EX Hotel - A maior e melhor experiência em hotelaria e tecnologia!" />
   <meta property="og:image"
-  content="https://untappedcities.com/wp-content/uploads/2011/08/Marina-Bay-Sands-Hotel-Singapore.jpg" />
+    content="https://untappedcities.com/wp-content/uploads/2011/08/Marina-Bay-Sands-Hotel-Singapore.jpg" />
 
   <link rel="icon" type="image/png" href="img/tex logo branco 1.png" />
   <title>T.EX Hotel - Desfrute do luxo tecnológico</title> 
 
 </head>
+
 <body >
 
 <header>
@@ -19,36 +20,36 @@
     <div class="bg-img-top">
       <img class="logo-header" src="@/assets/img/group.png" alt="logo">
       <div class="bg-img-top-content">
-        <ul class="navBar" id="myTopnav">
+        <ul class="topnav" id="myTopnav">
           <li><router-link to="/">Home</router-link></li>
           <li><router-link to="/sobreHotel">O Hotel</router-link></li>
           <li><router-link to="/acomodacoes">Acomodações</router-link></li>
-          <li><router-link to="/contatos">Contatos</router-link></li> 
+          <li><router-link to="/contatos">Contatos</router-link></li>
+                
         </ul>
-        <ul class="nav-cadastro">
-              <li><router-link to="/loginPublic">Login</router-link></li>
-              <li><router-link to="/cadastroPublic">Registre-se</router-link></li>
+             <ul class="loginCadastro">
+              <li class="logCada"><router-link  to="/loginPublic">Login</router-link></li>
+              <li class="logCada"><router-link  to="/cadastroPublic">Registre-se</router-link></li>
             </ul> 
       </div>
-
     </div>
+
     <div class="texto">
-      <p class="texto-bemVindo">BEM-VINDO AO</p>
+      <p class="texto-bemvindo">BEM-VINDO AO</p>
       <h1>T.EX</h1>
       <p class="texto-hotel">HOTEL</p>
       <p class="texto-slogan">Desfrute do Luxo Tecnológico</p>
     </div>
-        <router-link class="bottomReserveAgora" to="/reservas">
-        <button class="btn">ReserveAgora</button>
-        </router-link>
+        <router-link style="text-decoration: none" href="#" to="/reservas"><button class="btn"><i class="fa fa-home"></i> Reserve
+        Agora</button></router-link>
     <div class="scroll-down">
-      <img src="@/assets/img/down_arrow.svg" alt="SetaDown">
+      <img src="@/assets/img/down_arrow.svg" alt="role para baixo">
     </div>
   </div>
 </header>
 <br><br>
-<div>
-  <h2 class="texto-h2">Sobre Nosso Hotel</h2>
+<div style="text-align:center">
+  <h2 class="sobre">Sobre Nosso Hotel</h2>
 </div>
 
 <div class="container">
@@ -57,7 +58,7 @@
       <img class="imagens" src="@/assets/img/getting-to-marinabaysands-t.webp">
     </div>
     <div class="column-66">
-      <p class="textoImg">Pensado e arquitetado pelos melhores profissionais do mundo, visando para que nossos
+      <p class="textoimg">Pensado e arquitetado pelos melhores profissionais do mundo, visando para que nossos
         clientes tenham total conforto e tecnologia ao seu dispor.
       </p>
     </div>
@@ -67,7 +68,7 @@
 <div class="container">
   <div class="row">
     <div class="column-66">
-      <p class="textoImg">Cada detalhe foi cuidadosamente pensado e trabalhado tanto nos ambientes externos quanto
+      <p class="textoimg">Cada detalhe foi cuidadosamente pensado e trabalhado tanto nos ambientes externos quanto
         internos, proporcionando uma experiência única e inesquecível em cada espaço.
       </p>
     </div>
@@ -83,7 +84,7 @@
       <img class="imagens" src="@/assets/img/foto_2.1.jpg">
     </div>
     <div class="column-66">
-      <p class="textoImg">viver em um mundo de beleza e encantamento no nosso T.EX Hotel. Aqui, você poderá
+      <p class="textoimg">viver em um mundo de beleza e encantamento no nosso T.EX Hotel. Aqui, você poderá
         experimentar
         sensações únicas, criar novas memórias e se deixar levar pela imaginação.
       </p>
@@ -92,44 +93,50 @@
 </div>
 
 <!--Acomodações-->
-<div id="acomodacoes">
-  <h2 class="texto-h2">NOSSAS ACOMODAÇÕES</h2>
+<br><br><br>
+<div id="acomodacoes" style="text-align:center">
+  <h2 class="sobre">NOSSAS ACOMODAÇÕES</h2>
 </div>
+
+<br> <br> <br>
 
 <div class="row">
   <div class="holder">
+
+
     <div class="imagen" data-title="Premier Room">
-      <img src="@/assets/img/premier-room.webp" class="imgAcomodacao">
+      <img src="@/assets/img/premier-room.webp" style="border-radius: 18px;">
       <p class="descImagens">Pensado e arquitetado pelos melhores profissionais do mundo, visando para que nossos
         clientes tenham total conforto e tecnologia ao seu dispor.</p>
     </div>
 
       <div class="imagen" data-title="Deluxe Room">
-        <img src="@/assets/img/quartoDeluxeRoom.jpg" class="imgAcomodacao">
+        <img src="@/assets/img/quartoDeluxeRoom.jpg" style="border-radius: 18px;">
         <p class="descImagens">Cada detalhe foi cuidadosamente pensado e trabalhado tanto nos ambientes externos quanto
           internos, proporcionando uma experiência única e inesquecível em cada espaço.</p>
       </div>
 
+
     <div class="imagen" data-title="T.Ex Premier Room">
-      <img src="@/assets/img/tex-premier-room.webp" class="imgAcomodacao">
-      <p class="descImagens">viver em um mundo de beleza e encantamento no nosso T.EX Hotel. Aqui, 
-        você poderáexperimentarsensações únicas, criar novas memórias e se deixar levar pela imaginação.</p>
+      <img src="@/assets/img/tex-premier-room.webp" style="border-radius: 18px;">
+      <p class="descImagens">viver em um mundo de beleza e encantamento no nosso T.EX Hotel. Aqui, você poderá
+        experimentar
+        sensações únicas, criar novas memórias e se deixar levar pela imaginação.</p>
     </div>
 
   </div>
 </div>
 
-<div class="container-nossosServicos">
+<br><br><br><br>
+
+<div class="container">
   <button class="btn">Conheça mais sobre nossos serviços</button>
 
   <br>
 </div>
-<!--Fim Acomodações-->
 
-<!--Gastronomia-->
-
-<div>
-  <h2 class="texto-h2">Gastronomia</h2>
+<div style="text-align:left">
+  <h2 class="sobre">Gastronomia</h2>
 </div>
 
 <div class="container">
@@ -140,7 +147,7 @@
 
     <div class="column-66">
       <br><br><br>
-      <p class="textoImgDelicie">Delicie-se com uma
+      <p class="textoimgDelicie" style="font: montserrat; size: 36px; line-height: 43.88px;">Delicie-se com uma
         variedade
         ilustre de culinárias de todo o mundo. Navegue pelo mais variados tipos de pratos, feito pelo melhores e
         variados chefs que temos.
@@ -171,10 +178,25 @@ export default {
 </script>
 
 <style>
-* {
+.logCada{
+  margin-bottom:20px;
+  font-size: 1.6rem;
+  list-style: none;
+  
+  
+}
+
+
+  * {
   box-sizing: border-box;
   margin: 0;
   
+}
+
+.sobre {
+  text-align: center;
+  font-size: 50px;
+  font-family: "Mont";
 }
 
 body {
@@ -237,7 +259,7 @@ img {
   text-align: center;
 }
 
-.textoImg {
+.textoimg {
   font-size: 30px;
   font-family: "Montserrat";
   padding-top: 8%;
@@ -245,18 +267,11 @@ img {
   
   
 }
-.textoImgDelicie{
+.textoimgDelicie{
   font-size: 30px;
   font-family: "Montserrat";
   padding-left:5% ;
-  size: 36px; 
-  line-height: 43.88px;
   
-  
-}
-.imgAcomodacao{
-  border-radius: 18px;
-
 }
 
 .holder {
@@ -318,14 +333,13 @@ img {
     flex-wrap: wrap;
   }
 
+  .sobre {
+    font-size: 31px;
+  }
 
   .container {
     padding: 20px;
   }
-  .container-nossosServicos{
-  padding-top:120px;
-  padding-bottom:40px;
-}
 
   .descImagens {
     padding-bottom: 30px;
@@ -390,7 +404,7 @@ img {
     color: #fff;
 }
 
-.navBar {
+.topnav {
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -400,23 +414,47 @@ img {
     
 }
 
-.navBar a, .nav-cadastro a, .nav-cadastro{
-  text-decoration: none;
-  color: #ffffff;
-  margin-bottom:20px;
-  font-size: 1.6rem;
-  list-style:none;
+.topnav a, .loginCadastro a{
+    text-decoration: none;
+    color: #fff;
     
 }
-.navBar a:hover, .nav-cadastro a:hover {
+
+.topnav a:hover, .loginCadastro a:hover {
     text-decoration: none;
     font-size: 1.614rem;
-    color: rgb(207, 233, 245);   
+    color: rgb(207, 233, 245);
+    
+    
 }
-.nav-cadastro li{
-  padding-bottom:10px; 
 
+.nav-cadastro {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px;
+
+    font-size: 1.2rem;
 }
+
+.nav-cadastro button {
+    background: none;
+    border: none;
+    font-family: 'Mont';
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.nav-cadastro button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.nav-cadastro .btn-cadastro {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-self: right;
+}
+
 .texto {
     max-width: fit-content;
     display: flex;
@@ -432,7 +470,7 @@ h1 {
     text-align: center;
 }
 
-.texto .texto-bemVindo {
+.texto .texto-bemvindo {
     font-family: 'Mont';
     font-size: 3rem;
 }
@@ -454,14 +492,6 @@ h1 {
     font-family: 'Mont';
     font-size: 1.5rem;
 }
-.texto-h2 {
-  text-align: center;
-  font-size: 50px;
-  font-family: "Mont";
-  padding-bottom:20px;
-  text-align:center
-  
-}
 
 .btn {
     display: block;
@@ -474,9 +504,6 @@ h1 {
     cursor: pointer;
     border-radius: 10px;
     font-family: 'Mont-bold', 'Helvetica Neue';
-}
-.bottomReserveAgora{
-  text-decoration: none;
 }
 
 .scroll-down {
@@ -531,6 +558,13 @@ h1 {
         color: #fff;
     }
 
+    .nav-cadastro {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 15px;
+
+        font-size: 1.2rem;
+    }
    
 
 }
@@ -550,7 +584,14 @@ h1 {
         color: #fff;
     }
 
-  
+    .nav-cadastro {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 15px;
+
+        font-size: 1.2rem;
+    }
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -592,7 +633,13 @@ h1 {
         font-size: 1.6rem;
     }
 
-   
+    .nav-cadastro {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 15px;
+
+        font-size: 1.2rem;
+    }
 
     .texto {
         max-width: fit-content;
@@ -614,5 +661,4 @@ h1 {
 
 </style>
  
-
 

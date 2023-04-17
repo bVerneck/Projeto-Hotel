@@ -15,9 +15,9 @@
         
         <form action="" method="post" class="form-inline">
             <label for="email" class="email">Email</label><br>
-            <input type="email" id="email" placeholder="Enter email" name="email"> <br>
+            <input type="email" id="email" placeholder="Email" name="email"> <br>
             <label for="pwd">Password</label><br>
-            <input type="password" id="pwd" placeholder="Enter password"><br>
+            <input type="password" id="pwd" placeholder="Senha"><br>
             <button type="submit" onclick="logar(); return false">Entrar</button>
         </form>
     </div>
@@ -74,11 +74,8 @@ logar()
     width: 355px;
     border-radius: 5px;
     overflow: hidden;
-    /* background-color: red;  */
     text-align: center;
 }
-
-
 
 body{
  
@@ -92,11 +89,8 @@ body{
     height: 100vh;
     justify-content: center; 
     align-items: center;
-    
-    
+       
 }
-
-
 
 form{
     color: white;
@@ -110,8 +104,6 @@ form{
 }
 
 .form-inline{
-    /* display: flex; */
-    /* flex-flow: row wrap; */
     align-items: center;
     border-radius: 10px;
     margin-top: 80px;
