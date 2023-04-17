@@ -44,11 +44,14 @@ ul {
 .header {
     background-color: $black;
     box-shadow: 1px 1px 5px 0px $gray;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
+    // z-index: 1000;
     font-family: 'Mont', 'Garamond';
     text-transform: uppercase;
+
 }
 
 header {
