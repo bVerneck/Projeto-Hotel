@@ -10,9 +10,9 @@
 
 - João Ricardo Jr.
 
-- Willian Pinheiro (PO)
+- Willian Pinheiro 
 
-- Cristian Marcucci (Scrum Master)
+- Cristian Marcucci 
 
 - Renor Oliveira
 
