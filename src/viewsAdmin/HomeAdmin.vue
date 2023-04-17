@@ -55,7 +55,7 @@
         <nav>
           <ul>
             <li><router-link to="/homeAdmin">Home</router-link></li>
-            <li><router-link to="/hospedesAdmin">Hospedes</router-link></li>
+            <li><router-link to="/reservaAdmin">Reserva</router-link></li>
             <li><router-link to="/reservasAdmin">Reservas</router-link></li>
             <li><router-link to="/funcionariosAdmin">Funcionarios</router-link></li>
           </ul>
@@ -239,7 +239,7 @@ nav ul li {
 .card_large {
   margin: 40px;
   width: 425px;
-  height: 325px;
+  height: 400px;
   padding: 30px;
   background: #ffffff;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);

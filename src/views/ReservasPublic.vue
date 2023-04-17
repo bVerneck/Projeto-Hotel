@@ -475,11 +475,94 @@
           <button class="btn__aside__limpar limpar-dados" @click="limparDados">
             Limpar
           </button>
-          <button class="btn__aside__continuar">Continuar</button>
+          <button class="btn__aside__continuar">Finalizar</button>
         </div>
       </div>
     </aside>
   </div>
+
+  <!-- pagamento -->
+  <aside class="reservas__container" style="display:none;">
+      <div class="reservas__container__resumo__holder">
+        <div class="resumo__header">
+          <h3 class="resumo__titulo">Resumo da reserva</h3>
+          <button class="no-desktop"></button>
+        </div>
+        <div class="resumo__conteudo">
+          <div class="resumo__conteudo__item">
+            <p class="bold">Check-in</p>
+            <p class="info checkin-showup">{{ checkinShowup }}</p>
+          </div>
+          <div class="resumo__conteudo__item">
+            <p class="bold">Check-out</p>
+            <p class="info checkout-showup">{{ checkoutShowup }}</p>
+          </div>
+          <div class="resumo__conteudo__item">
+            <p class="bold">Hospedes</p>
+            <p class="info hospedes-resumo">{{ hospedesResumo }}</p>
+          </div>
+        </div>
+        <div class="resumo_conteudo_acomodacoes">
+          <p class="bold">Quarto</p>
+          <div class="resumo_conteudo_acomodacoes__wrap">
+            <div class="resumo_conteudo_acomodacoes__itens">
+              <ul>
+                <li class="quarto-selecionado">{{ displayQuarto }}</li>
+                <li>Noites</li>
+                <li>Adultos</li>
+                <li>Crianças</li>
+              </ul>
+            </div>
+            <div class="resumo_conteudo_acomodacoes__valores">
+              <ul>
+                <li class="quarto-selecionado-valor">
+                  {{ displayValorQuarto }}
+                </li>
+                <li class="display-noites">{{ noites }}</li>
+                <li class="entrada-adulto">{{ entradaAdulto }}</li>
+                <li class="entrada-crianca">{{ entradaCrianca }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="resumo_conteudo_adicionais">
+          <p class="bold">Adicionais</p>
+          <div class="resumo_conteudo_adicionais__wrap">
+            <div class="resumo_conteudo_adicionais__itens">
+              <ul>
+                <li>Academia</li>
+                <li>Cofre</li>
+                <li>Despertador</li>
+                <li>Estacionamento</li>
+                <li>Tranfer - Chegada</li>
+                <li>Transfer - Partida</li>
+              </ul>
+            </div>
+            <div class="resumo_conteudo_adicionais__valores">
+              <ul>
+                <li class="resumo-adicionais academia">R$0.00</li>
+                <li class="resumo-adicionais cofre">R$0.00</li>
+                <li class="resumo-adicionais despertador">R$0.00</li>
+                <li class="resumo-adicionais estacionamento">R$0.00</li>
+                <li class="resumo-adicionais transferChegada">R$0.00</li>
+                <li class="resumo-adicionais transferPartida">R$0.00</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="resumo__total">
+          <p class="bold">TOTAL:</p>
+          <p class="bold display-total">{{ total }}</p>
+        </div>
+        <div class="btn__aside">
+          <button class="btn__aside__continuar">Finalizar Pagamento</button>
+        </div>
+      </div>
+    </aside>
+  
+  <!-- fim pagamento -->
+
+
   <UnifiedFooter />
 </template>
 
@@ -752,6 +835,10 @@ export default {
 </script>
 
 <style>
+.reservas__container__pagamento{
+  width:1000px;
+}
+
 * {
   padding: 0;
   margin: 0;

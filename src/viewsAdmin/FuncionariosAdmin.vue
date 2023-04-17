@@ -1,6 +1,5 @@
 <template>
     <!DOCTYPE html>
-<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,11 +13,11 @@
       <HeaderAdmin />
     </header>
     <main>
-      <table class="funcionario">
+      <table>
         <tr>
           <th>Funcionarios</th>
           <th>Informações</th>
-          <th class="matri">Matricula</th>
+          <th>Matricula</th>
         </tr>
         <tr>
           <td class="cursorClick">Andre Luiz</td>
@@ -111,7 +110,6 @@
       </table>
     </main>
   </body>
-</html>
 
 </template>
 
@@ -139,15 +137,9 @@ body {
   background-color: rgb(194, 191, 191);
   font-size: 1.1em;
 }
-
-/* CLASSES */
 .cursorClick:hover {
   cursor: pointer;
   color: red;
-}
-
-.matricula {
-  padding-left: 3px;
 }
 
 /* table */
@@ -158,9 +150,11 @@ table {
   text-align: center;
 }
 
+
 table td,
 table th {
   padding: 1%;
+  
 }
 
 /* COR DAS TABELAS */
