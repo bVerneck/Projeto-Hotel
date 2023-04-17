@@ -1,0 +1,266 @@
+@font-face {
+  font-family: "Mont";
+  src: url("../fonts/Montserrat-Regular.otf");
+}
+@font-face {
+  font-family: "Mont-bold";
+  src: url("../fonts/Montserrat-Bold.otf");
+}
+@font-face {
+  font-family: "Garamond";
+  src: url("../fonts/AGaramondPro-Bold.otf");
+}
+@keyframes slide {
+  from {
+    top: 56rem;
+  }
+  to {
+    top: 55rem;
+  }
+}
+body {
+  margin: 0;
+  font-family: "Mont";
+  box-sizing: border-box;
+}
+
+.bg-img {
+  background-image: url("../img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 20px;
+}
+
+.bg-img-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: "Mont";
+  color: #fff;
+}
+
+.logo-header {
+  display: block;
+  align-self: start;
+}
+
+.bg-img-top-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10rem;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: "Mont";
+  color: #fff;
+}
+
+.top-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 70px;
+  font-size: 1.6rem;
+}
+.top-nav a {
+  text-decoration: none;
+  color: #fff;
+}
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+.nav-cadastro {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 30px;
+  font-size: 1.2rem;
+}
+.nav-cadastro button {
+  background: none;
+  border: none;
+  font-family: "Mont";
+  font-size: 1.2rem;
+  color: #fff;
+}
+.nav-cadastro button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.nav-cadastro .btn-cadastro {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: right;
+}
+
+.texto {
+  max-width: fit-content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 190px;
+  color: #fff;
+}
+.texto p {
+  text-align: center;
+}
+.texto .texto-bem-vindo {
+  font-family: "Mont";
+  font-size: 3rem;
+}
+.texto h1 {
+  font-family: "Garamond";
+  font-size: 10rem;
+  line-height: 130px;
+}
+.texto .texto-hotel {
+  font-family: "Garamond";
+  font-size: 4rem;
+  letter-spacing: 0.4em;
+  text-indent: 0.4em;
+}
+.texto .texto-slogan {
+  font-family: "Mont";
+  font-size: 1.5rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+.btn {
+  display: block;
+  margin: auto;
+  background-color: #0DADBD;
+  border: none;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: "Mont-bold", "Helvetica Neue";
+}
+
+.scroll-down {
+  width: fit-content;
+  margin: 70px auto 20px auto;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  justify-content: center;
+}
+.scroll-down p {
+  font-family: "Mont-bold", "Helvetica Neue";
+  color: #fff;
+  font-size: 1.1rem;
+}
+.scroll-down img {
+  position: absolute;
+  display: block;
+  align-self: center;
+  width: 40px;
+  animation-name: slide;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@media only screen and (max-width: 1315px) {
+  .bg-img-top-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding-right: 30px;
+    gap: 30px;
+    max-width: 800px;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    font-family: "Mont";
+    color: #fff;
+  }
+  .nav-cadastro {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px;
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 1070px) {
+  .bg-img-top-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 30px;
+    gap: 30px;
+    max-width: 800px;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    font-family: "Mont";
+    color: #fff;
+  }
+  .nav-cadastro {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px;
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bg-img-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: "Mont";
+    color: #fff;
+  }
+  .bg-img-top-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 30px;
+    gap: 30px;
+    max-width: 400px;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    font-family: "Mont";
+    color: #fff;
+  }
+  .top-nav {
+    margin: 30px auto 30px auto;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 1.6rem;
+  }
+  .nav-cadastro {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px;
+    font-size: 1.2rem;
+  }
+  .texto {
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+    color: #fff;
+  }
+  .scroll-down {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

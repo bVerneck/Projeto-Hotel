@@ -1,0 +1,216 @@
+/* footer */
+* {
+  margin: 0;
+}
+
+footer {
+  background-color: #0dadbd;
+  font-family: "Mont";
+  font-weight: 400;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  padding: 1% 10% 1% 10%;
+}
+
+.company-footer {
+  width: 80%;
+  padding: 25px;
+}
+.company-footer h2 {
+  margin: 0 0 25px 0;
+}
+
+.footer-box {
+  font-family: "AGaramondPro-Regular";
+  width: 80%;
+  padding: 0px 0px 0px 5%;
+  display: flex;
+}
+.footer-box li {
+  padding: 5%;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.social-media {
+  font-family: "Montserrat";
+  width: 80%;
+  padding: 0px 0px 0px 5%;
+}
+.social-media ul {
+  display: block;
+  float: left;
+}
+.social-media ul li {
+  display: flex;
+  justify-content: space-around;
+}
+.social-media li {
+  padding: 10px;
+}
+
+span {
+  padding: 0 15px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  font-weight: bold, 400;
+  font-size: 16px;
+  line-height: 20px;
+  border: 0, 5px solid #fff;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+.newsletter {
+  width: 50%;
+  padding: 1%;
+  float: left;
+  font-family: "Montserrat";
+}
+
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+  .newsletter {
+    display: none;
+  }
+  .footer-box {
+    display: none;
+    width: 100%;
+    margin-left: -15px;
+  }
+  .footer-box ul {
+    display: flex;
+    font-family: "AGaramondPro-Regular";
+    width: 37%;
+    height: 9%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .social-media {
+    padding: 0px 0px 0px 60%;
+    margin-top: -2%;
+    margin-bottom: 21px;
+  }
+  .social-media ul {
+    width: 120px;
+    display: flex;
+    float: none;
+  }
+  .social-media h2 {
+    display: none;
+  }
+  span {
+    display: none;
+  }
+  .con {
+    display: none;
+  }
+  footer {
+    padding: 0px;
+    flex-direction: column;
+  }
+  footer .img {
+    display: flex;
+  }
+  .company-footer {
+    padding-top: 10px;
+    padding-left: 5px;
+    width: 25%;
+    margin-bottom: -55px;
+  }
+  .company-footer h2 {
+    margin: 0 0 0px 0;
+  }
+  .company-footer p {
+    display: none;
+  }
+  .texto h1 {
+    font-size: 8rem;
+  }
+  .texto .texto-hotel {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 1000px) and (orientation: landscape) {
+  .newsletter {
+    display: none;
+  }
+  .social-media {
+    padding: 0px 0px 0px 72%;
+    margin-top: -18%;
+    margin-bottom: 115px;
+  }
+  .social-media ul {
+    width: 120px;
+    display: flex;
+    float: none;
+  }
+  .social-media h2 {
+    display: none;
+  }
+  span {
+    display: none;
+  }
+  .con {
+    display: none;
+  }
+  footer {
+    padding: 0px;
+    flex-direction: column;
+  }
+  footer .img {
+    display: flex;
+  }
+  .footer-box {
+    width: 106%;
+    margin-left: -82px;
+  }
+  .footer-box li {
+    padding: 0%;
+  }
+  .footer-box ul {
+    display: flex;
+    font-family: "AGaramondPro-Regular";
+    width: 100%;
+    height: 9%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 22px 0px 0px 8%;
+  }
+  .company-footer {
+    padding-top: 15px;
+    width: 25%;
+    margin-bottom: -45px;
+  }
+  .company-footer h2 {
+    margin-bottom: 15px;
+  }
+  p {
+    margin-bottom: 15px;
+  }
+  .texto h1 {
+    font-size: 8rem;
+  }
+  .texto .texto-hotel {
+    font-size: 3rem;
+  }
+}
+
+/*# sourceMappingURL=footer.css.map */

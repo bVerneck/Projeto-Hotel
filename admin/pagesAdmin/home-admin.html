@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styleAdmin/css/home-admin.css">
+  <title>Home Admin</title>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="./home-admin.js"></script>
+</head>
+<body>
+  <div class="container">
+    <section class="lateral-menu">
+      <div class="lateral-menu-top">
+        <div>
+          <a href="../pagesAdmin/home-admin.html">
+            <img src="../assetsAdmin/logo.png" alt="">
+          </a>
+        </div>
+        <div class="foto-perfil">
+          <img src="../assetsAdmin/perfil.jpg" alt="">
+        </div>
+        <ul>
+          <li class="dashboard">
+            <i data-feather="edit"></i>
+            <span>Dashboard</span>
+          </li>
+          <li class="notification">
+            <i data-feather="bell"></i>
+            <span>Notificações</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <div>
+            <li class="settings">
+              <i data-feather="settings"></i>
+              <span>Configurações</span>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </section>
+    <section class="main">
+      <div class="navbar">
+        <div>
+          <ul class="navigation">
+            <a href="/admin/pagesAdmin/home-admin.html">
+              <li class="navigation-itens">Home</li>
+            </a>
+            <a href="/admin/pagesAdmin/funcionarios-admin.html">
+              <li class="navigation-itens">Funcionários</li>
+            </a>
+            <a href="/admin/pagesAdmin/hospedes-admin.html">
+              <li class="navigation-itens">Hóspedes</li>
+            </a>
+            <a href="/admin/pagesAdmin/reservas-admin.html">
+              <li class="navigation-itens">Reservas</li>
+            </a>
+            <li class="navigation-itens"><img class="icone-logout" src="../assetsAdmin/icone-logout.png" alt="icone de logout"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="content">
+        <div class="cards-header">
+          <div class="card">
+            <div class="card-container">
+              <div>
+                <h2>Hóspedes</h2>
+                <p>120</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-container">
+              <div>
+                <h2>Quartos Ocupados</h2>
+                <p>50</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-container">
+              <div>
+                <h2>Quartos Vagos</h2>
+                <p>30</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-container">
+              <div>
+                <h2>Reservas Feitas</h2>
+                <p>20</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cards-header">
+          <div class="card-large">
+            <div class="card-container">
+              <div>
+                <h2>Título</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, doloribus?</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-container">
+              <div>
+                <h2>Título</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, doloribus?</p>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    feather.replace()
+  </script>
+</body>
+</html>

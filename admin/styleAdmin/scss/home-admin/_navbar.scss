@@ -1,0 +1,40 @@
+@import "_global-config-home-admin.scss";
+
+// Navbar
+$navbar-width: 100%;
+
+// Navigation
+$navigation-background: white;
+$navigation-display: flex;
+$navigation-direction: row;
+$navigation-justify-content: space-around;
+$navigation-font-size: 1.8rem;
+
+// Navigation Itens
+$itens-padding: 30px;
+
+// Icone Logout
+$logout-width: 50px;
+$logout-height: 40px;
+
+.navbar {
+  width: $navbar-width;
+}
+
+.navigation {
+  background-color: $navigation-background;
+  display: $navigation-display;
+  flex-direction: $navigation-direction;
+  justify-content: $navigation-justify-content;
+  font-size: $navigation-font-size;
+}
+
+.navigation-itens {
+  padding: $itens-padding;
+}
+
+.icone-logout {
+  width: $logout-width;
+  height: $logout-height;
+}
+

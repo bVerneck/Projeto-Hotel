@@ -1,0 +1,89 @@
+@font-face {
+  font-family: "Mont";
+  src: url("../../fonts/Montserrat-Regular.otf");
+}
+
+$cor-fundo: rgb(194, 191, 191);
+$cor-tabela-impar: #7623FF;
+$cor-tabela-par: rgba(255, 255, 255, 0.521);
+$cor-texto: rgb(255, 255, 255);
+$cor-hover: red;
+$tamanho-fonte: 1.4em;
+$espacamento-tabela: 1%;
+$borda-tabela: 12px;
+$largura-logo: 9%;
+$espacamento-esquerda-logo: 25%;
+$espacamento-esquerda-nav: 3%;
+$espacamento-esquerda-matricula: 3px;
+$largura-botaosair: 37px;
+$espacamento-direita-botaosair: 25%;
+
+body {
+    margin: 0;
+  background-color: $cor-fundo;
+  font-size: $tamanho-fonte;
+}
+
+/* CLASSES */
+.botaosair {
+  width: $largura-botaosair;
+  float: right;
+  filter: invert(100%);
+}
+
+.barraRoxaTop {
+  background-color: #7623FF;
+}
+
+.logo {
+  width: $largura-logo;
+  padding-left: $espacamento-esquerda-logo;
+  cursor: pointer;
+}
+
+.cursorClick:hover {
+  cursor: pointer;
+  color: $cor-hover;
+}
+
+.matricula {
+  padding-left: $espacamento-esquerda-matricula;
+}
+
+/* barra de navegação */
+.barraNavegacao {
+  display: initial;
+
+  a {
+    color: $cor-texto;
+    text-decoration: none;
+    padding-left: $espacamento-esquerda-nav;
+    font-size: $tamanho-fonte;
+
+    &:hover {
+      color: $cor-hover;
+    }
+  }
+}
+
+/* table */
+table {
+  width: 87%;
+  margin-left: 7%;
+  margin-top: 1%;
+  text-align: center;
+
+  td,
+  th {
+    padding: $espacamento-tabela;
+  }
+}
+
+/* COR DAS TABELAS */
+table tr:nth-of-type(even) {
+  background-color: $cor-tabela-par;
+}
+table tr:nth-of-type(odd) {
+  background-color: $cor-tabela-impar;
+  border-radius: $borda-tabela;
+}
