@@ -13,13 +13,12 @@ footer {
   padding: 1% 10% 1% 10%;
 }
 
-.company-footer h2 {
-  margin: 0 0 25px 0;
-}
-
 .company-footer {
   width: 80%;
   padding: 25px;
+}
+.company-footer h2 {
+  margin: 0 0 25px 0;
 }
 
 .footer-box {
@@ -27,6 +26,9 @@ footer {
   width: 80%;
   padding: 0px 0px 0px 5%;
   display: flex;
+}
+.footer-box li {
+  padding: 5%;
 }
 
 a {
@@ -39,15 +41,16 @@ a {
   width: 80%;
   padding: 0px 0px 0px 5%;
 }
-
 .social-media ul {
   display: block;
   float: left;
 }
-
 .social-media ul li {
   display: flex;
   justify-content: space-around;
+}
+.social-media li {
+  padding: 10px;
 }
 
 span {
@@ -66,14 +69,6 @@ li {
   border: 0, 5px solid #fff;
 }
 
-.footer-box li {
-  padding: 5%;
-}
-
-.social-media li {
-  padding: 10px;
-}
-
 h2 {
   font-weight: 400;
 }
@@ -89,41 +84,11 @@ h2 {
   .newsletter {
     display: none;
   }
-
   .footer-box {
     display: none;
-  }
-
-  .social-media ul {
-    width: 120px;
-    display: flex;
-    float: none;
-  }
-
-  .social-media {
-    padding: 0px 0px 0px 60%;
-    margin-top: -2%;
-    margin-bottom: 21px;
-  }
-
-  span {
-    display: none;
-  }
-
-  .con {
-    display: none;
-  }
-
-  footer {
-    padding: 0px;
-    flex-direction: column;
-  }
-
-  .footer-box {
     width: 100%;
     margin-left: -15px;
   }
-
   .footer-box ul {
     display: flex;
     font-family: "AGaramondPro-Regular";
@@ -135,84 +100,88 @@ h2 {
     justify-content: space-between;
     align-items: flex-end;
   }
-
+  .social-media {
+    padding: 0px 0px 0px 60%;
+    margin-top: -2%;
+    margin-bottom: 21px;
+  }
+  .social-media ul {
+    width: 120px;
+    display: flex;
+    float: none;
+  }
+  .social-media h2 {
+    display: none;
+  }
+  span {
+    display: none;
+  }
+  .con {
+    display: none;
+  }
+  footer {
+    padding: 0px;
+    flex-direction: column;
+  }
+  footer .img {
+    display: flex;
+  }
   .company-footer {
     padding-top: 10px;
     padding-left: 5px;
     width: 25%;
     margin-bottom: -55px;
   }
-
   .company-footer h2 {
     margin: 0 0 0px 0;
   }
-
   .company-footer p {
     display: none;
   }
-
-  .social-media h2 {
-    display: none;
-  }
-
   .texto h1 {
     font-size: 8rem;
   }
-
   .texto .texto-hotel {
     font-size: 3rem;
   }
-
-  footer .img {
-    display: flex;
-  }
-
 }
-
-
 @media screen and (max-width: 1000px) and (orientation: landscape) {
   .newsletter {
     display: none;
   }
-
-  .social-media ul {
-    width: 120px;
-    display: flex;
-    float: none;
-  }
-
   .social-media {
     padding: 0px 0px 0px 72%;
     margin-top: -18%;
     margin-bottom: 115px;
   }
-
+  .social-media ul {
+    width: 120px;
+    display: flex;
+    float: none;
+  }
   .social-media h2 {
     display: none;
   }
-
   span {
     display: none;
   }
-
   .con {
     display: none;
   }
-
   footer {
     padding: 0px;
     flex-direction: column;
   }
-
+  footer .img {
+    display: flex;
+  }
   .footer-box {
     width: 106%;
     margin-left: -82px;
   }
-
   .footer-box li {
     padding: 0%;
   }
-
   .footer-box ul {
     display: flex;
     font-family: "AGaramondPro-Regular";
@@ -225,28 +194,23 @@ h2 {
     align-items: flex-end;
     padding: 22px 0px 0px 8%;
   }
-
   .company-footer {
     padding-top: 15px;
     width: 25%;
     margin-bottom: -45px;
   }
-
-  .company-footer h2,
+  .company-footer h2 {
+    margin-bottom: 15px;
+  }
   p {
     margin-bottom: 15px;
   }
-
   .texto h1 {
     font-size: 8rem;
   }
-
   .texto .texto-hotel {
     font-size: 3rem;
   }
-
-  footer .img {
-    display: flex;
-  }
-
 }
+
+/*# sourceMappingURL=footer.css.map */

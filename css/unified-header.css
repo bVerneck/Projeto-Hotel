@@ -33,8 +33,9 @@ ul {
 .header {
   background-color: #36383F;
   box-shadow: 1px 1px 5px 0px #85888C;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   font-family: "Mont", "Garamond";
   text-transform: uppercase;
