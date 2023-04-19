@@ -17,8 +17,8 @@
         </li>
       </ul>
     </nav>
-  </header> 
-   <!-- End Unified Header -->
+  </header>
+  <!-- End Unified Header -->
 </template>
 
 <script>
@@ -34,37 +34,61 @@ export default {
     LogoHeader,
   },
 };
+
+let prevScrollpos = window.pageYOffset;
+let timeoutId = setTimeout(() => {
+  document.querySelector('.header').style.transition = 'top 0.4s ease-in-out';
+}, 300);
+
+window.addEventListener('scroll', () => {
+  const currentScrollPos = window.pageYOffset;
+
+  if (prevScrollpos > currentScrollPos) {
+    document.querySelector('.header').style.top = '0';
+  } else {
+    document.querySelector('.header').style.top = '-100px';
+  }
+  prevScrollpos = currentScrollPos;
+});
 </script>
 
 <style >
 /* Theming */
 @import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap";
+
 @font-face {
   font-family: "Mont";
   src: url("../assets/fonts/Montserrat-Regular.otf");
 }
+
 @font-face {
   font-family: "Mont-bold";
   src: url("../assets/fonts/Montserrat-Bold.otf");
 }
+
 @font-face {
   font-family: "Garamond";
   src: url("../assets/fonts/AGaramondPro-Bold.otf");
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: #f9f9f9;
 }
+
 a {
   text-decoration: none;
 }
+
 ul {
   list-style: none;
 }
+
 .header {
   background-color: #36383f;
   box-shadow: 1px 1px 5px 0px #85888c;
@@ -74,9 +98,11 @@ ul {
   font-family: "Mont", "Garamond";
   text-transform: uppercase;
 }
+
 header img {
   display: inline;
 }
+
 .nav {
   width: 100%;
   height: 100%;
@@ -86,19 +112,23 @@ header img {
   max-height: 0;
   transition: max-height 0.5s ease-out;
 }
+
 .menu a {
   display: block;
   padding: 30px;
   color: #f9f9f9;
 }
+
 .menu a:hover {
   background-color: #85888c;
 }
+
 .hamb {
   cursor: pointer;
   float: right;
   padding: 40px 30px;
 }
+
 .hamb-line {
   background: #f9f9f9;
   display: block;
@@ -106,6 +136,7 @@ header img {
   position: relative;
   width: 24px;
 }
+
 .hamb-line::before {
   background: #f9f9f9;
   content: "";
@@ -116,6 +147,7 @@ header img {
   width: 100%;
   top: 5px;
 }
+
 .hamb-line::after {
   background: #f9f9f9;
   content: "";
@@ -126,26 +158,33 @@ header img {
   width: 100%;
   top: -5px;
 }
+
 label span {
   padding: 0px 0px;
 }
+
 .side-menu {
   display: none;
 }
-.side-menu:checked ~ nav {
+
+.side-menu:checked~nav {
   max-height: 100%;
 }
-.side-menu:checked ~ .hamb .hamb-line {
+
+.side-menu:checked~.hamb .hamb-line {
   background: transparent;
 }
-.side-menu:checked ~ .hamb .hamb-line::before {
+
+.side-menu:checked~.hamb .hamb-line::before {
   transform: rotate(-45deg);
   top: 0;
 }
-.side-menu:checked ~ .hamb .hamb-line::after {
+
+.side-menu:checked~.hamb .hamb-line::after {
   transform: rotate(45deg);
   top: 0;
 }
+
 @media (min-width: 800px) {
   .nav {
     margin-right: 6%;
@@ -156,26 +195,32 @@ label span {
     width: fit-content;
     background-color: transparent;
   }
+
   .menu li {
     float: left;
   }
+
   .menu a:hover {
     background-color: transparent;
     color: #85888c;
   }
+
   .hamb {
     display: none;
   }
 }
+
 @media (min-width: 768px) and (orientation: landscape) {
   .nav {
     margin-right: 1%;
   }
+
   .nav li {
     height: 95px;
     font-size: 14px;
     line-height: 33px;
   }
+
   .menu a {
     padding: 24px;
   }
