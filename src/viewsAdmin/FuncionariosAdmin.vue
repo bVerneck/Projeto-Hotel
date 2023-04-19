@@ -1,25 +1,24 @@
 <template>
   <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tx Hotel-Funcionarios</title>
+</head>
 
-    <title>Tx Hotel-Funcionarios</title>
-  </head>
-
-  <body>
-    <header>
-      <HeaderAdmin />
-    </header>
+<body>
+  <header>
+    <HeaderAdmin />
+  </header>
     <main>
-      <table class="funcionario">
+      <table>
         <tr>
           <th>Funcionarios</th>
-          <th>Salário</th>
-          <th class="matri">Matricula</th>
+          <th>Informações</th>
+          <th>Matricula</th>
         </tr>
         <tr v-for="(funcionario, i) in funcionarios" :key="i">
           <td class="cursorClick">{{ funcionario.nome }}</td>
@@ -29,7 +28,6 @@
       </table>
     </main>
   </body>
-
   </html>
 </template>
 
@@ -69,15 +67,9 @@ body {
   background-color: rgb(194, 191, 191);
   font-size: 1.1em;
 }
-
-/* CLASSES */
 .cursorClick:hover {
   cursor: pointer;
   color: red;
-}
-
-.matricula {
-  padding-left: 3px;
 }
 
 /* table */
@@ -88,9 +80,11 @@ table {
   text-align: center;
 }
 
+
 table td,
 table th {
   padding: 1%;
+  
 }
 
 /* COR DAS TABELAS */

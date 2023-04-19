@@ -63,16 +63,6 @@
           <button class="botaoConfirmar">Confirmar</button>
         </div>
       </div>
-      <aside id="summary">
-        <h1>Resumo da Reserva</h1>
-        <div class="summary-info">
-          <p>Apartamento:</p>
-          <p>Check-in:</p>
-          <p>Check-out:</p>
-          <p>Qtd Pessoas:</p>
-        </div>
-        <button class="summary-book">Continuar</button>
-      </aside>
     </main>
   </body>
 
@@ -209,7 +199,7 @@ body {
 .room{
   display: flex;
   flex-direction: column;
-  margin: 6rem;
+  margin: 10px;
   max-width: 400px;
   border: 2px solid rgb(0, 0, 0)
 }

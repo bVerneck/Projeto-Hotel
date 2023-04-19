@@ -21,27 +21,6 @@
     </div>
 
     <div>
-      <p>Sexo</p>
-      <select>
-        <option></option>
-        <option>Masculino</option>
-        <option>Feminino</option>
-      </select>
-    </div>
-
-    <div>
-      <p>Estado civil</p>
-      <select>
-        <option></option>
-        <option>Casado(a)</option>
-        <option>Solteiro(a)</option>
-        <option>Viúvo(a)</option>
-        <option>Divorciado(a)</option>
-        <option>Separado(a)</option>
-      </select>
-    </div>
-
-    <div>
       <p>Selecione uma área</p>
       <select>
         <option>Selecione</option>
@@ -269,7 +248,7 @@ i{
 
 .capa{
   width: 100%;
-  height: 30vw;
+  height: 12vw;
   background-color: red;
   background: url('https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
   background-position: center center;

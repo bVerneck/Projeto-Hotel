@@ -196,7 +196,7 @@
         </div>
         <div class="modal-btn flex-row">
           <button class="modal-btn-limpar limpar-dados" @click="limparDados">Limpar</button>
-          <button @click="ativarModalFinal" class="modal-btn-continuar">Continuar</button>
+          <button @click="ativarModalFinal" class="modal-btn-continuar">Finalizar Reserva</button>
         </div>
       </div>
       <div class="modal-confirma">
@@ -475,22 +475,28 @@
           <button class="btn__aside__limpar limpar-dados" @click="limparDados">
             Limpar
           </button>
-          <button class="btn__aside__continuar">Continuar</button>
+          <button class="btn__aside__continuar" id="exibir-conteudo" @click="exibirPagamento" >Finalizar Reserva</button>
         </div>
       </div>
     </aside>
   </div>
+  <div  id="conteudo" :class="{ pagamento_hidden: !mostrarPagamento, pagamento: mostrarPagamento }">
+   <FormularioDePagamento />
+  </div>
+  
   <UnifiedFooter />
 </template>
 
 <script>
 import UnifiedHeader from "@/components/UnifiedHeader.vue";
 import UnifiedFooter from "@/components/UnifiedFooter.vue";
+import FormularioDePagamento from "@/components/FormularioDePagamento.vue";
 export default {
   name: "ReservasPublic",
   components: {
     UnifiedHeader,
     UnifiedFooter,
+    FormularioDePagamento,
   },
   data() {
     return {
@@ -507,9 +513,15 @@ export default {
       noites: 0,
       displayQuarto: "",
       displayValorQuarto: "",
+      mostrarPagamento: false,
     };
   },
+  
   methods: {
+   
+  exibirPagamento() {
+      this.mostrarPagamento = !this.mostrarPagamento;
+    },
     callReservas() {
       this.objreservas = require("@/assets/reservas.js");
     },
@@ -741,7 +753,7 @@ export default {
       this.altDisplay();
     },
   },
-
+  
   created() {
     this.callReservas();
   },
@@ -1044,6 +1056,16 @@ li {
 .right {
   text-align: right;
 }
+.pagamento_hidden {
+  display: none;
+}
+.pagamento {
+  position: fixed;
+  top: 15%;
+  bottom: 25%;
+  left: 35%;
+  right: 35%;
+}
 
 @media (min-width: 768px) {
   .reservas__entradas {
@@ -1170,6 +1192,7 @@ li {
   .no-mobile {
     display: block;
   }
+
 }
 
 /*# sourceMappingURL=reservas-public.css.map */
