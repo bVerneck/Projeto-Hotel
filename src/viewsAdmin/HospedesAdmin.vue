@@ -98,12 +98,23 @@
 
 <script>
 import HeaderAdmin from './components/HeaderAdmin.vue';
+import api from '@/services/api.js';
 
 export default {
     name:"HospedesAdmin",
     components: {
     HeaderAdmin
   },
+  data(){
+    return {
+      lista: []
+    }
+  },
+  mounted(){
+    api.get('/clientes').then(response => {
+      console.log(response.data);
+    })
+  }
 }
 </script>
 
