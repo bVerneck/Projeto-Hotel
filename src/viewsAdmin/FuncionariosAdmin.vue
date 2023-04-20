@@ -78,6 +78,7 @@ table {
   margin-left: 7%;
   margin-top: 1%;
   text-align: center;
+  
 }
 
 

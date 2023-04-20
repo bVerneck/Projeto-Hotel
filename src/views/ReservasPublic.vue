@@ -1120,6 +1120,16 @@ li {
 }
 
 @media (min-width: 768px) {
+
+.pagamento_hidden {
+  display: none;
+}
+.pagamento {
+  position: fixed;
+  top: 15%;
+  bottom: 25%;
+}
+
   .reservas__entradas {
     flex-direction: row;
     margin-bottom: 1rem;
@@ -1165,6 +1175,16 @@ li {
 }
 
 @media (min-width: 1025px) {
+
+.pagamento_hidden {
+  /* display: none; */
+}
+.pagamento {
+  position: fixed;
+  top: 15%;
+  bottom: 25%;
+ 
+}
   .no-desktop {
     display: none;
   }

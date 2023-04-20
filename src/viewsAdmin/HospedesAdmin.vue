@@ -1,253 +1,230 @@
 <template>
-<body>
-    <header>
-      <HeaderAdmin /> 
-    </header>   
-        <main>
-            <article id="hospedes" class="container">
-                <h3>Reservar</h3>
-                <form action="" method="post" enctype="multipart/form-data">
-                    
-                    
-                        <ul>
-                            <li>
-                                <label for="nome">Nome</label>
-                                <input type="text" id="nome" name="nome" maxlength="30" placeholder="Escreva o nome completo"
-                                    size="50" autofocus required />
-                            </li>
-                            <br />
-                            <li>
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" size="50" placeholder="Coloque seu melhor e-mail"
-                                    required />
-                            </li>
-                            <br />
-                            <li>
-                                <label for="data_niver">Data da entrada</label>
-                                <input type="date">
-                            </li>
-                            <br />
-                            <li>
-                                <label for="data_niver">Data prevista para saída</label>
-                                <input type="date" >
-                            </li>
-                            <br />
-                            <li>
-                                <label for="acompanhantes">Acompanhantes</label>
-                                <input type="number" id="acompanhantes" name="acompanhantes" min="1" max="10" required />
-                            </li>
-                            <br />
-            
-                            <li>
-                                <label for="ftHospede">Foto do hóspede</label>
-                                <input type="file" id="ftHospede" name="ftHospede" accept="image/png" />
-                            </li>
-            
-                            <br />
-                            <li>
-                                <label for="data_niver">Data de nascimento</label>
-                                <input type="date" >
-                            </li>
-                        
-                            <br />
-                            <li>
-                                <label class="text-label"  for="servicos">Serviços adicionais :</label><br />
-                                <input type="checkbox" name="servicos" id="garcom">Garçom particular
-                                <input type="checkbox" name="servicos" id="Motorista">Motorista 24h
-                                <input type="checkbox" name="servicos" id="cardapio">Cardápio completo
-                            </li>
-                            <br />
-                            <li>
-                                <label for="tpAcomodação">Tipo de acomodação :</label><br />
-                                <input type="radio" name="tpAcomodação" id="tpAcomodação">Premier room
-                                <input checked type="radio"  id="tpAcomodação">Deluxe Room
-                                <input checked type="radio"  id="tpAcomodação">T.Ex Premier Room
-                            </li>
-                            <br />
-                            <li>
-                                <label for="obs">Observações</label> <br />
-                                <textarea name="obs" id="obs" cols="50" rows="10"></textarea>
-                            </li>
-                            <li class="botton-salvar">
-                                <button >Salvar informações</button>
-                            </li>
-                        </ul>
-                    <aside id="summary">
-        <h1>Resumo da Reserva</h1>
-        <div class="summary-info">
-          <p>Apartamento:</p>
-          <p>Check-in:</p>
-          <p>Check-out:</p>
-          <p>Qtd Pessoas:</p>
-        </div>
-        <button class="summary-book">Continuar</button>
-      </aside>
-                </form>
-                
-                
-            </article>
-        
-   
-              </main>
-    
-</body>
+<headerAdmin />
+  <div>
+    <h1>Reserva Manual</h1>
+    <form id="reservation-form" @submit="save">
+      <input type="text" name="name" placeholder="Nome Completo" v-model="name" />
+      <input type="email" name="email" placeholder="E-mail" v-model="email" />
+      <input type="text" name="cpf" placeholder="CPF" v-model="cpf" @keypress="onlyNumbers" />
 
+      <label for="preco">Data de nascimento:</label>
+      <input type="date" name="birthDate" placeholder="Data de Nascimento" v-model="birthDate" />
+
+      <label for="dataEntrada">Data de entrada:</label>
+      <input type="date" name="checkInDate" placeholder="Data de Entrada" v-model="checkInDate" />
+
+      <label for="dataSaida">Data de saida:</label>
+      <input type="date" name="checkOutDate" placeholder="Data de Saída" v-model="checkOutDate" />
+
+      <label for="acompanhantes">Acompanhantes:</label>
+      <input type="text" name="acompanhantes" placeholder="Quantidade de Acompanhantes" v-model="acompanhantes" @keypress="onlyNumbers" />
+      
+      <div>Serviços Adicionais:</div>
+      <input type="checkbox" name="academia" v-model="services.academia" />
+      <label>Academia</label>
+      <input type="checkbox" name="cofre" v-model="services.cofre" />
+      <label>Cofre</label>
+      <input type="checkbox" name="despertador" v-model="services.despertador" />
+      <label>Despertador</label>
+      <input type="checkbox" name="estacionamento" v-model="services.estacionamento" />
+      <label>Estacionamento</label>
+      <div>Tipo de Quarto:</div>
+      <input type="radio" name="roomType" value="Premier Room" v-model="roomType" />
+      <label>Premier Room</label>
+      <input type="radio" name="roomType" value="Deluxe Room" v-model="roomType" />
+      <label>Deluxe Room</label>
+      <input type="radio" name="roomType" value="Tex Premier Room" v-model="roomType" />
+      <label>Tex Premier Room</label>
+      <input type="submit" value="Salvar" />
+      
+    </form>
+
+    <h2>hospedes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome Completo</th>
+          <th>E-mail</th>
+          <th>CPF</th>
+          <th>Data de Nascimento</th>
+          <th>Data de Entrada</th>
+          <th>Data de Saída</th>
+          <th>companhantes</th>
+          <th>Serviços Adicionais</th>
+          <th>Tipo de Quarto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(reservation, index) in reservations" :key="index">
+          <td>{{ reservation.name }}</td>
+          <td>{{ reservation.email }}</td>
+          <td>{{ reservation.cpf }}</td>
+          <td>{{ reservation.birthDate }}</td>
+          <td>{{ reservation.checkInDate }}</td>
+          <td>{{ reservation.checkOutDate }}</td>
+          <td>{{ reservation.acompanhantes }}</td>
+          <td>
+            {{ reservation.services.academia ? 'Academia' : '' }}
+            {{ reservation.services.cofre ? 'Cofre' : '' }}
+            {{ reservation.services.despertador ? 'Despertador' : '' }}
+            {{ reservation.services.estacionamento ? 'Estacionamento' : '' }}
+          </td>
+          <td>{{ reservation.roomType }}</td>
+          <td>
+            <button @click="edit(index)">Editar</button>
+            <button @click="remove(index)">Remover</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
-
-
 
 <script>
 import HeaderAdmin from './components/HeaderAdmin.vue';
-import api from '@/services/api.js';
-
 export default {
-    name:"HospedesAdmin",
-    components: {
+  components: {
     HeaderAdmin
   },
-  data(){
+  data() {
     return {
-      lista: []
+      name: '',
+      email: '',
+      cpf: '',
+      birthDate: '',
+      checkInDate: '',
+      checkOutDate: '',
+      acompanhantes: '',
+      services: {
+        academia: false,
+        cofre: false,
+        despertador: false,
+        estacionamento: false
+      },
+      roomType: '',
+      reservations: [],
+       reservations: [
+        {
+          name: 'Raylan Barbosa',
+          email: 'raylanbarbosa@gmail.com',
+          cpf: '00000000000',
+          birthDate: '1995-03-22',
+          checkInDate: '2023-04-19',
+          checkOutDate: '2023-04-26',
+          acompanhantes: 4,
+          services: {
+            academia: true,
+            cofre: true,
+            despertador: true,
+            estacionamento: true
+          },
+          roomType: 'Premier Room'
+        },
+        {
+          name: 'Willian Pinheiro',
+          email: 'willianpinheiro@gmail.com',
+          cpf: '00000000000',
+          birthDate: '1998-07-05',
+          checkInDate: '2023-04-18',
+          checkOutDate: '2023-04-26',
+          acompanhantes: 3,
+          services: {
+            academia: true,
+            cofre: false,
+            despertador: true,
+            estacionamento: true
+          },
+          roomType: 'Deluxe Room'
+        },
+        {
+          name: 'João Ricardo',
+          email: 'Joaoricardo@gmail.com',
+          cpf: '00000000000',
+          birthDate: '1994-06-15',
+          checkInDate: '2023-04-20',
+          checkOutDate: '2023-04-30',
+          acompanhantes: 2,
+          services: {
+            academia: true,
+            cofre: true,
+            despertador: false,
+            estacionamento: true
+          },
+          roomType: 'Tex Premier Room'
+        }
+      ]
     }
   },
-  mounted(){
-    api.get('/clientes').then(response => {
-      console.log(response.data);
-    })
+  
+  methods: {
+    
+    
+     remove(index) {
+    if (confirm('Tem certeza que deseja remover este quarto?')) {
+   this.reservations.splice(index, 1);
+
   }
+},
+    save(event) {
+      event.preventDefault()
+      const reservation = {
+        name: this.name,
+        email: this.email,
+        cpf: this.cpf,
+        birthDate: this.birthDate,
+        checkInDate: this.checkInDate,
+        checkOutDate: this.checkOutDate,
+        acompanhantes: this.acompanhantes,
+        services: this.services,
+        roomType: this.roomType
+      }
+
+      this.reservations.push(reservation)
+    },
+    edit(index) {
+      const reservation = this.reservations[index]
+
+      this.name = reservation.name
+      this.email = reservation.email
+      this.cpf = reservation.cpf
+      this.birthDate = reservation.birthDate
+      this.checkInDate = reservation.checkInDate
+      this.checkOutDate = reservation.checkOutDate
+      this.acompanhantes = reservation.acompanhantes
+      this.services = reservation.services
+      this.roomType = reservation.roomType
+
+      this.reservations.splice(index, 1)
+      
+    },
+    onlyNumbers(event) {
+      if (event.keyCode < 48 || event.keyCode > 57) {
+        event.preventDefault()
+      }
+    }
+  },
+  
 }
 </script>
-
 <style scoped>
-   @font-face {
+@font-face {
   font-family: "Mont";
   src: url("../assets/fonts/Montserrat-Regular.otf");
 }
-
-/* test de summario */
-#summary{
-  background-color: #ECEBEE;
-  height: 500px;
-  width: 450px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
-  float: right;
-  
+@font-face {
+  font-family: "Mont-bold";
+  src: url("../assets/fonts/Montserrat-Bold.otf");
+}
+@font-face {
+  font-family: "Garamond";
+  src: url("../assets/fonts/AGaramondPro-Bold.otf");
 }
 
-#summary div{
-  background-color: #D5D8D9;
-  padding: 0 1rem;
-  height: 300px;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-#summary h1{
-  text-transform: uppercase;
-}
-
-.summary-info p{
-text-transform: uppercase;
-margin: 1.2rem 0;
-}
-
-.summary-book{
-background-color: #959595;
-border: none;
-color: aliceblue;
-padding: 10px 30px;
-font-weight: bold;
-font-size: 1.3rem;
-text-transform: uppercase;
-}
-
-.summary-book:hover{
-cursor: pointer;
-}
-
-/* fim */
-
-.text-label{
-  margin-top: 1000px;
-  /* border:solid 2px black; */
-}
-.container{
-margin-top: 20px;
-}
-.botton-salvar{
-padding-top: 20px;
-}
-body {
- background-color: rgb(194, 191, 191);
+* {
+  box-sizing: border-box;
   margin: 0;
+  font-family: "Montserrat";
 }
-
-article {
-  
-  width: 50%;
-  margin-left: 25%;
-  background-color: #0b30ff36;
-  border-radius: 12px 12px 12px 12px;
-  font-family: "Mont";
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-}
-
-h3 {
-  text-align: center;
-  color: rgb(255, 255, 255);
-  text-transform: uppercase;
-  font-size: 30px;
-  padding-bottom: 30px;
-}
-
-
-
-input,
-textarea {
-  border-radius: 4px 4px 4px 4px;
-}
-
-/* button{
-   background-position: center;
-} */
-ul {
-  margin-left: 5%;
-}
-
-div {
-  margin-bottom: 10px;
-}
-
-li {
-  list-style: none;
- 
-}
-
-button {
-  border-radius: 10px;
-  margin-left: 270px;
-  color: rgb(0, 0, 0);
-  
-}
-
-form {
-  text-transform: uppercase;
-}
-
-.logo {
-  margin-left: 195px;
-  cursor: pointer;
-  width: 220px;
-}
-label{
-  padding-right: 20px;
-}
-
 
 </style>
+

@@ -15,9 +15,9 @@
       <div class="lateral_menu">
   
         <div class="lateral_menuTop">
-          <a class="logo" href="../pagesAdmin/home-admin.html">
+          <router-link to="/">
             <img src="@/viewsAdmin/assets/img/logo.png">
-          </a>
+          </router-link>
           <img class="img_perfil" src="@/viewsAdmin/assets/img/perfil.jpg">
         </div>
   
@@ -55,8 +55,8 @@
         <nav>
           <ul>
             <li><router-link to="/homeAdmin">Home</router-link></li>
-            <li><router-link to="/reservaAdmin">Reserva</router-link></li>
-            <li><router-link to="/reservasAdmin">Reservas</router-link></li>
+            <router-link to="/hospedesAdmin">Hospedes</router-link>
+            <li><router-link to="/quartosAdmin">Quartos</router-link></li>
             <li><router-link to="/funcionariosAdmin">Funcionarios</router-link></li>
           </ul>
           <ul>
