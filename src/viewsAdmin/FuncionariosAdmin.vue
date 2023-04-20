@@ -47,6 +47,7 @@ export default {
   },
   mounted() {
     api.get('/funcionarios').then(response => {
+      this.response = response;
       this.funcionarios = response.data;
       console.log(response.data);
     })
