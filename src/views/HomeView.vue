@@ -12,7 +12,7 @@
   <title>T.EX Hotel - Desfrute do luxo tecnológico</title> 
 
 </head>
-<!-- <body onload="confirm()"> -->
+
 <body >
 
 <header>
@@ -31,14 +31,6 @@
               <li class="logCada"><router-link  to="/loginPublic">Login</router-link></li>
               <li class="logCada"><router-link  to="/cadastroPublic">Registre-se</router-link></li>
             </ul> 
-        <!-- <div class="nav-cadastro">
-          <a href="./pages/login-public.html" id="link"><button id="btn-cadastro" class="btn-cadastro"><span
-                id="login">Login</span></button></a>
-
-          <a href="./pages/cadastro.html"><button id="btn-cadastro cadastro" class="btn-cadastro"><span
-                id="cadastro">Cadastre-se</span></button></a>
-
-        </div> -->
       </div>
     </div>
 
@@ -142,10 +134,7 @@
 
   <br>
 </div>
-<!--Fim Acomodações-->
 
-<!--Gastronomia-->
-<!-- <br><br><br><br><br><br> -->
 <div style="text-align:left">
   <h2 class="sobre">Gastronomia</h2>
 </div>
@@ -672,5 +661,4 @@ h1 {
 
 </style>
  
-
 

@@ -4,7 +4,7 @@
   <br /><br />
 
   <div id="acomodacoes" style="text-align: center">
-    <h2 class="sobre">NOSSAS ACOMODAÇÕES</h2>
+    <h2 class="texto-NossasAcomodacoes">NOSSAS ACOMODAÇÕES</h2>
   </div>
 
   <div class="row">
@@ -12,23 +12,25 @@
 
       <div class="imagens">
         <h3>Premier Room</h3>
+        
         <RouterLink :to="{ path: '/reservas', hash: '#premier' }">
-          <img src="../assets/img/premier-room.webp" style="border-radius: 18px" />
+          <img class="borderRadius" src="../assets/img/premier-room.webp"/>
         </RouterLink>
       </div>
 
       <div class="imagens">
         <h3>Deluxe Room</h3>
         
-          <img src="../assets/img/deluxe-room.jpg" style="border-radius: 18px" />
-        
+         <img  class="borderRadius" src="../assets/img/deluxe-room.jpg"/>      
+
       </div>
 
       <div class="imagens">
         <h3>T.EX Premier</h3>
         <RouterLink :to="{ path: 'reservas', hash: '#tex-premier' }">
-          <img src="../assets/img/tex-premier-room.webp" style="border-radius: 18px" />
+           <img  class="borderRadius" src="../assets/img/tex-premier-room.webp"/>
         </RouterLink>
+       
       </div>
 
     </div>
@@ -37,23 +39,23 @@
   <div class="container">
     <div class="row">
       <div class="column-66">
-        <br /><br /><br />
         <p class="tituloAcomodacoes">Destaque</p>
-        <p class="textoimg" style="font: montserrat; size: 36px; line-height: 43.88px">
+
+       <p class="textoimg">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim dolorum
           inventore cum consectetur! Necessitatibus, repellat.
         </p>
       </div>
 
       <div class="column-33">
-        <img class="imagens" src="../assets/img/premier-room.webp" style="border-radius: 18px" />
+
+        <img class="imagens" src="../assets/img/premier-room.webp"/>
+
       </div>
     </div>
   </div>
 
-  <br />
-  <br />
-  <br />
+ 
   <UnifiedFooter />
 </template>
 
@@ -69,20 +71,27 @@ export default {
 };
 </script>
 <style>
+
 * {
   box-sizing: border-box;
   margin: 0;
 }
-
-.sobre {
-  text-align: center;
-  font-size: 50px;
-  font-family: "Mont";
-}
-
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.borderRadius{
+  border-radius: 18px;
+
+}
+.texto-NossasAcomodacoes {
+  text-align: center;
+  font-size: 50px;
+  font-family: "Mont";
+  text-align: center;
+   font-size: 31px;
+   padding-bottom: 50px;
 }
 
 .container {
@@ -105,6 +114,7 @@ body {
   float: left;
   width: 33.33333%;
   padding: 10px;
+  padding-bottom: 50px;
 }
 
 .large-font {
@@ -127,6 +137,7 @@ img {
   margin: 10px;
   text-align: center;
   border-radius: 18px;
+   border-radius: 18px;
 }
 
 .imagen {
@@ -208,10 +219,6 @@ img {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-  }
-
-  .sobre {
-    font-size: 31px;
   }
 
   .container {

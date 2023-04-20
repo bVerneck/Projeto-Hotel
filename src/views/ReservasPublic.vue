@@ -10,32 +10,22 @@
         <div class="modal-adulto flex-row">
           <p>Adultos</p>
           <div class="flex-row">
-            <button @click="btnRemAdulto" class="retirar btn-rem-adulto">
-              -
-            </button>
+            <button @click="btnRemAdulto" class="retirar btn-rem-adulto">-</button>
             <p class="entrada-adulto">{{ entradaAdulto }}</p>
-            <button @click="btnAddAdulto" class="adicionar btn-add-adulto">
-              +
-            </button>
+            <button @click="btnAddAdulto" class="adicionar btn-add-adulto">+</button>
           </div>
         </div>
         <div class="modal-crianca flex-row">
           <p>Crianças</p>
           <div class="flex-row">
-            <button @click="btnRemCrianca" class="retirar btn-rem-crianca">
-              -
-            </button>
+            <button @click="btnRemCrianca" class="retirar btn-rem-crianca">-</button>
             <p class="entrada-crianca">{{ entradaCrianca }}</p>
-            <button @click="btnAddCrianca" class="adicionar btn-add-crianca">
-              +
-            </button>
+            <button @click="btnAddCrianca" class="adicionar btn-add-crianca">+</button>
           </div>
         </div>
       </div>
       <div class="modal-confirma">
-        <button @click="fecharModal" class="btn-reservar btn-modal-ok modal-ok">
-          OK
-        </button>
+        <button @click="fecharModal" class="btn-reservar btn-modal-ok modal-ok">OK</button>
       </div>
     </div>
   </div>
@@ -47,24 +37,41 @@
       </div>
       <div class="modal-body flex-col">
         <div class="flex-row">
-          <input v-bind:checked="objreservas.default.adicionais.academia.select()" @change="alteraAdicionais"
-            type="checkbox" id="academia" name="academia" />
+
+          <input
+            v-bind:checked="objreservas.default.adicionais.academia.select()"
+            @change="alteraAdicionais"
+            type="checkbox"
+            id="academia"
+            name="academia"/>
+
           <div class="flex-row">
             <p class="bold left">Academia</p>
             <p>R$ 30.00/dia</p>
           </div>
         </div>
         <div class="flex-row">
-          <input v-bind:checked="objreservas.default.adicionais.cofre.select()" @change="alteraAdicionais" type="checkbox"
-            id="cofre" name="cofre" />
+
+          <input
+            v-bind:checked="objreservas.default.adicionais.cofre.select()"
+            @change="alteraAdicionais"
+            type="checkbox"
+            id="cofre"
+            name="cofre"/>
+
           <div class="flex-row">
             <p class="bold left">Cofre</p>
             <p>R$ 150.00/dia</p>
           </div>
         </div>
         <div class="flex-row">
-          <input v-bind:checked="objreservas.default.adicionais.despertador.select()" @change="alteraAdicionais"
-            type="checkbox" id="despertador" name="despertador" />
+
+          <input
+            v-bind:checked="objreservas.default.adicionais.despertador.select()"
+            @change="alteraAdicionais"
+            type="checkbox"
+            id="despertador"
+            name="despertador"/>
 
           <div class="flex-row">
             <p class="bold left">Despertador</p>
@@ -72,9 +79,15 @@
           </div>
         </div>
         <div class="flex-row">
-          <input v-bind:checked="
-            objreservas.default.adicionais.estacionamento.select()
-          " @change="alteraAdicionais" type="checkbox" id="estacionamento" name="estacionamento" />
+
+          <input
+            v-bind:checked="
+              objreservas.default.adicionais.estacionamento.select()"
+            @change="alteraAdicionais"
+            type="checkbox"
+            id="estacionamento"
+            name="estacionamento"/>
+
           <div class="flex-row">
             <p class="bold left">Estacionamento</p>
             <p>R$ 25.00/dia</p>
@@ -86,18 +99,30 @@
             <p class="info-adicional left">Tranporte aeroporto-hotel</p>
           </div>
           <div class="flex-row">
-            <input v-bind:checked="
-              objreservas.default.adicionais.transferChegada.select()
-            " @change="alteraAdicionais" type="checkbox" id="transferChegada" name="transferChegada" />
+
+            <input
+              v-bind:checked="
+                objreservas.default.adicionais.transferChegada.select()"
+              @change="alteraAdicionais"
+              type="checkbox"
+              id="transferChegada"
+              name="transferChegada"/>
+
             <div class="flex-row">
               <p class="left">Chegada</p>
               <p>R$ 75.00</p>
             </div>
           </div>
           <div class="flex-row">
-            <input v-bind:checked="
-              objreservas.default.adicionais.transferPartida.select()
-            " @change="alteraAdicionais" type="checkbox" id="transferPartida" name="transferPartida" />
+
+            <input
+              v-bind:checked="
+                objreservas.default.adicionais.transferPartida.select()"
+              @change="alteraAdicionais"
+              type="checkbox"
+              id="transferPartida"
+              name="transferPartida"/>
+
             <div class="flex-row">
               <p class="left">Partida</p>
               <p>R$ 75.00</p>
@@ -105,11 +130,9 @@
           </div>
         </div>
       </div>
-      <!-- <p>Academia, Cofre, Despertador, Estacionamento, Taxi</p> -->
+
       <div class="modal-confirma">
-        <button @click="fecharModal" class="btn-reservar btn-modal-ok modal-ok">
-          OK
-        </button>
+        <button @click="fecharModal" class="btn-reservar btn-modal-ok modal-ok">OK</button>
       </div>
     </div>
   </div>
@@ -183,65 +206,92 @@
           <p class="bold display-total">{{ total }}</p>
         </div>
         <div class="modal-btn flex-row">
-          <button class="modal-btn-limpar limpar-dados" @click="limparDados">
-            Limpar
-          </button>
-          <button @click="ativarModalFinal" class="modal-btn-continuar">
-            Continuar
-          </button>
+          <button class="modal-btn-limpar limpar-dados" @click="limparDados">Limpar</button>
+          <button @click="ativarModalFinal" class="modal-btn-continuar">Finalizar Reserva</button>
         </div>
       </div>
       <div class="modal-confirma">
-        <button @click="fecharModal" class="btn-reservar btn-modal-ok modal-ok">
-          OK
-        </button>
+        <button @click="fecharModal" class="btn-reservar btn-modal-ok modal-ok">OK</button>
       </div>
     </div>
   </div>
 
-  <!--Código referente a reserva: entradas, quartos e resumo da reserva *********************************************************-->
+  <!-- Código referente a reserva: entradas, quartos e resumo da reserva  -->
   <div class="reservas__container">
     <!--O main agrupa toda parte de escolha: entradas e quartos-->
     <main class="reservas__container__main">
       <!--Código referente as entradas-->
       <div class="reservas__entradas">
-        <div v-on:click="ativarModalHospedes" class="reservas__entradas__itens modal-abrir">
+
+        <div
+          v-on:click="ativarModalHospedes"
+          class="reservas__entradas__itens modal-abrir">
+
           <p><font-awesome-icon icon="user" /></p>
           <div>
             <p class="bold">Hóspedes</p>
             <p class="hospedes-resumo">{{ hospedesResumo }}</p>
           </div>
-          <p><font-awesome-icon icon="sort-desc" /></p>
+          <p><font-awesome-icon icon="sort-desc"/></p>
         </div>
-        <div v-on:click="ativarCheckin" class="reservas__entradas__itens entrada-date">
-          <p><font-awesome-icon icon="calendar" /></p>
+
+        <div
+          v-on:click="ativarCheckin"
+          class="reservas__entradas__itens entrada-date">
+          <p><font-awesome-icon icon="calendar"/></p>
+
           <div>
             <p class="bold">Check-in</p>
             <p class="checkin-showup">{{ checkinShowup }}</p>
           </div>
           <p><font-awesome-icon icon="sort-desc" /></p>
-          <input @input="alteraCheckin" type="date" class="dropdown" name="" id="entrada-checkin" />
-        </div>
+
 
         <div v-on:click="ativarCheckout" class="reservas__entradas__itens entrada-date">
+
+          <input
+            @input="alteraCheckin"
+            type="date"
+            class="dropdown"
+            name=""
+            id="entrada-checkin"/>
+        </div>
+
+        <div
+          v-on:click="ativarCheckout"
+          class="reservas__entradas__itens entrada-date">
+
           <p><font-awesome-icon icon="calendar" /></p>
           <div>
             <p class="bold">Check-out</p>
             <p class="checkout-showup">{{ checkoutShowup }}</p>
           </div>
-          <p><font-awesome-icon icon="sort-desc" /></p>
-          <input @input="alteraCheckout" type="date" class="dropdown" name="" id="entrada-checkout" />
+
+          <p><font-awesome-icon icon="sort-desc"/></p>
+          <input
+            @input="alteraCheckout"
+            type="date"
+            class="dropdown"
+            name=""
+            id="entrada-checkout"
+          />
         </div>
-        <div v-on:click="ativarModalAdicionais" class="reservas__entradas__adicionais modal-abrir">
+        <div
+          v-on:click="ativarModalAdicionais"
+          class="reservas__entradas__adicionais modal-abrir">
+
           <p></p>
           <div>
             <p class="bold">Adicionais</p>
             <p class="resumo-adicionais-short">0 itens</p>
-            <!-- <p>Academia, Cofre, Despertador, Estacionamento, Taxi</p> -->
           </div>
           <p><font-awesome-icon icon="sort-desc" /></p>
         </div>
-        <div v-on:click="ativarModalResumo" class="reservas__entradas__resumo modal-abrir no-desktop">
+
+        <div
+          v-on:click="ativarModalResumo"
+          class="reservas__entradas__resumo modal-abrir no-desktop">
+
           <p></p>
           <div>
             <p class="bold">Total</p>
@@ -257,9 +307,12 @@
         <div class="reserva__quartos__container">
           <div class="quarto__container">
             <div class="quarto__imagem">
-              <img v-bind:src="
-                require('@/assets/img/' + objreservas.default.quartos[1].src)
-              " alt="Premier Room" />
+
+              <img
+                v-bind:src="
+                  require('@/assets/img/' + objreservas.default.quartos[1].src)"
+                alt="Premier Room"/>
+
               <ul class="no-mobile">
                 <li>Permitido pets</li>
                 <li>WiFi Free</li>
@@ -285,17 +338,23 @@
                   Para crianças, os valores de diária serão cobrados pela
                   metade.
                 </p>
-                <button class="btn-reservar quarto-reservar" value="1" @click="reservarQuartos">
-                  Reservar
-                </button>
+
+                <button
+                  class="btn-reservar quarto-reservar"
+                  value="1"
+                  @click="reservarQuartos">Reservar</button>
+
               </div>
             </div>
           </div>
           <div class="quarto__container">
-            <div id="deluxe" class="quarto__imagem">
-              <img v-bind:src="
-                require('@/assets/img/' + objreservas.default.quartos[2].src)
-              " alt="Deluxe Room" />
+
+            <div class="quarto__imagem">
+              <img
+                v-bind:src="
+                  require('@/assets/img/' + objreservas.default.quartos[2].src)"
+                alt="Deluxe Room"/>
+
               <ul class="no-mobile">
                 <li>Permitido pets</li>
                 <li>WiFi Free</li>
@@ -321,17 +380,22 @@
                   Para crianças, os valores de diária serão cobrados pela
                   metade.
                 </p>
-                <button class="btn-reservar quarto-reservar" value="2" @click="reservarQuartos">
-                  Reservar
-                </button>
+
+                <button
+                  class="btn-reservar quarto-reservar"
+                  value="2"
+                  @click="reservarQuartos">Reservar</button>
+
               </div>
             </div>
           </div>
           <div class="quarto__container">
             <div class="quarto__imagem">
-              <img v-bind:src="
-                require('@/assets/img/' + objreservas.default.quartos[3].src)
-              " alt="Tex Premier" />
+
+              <img
+                v-bind:src="require('@/assets/img/' + objreservas.default.quartos[3].src)"
+                alt="Tex Premier"/>
+
               <ul class="no-mobile">
                 <li>Permitido pets</li>
                 <li>WiFi Free</li>
@@ -357,7 +421,12 @@
                   Para crianças, os valores de diária serão cobrados pela
                   metade.
                 </p>
-                <button class="btn-reservar quarto-reservar" value="3" @click="reservarQuartos">
+
+                <button
+                  class="btn-reservar quarto-reservar"
+                  value="3"
+                  @click="reservarQuartos">
+
                   Reservar
                 </button>
               </div>
@@ -442,22 +511,28 @@
           <button class="btn__aside__limpar limpar-dados" @click="limparDados">
             Limpar
           </button>
-          <button class="btn__aside__continuar">Continuar</button>
+          <button class="btn__aside__continuar" id="exibir-conteudo" @click="exibirPagamento" >Finalizar Reserva</button>
         </div>
       </div>
     </aside>
   </div>
+  <div  id="conteudo" :class="{ pagamento_hidden: !mostrarPagamento, pagamento: mostrarPagamento }">
+   <FormularioDePagamento />
+  </div>
+  
   <UnifiedFooter />
 </template>
 
 <script>
 import UnifiedHeader from "@/components/UnifiedHeader.vue";
 import UnifiedFooter from "@/components/UnifiedFooter.vue";
+import FormularioDePagamento from "@/components/FormularioDePagamento.vue";
 export default {
   name: "ReservasPublic",
   components: {
     UnifiedHeader,
     UnifiedFooter,
+    FormularioDePagamento,
   },
   data() {
     return {
@@ -474,9 +549,15 @@ export default {
       noites: 0,
       displayQuarto: "",
       displayValorQuarto: "",
+      mostrarPagamento: false,
     };
   },
+  
   methods: {
+   
+  exibirPagamento() {
+      this.mostrarPagamento = !this.mostrarPagamento;
+    },
     callReservas() {
       this.objreservas = require("@/assets/reservas.js");
     },
@@ -708,7 +789,7 @@ export default {
       this.altDisplay();
     },
   },
-
+  
   created() {
     this.callReservas();
   },
@@ -1027,6 +1108,16 @@ li {
 .right {
   text-align: right;
 }
+.pagamento_hidden {
+  display: none;
+}
+.pagamento {
+  position: fixed;
+  top: 15%;
+  bottom: 25%;
+  left: 35%;
+  right: 35%;
+}
 
 @media (min-width: 768px) {
   .reservas__entradas {
@@ -1176,6 +1267,7 @@ li {
   .no-mobile {
     display: block;
   }
+
 }
 
 /*# sourceMappingURL=reservas-public.css.map */

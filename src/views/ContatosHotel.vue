@@ -1,10 +1,7 @@
 <template>
     <UnifiedHeader />
     
-    <!-- começo -->
-
     <section class="capa"></section>
-
     <main>
 
 <aside>
@@ -21,27 +18,6 @@
       <p>Nome</p><input id="input_nome" type ="text">
       <p>Sobrenome</p><input id="input_sobrenome" type ="text">
       <p>Telefone</p><input id="input_telefone" type ="text">
-    </div>
-
-    <div>
-      <p>Sexo</p>
-      <select>
-        <option></option>
-        <option>Masculino</option>
-        <option>Feminino</option>
-      </select>
-    </div>
-
-    <div>
-      <p>Estado civil</p>
-      <select>
-        <option></option>
-        <option>Casado(a)</option>
-        <option>Solteiro(a)</option>
-        <option>Viúvo(a)</option>
-        <option>Divorciado(a)</option>
-        <option>Separado(a)</option>
-      </select>
     </div>
 
     <div>
@@ -70,7 +46,6 @@
     </label>
 
     <div>
-      <!-- <button @click="check_all()" class="btn" id="btn_enviar">Enviar</button> -->
       <button type="submit" @click="check()" class="btn" id="btn_enviar">Enviar</button>
     </div>  
     
@@ -79,7 +54,6 @@
 
 
 </main>    
-    <!-- fim -->
 
     <UnifiedFooter />
 </template>
@@ -274,7 +248,7 @@ i{
 
 .capa{
   width: 100%;
-  height: 30vw;
+  height: 12vw;
   background-color: red;
   background: url('https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
   background-position: center center;

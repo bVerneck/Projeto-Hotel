@@ -1,12 +1,9 @@
 <template>
     <main>
-        <header>
-            <UnifiedHeader />
-        </header>
-
-        <div class="first-box">
-            
-
+        
+     <UnifiedHeader />
+        
+      <div class="first-box">
             <form id="signup-form">
               <h1 >Registre-se</h1>
                 <label for="name">Nome:</label>
@@ -26,8 +23,7 @@
 
             </form>
           </div>  
-            <UnifiedFooter />
-            
+      <UnifiedFooter />
     </main>
 </template>
 

@@ -60,11 +60,11 @@ const routes = [
   },
   {
 
-    path: "/hospedesAdmin",
-    name: "hospedesAdmin",
+    path: "/reservaAdmin",
+    name: "reservaAdmin",
     
     component: () =>
-      import("../viewsAdmin/HospedesAdmin.vue"),
+      import("../viewsAdmin/ReservaAdmin.vue"),
   },
   {
     path: "/reservasAdmin",
@@ -88,6 +88,13 @@ const routes = [
       import("../viewsAdmin/LoginAdmin.vue"),
 
   },
+  {
+    path: "/paginaTesteApi",
+    name: "paginaTesteApi",
+
+    component: () =>
+    import("../views/PaginaTesteApi"),
+  }
   
  
 ];
