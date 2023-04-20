@@ -58,20 +58,13 @@ const routes = [
     component: () =>
       import("../views/CadastroPublic.vue"),
   },
+  
   {
-
-    path: "/reservaAdmin",
-    name: "reservaAdmin",
+    path: "/quartosAdmin",
+    name: "quartosAdmin",
     
     component: () =>
-      import("../viewsAdmin/ReservaAdmin.vue"),
-  },
-  {
-    path: "/reservasAdmin",
-    name: "reservasAdmin",
-    
-    component: () =>
-      import("../viewsAdmin/ReservasAdmin.vue"),
+      import("../viewsAdmin/QuartosAdmin.vue"),
   },
   {
     path: "/homeAdmin",
@@ -94,6 +87,14 @@ const routes = [
 
     component: () =>
     import("../views/PaginaTesteApi"),
+  },
+  {
+    path: "/hospedesAdmin",
+    name: "hospedesAdmin",
+    
+    component: () =>
+      import("../viewsAdmin/HospedesAdmin.vue"),
+
   }
   
  
