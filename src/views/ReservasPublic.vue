@@ -37,30 +37,35 @@
       </div>
       <div class="modal-body flex-col">
         <div class="flex-row">
+
           <input
             v-bind:checked="objreservas.default.adicionais.academia.select()"
             @change="alteraAdicionais"
             type="checkbox"
             id="academia"
             name="academia"/>
+
           <div class="flex-row">
             <p class="bold left">Academia</p>
             <p>R$ 30.00/dia</p>
           </div>
         </div>
         <div class="flex-row">
+
           <input
             v-bind:checked="objreservas.default.adicionais.cofre.select()"
             @change="alteraAdicionais"
             type="checkbox"
             id="cofre"
             name="cofre"/>
+
           <div class="flex-row">
             <p class="bold left">Cofre</p>
             <p>R$ 150.00/dia</p>
           </div>
         </div>
         <div class="flex-row">
+
           <input
             v-bind:checked="objreservas.default.adicionais.despertador.select()"
             @change="alteraAdicionais"
@@ -74,6 +79,7 @@
           </div>
         </div>
         <div class="flex-row">
+
           <input
             v-bind:checked="
               objreservas.default.adicionais.estacionamento.select()"
@@ -81,6 +87,7 @@
             type="checkbox"
             id="estacionamento"
             name="estacionamento"/>
+
           <div class="flex-row">
             <p class="bold left">Estacionamento</p>
             <p>R$ 25.00/dia</p>
@@ -92,6 +99,7 @@
             <p class="info-adicional left">Tranporte aeroporto-hotel</p>
           </div>
           <div class="flex-row">
+
             <input
               v-bind:checked="
                 objreservas.default.adicionais.transferChegada.select()"
@@ -99,12 +107,14 @@
               type="checkbox"
               id="transferChegada"
               name="transferChegada"/>
+
             <div class="flex-row">
               <p class="left">Chegada</p>
               <p>R$ 75.00</p>
             </div>
           </div>
           <div class="flex-row">
+
             <input
               v-bind:checked="
                 objreservas.default.adicionais.transferPartida.select()"
@@ -112,6 +122,7 @@
               type="checkbox"
               id="transferPartida"
               name="transferPartida"/>
+
             <div class="flex-row">
               <p class="left">Partida</p>
               <p>R$ 75.00</p>
@@ -211,9 +222,11 @@
     <main class="reservas__container__main">
       <!--Código referente as entradas-->
       <div class="reservas__entradas">
+
         <div
           v-on:click="ativarModalHospedes"
           class="reservas__entradas__itens modal-abrir">
+
           <p><font-awesome-icon icon="user" /></p>
           <div>
             <p class="bold">Hóspedes</p>
@@ -221,15 +234,21 @@
           </div>
           <p><font-awesome-icon icon="sort-desc"/></p>
         </div>
+
         <div
           v-on:click="ativarCheckin"
           class="reservas__entradas__itens entrada-date">
           <p><font-awesome-icon icon="calendar"/></p>
+
           <div>
             <p class="bold">Check-in</p>
             <p class="checkin-showup">{{ checkinShowup }}</p>
           </div>
           <p><font-awesome-icon icon="sort-desc" /></p>
+
+
+        <div v-on:click="ativarCheckout" class="reservas__entradas__itens entrada-date">
+
           <input
             @input="alteraCheckin"
             type="date"
@@ -241,11 +260,13 @@
         <div
           v-on:click="ativarCheckout"
           class="reservas__entradas__itens entrada-date">
+
           <p><font-awesome-icon icon="calendar" /></p>
           <div>
             <p class="bold">Check-out</p>
             <p class="checkout-showup">{{ checkoutShowup }}</p>
           </div>
+
           <p><font-awesome-icon icon="sort-desc"/></p>
           <input
             @input="alteraCheckout"
@@ -258,6 +279,7 @@
         <div
           v-on:click="ativarModalAdicionais"
           class="reservas__entradas__adicionais modal-abrir">
+
           <p></p>
           <div>
             <p class="bold">Adicionais</p>
@@ -265,9 +287,11 @@
           </div>
           <p><font-awesome-icon icon="sort-desc" /></p>
         </div>
+
         <div
           v-on:click="ativarModalResumo"
           class="reservas__entradas__resumo modal-abrir no-desktop">
+
           <p></p>
           <div>
             <p class="bold">Total</p>
@@ -283,10 +307,12 @@
         <div class="reserva__quartos__container">
           <div class="quarto__container">
             <div class="quarto__imagem">
+
               <img
                 v-bind:src="
                   require('@/assets/img/' + objreservas.default.quartos[1].src)"
                 alt="Premier Room"/>
+
               <ul class="no-mobile">
                 <li>Permitido pets</li>
                 <li>WiFi Free</li>
@@ -295,7 +321,7 @@
             </div>
             <div class="quarto__especificacoes">
               <div class="quarto__especificacoes__info">
-                <h3>Premier Room</h3>
+                <h3 id="premier">Premier Room</h3>
                 <p class="bold">Sofá | Escrivaninha | 30m²</p>
                 <p>
                   Estes quartos aconchegantes oferecem conforto com algumas
@@ -312,19 +338,23 @@
                   Para crianças, os valores de diária serão cobrados pela
                   metade.
                 </p>
+
                 <button
                   class="btn-reservar quarto-reservar"
                   value="1"
                   @click="reservarQuartos">Reservar</button>
+
               </div>
             </div>
           </div>
           <div class="quarto__container">
+
             <div class="quarto__imagem">
               <img
                 v-bind:src="
                   require('@/assets/img/' + objreservas.default.quartos[2].src)"
                 alt="Deluxe Room"/>
+
               <ul class="no-mobile">
                 <li>Permitido pets</li>
                 <li>WiFi Free</li>
@@ -350,18 +380,22 @@
                   Para crianças, os valores de diária serão cobrados pela
                   metade.
                 </p>
+
                 <button
                   class="btn-reservar quarto-reservar"
                   value="2"
                   @click="reservarQuartos">Reservar</button>
+
               </div>
             </div>
           </div>
           <div class="quarto__container">
             <div class="quarto__imagem">
+
               <img
                 v-bind:src="require('@/assets/img/' + objreservas.default.quartos[3].src)"
                 alt="Tex Premier"/>
+
               <ul class="no-mobile">
                 <li>Permitido pets</li>
                 <li>WiFi Free</li>
@@ -370,7 +404,7 @@
             </div>
             <div class="quarto__especificacoes">
               <div class="quarto__especificacoes__info">
-                <h3>T.EX Premier</h3>
+                <h3 id="tex-premier">T.EX Premier</h3>
                 <p class="bold">Sofá | Duas camas | 75m²</p>
                 <p>
                   Estes quartos aconchegantes oferecem conforto com o melhor da
@@ -387,10 +421,12 @@
                   Para crianças, os valores de diária serão cobrados pela
                   metade.
                 </p>
+
                 <button
                   class="btn-reservar quarto-reservar"
                   value="3"
                   @click="reservarQuartos">
+
                   Reservar
                 </button>
               </div>
@@ -768,14 +804,17 @@ export default {
   padding: 0;
   margin: 0;
 }
+
 @font-face {
   font-family: "Mont";
   src: url("../assets/fonts/Montserrat-Regular.otf");
 }
+
 @font-face {
   font-family: "Mont-bold";
   src: url("../assets/fonts/Montserrat-Bold.otf");
 }
+
 @font-face {
   font-family: "Garamond";
   src: url("../assets/fonts/AGaramondPro-Bold.otf");
@@ -792,12 +831,15 @@ li {
   padding: 0.3rem;
   margin: 4rem auto;
 }
+
 .reservas__container aside {
   display: none;
 }
+
 .reservas__container li {
   font-size: 0.7rem;
 }
+
 .reservas__container li::before {
   display: inline-block;
   content: "";
@@ -867,6 +909,7 @@ li {
 .modal-resumo p {
   font-size: 0.8rem;
 }
+
 .modal-adicionais li,
 .modal-resumo li {
   font-size: 0.8rem;
@@ -925,6 +968,7 @@ li {
   border-radius: 2px;
   cursor: pointer;
 }
+
 .modal-body button.modal-btn-limpar {
   width: fit-content;
   height: fit-content;
@@ -936,6 +980,7 @@ li {
   text-decoration: underline;
   cursor: pointer;
 }
+
 .modal-body button.modal-btn-continuar {
   width: fit-content;
   height: fit-content;
@@ -960,6 +1005,7 @@ li {
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
+
 .reservas__entradas__itens,
 .reservas__entradas__resumo,
 .reservas__entradas__adicionais {
@@ -972,6 +1018,7 @@ li {
   justify-content: space-between;
   text-align: center;
 }
+
 .reservas__entradas__itens div,
 .reservas__entradas__resumo div,
 .reservas__entradas__adicionais div {
@@ -980,6 +1027,7 @@ li {
   align-items: center;
   gap: 1rem;
 }
+
 .reservas__entradas__itens input.dropdown {
   display: none;
   position: absolute;
@@ -1002,6 +1050,7 @@ li {
 .quarto__imagem {
   width: 100%;
 }
+
 .quarto__imagem img {
   width: 100%;
 }
@@ -1012,11 +1061,13 @@ li {
   flex-direction: column;
   gap: 1rem;
 }
+
 .quarto__especificacoes__info {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+
 .quarto__especificacoes__selecao {
   padding: 10px;
   border-top: 1px solid rgba(0, 0, 0, 0.3);
@@ -1039,6 +1090,7 @@ li {
   color: white;
   font-weight: bold;
 }
+
 .btn-reservar:hover {
   cursor: pointer;
 }
@@ -1083,6 +1135,7 @@ li {
     margin-bottom: 1rem;
     justify-content: space-around;
   }
+
   .reservas__entradas__itens,
   .reservas__entradas__resumo,
   .reservas__entradas__adicionais {
@@ -1091,29 +1144,36 @@ li {
     justify-content: space-between;
     align-items: center;
   }
+
   .reservas__entradas__itens div,
   .reservas__entradas__resumo div,
   .reservas__entradas__adicionais div {
     flex-direction: column;
     gap: 2px;
   }
+
   .modal-adicionais p {
     font-size: 0.9rem;
   }
+
   .quarto__container {
     display: flex;
     flex-direction: row;
   }
+
   .quarto__imagem {
     max-width: 300px;
   }
+
   .quarto__imagem img {
     width: 100%;
   }
+
   .no-mobile {
     display: block;
   }
 }
+
 @media (min-width: 1025px) {
 
 .pagamento_hidden {
@@ -1128,18 +1188,22 @@ li {
   .no-desktop {
     display: none;
   }
+
   .modal-adicionais p {
     font-size: 1rem;
   }
+
   .reservas__container {
     max-width: 1280px;
     display: flex;
     flex-direction: row;
     gap: 1rem;
   }
+
   .reservas__container aside {
     display: block;
   }
+
   .reservas__container aside .reservas__container__resumo__holder {
     width: 300px;
     background-color: #eaecec;
@@ -1149,32 +1213,38 @@ li {
     flex-direction: column;
     gap: 1rem;
   }
+
   .reservas__container .resumo__header,
   .reservas__container .resumo__total {
     padding: 0.5rem 0;
     border-top: 1px solid rgba(0, 0, 0, 0.3);
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   }
+
   .resumo__conteudo {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
+
   .resumo_conteudo_adicionais,
   .resumo_conteudo_acomodacoes {
     display: flex;
     flex-direction: column;
   }
+
   .resumo_conteudo_acomodacoes__valores,
   .resumo_conteudo_adicionais__valores {
     text-align: right;
   }
+
   .resumo__conteudo__item,
   .resumo__total {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
+
   .resumo_conteudo_adicionais__wrap,
   .resumo_conteudo_acomodacoes__wrap {
     margin-top: 10px;
@@ -1182,10 +1252,12 @@ li {
     flex-direction: row;
     justify-content: space-between;
   }
+
   .resumo_conteudo_adicionais li::before,
   .resumo_conteudo_acomodacoes li::before {
     display: none;
   }
+
   .btn__aside {
     width: 100%;
     margin-top: 1rem;
@@ -1193,12 +1265,14 @@ li {
     flex-direction: row;
     justify-content: space-between;
   }
+
   .btn__aside__limpar {
     background-color: transparent;
     border: none;
     text-decoration: underline;
     cursor: pointer;
   }
+
   .btn__aside__continuar {
     background-color: #670bff;
     color: white;
@@ -1209,6 +1283,7 @@ li {
     cursor: pointer;
     font-size: 1rem;
   }
+
   .no-mobile {
     display: block;
   }
