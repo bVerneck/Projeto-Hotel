@@ -95,7 +95,7 @@ const routes = [
     component: () =>
       import("../viewsAdmin/HospedesAdmin.vue"),
 
-  }
+  },
   
  
 ];
