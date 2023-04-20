@@ -123,6 +123,7 @@ h1 {
 }
 
 .img-left {
+  display: inline;
   margin-right: auto;
   width: 40%;
   border-radius: 1rem;

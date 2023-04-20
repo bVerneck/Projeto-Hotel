@@ -50,6 +50,7 @@ window.addEventListener('scroll', () => {
   }
   prevScrollpos = currentScrollPos;
 });
+
 </script>
 
 <style >
