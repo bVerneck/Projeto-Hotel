@@ -137,7 +137,8 @@ h1 {
   }
 
 .img-left {
-  margin-right: 2rem;
+  display: inline;
+  margin-right: auto;
   width: 40%;
   border-radius: 1rem;
   position: static;

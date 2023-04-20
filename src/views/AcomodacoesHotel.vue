@@ -9,20 +9,30 @@
 
   <div class="row">
     <div class="holder">
+
       <div class="imagens">
         <h3>Premier Room</h3>
-        <img class="borderRadius" src="../assets/img/premier-room.webp"/>
+        
+        <RouterLink :to="{ path: '/reservas', hash: '#premier' }">
+          <img class="borderRadius" src="../assets/img/premier-room.webp"/>
+        </RouterLink>
       </div>
 
       <div class="imagens">
         <h3>Deluxe Room</h3>
-        <img  class="borderRadius" src="../assets/img/deluxe-room.jpg"/>
+        
+         <img  class="borderRadius" src="../assets/img/deluxe-room.jpg"/>      
+
       </div>
 
       <div class="imagens">
         <h3>T.EX Premier</h3>
-        <img  class="borderRadius" src="../assets/img/tex-premier-room.webp"/>
+        <RouterLink :to="{ path: 'reservas', hash: '#tex-premier' }">
+           <img  class="borderRadius" src="../assets/img/tex-premier-room.webp"/>
+        </RouterLink>
+       
       </div>
+
     </div>
   </div>
 
@@ -30,14 +40,17 @@
     <div class="row">
       <div class="column-66">
         <p class="tituloAcomodacoes">Destaque</p>
-        <p class="textoimg">
+
+       <p class="textoimg">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim dolorum
           inventore cum consectetur! Necessitatibus, repellat.
         </p>
       </div>
 
       <div class="column-33">
+
         <img class="imagens" src="../assets/img/premier-room.webp"/>
+
       </div>
     </div>
   </div>
@@ -141,6 +154,7 @@ img {
   padding-top: 8%;
   padding-left: 5%;
 }
+
 .textoimgDelicie {
   font-size: 30px;
   font-family: "Montserrat";
@@ -174,6 +188,7 @@ img {
 }
 
 @media screen and (max-width: 1000px) and (orientation: portrait) {
+
   .column-66,
   .column-33 {
     width: 100%;
@@ -225,7 +240,7 @@ img {
 }
 
 .row .holder .imagens img {
-  opacity: 0.7;
+  opacity: 1;
   transition: all 0.6s;
 }
 
@@ -234,5 +249,6 @@ img {
   cursor: pointer;
   width: 605px;
   box-shadow: 5px 10px 10px grey;
+  transition: all 0.7s;
 }
 </style>
