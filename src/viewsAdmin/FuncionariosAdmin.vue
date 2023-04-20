@@ -1,17 +1,18 @@
 <template>
-    <!DOCTYPE html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Tx Hotel-Funcionarios</title>
-  </head>
+  <title>Tx Hotel-Funcionarios</title>
+</head>
 
-  <body>
-    <header>
-      <HeaderAdmin />
-    </header>
+<body>
+  <header>
+    <HeaderAdmin />
+  </header>
     <main>
       <table>
         <tr>
@@ -19,107 +20,36 @@
           <th>Informações</th>
           <th>Matricula</th>
         </tr>
-        <tr>
-          <td class="cursorClick">Andre Luiz</td>
-          <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            quod!
-          </td>
-          <td>xxx-xxx</td>
-        </tr>
-        <tr>
-          <td class="cursorClick">Bruno Verneck</td>
-          <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            quod!
-          </td>
-          <td>xxx-xxx</td>
-        </tr>
-        <tr>
-          <td class="cursorClick">Caio Seixas</td>
-          <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            quod!
-          </td>
-          <td>xxx-xxx</td>
-        </tr>
-        <tr>
-          <td class="cursorClick">Cristian Roberto</td>
-          <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            quod!
-          </td>
-          <td>xxx-xxx</td>
-        </tr>
-        <tr>
-          <td class="cursorClick">Igor Fontes</td>
-          <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            quod!
-          </td>
-          <td>xxx-xxx</td>
-        </tr>
-        <tr>
-          <td class="cursorClick">Luiz Gonzaga</td>
-          <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            quod!
-          </td>
-          <td>xxx-xxx</td>
-        </tr>
-        <tr>
-          <td class="cursorClick">Nathália Melo</td>
-          <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            quod!
-          </td>
-          <td>xxx-xxx</td>
-        </tr>
-        <tr>
-          <td class="cursorClick">Raylan Barbosa</td>
-          <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            quod!
-          </td>
-          <td>xxx-xxx</td>
-        </tr>
-        <tr>
-          <td class="cursorClick">Renor Oliveira</td>
-          <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            quod!
-          </td>
-          <td>xxx-xxx</td>
-        </tr>
-        <tr>
-          <td class="cursorClick">Willian Pinheiro</td>
-          <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            quod!
-          </td>
-          <td>xxx-xxx</td>
-        </tr>
-        <tr>
-          <td class="cursorClick">João Ricardo</td>
-          <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-            quod!
-          </td>
-          <td>xxx-xxx</td>
+        <tr v-for="(funcionario, i) in funcionarios" :key="i">
+          <td class="cursorClick">{{ funcionario.nome }}</td>
+          <td>{{ funcionario.salario }} </td>
+          <td>{{ funcionario.matricula }}</td>
         </tr>
       </table>
     </main>
   </body>
-
+  </html>
 </template>
 
 <script>
 import HeaderAdmin from './components/HeaderAdmin.vue';
+import api from '@/services/api.js';
 
 export default {
   name: "funcionariosAdmin",
   components: {
     HeaderAdmin
+  },
+  data() {
+    return {
+      funcionarios: []
+    };
+  },
+  mounted() {
+    api.get('/funcionarios').then(response => {
+      this.funcionarios = response.data;
+      console.log(response.data);
+    })
   },
 }
 </script>
