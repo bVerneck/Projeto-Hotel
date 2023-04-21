@@ -1,42 +1,93 @@
+
+
 <template>
-<headerAdmin />
+  <headerAdmin />
   <div>
     <h1>Reserva Manual</h1>
     <form id="reservation-form" @submit="save">
-      <input type="text" name="name" placeholder="Nome Completo" v-model="name" />
-      <input type="email" name="email" placeholder="E-mail" v-model="email" />
-      <input type="text" name="cpf" placeholder="CPF" v-model="cpf" @keypress="onlyNumbers" />
+      <input
+        type="text"
+        name="name"
+        placeholder="Nome Completo"
+        v-model="name"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="E-mail"
+        v-model="email"
+      />
+      <input
+        type="text"
+        name="cpf"
+        placeholder="CPF"
+        v-model="cpf"
+        @keypress="onlyNumbers"
+      />
 
       <label for="preco">Data de nascimento:</label>
-      <input type="date" name="birthDate" placeholder="Data de Nascimento" v-model="birthDate" />
+      <input
+        type="date"
+        name="birthDate"
+        placeholder="Data de Nascimento"
+        v-model="birthDate"
+      />
 
       <label for="dataEntrada">Data de entrada:</label>
-      <input type="date" name="checkInDate" placeholder="Data de Entrada" v-model="checkInDate" />
+      <input
+        type="date"
+        name="checkInDate"
+        placeholder="Data de Entrada"
+        v-model="checkInDate"
+      />
 
       <label for="dataSaida">Data de saida:</label>
-      <input type="date" name="checkOutDate" placeholder="Data de Saída" v-model="checkOutDate" />
+      <input
+        type="date"
+        name="checkOutDate"
+        placeholder="Data de Saída"
+        v-model="checkOutDate"
+      />
 
       <label for="acompanhantes">Acompanhantes:</label>
-      <input type="text" name="acompanhantes" placeholder="Quantidade de Acompanhantes" v-model="acompanhantes" @keypress="onlyNumbers" />
-      
+      <input
+        type="text"
+        name="acompanhantes"
+        placeholder="Quantidade de Acompanhantes"
+        v-model="acompanhantes"
+        @keypress="onlyNumbers"
+      />
+
       <div>Serviços Adicionais:</div>
       <input type="checkbox" name="academia" v-model="services.academia" />
       <label>Academia</label>
       <input type="checkbox" name="cofre" v-model="services.cofre" />
       <label>Cofre</label>
-      <input type="checkbox" name="despertador" v-model="services.despertador" />
+      <input
+        type="checkbox"
+        name="despertador"
+        v-model="services.despertador"
+      />
       <label>Despertador</label>
-      <input type="checkbox" name="estacionamento" v-model="services.estacionamento" />
+      <input
+        type="checkbox"
+        name="estacionamento"
+        v-model="services.estacionamento"
+      />
       <label>Estacionamento</label>
       <div>Tipo de Quarto:</div>
       <input type="radio" name="roomType" value="Premier Room" v-model="roomType" />
       <label>Premier Room</label>
       <input type="radio" name="roomType" value="Deluxe Room" v-model="roomType" />
       <label>Deluxe Room</label>
-      <input type="radio" name="roomType" value="Tex Premier Room" v-model="roomType" />
+      <input
+        type="radio"
+        name="roomType"
+        value="Tex Premier Room"
+        v-model="roomType"
+      />
       <label>Tex Premier Room</label>
       <input type="submit" value="Salvar" />
-      
     </form>
 
     <h2>hospedes</h2>
@@ -55,7 +106,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(reservation, index) in reservations" :key="index">
+        <tr
+          v-for="(reservation, index) in reservations"
+          :key="index"
+        >
           <td>{{ reservation.name }}</td>
           <td>{{ reservation.email }}</td>
           <td>{{ reservation.cpf }}</td>
@@ -102,8 +156,7 @@ export default {
         estacionamento: false
       },
       roomType: '',
-      reservations: [],
-       reservations: [
+      reservations: [
         {
           name: 'Raylan Barbosa',
           email: 'raylanbarbosa@gmail.com',
@@ -155,19 +208,29 @@ export default {
       ]
     }
   },
-  
   methods: {
-    
-    
-     remove(index) {
-    if (confirm('Tem certeza que deseja remover este quarto?')) {
-   this.reservations.splice(index, 1);
+    remove(index) {
+      if (confirm('Deseja realmente remover essa reserva?')) {
+        this.reservations.splice(index, 1)
+      }
+    },
+    edit(index) {
+      this.name = this.reservations[index].name
+      this.email = this.reservations[index].email
+      this.cpf = this.reservations[index].cpf
+      this.birthDate = this.reservations[index].birthDate
+      this.checkInDate = this.reservations[index].checkInDate
+      this.checkOutDate = this.reservations[index].checkOutDate
+      this.acompanhantes = this.reservations[index].acompanhantes
+      this.services = this.reservations[index].services
+      this.roomType = this.reservations[index].roomType
 
-  }
-},
-    save(event) {
-      event.preventDefault()
-      const reservation = {
+      this.reservations.splice(index, 1)
+    },
+    save(e) {
+      e.preventDefault()
+
+      this.reservations.push({
         name: this.name,
         email: this.email,
         cpf: this.cpf,
@@ -177,35 +240,32 @@ export default {
         acompanhantes: this.acompanhantes,
         services: this.services,
         roomType: this.roomType
+      })
+
+      this.name = ''
+      this.email = ''
+      this.cpf = ''
+      this.birthDate = ''
+      this.checkInDate = ''
+      this.checkOutDate = ''
+      this.acompanhantes = ''
+      this.services = {
+        academia: false,
+        cofre: false,
+        despertador: false,
+        estacionamento: false
       }
-
-      this.reservations.push(reservation)
+      this.roomType = ''
     },
-    edit(index) {
-      const reservation = this.reservations[index]
-
-      this.name = reservation.name
-      this.email = reservation.email
-      this.cpf = reservation.cpf
-      this.birthDate = reservation.birthDate
-      this.checkInDate = reservation.checkInDate
-      this.checkOutDate = reservation.checkOutDate
-      this.acompanhantes = reservation.acompanhantes
-      this.services = reservation.services
-      this.roomType = reservation.roomType
-
-      this.reservations.splice(index, 1)
-      
-    },
-    onlyNumbers(event) {
-      if (event.keyCode < 48 || event.keyCode > 57) {
-        event.preventDefault()
+    onlyNumbers(e) {
+      if (e.keyCode < 48 || e.keyCode > 57) {
+        e.preventDefault()
       }
     }
-  },
-  
+  }
 }
 </script>
+
 <style scoped>
 @font-face {
   font-family: "Mont";
