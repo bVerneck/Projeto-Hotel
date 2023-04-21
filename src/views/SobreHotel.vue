@@ -120,18 +120,16 @@ h1 {
 
 .p-right {
   float:right;
-  text-align:center;
+  text-align:justify;
   font-size: 1.3rem;
-  width: 50%;
+  width: 58%;
   font-family: "Mont";
-  font-size: larger;
   
 }
 .image-and-text {
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: flex-start;
     margin-bottom: 2rem;
   }
@@ -142,8 +140,7 @@ h1 {
   width: 40%;
   border-radius: 1rem;
   position: static;
-  border:solid 1px black;
-  
+  box-shadow: 1px 1px 5px 0px #85888c;
 }
 
 a {
@@ -168,7 +165,7 @@ a:hover {
 
   .img-left {
     width: 100%;
-    margin-bottom: 0rem;
+    margin-bottom: 1rem;
   }
 
   .p-right {
@@ -177,6 +174,13 @@ a:hover {
     float: bottom;
     
   }
+}
+
+@media screen and (max-width: 1080px) and (orientation: landscape){
+  .first-box{
+    width: 95%;
+  }
+
 }
 
 
