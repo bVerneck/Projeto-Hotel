@@ -11,8 +11,9 @@
     <div class="barraNavegacao">
       <router-link to="/homeAdmin">Home</router-link>
       <router-link to="/hospedesAdmin">Hospedes</router-link>
-      <router-link to="/reservasAdmin">Reservas</router-link>
+      <router-link to="/quartosAdmin">Quartos</router-link>
       <router-link to="/funcionariosAdmin">Funcionarios</router-link>
+      
     </div>
   </div>
 

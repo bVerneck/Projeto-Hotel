@@ -25,7 +25,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/ContatosHotel.vue"),
   },
-  
+
   {
     path: "/reservas",
     name: "reservas",
@@ -38,7 +38,7 @@ const routes = [
   {
     path: "/funcionariosAdmin",
     name: "funcionariosAdmin",
-    
+
     component: () =>
       import("../viewsAdmin/FuncionariosAdmin.vue"),
   },
@@ -46,7 +46,7 @@ const routes = [
 
     path: "/loginPublic",
     name: "loginPublic",
-    
+
     component: () =>
       import("../views/LoginPublic.vue"),
   },
@@ -54,42 +54,55 @@ const routes = [
 
     path: "/cadastroPublic",
     name: "CadatrosPublic",
-    
+
     component: () =>
       import("../views/CadastroPublic.vue"),
   },
-  {
 
-    path: "/hospedesAdmin",
-    name: "hospedesAdmin",
-    
-    component: () =>
-      import("../viewsAdmin/HospedesAdmin.vue"),
-  },
   {
-    path: "/reservasAdmin",
-    name: "reservasAdmin",
-    
+    path: "/quartosAdmin",
+    name: "quartosAdmin",
+
     component: () =>
-      import("../viewsAdmin/ReservasAdmin.vue"),
+      import("../viewsAdmin/QuartosAdmin.vue"),
   },
   {
     path: "/homeAdmin",
     name: "homeAdmin",
-    
+
     component: () =>
       import("../viewsAdmin/HomeAdmin.vue"),
   },
   {
     path: "/loginAdmin",
     name: "loginAdmin",
-    
+
     component: () =>
       import("../viewsAdmin/LoginAdmin.vue"),
 
   },
-  
- 
+  {
+    path: "/paginaTesteApi",
+    name: "paginaTesteApi",
+
+    component: () =>
+      import("../views/PaginaTesteApi"),
+  },
+  {
+    path: "/hospedesAdmin",
+    name: "hospedesAdmin",
+
+    component: () =>
+      import("../viewsAdmin/HospedesAdmin.vue"),
+
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: "not-found",
+    component: () =>
+      import("../views/404.vue"),
+  },
+
 ];
 
 const router = createRouter({

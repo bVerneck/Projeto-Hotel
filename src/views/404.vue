@@ -5,46 +5,10 @@
 </header>
 
 <main>
-  <div class="first-box">
-    <h1>O Hotel</h1>
-    <article>
-      <ul>
-        <li>
-          <div class="image-and-text">
-            <img src="@/assets/img/getting-to-marinabaysands-t.webp" class="img-left">
-            <p class="p-right">
-              Este hotel está sempre em busca de oferecer o melhor para seus clientes, 
-              desde as comodidades de alta qualidade até a tecnologia mais avançada. 
-              Com quartos modernos e confortáveis, bem como uma equipe atenciosa e prestativa, 
-              os hóspedes têm a certeza de uma experiência memorável.
-            </p>
-          </div>
-        </li>
-
-        <li>
-          <div class="image-and-text">
-            <img src="@/assets/img/quartoDeluxeRoom.jpg" class="img-left">
-            <p class="p-right">
-              Os quartos deste hotel são verdadeiras obras de arte. 
-              Com decoração moderna e confortável, 
-              oferecem o ambiente perfeito para descansar após um longo dia de viagem. 
-              As camas macias e os lençóis de alta qualidade garantem uma noite de sono inesquecível.
-            </p>
-          </div>
-        </li>
-
-        <li>
-          <div class="image-and-text">
-            <img src="@/assets/img/RISE_Australian_Stanbroke_Beef_Ribeye_600x450.webp" class="img-left">
-            <p class="p-right">
-              O nosso hotel oferece uma experiência gastronômica única.
-              Nosso chef utiliza ingredientes frescos e locais para criar pratos deliciosos e saudáveis. 
-              Experimente o melhor da culinária local e internacional no nosso restaurante.
-            </p>
-          </div>
-        </li>
-      </ul>
-    </article>
+  <div class="not-found">
+    <h1>404!</h1>
+    <h2>Oops! Essa página não existe.</h2>
+    <router-link to="/">Voltar para a página inicial</router-link>
   </div>
 </main>
 
@@ -88,6 +52,42 @@ main {
   margin-bottom: 0.6rem;
 }
 
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 35rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+
+main h1 {
+  font-size: 10rem;
+  margin-bottom: 0;
+}
+
+main h2 {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+router-link {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+router-link:hover {
+  background-color: #333;
+  color: #fff;
+}
+
 h1 {
   text-align: center;
   font-size: 2.5rem;
@@ -120,16 +120,18 @@ h1 {
 
 .p-right {
   float:right;
-  text-align:justify;
+  text-align:center;
   font-size: 1.3rem;
-  width: 58%;
+  width: 50%;
   font-family: "Mont";
+  font-size: larger;
   
 }
 .image-and-text {
     width: 100%;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: flex-start;
     margin-bottom: 2rem;
   }
@@ -140,7 +142,8 @@ h1 {
   width: 40%;
   border-radius: 1rem;
   position: static;
-  box-shadow: 1px 1px 5px 0px #85888c;
+  border:solid 1px black;
+  
 }
 
 a {
@@ -165,7 +168,7 @@ a:hover {
 
   .img-left {
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
   }
 
   .p-right {
@@ -174,13 +177,6 @@ a:hover {
     float: bottom;
     
   }
-}
-
-@media screen and (max-width: 1080px) and (orientation: landscape){
-  .first-box{
-    width: 95%;
-  }
-
 }
 
 

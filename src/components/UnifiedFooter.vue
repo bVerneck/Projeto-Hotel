@@ -3,11 +3,12 @@
     <div class="company-footer">
       <img src="@/assets/img/tex_logo_branco.png" />
       <h2>HOTÉIS</h2>
-      <span
-        ><p>
-          Av. Atlântica, 1284<br />(11) 95423-6698<br />contato@texhotels.com
-        </p></span
-      >
+      <span>
+        <p>Av. Atlântica, 1284
+         <br />(11) 95423-6698
+         <br />contato@texhotels.com
+        </p>
+      </span>
     </div>
 
     <div class="footer-box">
@@ -104,7 +105,7 @@ ul {
 li {
   list-style: none;
   font-weight: bold, 400;
-  font-size: 16px;
+  font-size: 30px;
   line-height: 20px;
   border: 0, 5px solid #fff;
 }
@@ -151,8 +152,8 @@ h2 {
   }
   .social-media {
     padding: 0px 0px 0px 60%;
-    margin-top: -2%;
-    margin-bottom: 21px;
+    margin-top: -7%;
+    margin-bottom: 40px;
   }
   span {
     display: none;
@@ -181,7 +182,7 @@ h2 {
   }
   .company-footer {
     padding-top: 10px;
-    padding-left: 5px;
+    padding-left: 20px;
     width: 25%;
     margin-bottom: -55px;
   }
@@ -204,7 +205,7 @@ h2 {
     display: flex;
   }
 }
-@media screen and (max-width: 1000px) and (orientation: landscape) {
+@media screen and (max-width: 1080px) and (orientation: landscape) {
   .newsletter {
     display: none;
   }
@@ -212,6 +213,9 @@ h2 {
     width: 120px;
     display: flex;
     float: none;
+    padding: 120px;
+    margin-top: -60px;
+    margin-bottom: -125px;
   }
   .social-media {
     padding: 0px 0px 0px 72%;
@@ -228,7 +232,7 @@ h2 {
     display: none;
   }
   footer {
-    padding: 0px;
+    padding: 10px;
     flex-direction: column;
   }
   .footer-box {

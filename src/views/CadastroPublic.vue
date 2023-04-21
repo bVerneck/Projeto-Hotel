@@ -1,33 +1,27 @@
 <template>
     <main>
-        <header>
-            <UnifiedHeader />
-        </header>
-
-        <div class="first-box">
-            
-
-            <form id="signup-form">
+        
+     <UnifiedHeader />
+        
+      <div class="first-box">
+            <form @submit.prevent="salvar" id="signup-form">
               <h1 >Registre-se</h1>
                 <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="nome" required v-model="cliente.nome">
 
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required v-model="cliente.email">
 
                 <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="senha" required v-model="cliente.senha">
                 
                 <label for="password">Confirmar Senha:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="confirmaSenha" required v-model="cliente.confirmaSenha">
 
-                <input type="submit" value="Sign Up">
-
-
+                <input type="submit">
             </form>
           </div>  
-            <UnifiedFooter />
-            
+      <UnifiedFooter />
     </main>
 </template>
 
@@ -35,12 +29,63 @@
 import UnifiedHeader from '@/components/UnifiedHeader.vue';
 import UnifiedFooter from '@/components/UnifiedFooter.vue';
 
+import apiMetodos from '@/services/apiMetodos';
+
 export default{
     name: "cadastroPublic",
     components: {
         UnifiedHeader,         
         UnifiedFooter
     },
+    data() {
+    return {
+      clientes: {
+        id:"",
+        email:"",
+        nome:"",
+      },
+      cliente: {
+        email:"",
+        nome:"",
+        senha:"",
+        confirmaSenha:""
+      },
+      errors: []
+    }
+  },
+  mounted(){
+    this.listar()
+  },
+  methods:{
+    listar(){
+      apiMetodos.listar().then(resposta => {
+        this.clientes = resposta.data
+      }).catch(e => {
+        console.log(e)
+      })
+    },
+    salvar(){
+      if(!this.cliente.id){
+        apiMetodos.salvar(this.cliente).then(response => {
+          this.cliente = {}
+          alert('Cadastrado com sucesso!')
+          this.errors = {}
+        }).catch(e => {
+          this.errors = e.response.data.errors
+        })
+      }else{
+        apiMetodos.atualizar(this.cliente).then(resposta => {
+          this.cliente = {}
+          this.errors = {}
+          alert('Atualizado com sucesso!')
+          this.listar()
+        }).catch(e => {
+          this.errors = e.response.data.errors
+        })
+      }
+    },
+  }
+  
 };
 </script>
 
