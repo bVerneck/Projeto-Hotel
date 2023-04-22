@@ -1,8 +1,41 @@
 <template>
   <headerAdmin />
-   <div class="container">
-  <h2 class="title">{{ editandoQuarto ? 'Editar Quarto' : 'Adicionar Quarto' }}</h2>
-  <form @submit.prevent="editandoQuarto ? atualizarQuarto() : adicionarQuarto()" class="form">
+  <div class="main-container">
+  
+  
+  <div class="employee-table-container">
+   <h2 class="page-title">Quartos Existentes</h2>
+  <table class="employee-table">
+    <thead>
+      <tr tr class="employee-tr">
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Adicionais</th>
+        <th>Tamanho</th>
+        <th>Descrição</th>
+        <th>Foto</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="quarto in quartos" :key="quarto.id">
+        <td>{{ quarto.nome }}</td>
+        <td>{{ quarto.preco }}</td>
+        <td>{{ quarto.adicionais }}</td>
+        <td>{{ quarto.tamanho }}</td>
+        <td>{{ quarto.observacao }}</td>
+        <td><img :src="quarto.foto" alt="Foto do quarto"></td>
+        <td>
+          <button type="button" @click="editarQuarto(quarto)" class="btn-secondary">Editar</button>
+          <button type="button" @click="excluirQuarto(quarto)" class="btn-danger">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="new-employee-container">
+    <h2 class="section-title">{{ editandoQuarto ? 'Editar Quarto' : 'Adicionar Quarto' }}</h2>
+  <form @submit.prevent="editandoQuarto ? atualizarQuarto() : adicionarQuarto()" class="new-employee-form">
     <div class="form-group">
       <label for="nome">Nome:</label>
       <input type="text" id="nome" v-model="novoQuarto.nome">
@@ -29,41 +62,14 @@
     </div>
 
     <div class="form-buttons">
-      <button type="submit" class="button">{{ editandoQuarto ? 'Atualizar' : 'Salvar' }}</button>
-      <button type="button" @click="cancelarEdicao()" class="button button-secondary">Cancelar</button>
+      <button type="submit" class="btn-primary">{{ editandoQuarto ? 'Atualizar' : 'Salvar' }}</button>
+      <button type="button" @click="cancelarEdicao()" class="btn-secondary">Cancelar</button>
     </div>
   </form>
 
-  <h2 class="title">Quartos Existentes</h2>
-
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Preço</th>
-        <th>Adicionais</th>
-        <th>Tamanho</th>
-        <th>Descrição</th>
-        <th>Foto</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="(quarto, index) in quartos" :key="index">
-        <td>{{ quarto.nome }}</td>
-        <td>{{ quarto.preco }}</td>
-        <td>{{ quarto.adicionais }}</td>
-        <td>{{ quarto.tamanho }}</td>
-        <td>{{ quarto.observacao }}</td>
-        <td><img :src="quarto.foto" alt=""></td>
-        <td>
-          <button @click="editarQuarto(index)" class="button button-primary">Editar</button>
-          <button @click="removerQuarto(index)" class="button button-danger">Remover</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  </div>
 </div>
+
 
 
 </template>
@@ -142,7 +148,7 @@ atualizarQuarto() {
 Object.assign(this.quartos[this.editandoQuartoIndex], this.novoQuarto);
 this.cancelarEdicao();
 },
-removerQuarto(index) {
+excluirQuarto(index) {
 if (confirm('Tem certeza que deseja remover este quarto?')) {
 this.quartos.splice(index, 1);
 }
@@ -164,95 +170,111 @@ this.editandoQuartoIndex = null;
 </script>
 
 <style scoped>
-.container {
+@font-face {
+  font-family: "Mont";
+  src: url("../assets/fonts/Montserrat-Regular.otf");
+}
+
+body {
+  margin: 0;
+  font-size: 1.1em;
+}
+.page-title{
+  margin-bottom: 10px;
+  text-align: center;
+}
+.employee-table-container {
+  width: 65%;
+  margin-top: 4px;
+  float: right;
+  
+}
+.employee-table-container {
+  width: 65%;
+  margin-top: 4px;
+  float: right;
+  
+}
+
+.employee-table {
   width: 100%;
-  padding: 20px;
+  border-collapse: collapse;
+}
+
+.employee-table th {
+  text-align: left;
+  background-color: #dbd9d98b;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+}
+
+.employee-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+.btn-secondary {
+  margin-right: 0.5em;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #ddd;
+  color: black;
+  cursor: pointer;
+}
+
+.btn-danger {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
+.new-employee-container {
+  width: 34%;
+  margin-top: 42px;
+  background-color: #dbd9d98b;
+  text-align: center;
+  padding-bottom:5px;
+  
+}
+.section-title {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+}
+.new-employee-form {
   display: flex;
+  flex-direction: column;
+  
 }
-
-.title {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-.form {
-display: flex;
-flex-direction: column;
-margin-bottom: 20px;
-}
-
 .form-group {
-display: flex;
-flex-direction: column;
-margin-bottom: 10px;
+  margin-bottom: 1em;
 }
 
 .form-group label {
-font-weight: bold;
-margin-bottom: 5px;
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
 }
 
-.form-group input,
-.form-group select {
-padding: 8px;
-font-size: 16px;
-border-radius: 5px;
-border: 1px solid #ccc;
+.form-group input {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1em;
+  border: 1px solid #ddd;
+}
+.btn-primary {
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #670bff;
+  color: white;
+  cursor: pointer;
 }
 
-.form-buttons {
-display: flex;
-justify-content: space-between;
-align-items: center;
+.btn-primary:hover {
+  background-color: #690bffd4;
 }
-
-.form-buttons button {
-padding: 8px;
-font-size: 16px;
-border-radius: 5px;
-border: none;
-color: #fff;
-background-color: #4CAF50;
-cursor: pointer;
-}
-
-.form-buttons button[type="button"] {
-background-color: #f44336;
-}
-
-.table {
-border-collapse: collapse;
-float: right;
-}
-
-.table th,
-.table td {
-padding: 12px;
-text-align: left;
-border: 1px solid #ccc;
-}
-
-.table th {
-background-color: #4CAF50;
-color: #fff;
-}
-
-.table tr:nth-child(even) {
-background-color: #f2f2f2;
-}
-
-.table tr:hover {
-background-color: #ddd;
-}
-
-.photo {
-max-width: 200px;
-max-height: 200px;
-}
-
-.error {
-color: red;
-margin-top: 5px;
-}
-
-
 </style>
