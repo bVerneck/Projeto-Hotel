@@ -286,5 +286,50 @@ export default {
   font-family: "Montserrat";
 }
 
+  h1{
+    font-size: 2em;
+    font-weight: bold;
+    color: #009900;
+    margin-bottom: 0.5em;
+  }
+
+  form {
+    margin-bottom: 1em;
+  }
+
+  input {
+    border: 1px solid #ccc;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  label {
+    font-weight: bold;
+    margin-right: 0.5em;
+  }
+
+  button {
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 0.5em;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    text-align: left;
+  }
+
+  th {
+    background: #eee;
+    font-weight: bold;
+  }
+
 </style>
 

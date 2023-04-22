@@ -1,59 +1,71 @@
 <template>
   <headerAdmin />
-  <div class="principal">
-    <h2>{{ editandoQuarto ? 'Editar Quarto' : 'Adicionar Quarto' }}</h2>
-    <form @submit.prevent="editandoQuarto ? atualizarQuarto() : adicionarQuarto()">
+   <div class="container">
+  <h2 class="title">{{ editandoQuarto ? 'Editar Quarto' : 'Adicionar Quarto' }}</h2>
+  <form @submit.prevent="editandoQuarto ? atualizarQuarto() : adicionarQuarto()" class="form">
+    <div class="form-group">
       <label for="nome">Nome:</label>
       <input type="text" id="nome" v-model="novoQuarto.nome">
-      <br>
+    </div>
+    <div class="form-group">
       <label for="preco">Preço:</label>
       <input type="text" id="preco" v-model="novoQuarto.preco">
-      <br>
+    </div>
+    <div class="form-group">
       <label for="adicionais">Adicionais:</label>
       <input type="text" id="adicionais" v-model="novoQuarto.adicionais">
-      <br>
+    </div>
+    <div class="form-group">
       <label for="tamanho">Tamanho:</label>
       <input type="number" id="tamanho" v-model="novoQuarto.tamanho">
-      <br>
+    </div>
+    <div class="form-group">
       <label for="observacao">Descrição:</label>
       <input type="text" id="observacao" v-model="novoQuarto.observacao">
-      <br>
+    </div>
+    <div class="form-group">
       <label for="foto">Foto:</label>
       <input type="file" id="foto" v-on:change="onFileSelected">
+    </div>
 
-      <br>
-      <button type="submit">{{ editandoQuarto ? 'Atualizar' : 'Salvar' }}</button>
-      <button type="button" @click="cancelarEdicao()">Cancelar</button>
-    </form>
-    <h2>Quartos Existentes</h2>
-    <table class="quartosSalvos">
-      <thead >
-        <tr>
-          <th>Nome</th>
-          <th>Preço</th>
-          <th>Adicionais</th>
-          <th>Tamanho</th>
-          <th>Descrição</th>
-          <th>Foto</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(quarto, index) in quartos" :key="index">
-          <td>{{ quarto.nome }}</td>
-          <td>{{ quarto.preco }}</td>
-          <td>{{ quarto.adicionais }}</td>
-          <td>{{ quarto.tamanho }}</td>
-          <td>{{ quarto.observacao }}</td>
-          <td>{{ quarto.foto }}</td>
-          <td>
-            <button @click="editarQuarto(index)">Editar</button>
-            <button @click="removerQuarto(index)">Remover</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <div class="form-buttons">
+      <button type="submit" class="button">{{ editandoQuarto ? 'Atualizar' : 'Salvar' }}</button>
+      <button type="button" @click="cancelarEdicao()" class="button button-secondary">Cancelar</button>
+    </div>
+  </form>
+
+  <h2 class="title">Quartos Existentes</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Adicionais</th>
+        <th>Tamanho</th>
+        <th>Descrição</th>
+        <th>Foto</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(quarto, index) in quartos" :key="index">
+        <td>{{ quarto.nome }}</td>
+        <td>{{ quarto.preco }}</td>
+        <td>{{ quarto.adicionais }}</td>
+        <td>{{ quarto.tamanho }}</td>
+        <td>{{ quarto.observacao }}</td>
+        <td><img :src="quarto.foto" alt=""></td>
+        <td>
+          <button @click="editarQuarto(index)" class="button button-primary">Editar</button>
+          <button @click="removerQuarto(index)" class="button button-danger">Remover</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
 </template>
 
 <script>
@@ -152,50 +164,95 @@ this.editandoQuartoIndex = null;
 </script>
 
 <style scoped>
-@font-face {
-  font-family: "Mont";
-  src: url("../assets/fonts/Montserrat-Regular.otf");
-}
-@font-face {
-  font-family: "Mont-bold";
-  src: url("../assets/fonts/Montserrat-Bold.otf");
-}
-@font-face {
-  font-family: "Garamond";
-  src: url("../assets/fonts/AGaramondPro-Bold.otf");
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  font-family: "Montserrat";
-}
-
-
-.principal{
-  background-color: #0b30ff36;
-  text-align: center;
-}
-.quartosSalvos{
-  
-  margin: 0 auto;
-}
-body {
-  margin: 0;
-    background-color:#95959558;
-}
-
-
-
-main{
+.container {
+  width: 100%;
+  padding: 20px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 30px 0 0;
 }
 
-
-@media screen and (max-width: 728px) {
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
+.form {
+display: flex;
+flex-direction: column;
+margin-bottom: 20px;
+}
+
+.form-group {
+display: flex;
+flex-direction: column;
+margin-bottom: 10px;
+}
+
+.form-group label {
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+padding: 8px;
+font-size: 16px;
+border-radius: 5px;
+border: 1px solid #ccc;
+}
+
+.form-buttons {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.form-buttons button {
+padding: 8px;
+font-size: 16px;
+border-radius: 5px;
+border: none;
+color: #fff;
+background-color: #4CAF50;
+cursor: pointer;
+}
+
+.form-buttons button[type="button"] {
+background-color: #f44336;
+}
+
+.table {
+border-collapse: collapse;
+float: right;
+}
+
+.table th,
+.table td {
+padding: 12px;
+text-align: left;
+border: 1px solid #ccc;
+}
+
+.table th {
+background-color: #4CAF50;
+color: #fff;
+}
+
+.table tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+
+.table tr:hover {
+background-color: #ddd;
+}
+
+.photo {
+max-width: 200px;
+max-height: 200px;
+}
+
+.error {
+color: red;
+margin-top: 5px;
+}
+
 
 </style>
