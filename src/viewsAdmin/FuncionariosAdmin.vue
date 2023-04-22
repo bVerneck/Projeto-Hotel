@@ -3,7 +3,7 @@
 
   <div>
     <h1 class="page-title">Gerenciador de Funcionários</h1>
-  
+
   <div class="employee-table-container">
     <table class="employee-table">
       <thead>
@@ -40,7 +40,6 @@
       </div>
       <div class="form-group">
         <label for="informacoes">Informações:</label>
-        <!-- <input type="text" v-model="novoFuncionario.informacoes" /> -->
         <textarea class="text" type="text" v-model="novoFuncionario.informacoes" ></textarea>
       </div>
       
@@ -142,7 +141,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @charset "UTF-8";
 
 @font-face {

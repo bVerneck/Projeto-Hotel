@@ -55,7 +55,7 @@
         <nav>
           <ul>
             <li><router-link to="/homeAdmin">Home</router-link></li>
-            <router-link to="/hospedesAdmin">Hospedes</router-link>
+            <li><router-link to="/hospedesAdmin">Hospedes</router-link></li>
             <li><router-link to="/quartosAdmin">Quartos</router-link></li>
             <li><router-link to="/funcionariosAdmin">Funcionarios</router-link></li>
           </ul>
@@ -113,16 +113,40 @@
 <script>
 
 import { Icon } from '@iconify/vue'
-
+import LoginAdmin from '@/viewsAdmin/LoginAdmin.vue'
 export default {
   name: "HomeAdmin",
   components: {
   
   },
+  
+  meta: {
+    requiresPreviousPage: true
+  },
+  data() {
+    return {
+      guests: [
+        { name: 'João', checkin: '2022-01-01', checkout: '2022-01-03' },
+        { name: 'Maria', checkin: '2022-01-05', checkout: '2022-01-10' },
+        { name: 'Pedro', checkin: '2022-02-10', checkout: '2022-02-13' }
+      ]
+    }
+  },
+  computed: {
+    totalGuests() {
+      return this.guests.length
+    }
+  }
 }
+const routes = [
+  { path: '/loginAdmin', component: LoginAdmin },
+  { path: '/homeAdmin', component: HomeAdmin, meta: { requiresPreviousPage: true } }
+]
+export { routes }
+
 </script>
 
-<style>
+<style scoped>
 * {
   margin: 0;
   padding: 0;
