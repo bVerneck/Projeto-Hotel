@@ -55,7 +55,7 @@
         <nav>
           <ul>
             <li><router-link to="/homeAdmin">Home</router-link></li>
-            <router-link to="/hospedesAdmin">Hospedes</router-link>
+            <li><router-link to="/hospedesAdmin">Hospedes</router-link></li>
             <li><router-link to="/quartosAdmin">Quartos</router-link></li>
             <li><router-link to="/funcionariosAdmin">Funcionarios</router-link></li>
           </ul>
@@ -113,16 +113,18 @@
 <script>
 
 import { Icon } from '@iconify/vue'
-
+import LoginAdmin from '@/viewsAdmin/LoginAdmin.vue'
 export default {
   name: "HomeAdmin",
   components: {
   
-  },
+  }
 }
+
+
 </script>
 
-<style>
+<style scoped>
 * {
   margin: 0;
   padding: 0;

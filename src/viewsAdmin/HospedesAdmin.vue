@@ -1,22 +1,31 @@
 
-
 <template>
   <headerAdmin />
   <div>
+    <div class="new-employee-container">
     <h1>Reserva Manual</h1>
     <form id="reservation-form" @submit="save">
+      <div class="form-group">
+        <label>Nome Completo:</label>
       <input
         type="text"
         name="name"
         placeholder="Nome Completo"
         v-model="name"
       />
+      </div>
+        <div class="form-group">
+          <label>Email:</label>
       <input
         type="email"
         name="email"
         placeholder="E-mail"
         v-model="email"
       />
+      </div>
+      
+      <div class="form-group">
+        <label>Cpf:</label>
       <input
         type="text"
         name="cpf"
@@ -24,6 +33,8 @@
         v-model="cpf"
         @keypress="onlyNumbers"
       />
+      </div>
+      <div class="form-group">
 
       <label for="preco">Data de nascimento:</label>
       <input
@@ -32,6 +43,8 @@
         placeholder="Data de Nascimento"
         v-model="birthDate"
       />
+      </div>
+      <div class="form-group">
 
       <label for="dataEntrada">Data de entrada:</label>
       <input
@@ -40,6 +53,8 @@
         placeholder="Data de Entrada"
         v-model="checkInDate"
       />
+      </div>
+      <div class="form-group">
 
       <label for="dataSaida">Data de saida:</label>
       <input
@@ -47,8 +62,9 @@
         name="checkOutDate"
         placeholder="Data de Saída"
         v-model="checkOutDate"
-      />
-
+      />  
+     </div>
+     <div class="form-group">
       <label for="acompanhantes">Acompanhantes:</label>
       <input
         type="text"
@@ -57,6 +73,7 @@
         v-model="acompanhantes"
         @keypress="onlyNumbers"
       />
+      </div>
 
       <div>Serviços Adicionais:</div>
       <input type="checkbox" name="academia" v-model="services.academia" />
@@ -75,6 +92,7 @@
         v-model="services.estacionamento"
       />
       <label>Estacionamento</label>
+      
       <div>Tipo de Quarto:</div>
       <input type="radio" name="roomType" value="Premier Room" v-model="roomType" />
       <label>Premier Room</label>
@@ -87,10 +105,14 @@
         v-model="roomType"
       />
       <label>Tex Premier Room</label>
-      <input type="submit" value="Salvar" />
+      <div>
+      <input type="submit" value="Salvar" class="btn-primary"/>
+      </div>
     </form>
+    </div>
 
-    <h2>hospedes</h2>
+<div>
+    <h1>hospedes</h1>
     <table>
       <thead>
         <tr>
@@ -103,6 +125,7 @@
           <th>companhantes</th>
           <th>Serviços Adicionais</th>
           <th>Tipo de Quarto</th>
+          <th>Ações</th>
         </tr>
       </thead>
       <tbody>
@@ -125,12 +148,13 @@
           </td>
           <td>{{ reservation.roomType }}</td>
           <td>
-            <button @click="edit(index)">Editar</button>
-            <button @click="remove(index)">Remover</button>
+            <button @click="edit(index)" class="btn-secondary">Editar</button>
+            <button @click="remove(index)" class="btn-danger">Remover</button>
           </td>
         </tr>
       </tbody>
     </table>
+    </div>
   </div>
 </template>
 
@@ -286,10 +310,72 @@ export default {
   font-family: "Montserrat";
 }
 
+.new-employee-container {
+  width: 100%;
+  background-color: #dbd9d98b;
+  text-align: center;
+  
+  
+}
+.form-group {
+  
+  margin-bottom: 1em;
+}
+
+.form-group label {
+   display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  
+}
+
+.form-group input {
+  width: 75%;
+  padding: 0.5em;
+  font-size: 0.9em;
+  border: 1px solid #ddd;
+  text-align: center;
+  
+}
+
+.btn-danger {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background-color: #da190b;
+}
+.btn-secondary {
+  margin-right: 0.5em;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #ddd;
+  color: black;
+  cursor: pointer;
+}
+.btn-primary {
+  margin-top: 1em;
+  padding: 0.7em 6em;
+  border: none;
+  border-radius: 4px;
+  background-color: #670bff;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #690bffd4;
+}
   h1{
     font-size: 2em;
     font-weight: bold;
-    color: #009900;
+    color: #000000;
     margin-bottom: 0.5em;
   }
 
@@ -330,6 +416,4 @@ export default {
     background: #eee;
     font-weight: bold;
   }
-
 </style>
-
