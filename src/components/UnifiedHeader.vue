@@ -33,23 +33,37 @@ export default {
     BotaoReservar,
     LogoHeader,
   },
-};
 
-let prevScrollpos = window.pageYOffset;
-let timeoutId = setTimeout(() => {
-  document.querySelector('.header').style.transition = 'top 0.4s ease-in-out';
-}, 300);
+  mounted() {
+    const header = document.querySelector('.header');
+    const logo = document.querySelector('.tx-logo');
+    const btn = document.querySelector('.btn-rsv');
+    const transitionClass = 'transition-active';
+    let prevScrollPos = window.pageYOffset;
 
-window.addEventListener('scroll', () => {
-  const currentScrollPos = window.pageYOffset;
+    header.classList.add(transitionClass);
+    logo.classList.add(transitionClass);
 
-  if (prevScrollpos > currentScrollPos) {
-    document.querySelector('.header').style.top = '0';
-  } else {
-    document.querySelector('.header').style.top = '-100px';
+    header.style.transition = 'top 0.4s ease-in-out';
+    logo.style.transition = 'top 0.4s ease-in-out';
+
+    header.style.willChange = 'top';
+    logo.style.willChange = 'top';
+
+    window.addEventListener('scroll', () => {
+      const currentScrollPos = window.pageYOffset;
+      const isScrollingUp = prevScrollPos > currentScrollPos;
+
+      if (currentScrollPos >= 120) {
+        header.style.top = isScrollingUp ? '0px' : '-80px';
+        logo.style.top = isScrollingUp ? '0px' : '80px';
+      }
+
+      prevScrollPos = currentScrollPos;
+    });
   }
-  prevScrollpos = currentScrollPos;
-});
+
+};
 
 </script>
 
@@ -90,6 +104,10 @@ ul {
   list-style: none;
 }
 
+.menu {
+  padding-right: 6rem;
+}
+
 .header {
   background-color: #36383f;
   box-shadow: 1px 1px 5px 0px #85888c;
@@ -98,6 +116,7 @@ ul {
   width: 100%;
   font-family: "Mont", "Garamond";
   text-transform: uppercase;
+  z-index: 2;
 }
 
 header img {
@@ -213,12 +232,11 @@ label span {
 
 @media (min-width: 768px) and (orientation: landscape) {
   .nav {
-    margin-right: 1%;
+    margin-right: 3%;
   }
 
   .nav li {
     height: 95px;
-    font-size: 14px;
     line-height: 33px;
   }
 
