@@ -20,9 +20,9 @@
 
       <div class="imagens">
         <h3>Deluxe Room</h3>
-        
+        <RouterLink :to="{ path: 'reservas', hash: '#deluxe' }">
          <img  class="borderRadius" src="../assets/img/deluxe-room.jpg"/>      
-
+        </RouterLink>
       </div>
 
       <div class="imagens">

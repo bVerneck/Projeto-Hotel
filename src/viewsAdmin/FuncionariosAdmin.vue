@@ -19,11 +19,16 @@
           <th>Funcionarios</th>
           <th>Informações</th>
           <th>Matricula</th>
+          <th></th>
         </tr>
-        <tr v-for="(funcionario, i) in funcionarios" :key="i">
-          <td class="cursorClick">{{ funcionario.nome }}</td>
+        <tr v-for="funcionario of funcionarios" :key="funcionario.id">
+          <td>{{ funcionario.nome }}</td>
           <td>{{ funcionario.salario }} </td>
           <td>{{ funcionario.matricula }}</td>
+          <td>
+            <button @click="editar(funcionario)">Editar</button>
+            <button @click="remover(funcionario)">Remover</button>
+          </td>
         </tr>
       </table>
     </main>
@@ -33,7 +38,7 @@
 
 <script>
 import HeaderAdmin from './components/HeaderAdmin.vue';
-import api from '@/services/api.js';
+import apiMetodos from '@/services/apiMetodos';
 
 export default {
   name: "funcionariosAdmin",
@@ -42,16 +47,61 @@ export default {
   },
   data() {
     return {
-      funcionarios: []
-    };
+      funcionario: {
+        id:"",
+        nome:"",
+        matricula:"",
+        salario:""
+      },
+      funcionarios: [],
+      errors: []
+    }
   },
   mounted() {
-    api.get('/funcionarios').then(response => {
-      this.response = response;
-      this.funcionarios = response.data;
-      console.log(response.data);
-    })
+    this.listar()
   },
+  methods:{
+    listar(){
+      apiMetodos.listar().then(resposta => {
+        this.funcionarios = resposta.data
+      }).catch(e => {
+        console.log(e);
+      })
+    },
+    salvar(){
+      if(!this.funcionario.id){
+        apiMetodos.salvar(this.funcionario).then(resposta => {
+          this.funcionario = {}
+          alert('Cadastrado com sucesso!')
+          this.errors = {}
+        }).catch(e => {
+          this.errors = e.resposta.data.errors
+        })
+      }else{
+        apiMetodos.atualizar(this.funcionario).then(resposta => {
+          this.funcionario = {}
+          this.errors = {}
+          alert('Atualizado com sucesso!')
+          this.listar()
+        }).catch(e => {
+          this.errors = e.resposta.data.errors
+        })
+      }
+    },
+    editar(funcionario){
+      this.funcionarios = funcionario
+    },
+    remover(funcionario){
+      if(confirm('Deseja excluir o funcionário?')){
+        apiMetodos.apagar(funcionario).then(resposta => {
+          this.listar()
+          this.errors = {}
+        }).catch(e => {
+          this.errors = e.resposta.data.errors
+        })
+      }
+    }
+  }
 }
 </script>
 
