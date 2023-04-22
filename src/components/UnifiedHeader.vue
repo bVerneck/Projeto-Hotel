@@ -109,8 +109,8 @@ ul {
 }
 
 .header {
-  background-color: #36383f;
-  box-shadow: 1px 1px 5px 0px #85888c;
+  background-color: #363f3f6b;
+  box-shadow: none;
   position: sticky;
   top: 0;
   width: 100%;
