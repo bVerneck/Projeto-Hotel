@@ -16,21 +16,5 @@ export default	{
 
 	apagar:(clientes)=>{
 		return api.delete('clientes', { data: clientes })
-	},
-
-	salvar:(funcionario)=>{
-		return api.post('funcionario', funcionario);
-	},
-
-	atualizar:(funcionario)=>{
-		return api.put('funcionario', funcionario);
-	},
-
-	listar:()=>{
-		return api.get('funcionarios')
-	},
-
-	apagar:(funcionario)=>{
-		return api.delete('funcionario', { data: funcionario })
 	}
 }
