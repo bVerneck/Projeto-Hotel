@@ -83,9 +83,15 @@ body {
   margin: 0%;
 }
 
+
 main {
   padding-top: 2rem;
   margin-bottom: 0.6rem;
+  background-image: url("../assets/img/linear-flat-abstract-lines-pattern_23-2148940824.webp");
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  
 }
 
 h1 {
@@ -104,7 +110,7 @@ h1 {
   width: 100%;
   height: 8rem;
   position: absolute;
-  z-index: -1;
+  z-index: 1;
 }
 
 .first-box {
