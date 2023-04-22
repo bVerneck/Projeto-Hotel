@@ -37,4 +37,12 @@ font-face {
   cursor: pointer;
   color: #f9f9f9;
 }
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .btn-rsv {
+    position: static;
+    margin-left: 28px;
+  }
+
+}
 </style>

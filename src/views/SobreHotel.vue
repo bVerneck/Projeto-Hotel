@@ -86,14 +86,13 @@ body {
 
 main {
   position: relative;
-  padding-top: 2rem;
   width: 100%;
   height: 100%;
 }
 
 main::before {
   content: "";
-  position:absolute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -107,12 +106,16 @@ main::before {
 
 h1 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 7.5rem;
   font-weight: 600;
   font-family: "Mont", "Garamond";
   text-transform: uppercase;
-  padding-top: 1rem;
-  padding-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  background-image: url(../assets/img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg);
+  background-repeat: repeat;
+  background-clip: text;
+  color: transparent;
 }
 
 .first-view {
@@ -127,7 +130,7 @@ h1 {
 .first-box {
   display: flex;
   border-radius: 1rem;
-  padding: 4rem;
+  /* padding: 4rem; */
   padding-top: 0rem;
   margin-left: auto;
   margin-right: auto;
@@ -135,11 +138,13 @@ h1 {
   flex-direction: column;
 }
 
+
+
 .p-right {
   float: right;
   text-align: justify;
-  font-size: 1.3rem;
-  width: 58%;
+  font-size: 1.5rem;
+  width: 48%;
   font-family: "Mont";
 
 }
@@ -149,13 +154,13 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 .img-left {
   display: inline;
   margin-right: auto;
-  width: 40%;
+  width: 48%;
   border-radius: 1rem;
   position: static;
   box-shadow: 1px 1px 5px 0px #85888c;
@@ -172,6 +177,11 @@ a:hover {
 }
 
 @media screen and (max-width: 780px) {
+
+  h1 {
+    font-size: 4.5rem;
+  }
+
   .image-and-text {
     flex-direction: column;
     align-items: flex-start;
@@ -179,7 +189,6 @@ a:hover {
 
   .first-box {
     padding: 0;
-    background-color: white;
   }
 
   .img-left {
