@@ -86,8 +86,12 @@ body {
 
 main {
   position: relative;
-  width: 100%;
+  width: 80%;
   height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 main::before {

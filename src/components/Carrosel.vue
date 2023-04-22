@@ -1,14 +1,16 @@
 <template>
-    <div class="carousel" ref="carousel">
-        <div class="carousel-item" v-for="item in items" :key="item.id" :class="{ 'active': item.id === currentSlide }">
-            <img :src="require(`@/assets/img/${item.image}`)" :alt="item.title">
-            <div class="carousel-caption">
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.description }}</p>
+    <div class="first-view">
+        <div class="carousel" ref="carousel">
+            <div class="carousel-item" v-for="item in items" :key="item.id" :class="{ 'active': item.id === currentSlide }">
+                <img :src="require(`@/assets/img/${item.image}`)" :alt="item.title">
+                <div class="carousel-caption">
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.description }}</p>
+                </div>
             </div>
+            <button class="carousel-control prev" @click="prevSlide">&#8249;</button>
+            <button class="carousel-control next" @click="nextSlide">&#8250;</button>
         </div>
-        <button class="carousel-control prev" @click="prevSlide">&#8249;</button>
-        <button class="carousel-control next" @click="nextSlide">&#8250;</button>
     </div>
 </template>
 

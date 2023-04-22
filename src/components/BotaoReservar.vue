@@ -21,15 +21,19 @@ font-face {
 
 .btn-rsv {
   padding: 0;
-  width: 6rem;
+  width: 6.5rem;
   height: 2rem;
   text-transform: uppercase;
   border-radius: 0.4rem;
   border: none;
-  background-color: rgb(105, 11, 255);
+  background-color: #0DADBD;
   color: #f9f9f9;
   text-align: center;
   position: fixed;
+  font-family: 'Mont-bold', 'Helvetica Neue';
+
+
+  
 }
 
 .btn-rsv:hover {

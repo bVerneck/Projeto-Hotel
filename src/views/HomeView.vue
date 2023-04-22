@@ -14,75 +14,69 @@
   </head>
 
   <body>
-    <header>
-      <Carrosel />
-      <UnifiedHeader />
-      <div class="texto">
-        <p class="texto-bemvindo">BEM-VINDO AO</p>
-        <h1>T.EX</h1>
-        <p class="texto-hotel">HOTEL</p>
-        <p class="texto-slogan">Desfrute do Luxo Tecnológico</p>
-      </div>
-      <router-link style="text-decoration: none" href="#" to="/reservas"><button class="btn"><i class="fa fa-home"></i>
-          Reserve
-          Agora</button></router-link>
-      <div class="scroll-down">
-        <img src="@/assets/img/down_arrow.svg" alt="role para baixo">
-      </div>
+    <Carrosel />
+    <UnifiedHeader />
 
-    </header>
-
-    <div style="text-align:center">
-      <h2 class="sobre">Sobre Nosso Hotel</h2>
+    <div class="texto">
+      <p class="texto-bemvindo">BEM-VINDO AO</p>
+      <h1>T.EX</h1>
+      <p class="texto-hotel">HOTEL</p>
+      <p class="texto-slogan">Desfrute do Luxo Tecnológico</p>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="column-33">
-          <img class="imagens" src="@/assets/img/getting-to-marinabaysands-t.webp">
+    <div class="container-full">
+      <div class="sobre">
+        <h2 class="sobre">Sobre Nosso Hotel</h2>
+      </div>
+
+      <div class="contain">
+        <div class="line">
+          <div class="column-33">
+            <img class="imagens" src="@/assets/img/getting-to-marinabaysands-t.webp">
+          </div>
+          <div class="column-66">
+            <p class="descImagens">Pensado e arquitetado pelos melhores profissionais do mundo, visando para que nossos
+              clientes tenham total conforto e tecnologia ao seu dispor.
+            </p>
+          </div>
         </div>
+      </div>
+
+      <!--Acomodações-->
+      <br><br><br>
+      <div id="acomodacoes" style="text-align:center">
+        <h2 class="sobre">NOSSAS ACOMODAÇÕES</h2>
+      </div>
+
+      <div class="line">
+        <div class="holder">
+
+
+          <div class="imagen" data-title="Premier Room">
+            <img src="@/assets/img/premier-room.webp" style="border-radius: 18px;">
+            <p class="descImagens">Pensado e arquitetado pelos melhores profissionais do mundo, visando para que nossos
+              clientes tenham total conforto e tecnologia ao seu dispor.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="contain">
+        <RouterLink to="sobreHotel#"><button class="btn">Conheça mais sobre nossos serviços</button></RouterLink>
+      </div>
+
+      <!--Fim Gastronomia-->
+      <div class="contain line">
+        <h2 class="sobre">Gastronomia</h2>
+        <img class="column-33 imagens" src="@/assets/img/RISE_Australian_Stanbroke_Beef_Ribeye_600x450.webp">
         <div class="column-66">
-          <p class="textoimg">Pensado e arquitetado pelos melhores profissionais do mundo, visando para que nossos
-            clientes tenham total conforto e tecnologia ao seu dispor.
+          <p class="descImagens">
+            Delicie-se com uma variedade
+            ilustre de culinárias de todo o mundo. Navegue pelo mais variados tipos de pratos, feito pelo melhores e
+            variados chefs que temos.
+            No Restaurante T.EX CUISINE, o mundo estará à sua mesa.
           </p>
         </div>
-      </div>
-    </div>
-
-    <!--Acomodações-->
-    <br><br><br>
-    <div id="acomodacoes" style="text-align:center">
-      <h2 class="sobre">NOSSAS ACOMODAÇÕES</h2>
-    </div>
-
-    <div class="row">
-      <div class="holder">
-
-
-        <div class="imagen" data-title="Premier Room">
-          <img src="@/assets/img/premier-room.webp" style="border-radius: 18px;">
-          <p class="descImagens">Pensado e arquitetado pelos melhores profissionais do mundo, visando para que nossos
-            clientes tenham total conforto e tecnologia ao seu dispor.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container">
-      <button class="btn">Conheça mais sobre nossos serviços</button>
-    </div>
-
-    <!--Fim Gastronomia-->
-    <div class="container row">
-      <h2 class="sobre">Gastronomia</h2>
-      <img class="column-33 imagens" src="@/assets/img/RISE_Australian_Stanbroke_Beef_Ribeye_600x450.webp">
-      <div class="column-66">
-        <p class="textoimgDelicie">
-          Delicie-se com uma variedade
-          ilustre de culinárias de todo o mundo. Navegue pelo mais variados tipos de pratos, feito pelo melhores e
-          variados chefs que temos.
-          No Restaurante T.EX CUISINE, o mundo estará à sua mesa.
-        </p>
       </div>
     </div>
     <!--Fim Gastronomia-->
@@ -128,6 +122,7 @@ export default {
 }
 
 .sobre {
+  margin-top: 5rem;
   text-align: center;
   font-size: 3rem;
   font-family: "Mont";
@@ -141,11 +136,36 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
-  padding: 60px;
+.contain {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.row:after {
+.container-full {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.container-full::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.12;
+  background-image: url("../assets/img/pexels-damir-mijailovic-3695238.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.line:after {
   content: "";
   display: table;
   clear: both;
@@ -193,22 +213,6 @@ img {
   text-align: center;
 }
 
-.textoimg {
-  font-size: 30px;
-  font-family: "Montserrat";
-  padding-top: 8%;
-  padding-left: 5%;
-
-
-}
-
-.textoimgDelicie {
-  font-size: 30px;
-  font-family: "Montserrat";
-  padding-left: 5%;
-
-}
-
 .holder {
   display: flex;
   justify-content: center;
@@ -242,7 +246,14 @@ img {
 
 @media screen and (max-width: 1000px) and (orientation: portrait) {
 
+  .container-full {
+    width: 100%;
+    margin-top: 50rem;
+  }
 
+  .contain {
+    width: 100%;
+  }
 
   .column-66,
   .column-33 {
@@ -254,13 +265,6 @@ img {
     margin: auto;
   }
 
-  .imagens {
-    margin: 0px;
-    width: auto;
-    height: auto;
-    padding-right: 20px;
-    padding-left: 20px;
-  }
 
   .imagen {
     margin: 0px;
@@ -299,12 +303,12 @@ img {
   padding-top: 0;
 }
 
-.row .holder .imagens img {
+.line .holder .imagens img {
   opacity: 0.7;
   transition: all 0.6s;
 }
 
-.row .holder .imagens img:hover {
+.line .holder .imagens img:hover {
   opacity: 1;
   cursor: pointer;
   width: 605px;
@@ -409,12 +413,13 @@ img {
   justify-content: center;
   margin-left: 5rem;
   margin-top: 8rem;
+  margin-bottom: 16rem;
   padding: .5rem;
   border-radius: 1rem;
   color: #fff;
   position: relative;
-  z-index: 2;
-  
+  z-index: 1;
+
 }
 
 .texto p,
@@ -525,6 +530,11 @@ h1 {
 @media only screen and (max-width: 1070px) {
 
   .texto {
+    display: inline;
+    margin-bottom: 5rem;
+  }
+
+  .texto .texto-slogan {
     display: none;
   }
 
