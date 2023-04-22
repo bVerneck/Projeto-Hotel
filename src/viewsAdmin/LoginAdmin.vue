@@ -1,55 +1,42 @@
 <template>
-    <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Login Admin</title>
-</head>
-<body>
-  
+  <main>
     <div class="container">
-        <img src="../assets/img/group.png" alt="logo" class="logo">
-        
-        <form action="" method="post" class="form-inline">
-            <label for="email" class="email">Email</label><br>
-            <input type="email" id="email" placeholder="Email" name="email"> <br>
-            <label for="pwd">Password</label><br>
-            <input type="password" id="pwd" placeholder="Senha"><br>
-            <button type="submit" onclick="logar(); return false">Entrar</button>
-        </form>
+      <img src="../assets/img/group.png" alt="logo" class="logo">
+      
+      <form @submit.prevent="login" class="form-inline">
+        <label for="email" class="email">Email</label><br>
+        <input type="email" id="email" placeholder="Email" v-model="email"> <br>
+        <label for="pwd">Senha</label><br>
+        <input type="password" id="pwd" placeholder="Senha" v-model="senha"><br>
+        <button type="submit">Entrar</button>
+      </form>
     </div>
-       
-    
-</body>
-</html>
+  </main>
 </template>
 
 <script>
-
 export default {
-    name:"LoginAdmin",
-
-methods:{
-logar()
-
-{function logar() {
-    var login = document.getElementById('email').value;
-    // var password = document.getElementById('pwd').value;
-
-    localStorage.setItem('user', login)
-    var email_localStorage = localStorage.getItem('email')
-                     }
+  name: 'LoginAdmin',
+  data() {
+    return {
+      email: '',
+      senha: ''
+    }
+  },
+  methods: {
+    login() {
+      
+      if (this.email === 'texhotel@tex.com' && this.senha === 'admin') {
+        console.log('login bem-sucedido')
+        this.$router.push('/homeAdmin')
+      } else {
+        console.log('email ou senha incorretos')
+      }
+    }
+  }
 }
-        }
-                 }
-
-
-
-
 </script>
+
 
 <style scoped>
 @font-face {
@@ -71,13 +58,14 @@ logar()
 
 .container{
     height: 520px;
-    width: 355px;
-    border-radius: 5px;
+    width: 500px;
+    border-radius: 8px 8px 8px 8px;
     overflow: hidden;
     text-align: center;
+    background-color: #dddddd78;
 }
 
-body{
+main{
  
     background-image:
     url("../assets/img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg");
@@ -92,32 +80,25 @@ body{
        
 }
 
-form{
-    color: white;
-}
+
 
 .logo{
     height: 100px;
-    padding-left:22%;
-    border-radius: 12px ;
+    
+    border-radius: 0px 0px 12px 12px;
     
 }
 
 .form-inline{
     align-items: center;
     border-radius: 10px;
-    margin-top: 80px;
-    
-}
-
-.form-inline label {
-    margin:  5px 10px 5px 0;
+    margin-top: 40px;
     
 }
 
 .form-inline input{
     vertical-align: middle;
-    margin: 5px 10px 5px 0;
+    margin: 5px 10px 50px 0;
     padding: 10px;
     width: 350px;
     background-color: rgba(255, 255, 255, 0.603);
@@ -128,7 +109,7 @@ form{
 
 .form-inline button {
     padding: 10px 20px;
-    background-color: slateblue;
+    background-color: #670bff;
     border: 1px solid #ddd;
     color: white;
     cursor: pointer;
@@ -137,7 +118,7 @@ form{
 
 .form-inline button:hover{
     
-    background-color: rgb(45, 95, 160);
+    background-color: #690bffd4;
 }
 teste {
 background-color: aliceblue;    
