@@ -1,59 +1,77 @@
 <template>
   <headerAdmin />
-  <div class="principal">
-    <h2>{{ editandoQuarto ? 'Editar Quarto' : 'Adicionar Quarto' }}</h2>
-    <form @submit.prevent="editandoQuarto ? atualizarQuarto() : adicionarQuarto()">
+  <div class="main-container">
+  
+  
+  <div class="employee-table-container">
+   <h2 class="page-title">Quartos Existentes</h2>
+  <table class="employee-table">
+    <thead>
+      <tr tr class="employee-tr">
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Adicionais</th>
+        <th>Tamanho</th>
+        <th>Descrição</th>
+        <th>Foto</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="quarto in quartos" :key="quarto.id">
+        <td>{{ quarto.nome }}</td>
+        <td>{{ quarto.preco }}</td>
+        <td>{{ quarto.adicionais }}</td>
+        <td>{{ quarto.tamanho }}</td>
+        <td>{{ quarto.observacao }}</td>
+        <td><img :src="quarto.foto" alt="Foto do quarto"></td>
+        <td>
+          <button type="button" @click="editarQuarto(quarto)" class="btn-secondary">Editar</button>
+          <button type="button" @click="excluirQuarto(quarto)" class="btn-danger">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="new-employee-container">
+    <h2 class="section-title">{{ editandoQuarto ? 'Editar Quarto' : 'Adicionar Quarto' }}</h2>
+  <form @submit.prevent="editandoQuarto ? atualizarQuarto() : adicionarQuarto()" class="new-employee-form">
+    <div class="form-group">
       <label for="nome">Nome:</label>
       <input type="text" id="nome" v-model="novoQuarto.nome">
-      <br>
+    </div>
+    <div class="form-group">
       <label for="preco">Preço:</label>
       <input type="text" id="preco" v-model="novoQuarto.preco">
-      <br>
+    </div>
+    <div class="form-group">
       <label for="adicionais">Adicionais:</label>
       <input type="text" id="adicionais" v-model="novoQuarto.adicionais">
-      <br>
+    </div>
+    <div class="form-group">
       <label for="tamanho">Tamanho:</label>
       <input type="number" id="tamanho" v-model="novoQuarto.tamanho">
-      <br>
+    </div>
+    <div class="form-group">
       <label for="observacao">Descrição:</label>
       <input type="text" id="observacao" v-model="novoQuarto.observacao">
-      <br>
+    </div>
+    <div class="form-group">
       <label for="foto">Foto:</label>
       <input type="file" id="foto" v-on:change="onFileSelected">
+    </div>
 
-      <br>
-      <button type="submit">{{ editandoQuarto ? 'Atualizar' : 'Salvar' }}</button>
-      <button type="button" @click="cancelarEdicao()">Cancelar</button>
-    </form>
-    <h2>Quartos Existentes</h2>
-    <table class="quartosSalvos">
-      <thead >
-        <tr>
-          <th>Nome</th>
-          <th>Preço</th>
-          <th>Adicionais</th>
-          <th>Tamanho</th>
-          <th>Descrição</th>
-          <th>Foto</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(quarto, index) in quartos" :key="index">
-          <td>{{ quarto.nome }}</td>
-          <td>{{ quarto.preco }}</td>
-          <td>{{ quarto.adicionais }}</td>
-          <td>{{ quarto.tamanho }}</td>
-          <td>{{ quarto.observacao }}</td>
-          <td>{{ quarto.foto }}</td>
-          <td>
-            <button @click="editarQuarto(index)">Editar</button>
-            <button @click="removerQuarto(index)">Remover</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="form-buttons">
+      <button type="submit" class="btn-primary">{{ editandoQuarto ? 'Atualizar' : 'Salvar' }}</button>
+      <button type="button" @click="cancelarEdicao()" class="btn-secondary">Cancelar</button>
+    </div>
+  </form>
+
   </div>
+</div>
+
+
+
 </template>
 
 <script>
@@ -130,7 +148,7 @@ atualizarQuarto() {
 Object.assign(this.quartos[this.editandoQuartoIndex], this.novoQuarto);
 this.cancelarEdicao();
 },
-removerQuarto(index) {
+excluirQuarto(index) {
 if (confirm('Tem certeza que deseja remover este quarto?')) {
 this.quartos.splice(index, 1);
 }
@@ -156,46 +174,107 @@ this.editandoQuartoIndex = null;
   font-family: "Mont";
   src: url("../assets/fonts/Montserrat-Regular.otf");
 }
-@font-face {
-  font-family: "Mont-bold";
-  src: url("../assets/fonts/Montserrat-Bold.otf");
-}
-@font-face {
-  font-family: "Garamond";
-  src: url("../assets/fonts/AGaramondPro-Bold.otf");
-}
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  font-family: "Montserrat";
-}
-
-
-.principal{
-  background-color: #0b30ff36;
-  text-align: center;
-}
-.quartosSalvos{
-  
-  margin: 0 auto;
-}
 body {
   margin: 0;
-    background-color:#95959558;
+  font-size: 1.1em;
+}
+.page-title{
+  margin-bottom: 10px;
+  text-align: center;
+}
+.employee-table-container {
+  width: 65%;
+  margin-top: 4px;
+  float: right;
+  
+}
+.employee-table-container {
+  width: 65%;
+  margin-top: 4px;
+  float: right;
+  
 }
 
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
+.employee-table th {
+  text-align: left;
+  background-color: #dbd9d98b;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+}
 
-main{
+.employee-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+.btn-secondary {
+  margin-right: 0.5em;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #ddd;
+  color: black;
+  cursor: pointer;
+}
+
+.btn-danger {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
+.new-employee-container {
+  width: 34%;
+  margin-top: 42px;
+  background-color: #dbd9d98b;
+  text-align: center;
+  padding-bottom:5px;
+  
+}
+.section-title {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+}
+.new-employee-form {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 30px 0 0;
+  flex-direction: column;
+  
+}
+.form-group {
+  margin-bottom: 1em;
 }
 
-
-@media screen and (max-width: 728px) {
+.form-group label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
 }
 
+.form-group input {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1em;
+  border: 1px solid #ddd;
+}
+.btn-primary {
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #670bff;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #690bffd4;
+}
 </style>

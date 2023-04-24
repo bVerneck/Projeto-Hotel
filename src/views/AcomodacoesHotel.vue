@@ -1,254 +1,251 @@
 <template>
   <UnifiedHeader />
-  <!--Acomodações-->
-  <br /><br />
-
-  <div id="acomodacoes" style="text-align: center">
-    <h2 class="texto-NossasAcomodacoes">NOSSAS ACOMODAÇÕES</h2>
-  </div>
-
-  <div class="row">
-    <div class="holder">
-
-      <div class="imagens">
-        <h3>Premier Room</h3>
-        
-        <RouterLink :to="{ path: '/reservas', hash: '#premier' }">
-          <img class="borderRadius" src="../assets/img/premier-room.webp"/>
-        </RouterLink>
-      </div>
-
-      <div class="imagens">
-        <h3>Deluxe Room</h3>
-        
-         <img  class="borderRadius" src="../assets/img/deluxe-room.jpg"/>      
-
-      </div>
-
-      <div class="imagens">
-        <h3>T.EX Premier</h3>
-        <RouterLink :to="{ path: 'reservas', hash: '#tex-premier' }">
-           <img  class="borderRadius" src="../assets/img/tex-premier-room.webp"/>
-        </RouterLink>
-       
-      </div>
-
-    </div>
-  </div>
-
   <div class="container">
-    <div class="row">
-      <div class="column-66">
-        <p class="tituloAcomodacoes">Destaque</p>
 
-       <p class="textoimg">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim dolorum
-          inventore cum consectetur! Necessitatibus, repellat.
-        </p>
+    <section class="title">
+      NOSSAS ACOMODAÇÕES
+    </section>
+
+    <section class="row">
+      <div class="column rooms">
+        <h3>Premier Room</h3>
+        <img src="../assets/img/premier-room.webp" />
       </div>
-
-      <div class="column-33">
-
-        <img class="imagens" src="../assets/img/premier-room.webp"/>
-
+      <div class="column rooms">
+        <h3>Deluxe Room</h3>
+        <img src="../assets/img/deluxe-room.jpg" />
       </div>
-    </div>
+      <div class="column rooms">
+        <h3>T.EX Premier</h3>
+        <img src="../assets/img/tex-premier-room.webp" />
+      </div>
+    </section>
+
+    <section class="parallax" :class="{ 'is-scrolling': isScrolling }">
+      <div class="parallax__overlay"></div>
+      <div class="parallax__background"></div>
+    </section>
+
+    <section class="row main">
+      <p class="text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim dolorum
+        inventore cum consectetur! Necessitatibus, repellat.
+      </p>
+      <img src="../assets/img/quarto.jpg" />
+    </section>
+
   </div>
-
- 
   <UnifiedFooter />
-</template>
-
+</template> 
+ 
 <script>
 import UnifiedHeader from "@/components/UnifiedHeader.vue";
 import UnifiedFooter from "@/components/UnifiedFooter.vue";
+
 export default {
   name: "AcomodacoesHotel",
   components: {
     UnifiedHeader,
     UnifiedFooter,
   },
-};
-</script>
-<style>
+  data() {
+    return {
+      isScrolling: false,
+    };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      const parallaxBg = document.querySelector(".parallax__background");
+      const scrollTop = window.pageYOffset;
+      const bgOffset = -(scrollTop * 0.05);
+      parallaxBg.style.transform = translate3d('0, ${ bgOffset }px, 0');
+      this.isScrolling = scrollTop > 0;
+    },
+  },
+}; 
+</script> 
+<style> * {
+   box-sizing: border-box;
+   margin: 0;
+ }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+ body {
+   margin: 0;
+   font-family: Arial, Helvetica, sans-serif;
+ }
 
-.borderRadius{
-  border-radius: 18px;
+ .container {
+   position: relative;
+   width: 80%;
+   height: 100%;
+   margin: 0 auto;
+   padding: 20px;
+   border-radius: 5px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+ }
 
-}
-.texto-NossasAcomodacoes {
-  text-align: center;
-  font-size: 50px;
-  font-family: "Mont";
-  text-align: center;
-   font-size: 31px;
-   padding-bottom: 50px;
-}
+ .container::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   opacity: 0.12;
+   background-image: url("../assets/img/pexels-damir-mijailovic-3695238.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   z-index: -1;
+ }
 
-.container {
-  padding: 60px;
-}
+ .row {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   padding-bottom: 20px;
+ }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+ .column {
+   flex-basis: calc(33.33% - 10px);
+   padding: 10px;
+   margin-bottom: 20px;
+   box-sizing: border-box;
+ }
 
-.column-66 {
-  float: left;
-  width: 66.66666%;
-  padding: 10px;
-}
+ .column h3 {
+   font-size: 18px;
+   margin-top: 20px;
+   margin-bottom: 10px;
+   text-align: center;
+   font-family: Arial, sans-serif;
+   color: #000000;
+ }
 
-.column-33 {
-  float: left;
-  width: 33.33333%;
-  padding: 10px;
-  padding-bottom: 50px;
-}
+ .column img {
+   display: block;
+   width: 100%;
+   height: auto;
+   margin: 0 auto;
+   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+ }
 
-.large-font {
-  font-size: 48px;
-}
+ /* inicio da animação */
 
-.xlarge-font {
-  font-size: 64px;
-}
+ .rooms {
+   position: relative;
+ }
 
-img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-}
+ .rooms img:hover {
+   transform: scale(1.1);
+ }
 
-.imagens {
-  width: 550;
-  height: 300;
-  margin: 10px;
-  text-align: center;
-  border-radius: 18px;
-   border-radius: 18px;
-}
+ .rooms img {
+   transition: transform 0.3s ease-out;
+ }
 
-.imagen {
-  width: 550px;
-  height: 300px;
-  margin: 10px;
-  position: relative;
-  text-align: center;
-}
+ .rooms h3 {
+   position: relative;
+   font-size: 22px;
+   text-align: center;
+   padding-bottom: 20px;
+ }
 
-.textoimg {
-  font-size: 30px;
-  font-family: "Montserrat";
-  padding-top: 8%;
-  padding-left: 5%;
-}
+ /* final da animação */
 
-.textoimgDelicie {
-  font-size: 30px;
-  font-family: "Montserrat";
-  padding-left: 5%;
-}
+ .title {
+   text-align: center;
+   font-size: 4.5rem;
+   font-weight: 600;
+   font-family: "Mont", "Garamond";
+   text-transform: uppercase;
+   padding-top: 2rem;
+   padding-bottom: 4rem;
+   background-image: url(../assets/img/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg);
+   background-repeat: repeat;
+   background-clip: text;
+   color: transparent;
+ }
 
-.holder {
-  display: flex;
-  justify-content: center;
-}
+ .main {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   padding: 20px 0;
+ }
 
-.imagens::after {
-  content: attr(data-title);
-  position: absolute;
-  width: 100%;
-  top: -30px;
-  left: 0;
-  font-size: 30px;
-  font-family: "Montserrat";
-  font-weight: bold !important;
-}
+ .main .text {
+   flex-basis: 100%;
+   text-align: center;
+   font-size: 24px;
+   line-height: 1.5;
+   margin-bottom: 1em;
+   font-family: Arial, sans-serif;
+   color: #000000;
+ }
 
-.imagens::before {
-  content: attr(data-subtitle);
-  position: absolute;
-  width: 100%;
-  bottom: -100px;
-  left: 0;
-  font-size: 30px;
-  font-family: "Montserrat";
-}
+ .main .text strong {
+   font-weight: bold;
+ }
 
-@media screen and (max-width: 1000px) and (orientation: portrait) {
+ .main img {
+   flex-basis: 50%;
+   max-width: 100%;
+   height: auto;
+   margin: 20px;
+ }
 
-  .column-66,
-  .column-33 {
-    width: 100%;
-    text-align: center;
-  }
+ /* Início do Parallax */
 
-  img {
-    margin: auto;
-  }
+ .parallax {
+   height: 300px;
+   overflow: hidden;
+   position: relative;
+ }
 
-  .imagens {
-    margin: 0px;
-    width: auto;
-    height: auto;
-    padding-right: 20px;
-    padding-left: 20px;
-  }
+ .parallax__background {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100vh;
+   background-image: url("../assets/img/hotel.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center bottom;
+   background-position-y: bottom;
+   transform: translate3d(0, 0, 0);
+   will-change: transform;
+   transition: transform 0.1s ease-out;
+   z-index: 1;
+ }
 
-  .imagen {
-    margin: 0px;
-    width: auto;
-    height: auto;
-    padding-right: 20px;
-    padding-left: 20px;
-  }
+ .parallax__overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.2);
+   z-index: 2;
+   opacity: 0;
+   transition: opacity 1s ease-in-out;
+ }
 
-  .holder {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+ .parallax.is-scrolling .parallax__background {
+   transform: translate3d(0, calc(var(--scroll, 0px) / 0.5), 0);
+ }
 
-  .container {
-    padding: 20px;
-  }
+ .parallax.is-scrolling .parallax__overlay {
+   opacity: 1;
+ }
 
-  .descImagens {
-    padding-bottom: 30px;
-  }
-}
-
-.tituloAcomodacoes {
-  text-align: center;
-  font-size: 30px;
-  font-family: "Montserrat";
-  font-weight: bold !important;
-  margin-top: 0;
-  padding-top: 0;
-}
-
-.row .holder .imagens img {
-  opacity: 1;
-  transition: all 0.6s;
-}
-
-.row .holder .imagens img:hover {
-  opacity: 1;
-  cursor: pointer;
-  width: 605px;
-  box-shadow: 5px 10px 10px grey;
-  transition: all 0.7s;
-}
+ /* Final do Parallax */
 </style>
+

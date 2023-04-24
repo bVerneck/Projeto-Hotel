@@ -113,7 +113,7 @@ li {
   padding: 5%;
 }
 .social-media li {
-  padding: 10px;
+  padding: 6px;
 }
 h2 {
   font-weight: 400;

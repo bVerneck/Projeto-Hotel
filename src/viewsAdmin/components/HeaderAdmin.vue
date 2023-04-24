@@ -1,10 +1,9 @@
 <template>
-   
-  <div class="barraRoxaTop">
-    
+
+  <div class="barraRoxaTop"> 
+
    <router-link to="/"><img src="../assets/img/logo.png" alt="Logo Imagem" class="logo" /></router-link>
-     
-    
+  
     <a href="">
       <img src="../assets/img/icone-logout.png" class="botaosair" alt="" />
     </a>
@@ -72,8 +71,8 @@ export default {
 .barraNavegacao a {
   color: rgb(255, 255, 255);
   text-decoration: none;
-  padding-left: 20%;
-  font-size: 1.4em;
+  padding-left: 25%;
+  font-size: 1.9em;
 }
 .barraNavegacao a:hover {
   color: rgba(0, 0, 0, 0.425);
