@@ -12,6 +12,7 @@
         <li><router-link to="/sobreHotel">O Hotel</router-link></li>
         <li><router-link to="/acomodacoes">Acomodações</router-link></li>
         <li><router-link to="/contatos">Contatos</router-link></li>
+        <li><router-link to="/LoginPublic">Login</router-link></li>
         <li>
           <BotaoReservar />
         </li>
@@ -127,7 +128,7 @@ header img {
   width: 100%;
   height: 100%;
   position: fixed;
-  background-color: #36383f;
+  background-color: #36383f75;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.5s ease-out;
@@ -238,6 +239,10 @@ label span {
   .nav li {
     height: 95px;
     line-height: 33px;
+  }
+
+  .header {
+    font-family: "";
   }
 
   .menu a {
