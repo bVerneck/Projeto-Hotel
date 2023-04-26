@@ -1,15 +1,17 @@
 <template>
   <main>
     <div class="container">
-      <img src="../assets/img/group.png" alt="logo" class="logo">
+      <router-link to="/"><img src="../assets/img/group.png" alt="logo" class="logo"></router-link>
       
       <form @submit.prevent="login" class="form-inline">
         <label for="email" class="email">Email</label><br>
         <input type="email" id="email" placeholder="Email" v-model="email"> <br>
         <label for="pwd">Senha</label><br>
         <input type="password" id="pwd" placeholder="Senha" v-model="senha"><br>
+        <p v-if="loginError" style="color: red;">E-mail ou senha incorretos. Tente novamente.</p>
         <button type="submit">Entrar</button>
       </form>
+      
     </div>
   </main>
 </template>
@@ -20,17 +22,18 @@ export default {
   data() {
     return {
       email: '',
-      senha: ''
+      senha: '',
+      loginError: false
     }
   },
   methods: {
     login() {
       
-      if (this.email === 'texhotel@tex.com' && this.senha === 'admin') {
+      if (this.email === 'brunotex@tex.com' && this.senha === 'admin') {
         console.log('login bem-sucedido')
         this.$router.push('/homeAdmin')
       } else {
-        console.log('email ou senha incorretos')
+        this.loginError = true
       }
     }
   }
@@ -98,7 +101,7 @@ main{
 
 .form-inline input{
     vertical-align: middle;
-    margin: 5px 10px 50px 0;
+    margin: 5px 10px 20px 0;
     padding: 10px;
     width: 350px;
     background-color: rgba(255, 255, 255, 0.603);

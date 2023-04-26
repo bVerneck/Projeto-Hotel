@@ -32,17 +32,14 @@
                 <!-- <i data-feather="bell"></i> -->
                 <span>Notificações</span>
               </li>
-              <li>
-                <span>Lorem</span>
-              </li>
             </ul>
           </div>
           <div>
             <ul>
               <div>
-                <li>
+                <li class="configura">
                   <!-- <i data-feather="settings"></i> -->
-                  <span>Configurações</span>
+                  <span >Configurações</span>
                 </li>
               </div>
             </ul>
@@ -67,13 +64,13 @@
           <div class="card">
             <div>
               <h2>Hóspedes</h2>
-              <p>120</p>
+              <p>12</p>
             </div>
           </div>
           <div  class="card">
             <div>
               <h2>Quartos Ocupados</h2>
-              <p>50</p>
+              <p>4</p>
             </div>
           </div>
           <div  class="card">
@@ -85,7 +82,7 @@
           <div class="card">
             <div>
               <h2>Reservas Feitas</h2>
-              <p>20</p>
+              <p>3</p>
             </div>
           </div>
         </div>
@@ -150,18 +147,23 @@ ul {
   background-color: #fff;
   width: 100%;
   height: 100%;
+  padding-bottom:50% ;
 }
+.configura{
+padding-top:50% ;
 
+}
 .lateral_menu {
   display: flex;
   position: relative;
   flex-direction: column;
   align-items: center;
-  background: #7623FF;
+  background: #670bff;
   color: #fff;
   width: 350px;
   height: 100%;
   font-size: 1.8rem;
+  padding-bottom:50%;
 }
 
 .lateral_menuTop {
@@ -175,7 +177,7 @@ ul {
 }
 
 .img_perfil {
-  border-radius: 50%;
+  border-radius: 75px 75px 75px 75px;
   width: 55%;
   height: 45%;
   border-style: solid;
@@ -189,6 +191,10 @@ ul {
   padding: 5px 0 15% 0;
   height: 100%;
 }
+.lateral_menuItens li{
+  padding-bottom: 20px;
+
+}
 
 nav {
   display: flex;
@@ -196,7 +202,6 @@ nav {
   justify-content: space-around;
   background-color: #fff;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
   font-size: 1.8rem;
   height: 10vh;
   width: 100%;

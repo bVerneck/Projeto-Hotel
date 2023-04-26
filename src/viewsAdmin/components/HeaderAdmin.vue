@@ -4,9 +4,10 @@
 
    <router-link to="/"><img src="../assets/img/logo.png" alt="Logo Imagem" class="logo" /></router-link>
   
-    <a href="">
-      <img src="../assets/img/icone-logout.png" class="botaosair" alt="" />
-    </a>
+    <router-link to="/loginAdmin" v-on:click.native="showConfirmation">
+  <img src="../assets/img/icone-logout.png" class="botaosair" alt="" />
+</router-link>
+
     <div class="barraNavegacao">
       <router-link to="/homeAdmin">Home</router-link>
       <router-link to="/hospedesAdmin">Hospedes</router-link>
@@ -21,7 +22,14 @@
 
 <script>
 export default {
-    name: "HeaderAdmin"
+    name: "HeaderAdmin",
+    methods:{
+      showConfirmation() {
+      if (!confirm('Tem certeza que deseja sair?')) {
+        event.preventDefault()
+      }
+    }
+    }
 }
 </script>
 
